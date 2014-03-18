@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html ng-app="mgcrea.ngStrapDocs">
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+  <script>document.write('<base href="' + document.location + '" />');</script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/static/styles/angular-motion.css">
+  <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/static/styles/bootstrap-additions.css">
+  <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/static/styles/libraries.min.css">
+
+</head>
+
+<body ng-controller="MainCtrl">
+  <!-- Navigation Bar -->
+  <div class="navbar navbar-default" role="navigation" bs-navbar>
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">HealthForum</a>
+      </div>
+      <!-- Search field in NavBar -->
+      <div class="navbar-form pull-left input-group">
+        <form ng-submit="search()" class="input-group">
+          <input type="text" size="60" class="form-control" ng-model="searchText"
+          placeholder="Type the drug name to Search" />
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button" ng-click="search()">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </form>
+      </div>
+
+      <div class="navbar-text col-lg-2 pull-right">Drug Found: <a>
+        <span ng-bind="cf.noItems()"></span></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container container-fluid" ng-controller="SelectDemoCtrl">
+
+
+    <!-- Main page layout -->
+    <div class="row">
+
+      <!-- Tweet Cards inside frame -->
+
+
+      <div class="col-lg-5" id="tweet-frame">
+       <div class="panel panel-success">
+        <div class="panel-heading">
+          <div class="row">
+            <!-- Pagination -->
+            <ul class="pagination" style="margin:0">
+              <li><a href="#">&laquo;</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">&raquo;</a></li>
+            </ul>
+            <div class="col-lg-5">
+              <label>Sort By:&nbsp;</label>
+              <button type="button" class="btn btn-default" ng-model="selectedIcon" data-html="1" data-animation="am-flip-x" ng-options="icon.value as icon.label for icon in icons" placeholder="Select" bs-select>
+                Action <span class="caret"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-body" style="background-color:#f5f5f5">
+          <div class="tweetCard" data-ng-repeat="tweet in cf.tweetPage(currentPage, pageSize, sortModel)"
+          data-tweet="tweet">
+          </div>    
+        </div>
+      </div>
+    </div>
+
+  <!-- Charts column -->
+  <div class="col-lg-7">
+
+    <h6>Activity by Time Unit (mouse over for details)</h6>
+    <div id="timeseries1" class="timeseries" data-tsdata="cf.timeseries()" data-live="live" data-height="100"></div>
+    <hr />
+
+    <h6>Word Frequency</h6>
+    <div id="wordCloud" class="cloud" data-words="words" data-live="live" data-interval="20000"
+    data-callback="addSearchString"></div>
+
+    <hr />
+
+    <div id="wordBars" class="barchart" data-words="words" data-live="live"
+    data-callback="addSearchString"></div>
+  </div>
+</div>
+</div>
+</div>
+
+<script src="//code.angularjs.org/1.2.13/angular.min.js" data-semver="1.2.13"></script>
+<script src="//code.angularjs.org/1.2.13/angular-animate.min.js" data-semver="1.2.13"></script>
+<script src="//code.angularjs.org/1.2.13/angular-sanitize.min.js" data-semver="1.2.13"></script>
+<script src="//mgcrea.github.io/angular-strap/dist/angular-strap.js" data-semver="v2.0.0-rc.4"></script>
+<script src="//mgcrea.github.io/angular-strap/dist/angular-strap.tpl.js" data-semver="v2.0.0-rc.4"></script>
+<script src="js/app.js"></script>
+<script src="//mgcrea.github.io/angular-strap/static/scripts/docs.tpl.min.js" data-semver="v2.0.0-rc.4"></script>
+</body>
+
+</html>
