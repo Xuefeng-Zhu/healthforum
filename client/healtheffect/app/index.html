@@ -40,16 +40,14 @@
 
   </div>
 
-  <div class="container container-fluid" ng-controller="SelectDemoCtrl">
+  <div class="container container-fluid">
 
 
     <!-- Main page layout -->
     <div class="row">
 
       <!-- Tweet Cards inside frame -->
-
-
-      <div class="col-lg-5" id="tweet-frame">
+      <div class="col-lg-5" id="tweet-frame" ng-controller="SelectDemoCtrl">
        <div class="panel panel-success">
         <div class="panel-heading">
           <div class="row">
@@ -72,31 +70,34 @@
           </div>
         </div>
 
-        <div class="panel-body" style="background-color:#f5f5f5">
-          <div class="tweetCard" data-ng-repeat="tweet in cf.tweetPage(currentPage, pageSize, sortModel)"
-          data-tweet="tweet">
+        <div class="panel-body" style="background-color:#f5f5f5;min-height:30em">
+          <div class="list-group">
+            <a href="#" class="list-group-item" style="margin-bottom:10px" ng-repeat="drug in drugs">
+              <h4 class="list-group-item-heading">{{drug.name}}</h4>
+              <p class="list-group-item-text">{{drug.concise}}</p>
+            </a>
           </div>    
         </div>
       </div>
     </div>
 
-  <!-- Charts column -->
-  <div class="col-lg-7">
+    <!-- Charts column -->
+    <div class="col-lg-7">
 
-    <h6>Activity by Time Unit (mouse over for details)</h6>
-    <div id="timeseries1" class="timeseries" data-tsdata="cf.timeseries()" data-live="live" data-height="100"></div>
-    <hr />
+      <h6>Activity by Time Unit (mouse over for details)</h6>
+      <div id="timeseries1" class="timeseries" data-tsdata="cf.timeseries()" data-live="live" data-height="100"></div>
+      <hr />
 
-    <h6>Word Frequency</h6>
-    <div id="wordCloud" class="cloud" data-words="words" data-live="live" data-interval="20000"
-    data-callback="addSearchString"></div>
+      <h6>Word Frequency</h6>
+      <div id="wordCloud" class="cloud" data-words="words" data-live="live" data-interval="20000"
+      data-callback="addSearchString"></div>
 
-    <hr />
+      <hr />
 
-    <div id="wordBars" class="barchart" data-words="words" data-live="live"
-    data-callback="addSearchString"></div>
+      <div id="wordBars" class="barchart" data-words="words" data-live="live"
+      data-callback="addSearchString"></div>
+    </div>
   </div>
-</div>
 </div>
 </div>
 
