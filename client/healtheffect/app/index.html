@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="mgcrea.ngStrapDocs">
+<html ng-app="myapp">
 
 <head>
   <meta charset="utf-8" />
@@ -10,6 +10,13 @@
   <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/static/styles/angular-motion.css">
   <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/static/styles/bootstrap-additions.css">
   <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/static/styles/libraries.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  
+  <link rel="stylesheet" href="summernote/summernote.css">
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script> 
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script> 
+  <script src="summernote/summernote.min.js"></script>
+
 
 </head>
 
@@ -34,22 +41,20 @@
       </div>
 
       <div class="navbar-text col-lg-2 pull-right">Drug Found: <a>
-        <span ng-bind="cf.noItems()"></span></a>
+        <span>{{drugs.length}}</span></a>
       </div>
     </div>
 
   </div>
 
-  <div class="container container-fluid" ng-controller="SelectDemoCtrl">
+  <div class="container container-fluid">
 
 
     <!-- Main page layout -->
     <div class="row">
 
       <!-- Tweet Cards inside frame -->
-
-
-      <div class="col-lg-5" id="tweet-frame">
+      <div class="col-lg-5" id="tweet-frame" ng-controller="SelectDemoCtrl">
        <div class="panel panel-success">
         <div class="panel-heading">
           <div class="row">
@@ -72,37 +77,30 @@
           </div>
         </div>
 
-        <div class="panel-body" style="background-color:#f5f5f5">
-          <div class="tweetCard" data-ng-repeat="tweet in cf.tweetPage(currentPage, pageSize, sortModel)"
-          data-tweet="tweet">
+        <div class="panel-body" style="background-color:#f5f5f5;min-height:30em">
+          <div class="list-group">
+            <a href="#" class="list-group-item" style="margin-bottom:10px" ng-repeat="drug in drugs">
+              <h4 class="list-group-item-heading">{{drug.name}}</h4>
+              <p class="list-group-item-text">{{drug.concise}}</p>
+            </a>
           </div>    
         </div>
       </div>
     </div>
 
-  <!-- Charts column -->
-  <div class="col-lg-7">
-
-    <h6>Activity by Time Unit (mouse over for details)</h6>
-    <div id="timeseries1" class="timeseries" data-tsdata="cf.timeseries()" data-live="live" data-height="100"></div>
-    <hr />
-
-    <h6>Word Frequency</h6>
-    <div id="wordCloud" class="cloud" data-words="words" data-live="live" data-interval="20000"
-    data-callback="addSearchString"></div>
-
-    <hr />
-
-    <div id="wordBars" class="barchart" data-words="words" data-live="live"
-    data-callback="addSearchString"></div>
+    <!-- Charts column -->
+    <div class="col-lg-7">
+      <div ng-view></div>
+    </div>
   </div>
 </div>
 </div>
-</div>
 
-<script src="//code.angularjs.org/1.2.13/angular.min.js" data-semver="1.2.13"></script>
-<script src="//code.angularjs.org/1.2.13/angular-animate.min.js" data-semver="1.2.13"></script>
-<script src="//code.angularjs.org/1.2.13/angular-sanitize.min.js" data-semver="1.2.13"></script>
+
+<script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular/angular-animate.min.js"></script>
+<script src="lib/angular/angular-sanitize.min.js"></script>
+<script src="lib/angular/angular-route.min.js"></script>
 <script src="//mgcrea.github.io/angular-strap/dist/angular-strap.js" data-semver="v2.0.0-rc.4"></script>
 <script src="//mgcrea.github.io/angular-strap/dist/angular-strap.tpl.js" data-semver="v2.0.0-rc.4"></script>
 <script src="js/app.js"></script>

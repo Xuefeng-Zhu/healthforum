@@ -5,3 +5,5 @@ Here, you will find some initial code for our project. The two folders, client a
 NOTE: When coding in python, make sure that your tabs are actually tab characters, and not spaces.
 
 To run the server, go to server, and type "./server.py"
+
+hello world
