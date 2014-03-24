@@ -2,4 +2,4 @@
 .heroku
 venv
 .idea
-#*.pyc
+*.pyc
