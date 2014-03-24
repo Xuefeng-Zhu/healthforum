@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c7c6d489-aec6-4fac-bfe1-5c3542875ae8" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/app.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index-async.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index-async.html.template" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/directives.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/filters.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/services.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-animate.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-animate.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-animate.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-cookies.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-cookies.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-cookies.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-csp.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-loader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-loader.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-loader.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-resource.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-resource.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-resource.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-route.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-route.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-route.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-sanitize.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-sanitize.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-sanitize.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-scenario.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-touch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-touch.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular-touch.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular.min.js.gzip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/angular.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/errors.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_af-na.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_af-za.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_af.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_am-et.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_am.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-001.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-ae.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-bh.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-dz.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-eg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-iq.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-jo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-kw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-lb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-ly.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-ma.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-om.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-qa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-sa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-sd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-sy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-tn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar-ye.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_bg-bg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_bg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_bn-bd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_bn-in.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_bn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ca-ad.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ca-es.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_cs-cz.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_cs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_da-dk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_da.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_de-at.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_de-be.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_de-ch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_de-de.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_de-li.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_de-lu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_de.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_el-cy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_el-gr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_el.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-as.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-au.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-bb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-be.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-bm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-bw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-bz.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-dsrt-us.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-dsrt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-fm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-gb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-gu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-gy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-hk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-ie.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-in.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-iso.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-jm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-mh.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-mp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-mt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-mu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-na.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-nz.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-ph.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-pk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-pr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-pw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-sg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-tc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-tt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-um.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-us.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-vg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-vi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-za.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en-zw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-419.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-ar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-bo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-cl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-co.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-cr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-do.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-ea.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-ec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-es.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-gq.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-gt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-hn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-ic.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-mx.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-ni.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-pa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-pe.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-pr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-py.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-sv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-us.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-uy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es-ve.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_es.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_et-ee.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_et.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_eu-es.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_eu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fa-af.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fa-ir.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fi-fi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fil-ph.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fil.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-be.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-bf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-bi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-bj.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-bl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-cd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-cf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-cg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-ch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-ci.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-cm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-dj.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-fr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-ga.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-gf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-gn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-gp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-gq.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-km.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-lu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-mc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-mf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-mg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-ml.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-mq.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-ne.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-re.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr-yt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_fr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_gl-es.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_gl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_gsw-ch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_gsw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_gu-in.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_gu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_he-il.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_he.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_hi-in.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_hi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_hr-hr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_hr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_hu-hu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_hu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_id-id.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_id.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_in.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_is-is.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_is.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_it-it.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_it-sm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_it.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_iw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ja-jp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ja.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_kn-in.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_kn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ko-kr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ko.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ln-cd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ln.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_lt-lt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_lt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_lv-lv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_lv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ml-in.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ml.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_mr-in.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_mr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ms-my.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ms.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_mt-mt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_mt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_nl-cw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_nl-nl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_nl-sx.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_nl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_no.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_or-in.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_or.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_pl-pl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_pl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_pt-br.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_pt-pt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_pt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ro-ro.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ro.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ru-ru.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ru.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_sk-sk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_sk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_sl-si.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_sl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_sq-al.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_sq.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_sr-cyrl-rs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_sr-latn-rs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_sr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_sv-se.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_sv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_sw-tz.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_sw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ta-in.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ta.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_te-in.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_te.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_th-th.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_th.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_tl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_tr-tr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_tr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_uk-ua.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_uk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ur-pk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_ur.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_vi-vn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_vi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_zh-hans-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_zh-hk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_zh-tw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_zh.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_zu-za.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/i18n/angular-locale_zu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/version.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/angular/version.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/ui-bootstrap-tpls-0.10.0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/partials/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/partials/comments.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/partials/description.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/partials/sideeffect.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scraper/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scraper/drugs.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scraper/parser.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/summernote/summernote-bs2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/summernote/summernote-bs3.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/summernote/summernote.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/summernote/summernote.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/summernote/summernote.min.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
+    </list>
+    <ignored path="healthforum.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="healthforum" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/server.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="4" />
+    <option name="y" value="22" />
+    <option name="width" value="1276" />
+    <option name="height" value="778" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="healthforum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RunManager">
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c7c6d489-aec6-4fac-bfe1-5c3542875ae8" name="Default" comment="" />
+      <created>1395622924125</created>
+      <updated>1395622924125</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="4" y="22" width="1276" height="778" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="11" selection-start="384" selection-end="384" vertical-scroll-proportion="0.19823788" vertical-offset="0" max-vertical-offset="681">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
