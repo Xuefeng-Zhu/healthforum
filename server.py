@@ -9,9 +9,11 @@ app = Flask(__name__, template_folder = tmpl_dir)
 
 
 # Note to Self: Serving static content through Flask is not a good idea. host on actual webserver instead of app server
+
 @app.route("/")
 def index():
-	return render_template('client/index.html')
+    # template engine, hard.
+    return render_template('client/index.html',  )
 
 
 @app.route("/client/test",methods=['GET', 'POST'])
