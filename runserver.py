@@ -15,11 +15,12 @@ https://github.com/twilio/flask-restful/pull/131
 
 app = Flask(__name__)
 api = restful.Api(app)
+api.decorators=[cors.crossdomain(origin='*’)]
 
 DRUGS = [
-	{ 'drug': 'drug a', 'drug a side effects': {'side effect': 'side effect a1', 'side effect': 'side effect a2' }},
-	{ 'drug': 'drug b', 'drug b side effects': {'side effect': 'side effect b1', 'side effect': 'side effect b2' }},
-	{ 'drug': 'drug c', 'drug c side effects': {'side effect': 'side effect c1', 'side effect': 'side effect c2' }}
+	{ 'name': 'drug a', 'drug a side effects': {'side effect': 'side effect a1', 'side effect': 'side effect a2' }},
+	{ 'name': 'drug b', 'drug b side effects': {'side effect': 'side effect b1', 'side effect': 'side effect b2' }},
+	{ 'name': 'drug c', 'drug c side effects': {'side effect': 'side effect c1', 'side effect': 'side effect c2' }}
 ]
 
 #only output the .task. field
@@ -34,14 +35,12 @@ class Drug(restful.Resource):
 	# Note: There seems to be a way to you implement decorators
 	# on all of the classes, but I'm not sure how to do this. More information
 	# here: http://flask-restful.readthedocs.org/en/latest/extending.html#resource-method-decorators	
-	@cors.crossdomain(origin="*")
 	@marshal_with(fields)
 	def get(self, drug_id):
 		if not(len(DRUGS) > drug_id >= 0) or DRUGS[drug_id] is None:
 			abort(404, message="Drug {} doesn't exist".format(drug_id))
 		return DRUGS[drug_id]
 
-	@cors.crossdomain(origin="*")
 	def delete(self, drug_id):
 		if not(len(DRUGS) > drug_id >= 0):
 			abort(404, message="Drug {} doesn't exist".format(drug_id))
@@ -55,12 +54,10 @@ parser.add_argument('drug', type=str)
 
 class DrugList(restful.Resource):
 
-	@cors.crossdomain(origin="*")
 	@marshal_with(fields)
 	def get(self):
 		return DRUGS
 
-	@cors.crossdomain(origin="*")
 	def post(self):
 		args = parser.parse_args()
 		task = {'drug': args['drug']}
