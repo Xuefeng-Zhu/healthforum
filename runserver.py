@@ -1,33 +1,57 @@
 #!/usr/bin/python
 from healthcode import app
-from flask import Flask, jsonify
-from flask import request
-from flask.ext.restful import Api, Resource
+from flask import Flask
+from flask.ext import restful
+from flask.ext.restful import (reqparse, abort, fields, marshal_with, marshal)
 
 app = Flask(__name__)
-api = Api(app)
+api = restful.Api(app)
 
-# TODO handle request to GET single drug resource by drug_name
-# TODO return json containing list of side effects and associated data
-class DrugAPI(Resource):
-	def get(self, id):
-		return self.response
+DRUGS = [
+	{ 'drug': 'drug a', 'drug a side effects': {'side effect': 'side effect a1', 'side effect': 'side effect a2' }},
+	{ 'drug': 'drug b', 'drug b side effects': {'side effect': 'side effect b1', 'side effect': 'side effect b2' }},
+	{ 'drug': 'drug c', 'drug c side effects': {'side effect': 'side effect c1', 'side effect': 'side effect c2' }}
+]
 
-	# TODO: Is this supposed to be a classmethod?
-	def make_api(cls, response):
-		cls.response = response
-		return cls
+#only output the .task. field
+fields = {
+	'drug': fields.String
+}
 
+# Drug
+#   show a single drug item and lets you delete them
+class Drug(restful.Resource):
+	@marshal_with(fields)
+	def get(self, drug_id):
+		if not(len(DRUGS) > drug_id > 0) or DRUGS[drug_id] is None:
+			abort(404, message="Drug {} doesn't exist".format(drug_id))
+		return DRUGS[drug_id]
 
-class HealthforumApp():
-	def __init__(self):
-		self.app = Flask()
-		app_api = Api(self.app)
-		SideEffectsApi = DrugAPI.make_api({"key": "value"})
-		app_api.add_resource(DrugApi, "/drug/<string:drug_name>", endpoint = 'drug')
+	def delete(self, drug_id):
+		if not(len(DRUGS) > drug_id > 0):
+			abort(404, message="Drug {} doesn't exist".format(drug_id))
+		DRUGS[drug_id] = None
+		return "", 204
 
-	def run(self):
-		self.app.run("0.0.0.0", 80, debug = True) # remove debug when putting in production
+# DrugList
+#   shows a list of all drugs, and lets you POST to add new drugs
+parser = reqparse.RequestParser()
+parser.add_argument('drug', type=str)
 
+class DrugList(restful.Resource):
+	@marshal_with(fields)
+	def get(self):
+		return DRUGS
 
-HealthforumApp().run()
+	def post(self):
+		args = parser.parse_args()
+		task = {'drug': args['drug']}
+		DRUGS.append(task)
+		return marshal(task, fields), 201
+
+## Actually setup the Api resource routing here
+api.add_resource(DrugList, '/drug')
+api.add_resource(Drug, '/drug/<int:drug_id>')
+
+if __name__ == '__main__':
+	app.run(debug=True)
