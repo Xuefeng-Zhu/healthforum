@@ -15,7 +15,7 @@ https://github.com/twilio/flask-restful/pull/131
 
 app = Flask(__name__)
 api = restful.Api(app)
-api.decorators=[cors.crossdomain(origin='*’)]
+api.decorators=[cors.crossdomain(origin='*')]
 
 DRUGS = [
 	{ 'name': 'drug a', 'drug a side effects': {'side effect': 'side effect a1', 'side effect': 'side effect a2' }},
