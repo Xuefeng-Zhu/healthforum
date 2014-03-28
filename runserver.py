@@ -23,12 +23,12 @@ fields = {
 class Drug(restful.Resource):
 	@marshal_with(fields)
 	def get(self, drug_id):
-		if not(len(DRUGS) > drug_id > 0) or DRUGS[drug_id] is None:
+		if not(len(DRUGS) > drug_id >= 0) or DRUGS[drug_id] is None:
 			abort(404, message="Drug {} doesn't exist".format(drug_id))
 		return DRUGS[drug_id]
 
 	def delete(self, drug_id):
-		if not(len(DRUGS) > drug_id > 0):
+		if not(len(DRUGS) > drug_id >= 0):
 			abort(404, message="Drug {} doesn't exist".format(drug_id))
 		DRUGS[drug_id] = None
 		return "", 204
