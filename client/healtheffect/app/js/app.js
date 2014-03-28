@@ -36,21 +36,11 @@ app.controller('SelectDemoCtrl', function($scope, $http) {
 	{value: 'Most Review', label: '<i class="fa fa-comment"></i> Most Review'}
 	];
 
-	$scope.drugs = [
-	{name: 'A', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'B', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'C', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'D', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'E', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'F', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'G', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'H', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'I', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'J', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'K', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	];
+	$scope.drugs = [];
 
-
+	$http.get('http://healthforum.herokuapp.com/drugs').success(function(data){
+		$scope.drugs = data;
+	});
 
 
 });
