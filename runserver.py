@@ -14,6 +14,10 @@ https://github.com/twilio/flask-restful/pull/131
 
 More information on argument passing:
 http://flask-restful.readthedocs.org/en/latest/reqparse.html
+
+For the brave souls: To push this server onto heroku,
+https://devcenter.heroku.com/articles/getting-started-with-python
+
 """
 
 app = Flask(__name__)
@@ -89,8 +93,16 @@ class DrugList(restful.Resource):
 		drugNum = len(drugsTable) - 1
 		return drugNum, 201
 
-## Actually setup the Api resource routing here
 api.add_resource(DrugList, '/drugs')
+
+class DrugNames(restful.Resource):
+
+	def get(self):
+		names = [drugObj["name"] for drugObj in drugsTable]
+		return names, 201
+
+api.add_resource(DrugNames, '/names')
+
 
 if __name__ == '__main__':
 	app.run(debug=True)
