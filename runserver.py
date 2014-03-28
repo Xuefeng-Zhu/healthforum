@@ -35,19 +35,26 @@ class Drug(restful.Resource):
 
 # DrugList
 #   shows a list of all drugs, and lets you POST to add new drugs
-parser = reqparse.RequestParser()
-parser.add_argument('drug', type=str)
+#parser = reqparse.RequestParser()
+#parser.add_argument('drug', type=str)
 
 class DrugList(restful.Resource):
 	@marshal_with(fields)
 	def get(self):
 		return DRUGS
 
+
 	def post(self):
 		args = parser.parse_args()
 		task = {'drug': args['drug']}
 		DRUGS.append(task)
 		return marshal(task, fields), 201
+
+class PageRender(restful.Resource):
+	def get(self):
+		data = open("index.html").read()
+
+
 
 ## Actually setup the Api resource routing here
 api.add_resource(DrugList, '/drug')
