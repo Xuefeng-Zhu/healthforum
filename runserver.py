@@ -2,7 +2,16 @@
 from healthcode import app
 from flask import Flask
 from flask.ext import restful
-from flask.ext.restful import (reqparse, abort, fields, marshal_with, marshal)
+from flask.ext.restful import reqparse, abort, fields, marshal_with, marshal
+from flask.ext.restful.utils import cors
+
+"""
+More information about Flask RESTful:
+http://flask-restful.readthedocs.org/en/latest/installation.html
+
+More documentation on cors (cross origin resource sharing):
+https://github.com/twilio/flask-restful/pull/131
+"""
 
 app = Flask(__name__)
 api = restful.Api(app)
@@ -21,12 +30,18 @@ fields = {
 # Drug
 #   show a single drug item and lets you delete them
 class Drug(restful.Resource):
+
+	# Note: There seems to be a way to you implement decorators
+	# on all of the classes, but I'm not sure how to do this. More information
+	# here: http://flask-restful.readthedocs.org/en/latest/extending.html#resource-method-decorators	
+	@cors.crossdomain(origin="*")
 	@marshal_with(fields)
 	def get(self, drug_id):
 		if not(len(DRUGS) > drug_id >= 0) or DRUGS[drug_id] is None:
 			abort(404, message="Drug {} doesn't exist".format(drug_id))
 		return DRUGS[drug_id]
 
+	@cors.crossdomain(origin="*")
 	def delete(self, drug_id):
 		if not(len(DRUGS) > drug_id >= 0):
 			abort(404, message="Drug {} doesn't exist".format(drug_id))
@@ -35,25 +50,22 @@ class Drug(restful.Resource):
 
 # DrugList
 #   shows a list of all drugs, and lets you POST to add new drugs
-#parser = reqparse.RequestParser()
-#parser.add_argument('drug', type=str)
+parser = reqparse.RequestParser()
+parser.add_argument('drug', type=str)
 
 class DrugList(restful.Resource):
+
+	@cors.crossdomain(origin="*")
 	@marshal_with(fields)
 	def get(self):
 		return DRUGS
 
-
+	@cors.crossdomain(origin="*")
 	def post(self):
 		args = parser.parse_args()
 		task = {'drug': args['drug']}
 		DRUGS.append(task)
 		return marshal(task, fields), 201
-
-class PageRender(restful.Resource):
-	def get(self):
-		data = open("index.html").read()
-
 
 
 ## Actually setup the Api resource routing here
