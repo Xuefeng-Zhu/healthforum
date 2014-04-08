@@ -4,6 +4,8 @@ from flask import Flask
 from flask.ext import restful
 from flask.ext.restful import reqparse, abort, fields, marshal_with, marshal
 from flask.ext.restful.utils import cors
+from database import Users
+from flask.ext.sqlalchemy import SQLAlchemy
 
 """
 More information about Flask RESTful:
@@ -20,7 +22,13 @@ https://devcenter.heroku.com/articles/getting-started-with-python
 
 """
 
+herokuURI = 'mysql://bbe6adb0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a'
+henryURI = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
+
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = henryURI
+db = SQLAlchemy(app)
+
 api = restful.Api(app)
 api.decorators=[cors.crossdomain(origin='*')]
 
@@ -102,6 +110,28 @@ class DrugNames(restful.Resource):
 		return names, 201
 
 api.add_resource(DrugNames, '/names')
+
+
+# Added April 8th to test out querying database
+class RealThing(restful.Resource):
+
+	# TODO: Implement marshalling....
+	def get(self):
+		variable = Users.query
+		print type(variable)
+		users = Users.query.all()
+		return [str(user) for user in users], 201
+	
+#	def post(self):
+#		# Parse the arguments from the post request
+#		args = parser.parse_args()
+#		name = args["name"]				# name = "advil"
+#		effects = args["side_effect"] 	# effects = ["nausea", "dying"] 
+
+
+api.add_resource(RealThing, '/real')
+
+
 
 
 if __name__ == '__main__':
