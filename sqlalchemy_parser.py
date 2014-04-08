@@ -15,10 +15,12 @@ loggers = [app.logger, getLogger('SQLAlchemy')]
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
+
+# To Stephen: What's this line doing?
 db.Model.itercolumns = classmethod(lambda cls: cls.__table__.columns._data.iterkeys())
 
 class Users(db.Model):
-user_id = db.Column(db.Integer, primary_key=True)
+	user_id = db.Column(db.Integer, primary_key=True)
 	first_name = db.Column(db.String(30))
 	last_name = db.Column(db.String(30))
 	dob = db.Column(db.DateTime)
@@ -40,6 +42,7 @@ user_id = db.Column(db.Integer, primary_key=True)
 class Drugs(db.Model):
 	drug_id = db.Column(db.Integer, primary_key=True)
 	drug_name = db.Column(db.String(50), unique=True)
+	# Probably want a drug description here later
 
 	def __init__(self, resource):
 		self.drug_name = resource['drugName']
@@ -80,7 +83,8 @@ class SideEffectsDetails(db.Model):
 	def __repr__(self):
 		return '<Side Effect Details %s>' % self.title
 
-class Resources:
+# I'm not sure where this Resources class came from, actually
+class Resources():
 
 	def __init__(self):
 		self.engine = None
@@ -104,7 +108,8 @@ class Resources:
 		db.create_all(self.engine)
 
 	def process(self):
-		data = simplejson.load(open("drug_sideeffect_retResults.json", "r"))
+		data = simplejson.load(open("drug_sideeffect_retResults.json", "r")) # Maybe use json.loads("drug_sideeffect_retResults.json") ?
+		# Not sure what the simplejson class is doing
 
 		manager.create_api(User, methods=['GET'],['POST'],['DELETE'])
 		manager.create_api(Drugs, methods=['GET'],['POST'],['DELETE'])
