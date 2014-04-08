@@ -1,23 +1,24 @@
 #!/usr/bin/python
+# SQLAlchemy version 0.9.3
 from flask import Flask
 from datetime import datetime
 from healthcode import app
 import simplejson
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.dialects import mysql
-from sqlalchemy import Column, Integer, String, ForeignKey, create_engine
-from sqlalchemy.orm import sessionmaker, relationship, backref
+from sqlalchemy import Column, Integer, String, ForeignKey, create_engine, types
+from sqlalchemy.orm import scoped_session, sessionmaker, relationship, backref
+from sqlalchemy.types import TypeDecorator, VARCHAR
 from sqlalchemy.ext.declarative import declarative_base
 from logging import getLogger
 loggers = [app.logger, getLogger('SQLAlchemy')]
 
-
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] ='mysql://bbe6adb0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a'
 db = SQLAlchemy(app)
+db.Model.itercolumns = classmethod(lambda cls: cls.__table__.columns._data.iterkeys())
 
 class Users(db.Model):
-	user_id = db.Column(db.Integer, primary_key=True)
+user_id = db.Column(db.Integer, primary_key=True)
 	first_name = db.Column(db.String(30))
 	last_name = db.Column(db.String(30))
 	dob = db.Column(db.DateTime)
@@ -87,70 +88,67 @@ class Resources:
 		self.session = None
 
 		self.setup_connection()
-
+		
 		manager = flask.ext.restless.APIManager(app, flask_sqlalchemy_db=db)
 
 		self.setup_tables()
 		self.process()
-
 		app.run()
 
 	def setup_connection(self):
-		# set echo=False in production to avoid seeing SQLAlchemy logging
-		self.engine = create_engine('mysql://bbe6adb0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a', echo=True)
-		Session = sessionmaker(bind=self.engine)
+		self.engine = create_engine('mysql://bbe6adb0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a', echo=True, convert_unicode=True)
+		Session = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
 		self.session = Session()
 
 	def setup_tables(self):
 		db.create_all(self.engine)
 
 	def process(self):
-		# data = simplejson.load(urllib2.urlopen("http://api_url/drugs"))
 		data = simplejson.load(open("drug_sideeffect_retResults.json", "r"))
 
-		# Create API endpoints, which will be available at /api/<tablename> by
 		manager.create_api(User, methods=['GET'],['POST'],['DELETE'])
 		manager.create_api(Drugs, methods=['GET'],['POST'],['DELETE'])
 		manager.create_api(SideEffects, methods=['GET'],['POST'],['DELETE'])
 		manager.create_api(SideEffectsDetails, methods=['GET'],['POST'],['DELETE'])
 
-		# populate the tables
-		user = Users('first_name', 'last_name', 'dob','weight_lbs','height_inches','gender')
-		drug = Drugs('drug_name')
-		side_effect = SideEffects('side_effect')
-		side_effect_details = SideEffectsDetails('url','title','forum_id','content')
 
-"""
-sample_json = [{"drugName":"some drug","sideEffect":"some side effect","retrievedObjects":[{"url":"http://www.some.url.om","forumId":"5","title":"some title1","content":"content 1"},{"url":"http://www.some.url.com","forumId":"3","title":"some title 2","content":"some content 2"}]
+		"""
+			data =  [{
+				"drugName":"some drug",
+				"sideEffect":"some side effect",
+				"retrievedObjects":
+					[{
+						"url":"http://www.some.url.om",
+						"forumId":"5",
+						"title":"some title1",
+						"content":"content 1"
+					}]
+			}]
 
-"""
+		"""
 
-		# TODO - may need to use JSONColumnParser below or some alternate solution
-		for i, dr in enumerate(data['drugName']):
-			drug = Drugs(dr) # create Drug object
-			side_effects = [] # fill-up list of side effect objects
-			for se in data['sideEffect'][i]:
-				side_effects.append(SideEffects(se)) 
-			drug.side_effects = side_effects 
-			self.session.add(drug) 
-			self.session.add(side_effect)
+	for i, dr in enumerate(data['drugName']):
+		drug = Drugs(dr)
+		self.session.add(drug)
 
-			# self.session.add(side_effect_details)
+			for se in data['sideEffect']:
+				side_effect = SideEffects(se)
+				self.session.add(side_effect)
+
+				for j, reO in data['retrievedObjects'][i]:
+					side_effects_details = SideEffectsDetails(reO)
+
+					url = data['retrievedObjects'][j]['url']
+					self.session.add(url)
+
+					forumid = data['retrievedObjects'][j]['forumId']
+					self.session.add(forumid)
+
+					title = data['retrievedObjects'][j]['title']
+					self.session.add(title)
+
+					content = data['retrievedObjects'][j]['content']
+					self.session.add(content)
+
 		self.session.commit()
 
-# possible JSON solution
-class JSONColumnParser(types.MutableType, types.TypeDecorator):
-	impl = types.Unicode
-
-	def process_bind_param(self, value, dialect):
-		if value is json_null:
-			value = None
-		return simplejson.dumps(value)
-
-	def process_result_value(self, value, dialect):
-    if value is None:
-			return None
-		return simplejson.loads(value)
-
-	def copy_value(self, value):
-		return copy.deepcopy(value)
