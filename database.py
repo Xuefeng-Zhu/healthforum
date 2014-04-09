@@ -26,19 +26,17 @@ class Users(db.Model):
 		self.gender = resource['gender']
 
 	# There's probably an easier way to do this....
-	def __str__(self):
+	def __dict__(self):
 		output = dict()
 		output["first_name"] = self.first_name
-		output["last_name"] = self.last_name
+		output["last_name"] = selfchar.last_name
 		output["dob"] = self.dob
 		output["weight_lbs"] = self.weight_lbs
 		output["height_inches"] = self.height_inches
 		output["gender"] = self.gender
-		return json.dumps(output)
-"""
+		return output 
 	def __repr__(self):
 		return '<User %s %s>' % (self.first_name, self.last_name)
-"""
 """
 # NOTE: Shows up in database as drugs, NOT Drugs
 class Drugs(db.Model):

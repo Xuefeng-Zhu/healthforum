@@ -1,8 +1,9 @@
 #!/usr/bin/python
+import json
 from healthcode import app
 from flask import Flask
 from flask.ext import restful
-from flask.ext.restful import reqparse, abort, fields, marshal_with, marshal
+from flask.ext.restful import reqparse, abort, fields, marshal_with
 from flask.ext.restful.utils import cors
 from database import Users
 from flask.ext.sqlalchemy import SQLAlchemy
@@ -36,18 +37,20 @@ api.decorators=[cors.crossdomain(origin='*')]
 # Each dictionary has
 # 1. A string called "name"
 # 2. A list of side effects (strings) called "side effects"
+"""
 drugsTable = [
 	{ 'name': 'oxygen', 'side effects': ['side effect a1', 'side effect a2']},
 	{ 'name': 'humira', 'side effects': ['nausea', 'death']},
 	{ 'name': 'mcdonalds', 'side effects': ['irregular sleep habits', 'hysteria', 'uncontrollable shivering', 'vomiting', 'gaining weight']}
 ]
-
+"""
 # Generic function that aborts the call if the
 # queried index is not in the input list
 def assertInList(inputList, index):
 	if not(len(inputList) > index >= 0) or inputList[index] is None:
 		abort(404, message = "ERROR! Item doesn't exist in table.")
 
+"""
 # Drug
 # show a single drug item and lets you delete them
 class Drug(restful.Resource):
@@ -110,6 +113,16 @@ class DrugNames(restful.Resource):
 		return names, 201
 
 api.add_resource(DrugNames, '/names')
+"""
+
+users_fields = {
+	'first_name': fields.String,
+	'last_name': fields.String,
+	'dob': fields.DateTime,
+	'weight_lbs': fields.Integer,
+	'height_inches': fields.Integer,
+	'gender': fields.Raw
+}
 
 
 # Added April 8th to test out querying database
@@ -117,10 +130,9 @@ class RealThing(restful.Resource):
 
 	# TODO: Implement marshalling....
 	def get(self):
-		variable = Users.query
-		print type(variable)
 		users = Users.query.all()
-		return [str(user) for user in users], 201
+		
+		return "hello world"#[marshal(user, users_fields) for user in users], 200
 	
 #	def post(self):
 #		# Parse the arguments from the post request
