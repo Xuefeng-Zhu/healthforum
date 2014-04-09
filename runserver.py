@@ -131,6 +131,7 @@ api.add_resource(Users_resource, '/users')
 user_parser = reqparse.RequestParser()
 user_parser.add_argument('first', type = str)
 user_parser.add_argument('last', type = str)
+user_parser.add_argument('dob', type = str)
 
 users_fields = {
 	'first_name': fields.String,
@@ -147,7 +148,8 @@ class User_resource(restful.Resource):
 		args = user_parser.parse_args()
 		first = args['first']
 		last = args['last']
-		user = Users(first, last)
+		dob = restful.types.date(args['dob'])
+		user = Users(first, last, dob)
 
 		db.session.add(user)
 		db.session.commit()

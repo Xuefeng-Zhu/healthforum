@@ -17,9 +17,10 @@ class Users(db.Model):
 	height_inches = db.Column(db.Integer)
 	gender = db.Column(db.CHAR(1))
 
-	def __init__(self, first, last):
+	def __init__(self, first, last, dob):
 		self.first_name = first
 		self.last_name = last
+		self.dob = dob
 
 		"""
 		self.first_name = resource['first_name']
