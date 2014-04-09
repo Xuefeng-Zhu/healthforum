@@ -16,9 +16,6 @@ loggers = [app.logger, getLogger('SQLAlchemy')]
 app = Flask(__name__)
 db = SQLAlchemy(app)
 
-# To Stephen: What's this line doing?
-db.Model.itercolumns = classmethod(lambda cls: cls.__table__.columns._data.iterkeys())
-
 class Users(db.Model):
 	user_id = db.Column(db.Integer, primary_key=True)
 	first_name = db.Column(db.String(30))
@@ -84,6 +81,9 @@ class SideEffectsDetails(db.Model):
 		return '<Side Effect Details %s>' % self.title
 
 # I'm not sure where this Resources class came from, actually
+# SRM: included here for development only. Most of this is meant to be split off/incorporated into server.py and 
+#      some is for loading data into mysql database.
+
 class Resources():
 
 	def __init__(self):
@@ -110,6 +110,8 @@ class Resources():
 	def process(self):
 		data = simplejson.load(open("drug_sideeffect_retResults.json", "r")) # Maybe use json.loads("drug_sideeffect_retResults.json") ?
 		# Not sure what the simplejson class is doing
+		# SRM: loads json sample into python dict, which is parsed out to the database in for loop below
+		#      json.loads looks simpler than simplejson. I'll look into the differences tomorrow
 
 		manager.create_api(User, methods=['GET'],['POST'],['DELETE'])
 		manager.create_api(Drugs, methods=['GET'],['POST'],['DELETE'])
