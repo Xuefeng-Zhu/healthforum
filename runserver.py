@@ -1,5 +1,4 @@
 #!/usr/bin/python
-import json
 from flask import Flask
 from flask.ext import restful
 from flask.ext.restful import reqparse, marshal_with, marshal
@@ -42,11 +41,11 @@ drug_parser.add_argument('info', type = str)
 class Drug_resource(restful.Resource):
 
 	# $ curl localhost:5000/drugs/2
-	@marshal_with(Drugs.field())
 	def get(self, drugNum):
 		drug = Drugs.query.filter_by(id=drugNum).first()
-		return drug 
+		return marshal(drug, Drug.fields()) if drug is not None else "Not found", 404 
 
+	# $ curl localhost:5000/drugs -d "name=Some UNIQUE name" -d "info=This is some information" -X POST -v
 	def post(self):
 		args = drug_parser.parse_args()
 		name = args['name']
@@ -58,7 +57,6 @@ class Drug_resource(restful.Resource):
 
 		return drug.id
 
-
 api.add_resource(Drug_resource, '/drugs', endpoint="drugs")
 api.add_resource(Drug_resource, '/drugs/<int:drugNum>')
 		
@@ -68,6 +66,7 @@ api.add_resource(Drug_resource, '/drugs/<int:drugNum>')
 # Added April 8th to test out querying database
 class Users_list_resource(restful.Resource):
 
+	# curl localhost:5000/users_list
 	def get(self):
 		users = Users.query.all()
 		return [marshal(user, Users.fields()) for user in users], 200

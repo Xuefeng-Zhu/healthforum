@@ -1,8 +1,8 @@
 from flask import Flask 
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.restful import fields
-import json
 
+# URLS for the databases. The default one is henryURI
 herokuURI = 'mysql://bbe6adb0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a'
 henryURI = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
 
@@ -53,7 +53,7 @@ class Drugs(db.Model):
 		self.info = info
 
 	@staticmethod
-	def field():
+	def fields():
 		drug_fields = {
 			'id': fields.Integer,
 			'name': fields.String, 
