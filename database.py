@@ -23,17 +23,6 @@ class Users(db.Model):
 		self.last_name = last
 		self.dob = dob
 
-	# There's probably an easier way to do this....
-	def __str__(self):
-		output = dict()
-		output["first_name"] = self.first_name
-		output["last_name"] = self.last_name
-		output["dob"] = self.dob
-		output["weight_lbs"] = self.weight_lbs
-		output["height_inches"] = self.height_inches
-		output["gender"] = self.gender
-		return json.dumps(output)
-
 	# Marshalling documentation:
 	# http://flask-restful.readthedocs.org/en/latest/api.html
 	# http://flask-restful.readthedocs.org/en/latest/fields.html
@@ -64,9 +53,6 @@ class Drugs(db.Model):
 		self.name = drug_name
 		self.info = drug_info
 
-	def __repr__(self):
-		return '<Drug %s>' % self.drug_name
-	
 	@staticmethod
 	def field():
 		drug_fields = {
