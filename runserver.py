@@ -5,7 +5,7 @@ from flask import Flask
 from flask.ext import restful
 from flask.ext.restful import reqparse, abort, fields, marshal_with, marshal
 from flask.ext.restful.utils import cors
-from database import Users
+from database import db, Users
 from flask.ext.sqlalchemy import SQLAlchemy
 
 """
@@ -103,6 +103,9 @@ def assertInList(inputList, index):
 #api.add_resource(DrugNames, '/names')
 #
 
+# Marshalling documentation:
+# http://flask-restful.readthedocs.org/en/latest/api.html
+# http://flask-restful.readthedocs.org/en/latest/fields.html
 users_fields = {
 	'first_name': fields.String,
 	'last_name': fields.String,
@@ -114,23 +117,42 @@ users_fields = {
 
 
 # Added April 8th to test out querying database
-class RealThing(restful.Resource):
+class Users_resource(restful.Resource):
 
-	# TODO: Implement marshalling....
 	def get(self):
 		users = Users.query.all()
 		return [marshal(user, users_fields) for user in users], 200
-	
-#	def post(self):
-#		# Parse the arguments from the post request
-#		args = parser.parse_args()
-#		name = args["name"]				# name = "advil"
-#		effects = args["side_effect"] 	# effects = ["nausea", "dying"] 
 
+api.add_resource(Users_resource, '/users')
 
-api.add_resource(RealThing, '/real')
+################################################
+################################################
 
+user_parser = reqparse.RequestParser()
+user_parser.add_argument('first', type = str)
+user_parser.add_argument('last', type = str)
 
+users_fields = {
+	'first_name': fields.String,
+	'last_name': fields.String,
+	'dob': fields.DateTime,
+	'weight_lbs': fields.Integer,
+	'height_inches': fields.Integer,
+	'gender': fields.Raw
+}
+class User_resource(restful.Resource):
+
+	# $ curl http://localhost:5000/user -d "first=john" -d "last=smith" -X POST -v
+	def post(self):
+		args = user_parser.parse_args()
+		first = args['first']
+		last = args['last']
+		user = Users(first, last)
+
+		db.session.add(user)
+		db.session.commit()
+
+api.add_resource(User_resource, '/user')
 
 
 if __name__ == '__main__':

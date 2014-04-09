@@ -17,13 +17,18 @@ class Users(db.Model):
 	height_inches = db.Column(db.Integer)
 	gender = db.Column(db.CHAR(1))
 
-	def __init__(self, resource):
+	def __init__(self, first, last):
+		self.first_name = first
+		self.last_name = last
+
+		"""
 		self.first_name = resource['first_name']
 		self.last_name = resource['last_name']
 		self.dob = resource['dob']
 		self.weight_lbs = resource['weight_lbs']
 		self.height_inches = resource['height_inches']
 		self.gender = resource['gender']
+		"""
 
 	# There's probably an easier way to do this....
 	def __str__(self):
