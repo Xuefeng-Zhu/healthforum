@@ -35,7 +35,6 @@ class Users(db.Model):
 
 #	def __repr__(self):
 #		return '<User %s %s>' % (self.first_name, self.last_name)
-"""
 # NOTE: Shows up in database as drugs, NOT Drugs
 class Drugs(db.Model):
 	drug_id = db.Column(db.Integer, primary_key=True)
@@ -54,7 +53,7 @@ class SideEffects(db.Model):
 	side_effect = db.Column(db.String(150))
 
 	drug_id = db.Column(db.Integer, db.ForeignKey('drugs.drug_id'))
-	drug = db.relationship('drugs', backref=db.backref('posts', lazy='dynamic'))
+#	drug = db.relationship('drugs', backref=db.backref('posts', lazy='dynamic'))
 
 	def __init__(self, resource):
 		self.side_effect = resource['sideEffect']
@@ -72,7 +71,7 @@ class SideEffectsDetails(db.Model):
 	content = db.Column(db.Text)
 
 	side_effects_id = db.Column(db.Integer, db.ForeignKey('side_effects.side_effects_id'))
-	side_effects = db.relationship('side_effects', backref=db.backref('posts', lazy='dynamic'))
+#side_effects = db.relationship('side_effects', backref=db.backref('posts', lazy='dynamic'))
 
 	def __init__(self, resource):
 		self.url = resource['url']
@@ -82,4 +81,3 @@ class SideEffectsDetails(db.Model):
 
 	def __repr__(self):
 		return '<Side Effect Details %s>' % self.title
-		"""
