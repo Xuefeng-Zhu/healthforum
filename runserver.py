@@ -1,11 +1,10 @@
 #!/usr/bin/python
 import json
-#from healthcode import app
 from flask import Flask
 from flask.ext import restful
 from flask.ext.restful import reqparse, abort, fields, marshal_with, marshal
 from flask.ext.restful.utils import cors
-from database import db, Users
+from database import db, Users, Drugs
 from flask.ext.sqlalchemy import SQLAlchemy
 
 """
@@ -33,30 +32,34 @@ db = SQLAlchemy(app)
 api = restful.Api(app)
 api.decorators=[cors.crossdomain(origin='*')]
 
-# Generic function that aborts the call if the
-# queried index is not in the input list
-def assertInList(inputList, index):
-	if not(len(inputList) > index >= 0) or inputList[index] is None:
-		abort(404, message = "ERROR! Item doesn't exist in table.")
-#
-## Drug
-## show a single drug item and lets you delete them
-#class Drug(restful.Resource):
-#
-#	# $ curl localhost:5000/drugs/2
-#	def get(self, drugNum):
+################################################
+################################################
+
+
+# Allows drug data to be pulled and pushed to/from the database
+class Drug_resource(restful.Resource):
+
+	# $ curl localhost:5000/drugs/2
+	@marshal_with(Drugs.field())
+	def get(self, drugNum):
+		drug = Drugs.query.filter_by(id=drugNum).first()
+		return drug 
+
+api.add_resource(Drug_resource, '/drugs/<int:drugNum>')
+		
+#	def post(self):
+
 #		assertInList(drugsTable, drugNum)	
 #		return drugsTable[drugNum]
-#
-#	# $ curl localhost:5000/drugs/1 -X DELETE
+
+	# $ curl localhost:5000/drugs/1 -X DELETE
 #	def delete(self, drugNum):
 #		assertInList(drugsTable, drugNum)	
 #		drugsTable[drugNum] = None
 #		return "Successfully killed.", 204
-#
-#api.add_resource(Drug, '/drugs/<int:drugNum>')
-#
-#
+
+
+
 ## Allows the input URI to be parsed
 ## We can theoretically use this for the above class, but we didn't
 #parser = reqparse.RequestParser()
@@ -106,27 +109,21 @@ def assertInList(inputList, index):
 ################################################
 ################################################
 
-# Marshalling documentation:
-# http://flask-restful.readthedocs.org/en/latest/api.html
-# http://flask-restful.readthedocs.org/en/latest/fields.html
-users_fields = {
-	'first_name': fields.String,
-	'last_name': fields.String,
-	'dob': fields.DateTime,
-	'weight_lbs': fields.Integer,
-	'height_inches': fields.Integer,
-	'gender': fields.Raw
-}
+# Parsing documentation
+# http://flask-restful.readthedocs.org/en/latest/api.html#module-reqparse
+user_parser = reqparse.RequestParser()
+user_parser.add_argument('name', type = str)
+user_parser.add_argument('info', type = str)
 
 
 # Added April 8th to test out querying database
-class Users_resource(restful.Resource):
+class Users_list_resource(restful.Resource):
 
 	def get(self):
 		users = Users.query.all()
-		return [marshal(user, users_fields) for user in users], 200
+		return [marshal(user, Users.fields()) for user in users], 200
 
-api.add_resource(Users_resource, '/users')
+api.add_resource(Users_list_resource, '/users')
 
 ################################################
 ################################################
@@ -138,14 +135,6 @@ user_parser.add_argument('first', type = str)
 user_parser.add_argument('last', type = str)
 user_parser.add_argument('dob', type = str)
 
-users_fields = {
-	'first_name': fields.String,
-	'last_name': fields.String,
-	'dob': fields.DateTime,
-	'weight_lbs': fields.Integer,
-	'height_inches': fields.Integer,
-	'gender': fields.Raw
-}
 class User_resource(restful.Resource):
 
 	# $ curl http://localhost:5000/user -d "first=john" -d "last=smith" -X POST -v

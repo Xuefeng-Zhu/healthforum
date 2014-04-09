@@ -1,5 +1,6 @@
 from flask import Flask 
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.restful import fields
 import json
 # mysql://bbe6adb0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a
 
@@ -33,26 +34,53 @@ class Users(db.Model):
 		output["gender"] = self.gender
 		return json.dumps(output)
 
+	# Marshalling documentation:
+	# http://flask-restful.readthedocs.org/en/latest/api.html
+	# http://flask-restful.readthedocs.org/en/latest/fields.html
+	@staticmethod
+	def fields():
+		users_fields = {
+			'first_name': fields.String,
+			'last_name': fields.String,
+			'dob': fields.DateTime,
+			'weight_lbs': fields.Integer,
+			'height_inches': fields.Integer,
+			'gender': fields.Raw
+		}
+		return users_fields
+	
+#	@staticmethod
+#	def getFields():
+
 #	def __repr__(self):
 #		return '<User %s %s>' % (self.first_name, self.last_name)
 # NOTE: Shows up in database as drugs, NOT Drugs
 class Drugs(db.Model):
-	drug_id = db.Column(db.Integer, primary_key=True)
-	drug_name = db.Column(db.String(50), unique=True)
-	# Probably want a drug description here later
+	id = db.Column(db.Integer, primary_key=True)
+	name = db.Column(db.String(50), unique=True)
+	info = db.Column(db.Text)
 
-	def __init__(self, resource):
-		self.drug_name = resource['drugName']
+	def __init__(self, name, info):
+		self.name = drug_name
+		self.info = drug_info
 
 	def __repr__(self):
 		return '<Drug %s>' % self.drug_name
+	
+	@staticmethod
+	def field():
+		drug_fields = {
+			'id': fields.Integer,
+			'name': fields.String, 
+			'info': fields.String
+		}
+		return drug_fields
 
 # NOTE: Shows up in database as side_effects
 class SideEffects(db.Model):
-	side_effects_id = db.Column(db.Integer, primary_key=True)
-	side_effect = db.Column(db.String(150))
-
-	drug_id = db.Column(db.Integer, db.ForeignKey('drugs.drug_id'))
+	id = db.Column(db.Integer, primary_key=True)
+	effect = db.Column(db.String(150))
+	drug_id = db.Column(db.Integer, db.ForeignKey('drugs.id'))
 #	drug = db.relationship('drugs', backref=db.backref('posts', lazy='dynamic'))
 
 	def __init__(self, resource):
@@ -63,14 +91,14 @@ class SideEffects(db.Model):
 
 # NOTE: Shows up in database as side_effects_details
 class SideEffectsDetails(db.Model):
-	side_effects_details_id = db.Column(db.Integer, primary_key=True)
-#	side_effect = db.Column(db.String(150))
+	id = db.Column(db.Integer, primary_key=True)
+	effect = db.Column(db.String(150))
 	url = db.Column(db.String(250), unique=True)
 	title = db.Column(db.String(100))
 	forum_id = db.Column(db.String(30), unique=True)
 	content = db.Column(db.Text)
 
-	side_effects_id = db.Column(db.Integer, db.ForeignKey('side_effects.side_effects_id'))
+	side_effects_id = db.Column(db.Integer, db.ForeignKey('side_effects.id'))
 #side_effects = db.relationship('side_effects', backref=db.backref('posts', lazy='dynamic'))
 
 	def __init__(self, resource):
