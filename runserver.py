@@ -35,6 +35,11 @@ api.decorators=[cors.crossdomain(origin='*')]
 ################################################
 ################################################
 
+# Parsing documentation
+# http://flask-restful.readthedocs.org/en/latest/api.html#module-reqparse
+drug_parser = reqparse.RequestParser()
+drug_parser.add_argument('name', type = str)
+drug_parser.add_argument('info', type = str)
 
 # Allows drug data to be pulled and pushed to/from the database
 class Drug_resource(restful.Resource):
@@ -45,76 +50,23 @@ class Drug_resource(restful.Resource):
 		drug = Drugs.query.filter_by(id=drugNum).first()
 		return drug 
 
+	def post(self):
+		args = drug_parser.parse_args()
+		name = args['name']
+		info = args['info']
+		drug = Drugs(name, info)
+
+		db.session.add(drug)
+		db.session.commit()
+
+		return drug.id
+
+
+api.add_resource(Drug_resource, '/drugs', endpoint="drugs")
 api.add_resource(Drug_resource, '/drugs/<int:drugNum>')
 		
-#	def post(self):
-
-#		assertInList(drugsTable, drugNum)	
-#		return drugsTable[drugNum]
-
-	# $ curl localhost:5000/drugs/1 -X DELETE
-#	def delete(self, drugNum):
-#		assertInList(drugsTable, drugNum)	
-#		drugsTable[drugNum] = None
-#		return "Successfully killed.", 204
-
-
-
-## Allows the input URI to be parsed
-## We can theoretically use this for the above class, but we didn't
-#parser = reqparse.RequestParser()
-#parser.add_argument('name', type = str)
-#parser.add_argument('side_effects', type = str, action = "append")	# Creates array
-#
-## DrugList
-## shows a list of all drugs, and lets you POST to add new drugs
-#class DrugList(restful.Resource):
-#
-#	# Gets the current list
-#	# $ curl localhost:5000/drugs
-#	def get(self):
-#		return drugsTable
-#
-#	# Adding a new drug and side effects list
-#	# $ curl http://localhost:5000/drugs -d "name=advil" -d "side_effect=nausea" -d "side_effect=dying" -X POST -v
-#	# Interesting note: When formulating your post request, don't have a space before
-#	def post(self):
-#
-#		# Parse the arguments from the post request
-#		args = parser.parse_args()
-#		name = args["name"]				# name = "advil"
-#		effects = args["side_effect"] 	# effects = ["nausea", "dying"] 
-#	
-#		# Create the dictionary that we're going to put into the table
-#		drugDict = dict()
-#		drugDict["name"] = name
-#		drugDict["side effects"] = effects
-#
-#		# Add this to the table and send its index to the client
-#		drugsTable.append(drugDict)
-#		drugNum = len(drugsTable) - 1
-#		return drugNum, 201
-#
-#api.add_resource(DrugList, '/drugs')
-#
-#class DrugNames(restful.Resource):
-#
-#	def get(self):
-#		names = [drugObj["name"] for drugObj in drugsTable]
-#		return names, 201
-#
-#api.add_resource(DrugNames, '/names')
-#
-
 ################################################
 ################################################
-
-# Parsing documentation
-# http://flask-restful.readthedocs.org/en/latest/api.html#module-reqparse
-user_parser = reqparse.RequestParser()
-user_parser.add_argument('name', type = str)
-user_parser.add_argument('info', type = str)
-
 
 # Added April 8th to test out querying database
 class Users_list_resource(restful.Resource):
@@ -123,7 +75,7 @@ class Users_list_resource(restful.Resource):
 		users = Users.query.all()
 		return [marshal(user, Users.fields()) for user in users], 200
 
-api.add_resource(Users_list_resource, '/users')
+api.add_resource(Users_list_resource, '/users_list')
 
 ################################################
 ################################################
@@ -147,6 +99,7 @@ class User_resource(restful.Resource):
 
 		db.session.add(user)
 		db.session.commit()
+		return user.id
 
 api.add_resource(User_resource, '/user')
 

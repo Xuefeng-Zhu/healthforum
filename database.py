@@ -10,7 +10,7 @@ db = SQLAlchemy(databaseApp)
 
 # NOTE: Shows up in database as users, NOT Users
 class Users(db.Model):
-	user_id = db.Column(db.Integer, primary_key=True)
+	id = db.Column(db.Integer, primary_key=True)
 	first_name = db.Column(db.String(30))
 	last_name = db.Column(db.String(30))
 	dob = db.Column(db.DateTime)
@@ -38,11 +38,6 @@ class Users(db.Model):
 		}
 		return users_fields
 	
-#	@staticmethod
-#	def getFields():
-
-#	def __repr__(self):
-#		return '<User %s %s>' % (self.first_name, self.last_name)
 # NOTE: Shows up in database as drugs, NOT Drugs
 class Drugs(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
@@ -50,8 +45,8 @@ class Drugs(db.Model):
 	info = db.Column(db.Text)
 
 	def __init__(self, name, info):
-		self.name = drug_name
-		self.info = drug_info
+		self.name = name
+		self.info = info
 
 	@staticmethod
 	def field():
