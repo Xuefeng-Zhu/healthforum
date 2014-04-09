@@ -2,9 +2,9 @@
 import json
 from flask import Flask
 from flask.ext import restful
-from flask.ext.restful import reqparse, abort, fields, marshal_with, marshal
+from flask.ext.restful import reqparse, marshal_with, marshal
 from flask.ext.restful.utils import cors
-from database import db, Users, Drugs
+from database import Users, Drugs, henryURI, herokuURI
 from flask.ext.sqlalchemy import SQLAlchemy
 
 """
@@ -22,12 +22,9 @@ https://devcenter.heroku.com/articles/getting-started-with-python
 
 """
 
-herokuURI = 'mysql://bbe6adb0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a'
-henryURI = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = henryURI
-db = SQLAlchemy(app)
+data = SQLAlchemy(app)
 
 api = restful.Api(app)
 api.decorators=[cors.crossdomain(origin='*')]
@@ -56,8 +53,8 @@ class Drug_resource(restful.Resource):
 		info = args['info']
 		drug = Drugs(name, info)
 
-		db.session.add(drug)
-		db.session.commit()
+		data.session.add(drug)
+		data.session.commit()
 
 		return drug.id
 
@@ -97,8 +94,8 @@ class User_resource(restful.Resource):
 		dob = restful.types.date(args['dob'])
 		user = Users(first, last, dob)
 
-		db.session.add(user)
-		db.session.commit()
+		data.session.add(user)
+		data.session.commit()
 		return user.id
 
 api.add_resource(User_resource, '/user')

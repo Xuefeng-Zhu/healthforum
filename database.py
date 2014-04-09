@@ -2,11 +2,15 @@ from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.restful import fields
 import json
-# mysql://bbe6adb0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a
 
+herokuURI = 'mysql://bbe6adb0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a'
+henryURI = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
+
+# In runserver.py, the code will not be able to access these global vars 
 databaseApp = Flask(__name__)
-databaseApp.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
+databaseApp.config['SQLALCHEMY_DATABASE_URI'] = henryURI
 db = SQLAlchemy(databaseApp)
+
 
 # NOTE: Shows up in database as users, NOT Users
 class Users(db.Model):
