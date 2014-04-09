@@ -14,6 +14,7 @@ from logging import getLogger
 loggers = [app.logger, getLogger('SQLAlchemy')]
 
 app = Flask(__name__)
+mysql = MySQL()
 db = SQLAlchemy(app)
 
 class Users(db.Model):
@@ -82,7 +83,8 @@ class SideEffectsDetails(db.Model):
 
 # I'm not sure where this Resources class came from, actually
 # SRM: included here for development only. Most of this is meant to be split off/incorporated into server.py and 
-#      some is for loading data into mysql database.
+#      some is for loading data into mysql database. 
+# SRM: This evening I will work this, loading data and testing it, documenting...
 
 class Resources():
 
@@ -95,8 +97,9 @@ class Resources():
 		
 		manager = flask.ext.restless.APIManager(app, flask_sqlalchemy_db=db)
 
-		self.setup_tables()
-		self.process()
+		#self.setup_tables() # already done
+		self.process() # run once
+		self.session.commit()
 		app.run()
 
 	def setup_connection(self):
@@ -107,7 +110,7 @@ class Resources():
 	def setup_tables(self):
 		db.create_all(self.engine)
 
-	def process(self):
+	def load_data(self):
 		data = simplejson.load(open("drug_sideeffect_retResults.json", "r")) # Maybe use json.loads("drug_sideeffect_retResults.json") ?
 		# Not sure what the simplejson class is doing
 		# SRM: loads json sample into python dict, which is parsed out to the database in for loop below
@@ -117,7 +120,6 @@ class Resources():
 		manager.create_api(Drugs, methods=['GET'],['POST'],['DELETE'])
 		manager.create_api(SideEffects, methods=['GET'],['POST'],['DELETE'])
 		manager.create_api(SideEffectsDetails, methods=['GET'],['POST'],['DELETE'])
-
 
 		"""
 			data =  [{
@@ -157,5 +159,4 @@ class Resources():
 					content = data['retrievedObjects'][j]['content']
 					self.session.add(content)
 
-		self.session.commit()
 
