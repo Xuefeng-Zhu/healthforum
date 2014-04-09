@@ -3,9 +3,9 @@ from flask.ext.sqlalchemy import SQLAlchemy
 import json
 # mysql://bbe6adb0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
-db = SQLAlchemy(app)
+databaseApp = Flask(__name__)
+databaseApp.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
+db = SQLAlchemy(databaseApp)
 
 # NOTE: Shows up in database as users, NOT Users
 class Users(db.Model):
@@ -21,15 +21,6 @@ class Users(db.Model):
 		self.first_name = first
 		self.last_name = last
 		self.dob = dob
-
-		"""
-		self.first_name = resource['first_name']
-		self.last_name = resource['last_name']
-		self.dob = resource['dob']
-		self.weight_lbs = resource['weight_lbs']
-		self.height_inches = resource['height_inches']
-		self.gender = resource['gender']
-		"""
 
 	# There's probably an easier way to do this....
 	def __str__(self):

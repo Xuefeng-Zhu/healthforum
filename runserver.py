@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import json
-from healthcode import app
+#from healthcode import app
 from flask import Flask
 from flask.ext import restful
 from flask.ext.restful import reqparse, abort, fields, marshal_with, marshal
@@ -103,6 +103,9 @@ def assertInList(inputList, index):
 #api.add_resource(DrugNames, '/names')
 #
 
+################################################
+################################################
+
 # Marshalling documentation:
 # http://flask-restful.readthedocs.org/en/latest/api.html
 # http://flask-restful.readthedocs.org/en/latest/fields.html
@@ -128,6 +131,8 @@ api.add_resource(Users_resource, '/users')
 ################################################
 ################################################
 
+# Parsing documentation
+# http://flask-restful.readthedocs.org/en/latest/api.html#module-reqparse
 user_parser = reqparse.RequestParser()
 user_parser.add_argument('first', type = str)
 user_parser.add_argument('last', type = str)
