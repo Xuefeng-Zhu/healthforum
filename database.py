@@ -14,6 +14,7 @@ db = SQLAlchemy(databaseApp)
 
 # NOTE: Shows up in database as users, NOT Users
 class Users(db.Model):
+        __tablename__ = "users"
 	id = db.Column(db.Integer, primary_key=True)
 	first_name = db.Column(db.String(30))
 	last_name = db.Column(db.String(30))
@@ -44,6 +45,7 @@ class Users(db.Model):
 	
 # NOTE: Shows up in database as drugs, NOT Drugs
 class Drugs(db.Model):
+        __tablename__ = "drugs"
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(50), unique=True)
 	info = db.Column(db.Text)
@@ -63,10 +65,15 @@ class Drugs(db.Model):
 
 # NOTE: Shows up in database as side_effects
 class SideEffects(db.Model):
+        __tablename__ = "side_effects"
 	id = db.Column(db.Integer, primary_key=True)
 	effect = db.Column(db.String(150))
 	drug_id = db.Column(db.Integer, db.ForeignKey('drugs.id'))
-#	drug = db.relationship('drugs', backref=db.backref('posts', lazy='dynamic'))
+
+	# TODO: I got an error whenever I uncommented the below line. We should look into that.
+	# I'll look into this documentation later:
+	# https://pythonhosted.org/Flask-SQLAlchemy/models.html
+	#	drug = db.relationship('drugs', backref=db.backref('posts', lazy='dynamic'))
 
 	def __init__(self, resource):
 		self.side_effect = resource['sideEffect']
@@ -76,6 +83,7 @@ class SideEffects(db.Model):
 
 # NOTE: Shows up in database as side_effects_details
 class SideEffectsDetails(db.Model):
+        __tablename__ = "side_effects_details"
 	id = db.Column(db.Integer, primary_key=True)
 	effect = db.Column(db.String(150))
 	url = db.Column(db.String(250), unique=True)
@@ -84,6 +92,10 @@ class SideEffectsDetails(db.Model):
 	content = db.Column(db.Text)
 
 	side_effects_id = db.Column(db.Integer, db.ForeignKey('side_effects.id'))
+
+	# TODO: I got an error whenever I uncommented the below line. We should look into that.
+	# I'll look into this documentation later:
+	# https://pythonhosted.org/Flask-SQLAlchemy/models.html
 #side_effects = db.relationship('side_effects', backref=db.backref('posts', lazy='dynamic'))
 
 	def __init__(self, resource):

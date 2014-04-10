@@ -3,7 +3,12 @@ from flask import Flask
 from flask.ext import restful
 from flask.ext.restful import reqparse, marshal_with, marshal
 from flask.ext.restful.utils import cors
+<<<<<<< HEAD
 from database import Users, Drugs, henryURI, herokuURI
+=======
+from database import db, Users, Drugs 
+from models import db, Users, Drugs, SideEffects, SideEffectsDetails
+>>>>>>> 5a601a2cbe0100e00f6cdb0a63dcb738eb18faf1
 from flask.ext.sqlalchemy import SQLAlchemy
 
 """
@@ -20,11 +25,25 @@ For the brave souls: To push this server onto heroku,
 https://devcenter.heroku.com/articles/getting-started-with-python
 
 """
+<<<<<<< HEAD
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = henryURI
 data = SQLAlchemy(app)
 
+=======
+SQLALCHEMY_BINDS = {
+	'herokuURI': 'mysql://bbe6adb0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a',
+	'henryURI': 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
+}
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = henryURI
+app.config['SQLALCHEMY_ECHO'] = True  # only in development!!!
+app.config['SQLALCHEMY_PASSWORD'] = '488c7e4d'
+db = SQLAlchemy(app)
+db.app = app
+>>>>>>> 5a601a2cbe0100e00f6cdb0a63dcb738eb18faf1
 api = restful.Api(app)
 api.decorators=[cors.crossdomain(origin='*')]
 
