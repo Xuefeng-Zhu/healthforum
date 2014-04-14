@@ -25,17 +25,19 @@ print drugs;
 #Storing into Database
 cur=db.cursor()
 for key in drugs.keys():
-	try:
-		query = "INSERT INTO drugs (name) VALUES (\"%s\")" % (key)
-		cur.execute(query)
-		get_drug_id = "SELECT id from drugs WHERE name = \"%s\"" % (key)
-		cur.execute(get_drug_id)
-		drug_id = cur.fetchall()[0][0]
-		for side_effect in drugs[key]:
-			val= "INSERT INTO side_effects (drug_id, effect) VALUES (\"%d\", \"%s\")" % (drug_id, side_effect)
-			cur.execute(val)
+#try:
+	query = "INSERT INTO drugs (name) VALUES (\"%s\")" % (key)
+	cur.execute(query)
+	get_drug_id = "SELECT id from drugs WHERE name = \"%s\"" % (key)
+	cur.execute(get_drug_id)
+	for row in cur.fetchall():
+		drug_id = row[0];
+#drug_id = cur.fetchall()[0][0]
+	for side_effect in drugs[key]:
+		val= "INSERT INTO side_effects (drug_id, effect) VALUES (\"%d\", \"%s\")" % (drug_id, side_effect)
+		cur.execute(val)
 		db.commit()
-	except:
-		db.rollback()
-		print "Error: Unable to insert into database."
+#	except:
+#		db.rollback()
+#		print "Error: Unable to insert into database."
 db.close()
