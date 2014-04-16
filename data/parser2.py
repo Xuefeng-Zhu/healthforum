@@ -23,7 +23,7 @@ with open('drugs2.txt','r') as f:
 
 
 # When testing
-if False:
+if True:
 	db = MySQLdb.connect(host="engr-cpanel-mysql.engr.illinois.edu",
 						 user="halin2_guest",
 						 passwd="helloworld",

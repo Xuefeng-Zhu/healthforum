@@ -3,7 +3,7 @@ from flask import Flask
 from flask.ext import restful
 from flask.ext.restful import reqparse, marshal_with, marshal
 from flask.ext.restful.utils import cors
-from database import Users, Drugs, henryURI, herokuURI
+from database import Users, Drugs, SideEffects, henryURI, herokuURI
 from flask.ext.sqlalchemy import SQLAlchemy
 
 """
@@ -59,7 +59,39 @@ class Drug_resource(restful.Resource):
 
 api.add_resource(Drug_resource, '/drugs', endpoint="drugs")
 api.add_resource(Drug_resource, '/drugs/<int:drugNum>')
+
+################################################
+################################################
+
+# Given a drug's name and whether a user is a patient or doctor,
+# return a list of side effects corresponding to the user
+class Drug_Effect_resource(restful.Resource):
+
+	def get(self, drugName, userType):
 		
+		effectType = "doctor_effect" if userType.lower() == "doctor" else "patient_effect"
+		try:
+			drugId = Drugs.query.filter_by(name = drugName.lower()).first().id
+		except:
+			return "Drug not found", 404
+
+		# TODO: Learn how to do a f***** select statement in SQLAlchemy! There's code to be refractored 
+		queryEffects = SideEffects.query.filter_by(drug_id = drugId)
+		
+		output = dict()
+		output["name"] = drugName
+		output["userType"] = userType
+		output["drugId"] = drugId
+		if userType == "doctor":
+			output["effects"] = [query.doctor_effect for query in queryEffects]
+		else:
+			output["effects"] = [query.patient_effect for query in queryEffects]
+			
+		return output
+
+
+api.add_resource(Drug_Effect_resource, '/drugs/<string:drugName>/<string:userType>')
+
 ################################################
 ################################################
 
@@ -98,6 +130,9 @@ class User_resource(restful.Resource):
 		return user.id
 
 api.add_resource(User_resource, '/user')
+
+################################################
+################################################
 
 
 if __name__ == '__main__':
