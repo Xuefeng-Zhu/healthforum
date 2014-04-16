@@ -13,6 +13,7 @@ db = SQLAlchemy(databaseApp)
 
 
 # NOTE: Shows up in database as users, NOT Users
+# TODO: We need more tables! Need a table for doctors as well as patients.
 class Users(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	first_name = db.Column(db.String(30))
@@ -64,8 +65,10 @@ class Drugs(db.Model):
 # NOTE: Shows up in database as side_effects
 class SideEffects(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
-	effect = db.Column(db.String(150))
 	drug_id = db.Column(db.Integer, db.ForeignKey('drugs.id'))
+	patient_effect = db.Column(db.String(150))
+	doctor_effect = db.Column(db.String(150))
+	# TODO: Add a rank to side effects
 
 	# TODO: I got an error whenever I uncommented the below line. We should look into that.
 	# I'll look into this documentation later:
