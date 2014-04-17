@@ -68,12 +68,11 @@ api.add_resource(Drug_resource, '/drugs/<int:drugNum>')
 class Drug_Effect_resource(restful.Resource):
 
 	def get(self, drugName, userType):
-		
 		effectType = "doctor_effect" if userType.lower() == "doctor" else "patient_effect"
-		try:
-			drugId = Drugs.query.filter_by(name = drugName.lower()).first().id
-		except:
-			return "Drug not found", 404
+#		try:
+		drugId = Drugs.query.filter_by(name = drugName.lower()).first().id
+#		except:
+#			return "Drug not found", 404
 
 		# TODO: Learn how to do a f***** select statement in SQLAlchemy! There's code to be refractored 
 		queryEffects = SideEffects.query.filter_by(drug_id = drugId)
