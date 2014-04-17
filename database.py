@@ -3,12 +3,12 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.restful import fields, marshal
 
 # URLS for the databases. The default one is henryURI
-herokuURI = 'mysql://bbe6adb0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a'
+herokuURI = 'mysql://bbe6abd0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a'
 henryURI = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
 
 # In runserver.py, the code will not be able to access these global vars 
 databaseApp = Flask(__name__)
-databaseApp.config['SQLALCHEMY_DATABASE_URI'] = henryURI
+databaseApp.config['SQLALCHEMY_DATABASE_URI'] = herokuURI
 db = SQLAlchemy(databaseApp)
 
 
