@@ -63,6 +63,18 @@ api.decorators=[cors.crossdomain(origin='*')]
 ################################################
 ################################################
 
+# Returns a list of all of the drugs in the database
+class Drug_List_resource(restful.Resource):
+
+	def get(self):
+		try:
+			drugs = Drugs.query.all()
+			return [{"name": drug.name, "concise": drug.info} for drug in drugs]
+		except:
+			data.session.rollback()
+
+api.add_resource(Drug_List_resource, '/drugs/all')
+
 # Given a drug's name and whether a user is a patient or doctor,
 # return a list of side effects corresponding to the user
 class Drug_Effect_resource(restful.Resource):
