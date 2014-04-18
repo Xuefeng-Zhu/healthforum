@@ -8,7 +8,7 @@ henryURI = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/
 
 # In runserver.py, the code will not be able to access these global vars 
 databaseApp = Flask(__name__)
-databaseApp.config['SQLALCHEMY_DATABASE_URI'] = henryURI
+databaseApp.config['SQLALCHEMY_DATABASE_URI'] = herokuURI
 db = SQLAlchemy(databaseApp)
 
 

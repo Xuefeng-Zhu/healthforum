@@ -22,7 +22,7 @@ https://devcenter.heroku.com/articles/getting-started-with-python
 """
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = henryURI
+app.config['SQLALCHEMY_DATABASE_URI'] = herokuURI
 data = SQLAlchemy(app)
 
 api = restful.Api(app)
@@ -92,14 +92,22 @@ class Drug_Effect_resource(restful.Resource):
 api.add_resource(Drug_Effect_resource, '/drugs/<string:drugName>/<string:userType>')
 
 
-class Drugs_List_resource(restful.Resource):
+class Drugs_Substr_resource(restful.Resource):
 
-	def get(self, threeChar):
-		drugs = Drugs.query.filter(Drugs.name.startswith(threeChar)).all()
+	def get(self, startChars):
+		drugs = Drugs.query.filter(Drugs.name.startswith(startChars)).all()
 		return [drug.name for drug in drugs]
 
+api.add_resource(Drugs_Substr_resource, '/drugs/list/<string:startChars>')
 
-api.add_resource(Drugs_List_resource, '/drugs/list/<string:threeChar>')
+class Drugs_Substr_Result_resource(restful.Resource):
+
+	def get(self, startChars):
+		drugs = Drugs.query.filter(Drugs.name.startswith(startChars)).all()
+		return [{"name": drug.name, "concise": drug.info} for drug in drugs]
+
+api.add_resource(Drugs_Substr_Result_resource, '/drugs/result/<string:startChars>')
+
 
 ################################################
 ################################################
