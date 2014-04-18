@@ -30,36 +30,36 @@ api.decorators=[cors.crossdomain(origin='*')]
 
 ################################################
 ################################################
-
-# Parsing documentation
-# http://flask-restful.readthedocs.org/en/latest/api.html#module-reqparse
-drug_parser = reqparse.RequestParser()
-drug_parser.add_argument('name', type = str)
-drug_parser.add_argument('info', type = str)
-
-# Allows drug data to be pulled and pushed to/from the database
-class Drug_resource(restful.Resource):
-
-	# $ curl localhost:5000/drugs/2
-	def get(self, drugNum):
-		drug = Drugs.query.filter_by(id=drugNum).first()
-		return marshal(drug, Drugs.fields()) if drug is not None else "Not found", 404 
-
-	# $ curl localhost:5000/drugs -d "name=Some UNIQUE name" -d "info=This is some information" -X POST -v
-	def post(self):
-		args = drug_parser.parse_args()
-		name = args['name']
-		info = args['info']
-		drug = Drugs(name, info)
-
-		data.session.add(drug)
-		data.session.commit()
-
-		return drug.id
-
-api.add_resource(Drug_resource, '/drugs', endpoint="drugs")
-api.add_resource(Drug_resource, '/drugs/<int:drugNum>')
-
+#
+## Parsing documentation
+## http://flask-restful.readthedocs.org/en/latest/api.html#module-reqparse
+#drug_parser = reqparse.RequestParser()
+#drug_parser.add_argument('name', type = str)
+#drug_parser.add_argument('info', type = str)
+#
+## Allows drug data to be pulled and pushed to/from the database
+#class Drug_resource(restful.Resource):
+#
+#	# $ curl localhost:5000/drugs/2
+#	def get(self, drugNum):
+#		drug = Drugs.query.filter_by(id=drugNum).first()
+#		return marshal(drug, Drugs.fields()) if drug is not None else "Not found", 404 
+#
+#	# $ curl localhost:5000/drugs -d "name=Some UNIQUE name" -d "info=This is some information" -X POST -v
+#	def post(self):
+#		args = drug_parser.parse_args()
+#		name = args['name']
+#		info = args['info']
+#		drug = Drugs(name, info)
+#
+#		data.session.add(drug)
+#		data.session.commit()
+#
+#		return drug.id
+#
+#api.add_resource(Drug_resource, '/drugs', endpoint="drugs")
+#api.add_resource(Drug_resource, '/drugs/<int:drugNum>')
+#
 ################################################
 ################################################
 
@@ -91,45 +91,55 @@ class Drug_Effect_resource(restful.Resource):
 
 api.add_resource(Drug_Effect_resource, '/drugs/<string:drugName>/<string:userType>')
 
-################################################
-################################################
 
-# Added April 8th to test out querying database
-class Users_list_resource(restful.Resource):
+class Drugs_List_resource(restful.Resource):
 
-	# curl localhost:5000/users_list
-	def get(self):
-		users = Users.query.all()
-		return [marshal(user, Users.fields()) for user in users], 200
+	def get(self, threeChar):
+		drugs = Drugs.query.filter(Drugs.name.startswith(threeChar)).all()
+		return [drug.name for drug in drugs]
 
-api.add_resource(Users_list_resource, '/users_list')
+
+api.add_resource(Drugs_List_resource, '/drugs/list/<string:threeChar>')
 
 ################################################
 ################################################
-
-# Parsing documentation
-# http://flask-restful.readthedocs.org/en/latest/api.html#module-reqparse
-user_parser = reqparse.RequestParser()
-user_parser.add_argument('first', type = str)
-user_parser.add_argument('last', type = str)
-user_parser.add_argument('dob', type = str)
-
-class User_resource(restful.Resource):
-
-	# $ curl http://localhost:5000/user -d "first=john" -d "last=smith" -X POST -v
-	def post(self):
-		args = user_parser.parse_args()
-		first = args['first']
-		last = args['last']
-		dob = restful.types.date(args['dob'])
-		user = Users(first, last, dob)
-
-		data.session.add(user)
-		data.session.commit()
-		return user.id
-
-api.add_resource(User_resource, '/user')
-
+#
+## Added April 8th to test out querying database
+#class Users_list_resource(restful.Resource):
+#
+#	# curl localhost:5000/users_list
+#	def get(self):
+#		users = Users.query.all()
+#		return [marshal(user, Users.fields()) for user in users], 200
+#
+#api.add_resource(Users_list_resource, '/users_list')
+#
+#################################################
+#################################################
+#
+## Parsing documentation
+## http://flask-restful.readthedocs.org/en/latest/api.html#module-reqparse
+#user_parser = reqparse.RequestParser()
+#user_parser.add_argument('first', type = str)
+#user_parser.add_argument('last', type = str)
+#user_parser.add_argument('dob', type = str)
+#
+#class User_resource(restful.Resource):
+#
+#	# $ curl http://localhost:5000/user -d "first=john" -d "last=smith" -X POST -v
+#	def post(self):
+#		args = user_parser.parse_args()
+#		first = args['first']
+#		last = args['last']
+#		dob = restful.types.date(args['dob'])
+#		user = Users(first, last, dob)
+#
+#		data.session.add(user)
+#		data.session.commit()
+#		return user.id
+#
+#api.add_resource(User_resource, '/user')
+#
 ################################################
 ################################################
 
