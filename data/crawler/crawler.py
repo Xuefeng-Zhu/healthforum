@@ -11,18 +11,19 @@ from descriptionCrawler import drugList
 
 
 '''
-name="alcohol"
+name="macrolide"
 
 
-url="http://www.drugs.com/%s.html"%(name).strip()
+url="http://www.drugs.com/dict/%s.html"%(name).strip()
 print url
 r=requests.get(url)
 data=r.text
 soup=BeautifulSoup(data)
-#print(soup.prettify())
+print(soup.prettify())
 #print soup.title.string
-print soup.find(itemprop="description").string
+print soup.findall("Definition")
 
 '''
+
 
 desCrawl()

@@ -66,7 +66,7 @@ enzymes
 naproxen
 avelox
 doxycycline
-marihuana
+marijuana
 calcium
 clot
 lortab
@@ -91,7 +91,7 @@ zantac
 warfarin
 penicillin
 propranolol
-amphetamines
+amphetamine
 antihistamine
 nexium
 norvasc
@@ -117,7 +117,7 @@ citalopram
 alprazolam
 avinza
 metoprolol
-amfetamine
+amphetamine
 concerta
 demerol
 sudafed
@@ -170,16 +170,16 @@ sulfa
 fioricet
 buspar
 opioid
-cefalexin
+cephalexin
 aleve
-chlomipramine
+anafranil
 methamphetamine
 flagyl
 inderal
 conal
 tris
 tetracycline
-nytol
+nytol-caplet
 modafinil
 nizoral
 lasix
@@ -192,7 +192,7 @@ mdma
 augmentin
 extra
 pepcid
-percocets
+percocet
 tequin
 meloxicam
 apap
@@ -200,7 +200,7 @@ opioids
 fungoid
 fluoxetine
 ultracet
-barbiturates
+barbiturate
 gravol
 macrolide
 stadol
@@ -238,7 +238,7 @@ trimethoprim
 zithromax
 bactrim
 claritin
-pheniramine
+pheniramine-pyrilamine-phenyltoloxamine-phenylpropanolamine
 prometazin
 fluconazole
 lisinopril
