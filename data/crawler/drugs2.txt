@@ -1,0 +1,858 @@
+drug 0 :nocturne 145
+"depressed mood" "osteonecrosis of jaw" "nausea" "hot flush" "memory impairment" "therapeutic response decreased" "dry mouth" "abortion spontaneous" "sleep disorder" "crying" "injection site bruising" "gait disturbance" "decreased appetite" "weight increased" "fall" 
+"depressed" "mood" "insomnia" "tremors" "nausea" "mood swings" "cold" "panic disorder" "mouth" "muscle spasms" "depression" "drowsiness" "lips" "neck" "head" 
+drug 1 :zoloft 84
+"weight decreased" "memory impairment" "depressed mood" "disturbance in attention" "vision blurred" "weight increased" "menstruation irregular" "activities of daily living impaired" "dry mouth" "hot flush" "stress" "aggression" "fall" "condition aggravated" "dry skin" 
+"weight" "weight loss" "depression" "weight gain" "gain weight" "damage" "insomnia" "panic disorder" "fatigue" "depressed" "symptom" "high blood pressure" "dizziness" "stress" "drowsiness" 
+drug 2 :alcohol 69
+"blood cholesterol increased" "abortion spontaneous" "renal impairment" "blood glucose increased" "multiple sclerosis relapse" "suicidal ideation" "hot flush" "weight increased" "visual impairment" "depression" "weight decreased" "dry mouth" "cerebrovascular accident" "memory impairment" "malignant neoplasm progression" 
+"blood" "cholesterol" "pregnancy" "birth control" "blood test" "blood pressure" "high blood pressure" "blood work" "swelling" "urine" "steroids" "vitamins" "vitamin" "suicide" "weight loss" 
+drug 3 :xanax 65
+"depressed mood" "stress" "therapeutic response unexpected" "aggression" "sleep disorder" "anxiety" "suicidal ideation" "abnormal behaviour" "confusional state" "septic shock" "low turnover osteopathy" "disturbance in attention" "emotional distress" "toxicity to various agents" "therapeutic response decreased" 
+"mood" "anxiety" "stress" "suicidal" "depressed" "reaction" "reactions" "depression" "panic disorder" "allergic reaction" "fatigue" "sleep" "mood swings" "insomnia" "panic" 
+drug 4 :lexapro 52
+"depressed mood" "therapeutic response decreased" "therapeutic response unexpected" "aggression" "product substitution issue" "suicidal ideation" "memory impairment" "sleep disorder" "depression" "condition aggravated" "nausea" "multiple sclerosis relapse" "insomnia" "vision blurred" "completed suicide" 
+"drug free" "reaction" "reactions" "suicidal" "mood" "depressed" "generic" "allergic reaction" "depression" "therapy" "anxiety" "mood swings" "insomnia" "panic disorder" "anxiety attacks" 
+drug 5 :wellbutrin 48
+"memory impairment" "fall" "gait disturbance" "depressed mood" "sleep disorder" "device expulsion" "renal impairment" "product substitution issue" "disturbance in attention" "abortion spontaneous" "vision blurred" "general physical health deterioration" "renal failure" "fatigue" "condition aggravated" 
+"period" "damage" "seizures" "seizure" "panic disorder" "insomnia" "weakness" "weight loss" "tremors" "symptom" "epilepsy" "numbness" "depression" "head" "fatigue" 
+drug 6 :prozac 44
+"disturbance in attention" "weight decreased" "abortion spontaneous" "loss of consciousness" "multiple sclerosis relapse" "depressed mood" "memory impairment" "anaphylactic reaction" "therapeutic response decreased" "weight increased" "aggression" "sleep disorder" "fall" "crying" "therapeutic response unexpected" 
+"weight loss" "depression" "panic disorder" "seizures" "seizure" "weight" "reaction" "reactions" "damage" "insomnia" "gain weight" "fatigue" "stress" "allergic reaction" "weight gain" 
+drug 7 :effexor 42
+"weight decreased" "depressed mood" "nausea" "weight increased" "foetal exposure during pregnancy" "fall" "impaired healing" "abortion spontaneous" "product substitution issue" "multiple sclerosis relapse" "activities of daily living impaired" "memory impairment" "suicidal ideation" "anxiety" "deep vein thrombosis" 
+"weight loss" "weight" "gain weight" "depressed" "weight gain" "depression" "period" "drug free" "high" "pregnancy" "insomnia" "nausea" "drowsiness" "swelling" "panic disorder" 
+drug 8 :tylenol 39
+"injection site bruising" "therapeutic response unexpected" "malignant neoplasm progression" "surgery" "toxicity to various agents" "intestinal obstruction" "therapeutic response decreased" "oedema peripheral" "injection site reaction" "crying" "general physical health deterioration" "abnormal behaviour" "cardiac failure congestive" "liver function test abnormal" "fall" 
+"reaction" "reactions" "therapy" "bleeding" "injection" "allergic reaction" "liver" "kidneys" "kidney" "surgery" "swollen" "antibiotic" "antibiotics" "lungs" "swelling" 
+drug 9 :antibiotic 33
+"influenza" "therapeutic response unexpected" "injection site bruising" "vision blurred" "dry mouth" "memory impairment" "crying" "product substitution issue" "surgery" "osteonecrosis of jaw" "fall" "sleep disorder" "herpes zoster" "pneumonia" "dry skin" 
+"flu" "disease" "infection" "antibiotic" "antibiotics" "allergies" "allergy" "sinus infection" "diarrhea" "arthritis" "cold" "allergic" "rash" "heart attack" "reaction" 
+drug 10 :percocet 33
+"surgery" "sleep disorder" "multiple sclerosis relapse" "injection site bruising" "headache" "toxicity to various agents" "blindness" "abortion spontaneous" "migraine" "influenza like illness" "amnesia" "insomnia" "nausea" "memory impairment" "femur fracture" 
+"surgery" "epilepsy" "bleeding" "therapy" "pains" "chronic pain" "hypertension" "arthritis" "insomnia" "disease" "migraine" "migraines" "panic disorder" "chest pain" "chest pains" 
+drug 11 :ativan 33
+"sleep disorder" "anxiety" "nausea" "confusional state" "memory impairment" "depressed mood" "multiple sclerosis relapse" "nervousness" "amnesia" "suicidal ideation" "insomnia" "malaise" "gait disturbance" "extrapyramidal disorder" "cognitive disorder" 
+"mood" "drowsiness" "sleep" "insomnia" "fatigue" "panic disorder" "anxiety" "epilepsy" "depression" "symptom" "disease" "hypertension" "migraine" "sleeping" "withdrawal symptoms" 
+drug 12 :klonopin 31
+"depressed mood" "aggression" "nausea" "anxiety" "stress" "septic shock" "suicidal ideation" "surgery" "osteonecrosis of jaw" "gait disturbance" "multiple sclerosis relapse" "nervousness" "injection site bruising" "neck pain" "sleep disorder" 
+"anxiety" "mood" "depressed" "suicidal" "anxiety attacks" "depression" "mood swings" "insomnia" "stress" "panic attacks" "panic attack" "panic" "suicide" "appetite" "migraine" 
+drug 13 :paxil 31
+"sleep disorder" "aggression" "general physical health deterioration" "depressed mood" "abnormal behaviour" "therapeutic response unexpected" "therapeutic response decreased" "weight increased" "anxiety" "suicidal ideation" "stress" "weight decreased" "disturbance in attention" "gait disturbance" "surgery" 
+"anxiety" "sleep" "panic disorder" "suicidal" "anxiety attacks" "depression" "insomnia" "symptom" "stress" "suicide" "panic attacks" "panic attack" "physical" "reaction" "reactions" 
+drug 14 :vicodin 31
+"toxicity to various agents" "suicidal ideation" "injection site bruising" "multiple sclerosis relapse" "migraine" "abortion spontaneous" "headache" "influenza like illness" "amnesia" "sleep disorder" "memory impairment" "insomnia" "therapeutic response decreased" "therapeutic response unexpected" "renal impairment" 
+"suicidal" "allergic" "overdose" "drug interactions" "drug interaction" "side effects" "addictive" "drug test" "drug free" "metabolism" "narcotic" "narcotics" "medicines" "addicted" "depressed" 
+drug 15 :antibiotics 30
+"influenza" "therapeutic response unexpected" "hepatic enzyme increased" "international normalised ratio increased" "injection site bruising" "swelling face" "abnormal behaviour" "rash erythematous" "rash pruritic" "infusion related reaction" "weight decreased" "therapeutic response decreased" "weight increased" "white blood cell count increased" "activities of daily living impaired" 
+"flu" "reaction" "reactions" "disease" "antibiotic" "antibiotics" "infection" "allergic reaction" "therapy" "allergies" "allergy" "allergic" "sinus infection" "diarrhea" "swelling" 
+drug 16 :methadone 26
+"multiple sclerosis relapse" "abortion spontaneous" "therapeutic response unexpected" "infusion related reaction" "injection site bruising" "therapeutic response decreased" "suicidal ideation" "injection site swelling" "toxicity to various agents" "impaired healing" "suicide attempt" "activities of daily living impaired" "nausea" "death" "surgery" 
+"epilepsy" "arthritis" "migraine" "migraines" "hypertension" "heart attack" "methadone" "insomnia" "addiction" "suicidal" "detox" "seizures" "seizure" "addictive" "allergies" 
+drug 17 :materna 26
+"blood glucose increased" "toxicity to various agents" "injection site bruising" "memory impairment" "multiple sclerosis relapse" "device expulsion" "visual acuity reduced" "nausea" "pulmonary oedema" "pulmonary embolism" "death" "infusion related reaction" "therapeutic response decreased" "renal impairment" "injection site swelling" 
+"seizures" "seizure" "physical" "allergic" "high blood pressure" "high" "numbness" "brain" "diagnosed" "epilepsy" "sexual side effects" "withdrawing" "withdraw" "damage" "blood" 
+drug 18 :aspirin 25
+"injection site bruising" "nausea" "infusion related reaction" "therapeutic response unexpected" "toxicity to various agents" "intestinal obstruction" "dry skin" "septic shock" "blister" "abnormal behaviour" "anaphylactic reaction" "osteonecrosis of jaw" "flatulence" "liver function test abnormal" "abdominal pain upper" 
+"nausea" "injection" "rash" "drowsiness" "itchy" "swelling" "bleeding" "side effects" "insomnia" "reaction" "reactions" "tremors" "swollen" "muscle spasms" "allergic reaction" 
+drug 19 :cymbalta 24
+"decreased appetite" "weight decreased" "depression" "visual acuity reduced" "fluid retention" "dry skin" "neutrophil count decreased" "vision blurred" "gait disturbance" "platelet count decreased" "liver function test abnormal" "sleep disorder" "disorientation" "mobility decreased" "nervous system disorder" 
+"high blood pressure" "tapering" "tapered" "taper" "high" "weight loss" "swelling" "appetite" "heart rate" "fatigue" "nausea" "headaches" "headache" "stomach" "drowsiness" 
+drug 20 :ibuprofen 22
+"injection site bruising" "osteonecrosis of jaw" "dry mouth" "deep vein thrombosis" "dry skin" "blood creatinine increased" "nausea" "device dislocation" "heart rate increased" "headache" "liver function test abnormal" "intestinal obstruction" "blood glucose increased" "abdominal pain upper" "menstruation irregular" 
+"swollen" "painful" "mouth" "swelling" "lips" "tongue" "neck" "throat" "stomach" "injection" "toes" "legs" "leg" "spine" "chest" 
+drug 21 :valium 22
+"dry skin" "osteonecrosis of jaw" "surgery" "dry mouth" "depressed mood" "aggression" "crying" "anxiety" "nervousness" "product substitution issue" "feeling hot" "neck pain" "sleep disorder" "emotional distress" "swelling face" 
+"skin" "neck" "lips" "mouth" "tongue" "throat" "spine" "legs" "leg" "chest" "muscles" "eyes" "eye" "stomach" "toes" 
+drug 22 :morphine 21
+"injection site bruising" "hepatic enzyme increased" "infusion related reaction" "dry mouth" "haemoglobin decreased" "multiple sclerosis relapse" "cerebrovascular accident" "suicidal ideation" "injection site swelling" "therapeutic response unexpected" "completed suicide" "road traffic accident" "amnesia" "therapeutic response decreased" "blood glucose increased" 
+"injection" "swollen" "swelling" "bleeding" "itching" "tingling" "itchy" "morphine" "numb" "methadone" "antibiotic" "antibiotics" "steroids" "pill" "hurting" 
+drug 23 :adderall 21
+"sleep disorder" "white blood cell count decreased" "memory impairment" "dry skin" "liver function test abnormal" "burning sensation" "depressed mood" "visual acuity reduced" "hot flush" "nervous system disorder" "osteonecrosis of jaw" "product substitution issue" "blood creatine phosphokinase increased" "weight increased" "surgery" 
+"disease" "panic disorder" "brain" "symptom" "sleep" "epilepsy" "blood" "insomnia" "high" "drug free" "withdrawal symptoms" "skin" "head" "depression" "chronic pain" 
+drug 24 :oxycodone 20
+"crying" "surgery" "therapeutic response decreased" "therapeutic response unexpected" "osteonecrosis of jaw" "infusion related reaction" "sleep disorder" "toxicity to various agents" "injection site bruising" "multiple sclerosis relapse" "burning sensation" "feeling hot" "feeling abnormal" "dry mouth" "extrapyramidal disorder" 
+"surgery" "therapy" "awake" "shaking" "sleeping" "bleeding" "vomiting" "sleeping pills" "pains" "reaction" "reactions" "died" "breath" "sick" "chest pain" 
+drug 25 :topamax 20
+"cataract" "weight decreased" "memory impairment" "sleep disorder" "weight increased" "liver function test abnormal" "insomnia" "neoplasm malignant" "multiple sclerosis" "femur fracture" "migraine" "arthritis" "coma" "intestinal obstruction" "visual impairment" 
+"epilepsy" "hypertension" "arthritis" "migraine" "migraines" "insomnia" "kidneys" "kidney" "weight" "heart attack" "constipation" "weight loss" "depression" "bleeding" "weight gain" 
+drug 26 :seroquel 19
+"sleep disorder" "depressed mood" "vision blurred" "weight increased" "abnormal behaviour" "therapeutic response unexpected" "weight decreased" "osteonecrosis of jaw" "nausea" "fatigue" "gait disturbance" "crying" "confusional state" "therapeutic response decreased" "product quality issue" 
+"sleep" "mood" "insomnia" "depressed" "panic disorder" "depression" "epilepsy" "mood swings" "hypertension" "symptom" "fatigue" "sleeping" "swelling" "anxiety" "migraine" 
+drug 27 :celexa 19
+"aggression" "anxiety" "gait disturbance" "surgery" "abortion spontaneous" "memory impairment" "death" "sleep disorder" "pulmonary embolism" "toxicity to various agents" "pulmonary oedema" "depressed mood" "stress" "diabetes mellitus" "cognitive disorder" 
+"allergic" "anxiety" "suicide" "panic disorder" "seizures" "seizure" "anxiety attacks" "suicidal" "depression" "diagnosed" "stress" "insomnia" "panic attacks" "panic attack" "pregnancy" 
+drug 28 :hydrocodon 19
+"abnormal behaviour" "feeling hot" "surgery" "injection site bruising" "fall" "septic shock" "infusion related reaction" "therapeutic response decreased" "depressed mood" "toxicity to various agents" "therapeutic response unexpected" "condition aggravated" "nausea" "device dislocation" "injection site swelling" 
+"died" "panic disorder" "interaction" "interactions" "period" "reaction" "reactions" "swollen" "blood work" "hurting" "allergic reaction" "pains" "painful" "stress" "drug interactions" 
+drug 29 :benadryl 19
+"sleep disorder" "nausea" "injection site pruritus" "general physical health deterioration" "confusional state" "injection site erythema" "amnesia" "vision blurred" "diabetes mellitus" "injection site bruising" "coma" "insomnia" "depressed mood" "gait disturbance" "disorientation" 
+"sleeping pills" "sleep" "insomnia" "drowsiness" "symptom" "sleeping" "epilepsy" "panic disorder" "disease" "tremors" "nausea" "migraine" "fatigue" "hypertension" "withdrawal symptoms" 
+drug 30 :acetaminophen 17
+"fall" "surgery" "product substitution issue" "nausea" "liver function test abnormal" "neoplasm malignant" "oedema peripheral" "flatulence" "disorientation" "abdominal pain upper" "intestinal obstruction" "malaise" "device dislocation" "injection site bruising" "malignant neoplasm progression" 
+"drug free" "generic" "period" "high" "died" "focus" "broke" "surgery" "weakness" "weight loss" "liver" "bleeding" "kidneys" "kidney" "cold" 
+drug 31 :lamictal 15
+"suicidal ideation" "vision blurred" "abortion spontaneous" "flatulence" "osteonecrosis of jaw" "diabetes mellitus" "bronchitis" "disorientation" "device expulsion" "dry skin" "disturbance in attention" "dry mouth" "gait disturbance" "lethargy" "general physical health deterioration" 
+"suicidal" "allergic" "depressed" "overdose" "addicted" "addictive" "drunk" "vomiting" "nervous" "smoked" "sick" "anxious" "pregnant" "drowsiness" "dizziness" 
+drug 32 :neurontin 14
+"disturbance in attention" "therapeutic response unexpected" "therapeutic response decreased" "cerebrovascular accident" "memory impairment" "depressed mood" "suicide attempt" "aggression" "deep vein thrombosis" "multiple sclerosis relapse" "injection site bruising" "renal impairment" "feeling hot" "road traffic accident" "gait disturbance" 
+"suicide" "panic disorder" "reaction" "reactions" "damage" "seizures" "seizure" "insomnia" "anxiety attacks" "eyes" "eye" "allergic reaction" "heart attack" "panic attacks" "panic attack" 
+drug 33 :tramadol 14
+"osteonecrosis of jaw" "injection site bruising" "nausea" "abdominal distension" "weight increased" "malignant neoplasm progression" "neoplasm malignant" "intestinal obstruction" "blister" "weight decreased" "neck pain" "abdominal pain upper" "musculoskeletal pain" "injection site swelling" "dry skin" 
+"swelling" "neck" "spine" "lips" "legs" "leg" "tongue" "toes" "mouth" "swollen" "muscle spasms" "chest pain" "chest" "throat" "stomach" 
+drug 34 :advil 14
+"flatulence" "injection site bruising" "memory impairment" "bronchitis" "headache" "menstruation irregular" "femur fracture" "fall" "dizziness" "decreased appetite" "disorientation" "malaise" "dry mouth" "device dislocation" "stress" 
+"nausea" "constipation" "drowsiness" "dizziness" "insomnia" "numbness" "diarrhea" "headaches" "headache" "migraine" "migraines" "bleeding" "swelling" "fatigue" "tremors" 
+drug 35 :vitamin 14
+"hepatic enzyme increased" "blood glucose increased" "injection site reaction" "blood cholesterol increased" "suicidal ideation" "osteonecrosis of jaw" "therapeutic response unexpected" "dry skin" "surgery" "toxicity to various agents" "abortion spontaneous" "blood creatine phosphokinase increased" "therapeutic response decreased" "injection site bruising" "infusion related reaction" 
+"swelling" "vitamins" "vitamin" "cholesterol" "metabolism" "acid reflux" "high" "high blood pressure" "sugar" "reaction" "reactions" "liver" "muscles" "antibiotic" "antibiotics" 
+drug 36 :codeine 14
+"burning sensation" "feeling hot" "crying" "abdominal pain upper" "malignant neoplasm progression" "death" "intestinal obstruction" "injection site bruising" "liver function test abnormal" "completed suicide" "dry mouth" "flatulence" "infusion related reaction" "general physical health deterioration" "bronchitis" 
+"died" "sensation" "pains" "pain killers" "burning" "hurting" "bleeding" "chest pain" "chest pains" "cold" "muscle spasms" "awake" "tingling" "chronic pain" "symptom" 
+drug 37 :cipro 13
+"nausea" "therapeutic response unexpected" "influenza" "sleep disorder" "therapeutic response decreased" "urinary tract infection" "anaphylactic reaction" "surgery" "intestinal obstruction" "crying" "influenza like illness" "vision blurred" "infection" "gait disturbance" "infusion related reaction" 
+"nausea" "drowsiness" "insomnia" "tremors" "nauseous" "migraine" "rash" "side effects" "muscle spasms" "cold" "itchy" "chronic pain" "swelling" "breathing" "chest pain" 
+drug 38 :ultram 13
+"multiple sclerosis relapse" "device expulsion" "blindness" "nervous system disorder" "sleep disorder" "cognitive disorder" "memory impairment" "extrapyramidal disorder" "abnormal behaviour" "cardiac disorder" "balance disorder" "gait disturbance" "bone disorder" "withdrawal syndrome" "gastrointestinal disorder" 
+"seizures" "seizure" "withdrawing" "withdraw" "epilepsy" "numbness" "physical" "pregnancy" "suicide" "arthritis" "hypertension" "insomnia" "migraine" "migraines" "addiction" 
+drug 39 :plavix 12
+"gastrointestinal haemorrhage" "surgery" "femur fracture" "nausea" "vaginal haemorrhage" "device dislocation" "cerebral haemorrhage" "anorectal discomfort" "rectal haemorrhage" "depressed mood" "malaise" "coma" "toxicity to various agents" "low turnover osteopathy" "haemoglobin decreased" 
+"bleeding" "surgery" "heart attack" "hypertension" "arthritis" "swelling" "spine" "sinus infection" "damage" "infection" "muscle spasms" "hospital" "nausea" "constipation" "migraine" 
+drug 40 :heroin 12
+"multiple sclerosis relapse" "abortion spontaneous" "suicidal ideation" "diabetes mellitus" "death" "low turnover osteopathy" "impaired healing" "heart rate increased" "fall" "injection site bruising" "completed suicide" "liver function test abnormal" "dry mouth" "osteonecrosis of jaw" "dry skin" 
+"suicidal" "high" "allergic" "depressed" "overdose" "smoked" "diagnosed" "addicted" "suicide" "addictive" "pregnant" "died" "pregnancy" "epilepsy" "vomiting" 
+drug 41 :trazodone 12
+"nausea" "sleep disorder" "gait disturbance" "confusional state" "depressed mood" "blood creatine phosphokinase increased" "general physical health deterioration" "osteonecrosis of jaw" "vision blurred" "crying" "memory impairment" "blood glucose increased" "insomnia" "disturbance in attention" "therapeutic response decreased" 
+"drowsiness" "mood" "insomnia" "nausea" "fatigue" "sleep" "tremors" "migraine" "side effects" "muscle spasms" "nauseous" "anxiety" "rash" "panic disorder" "symptom" 
+drug 42 :coumadin 12
+"death" "osteonecrosis of jaw" "blood glucose increased" "surgery" "dry mouth" "femur fracture" "blood creatine phosphokinase increased" "gastrointestinal haemorrhage" "dry skin" "heart rate increased" "cerebral haemorrhage" "depressed mood" "blood cholesterol increased" "injection site bruising" "oedema peripheral" 
+"died" "suicide" "heart" "weight loss" "pain killers" "blood" "disease" "hands" "hand" "damage" "panic attacks" "panic attack" "anxiety attacks" "brain" "heart attack" 
+drug 43 :oxycontin 12
+"injection site bruising" "abortion spontaneous" "therapeutic response decreased" "influenza like illness" "toxicity to various agents" "feeling abnormal" "burning sensation" "therapeutic response unexpected" "multiple sclerosis relapse" "abdominal pain upper" "crohn's disease" "abnormal behaviour" "crying" "infusion related reaction" "injection site swelling" 
+"birth control" "injection" "reaction" "reactions" "pregnancy" "allergic reaction" "therapy" "bleeding" "sexual side effects" "suicide" "methadone" "pill" "swelling" "surgery" "swollen" 
+drug 44 :ambien 12
+"sleep disorder" "confusional state" "nausea" "crying" "general physical health deterioration" "depressed mood" "gait disturbance" "multiple sclerosis relapse" "menstruation irregular" "suicidal ideation" "insomnia" "decreased appetite" "fatigue" "disturbance in attention" "flatulence" 
+"mood" "drowsiness" "fatigue" "sleep" "panic disorder" "sleeping" "disease" "insomnia" "anxiety" "epilepsy" "symptom" "suicidal" "hypertension" "sleeping pills" "nervous" 
+drug 45 :zyprexa 11
+"suicidal ideation" "therapeutic response decreased" "weight decreased" "condition aggravated" "depressed mood" "nausea" "suicide attempt" "memory impairment" "hot flush" "balance disorder" "renal impairment" "confusional state" "aggression" "influenza like illness" "cognitive disorder" 
+"suicidal" "depressed" "allergic" "addicted" "addictive" "mood" "overdose" "depression" "drunk" "reaction" "reactions" "allergic reaction" "tapering" "stress" "anxious" 
+drug 46 :norco 11
+"headache" "injection site bruising" "influenza" "general physical health deterioration" "nausea" "injection site erythema" "nervousness" "injection site pruritus" "abortion spontaneous" "injection site swelling" "therapeutic response unexpected" "anxiety" "menstruation irregular" "migraine" "emotional distress" 
+"sleeping pills" "flu" "nausea" "physical" "migraine" "rash" "diarrhea" "headaches" "headache" "migraines" "insomnia" "itchy" "drowsiness" "swelling" "symptom" 
+drug 47 :amitriptyline 10
+"confusional state" "crying" "therapeutic response decreased" "therapeutic response unexpected" "injection site bruising" "loss of consciousness" "product substitution issue" "infusion related reaction" "memory impairment" "vision blurred" "sleep disorder" "depressed mood" "headache" "nausea" "osteonecrosis of jaw" 
+"mood" "drowsiness" "drug free" "fatigue" "generic" "reaction" "reactions" "therapy" "allergic reaction" "sleep" "focus" "period" "anxiety" "high" "effect" 
+drug 48 :abilify 10
+"surgery" "vision blurred" "osteonecrosis of jaw" "therapeutic response unexpected" "hepatic enzyme increased" "injection site bruising" "heart rate increased" "fall" "blood cholesterol increased" "memory impairment" "general physical health deterioration" "therapeutic response decreased" "dry mouth" "dry skin" "sleep disorder" 
+"surgery" "therapy" "reaction" "reactions" "swelling" "chest pain" "chest pains" "muscles" "medicines" "head" "kidneys" "kidney" "patients" "swollen" "spine" 
+drug 49 :lipitor 10
+"heart rate increased" "osteonecrosis of jaw" "surgery" "chest discomfort" "cardiac failure congestive" "blood cholesterol increased" "chest pain" "toxicity to various agents" "blood glucose increased" "septic shock" "liver function test abnormal" "feeling hot" "dry skin" "abnormal behaviour" "activities of daily living impaired" 
+"heart rate" "heart" "head" "swelling" "lungs" "chest" "stomach" "eyes" "eye" "kidneys" "kidney" "high blood pressure" "period" "liver" "mood" 
+drug 50 :levaquin 10
+"nausea" "osteonecrosis of jaw" "injection site bruising" "fall" "abnormal behaviour" "blister" "joint swelling" "nervousness" "anaphylactic reaction" "impaired healing" "skin exfoliation" "dry skin" "injection site reaction" "dry mouth" "pulmonary oedema" 
+"nausea" "drowsiness" "muscle spasms" "itchy" "insomnia" "rash" "swelling" "period" "allergic" "tremors" "chest pain" "swollen" "migraine" "cold" "side effects" 
+drug 51 :motrin 10
+"toxicity to various agents" "abortion spontaneous" "osteonecrosis of jaw" "abdominal pain upper" "blindness" "nausea" "cataract" "intestinal obstruction" "fall" "renal failure" "pain in extremity" "dry mouth" "arthritis" "injection site bruising" "burning sensation" 
+"side effects" "hypertension" "weight loss" "sexual side effects" "drug free" "allergic" "drug interactions" "drug interaction" "seizures" "seizure" "narcotic" "bleeding" "nausea" "narcotics" "medicines" 
+drug 52 :appt 10
+"hot flush" "crying" "feeling hot" "sleep disorder" "completed suicide" "depressed mood" "fall" "blood creatine phosphokinase increased" "mental disorder" "blood glucose increased" "amnesia" "surgery" "mobility decreased" "aggression" "therapeutic response decreased" 
+"cold" "burning" "died" "panic" "injection" "breath" "awake" "drinking" "anxious" "itchy" "panic disorder" "sensation" "sleeping" "drinks" "drink" 
+drug 53 :lyrica 9
+"dry skin" "fall" "nausea" "memory impairment" "weight increased" "activities of daily living impaired" "disturbance in attention" "confusional state" "dry mouth" "heart rate increased" "weight decreased" "renal impairment" "road traffic accident" "osteonecrosis of jaw" "toxicity to various agents" 
+"period" "drowsiness" "mood" "weight loss" "died" "damage" "fatigue" "skin" "broke" "head" "weakness" "weight" "cold" "insomnia" "nausea" 
+drug 54 :glassy 9
+"hot flush" "blood cholesterol increased" "dry mouth" "crying" "road traffic accident" "blood glucose increased" "blood creatine phosphokinase increased" "osteonecrosis of jaw" "blood creatinine increased" "renal impairment" "death" "white blood cell count decreased" "dry skin" "heart rate increased" "influenza like illness" 
+"cold" "burning" "injection" "itchy" "drinking" "anxious" "drinks" "drink" "breath" "high" "high blood pressure" "smoke" "panic" "swelling" "energy" 
+drug 55 :lorazepam 9
+"nausea" "sleep disorder" "crying" "gait disturbance" "coma" "amnesia" "headache" "memory impairment" "therapeutic response unexpected" "anxiety" "vomiting" "disturbance in attention" "lethargy" "constipation" "cough" 
+"nausea" "drowsiness" "insomnia" "nauseous" "tremors" "migraine" "rash" "side effects" "muscle spasms" "itchy" "cold" "breathing" "swelling" "chest pain" "chronic pain" 
+drug 56 :serotonin 9
+"osteonecrosis of jaw" "general physical health deterioration" "mobility decreased" "therapeutic response decreased" "therapeutic response unexpected" "vision blurred" "toxicity to various agents" "memory impairment" "liver function test abnormal" "surgery" "nausea" "hepatic enzyme increased" "injection site bruising" "abnormal behaviour" "gait disturbance" 
+"physical" "symptom" "withdrawal symptoms" "neck" "tapering" "tapered" "taper" "spine" "legs" "leg" "damage" "lips" "fatigue" "tongue" "mouth" 
+drug 57 :celebrex 9
+"fall" "pulmonary embolism" "pulmonary oedema" "hypertension" "bronchitis" "asthma" "injection site reaction" "toxicity to various agents" "blood pressure decreased" "blood creatine phosphokinase increased" "coma" "wheezing" "cough" "nasal congestion" "infusion related reaction" 
+"allergic" "diagnosed" "period" "brain zaps" "nervous" "vomiting" "died" "broke" "cold" "hypertension" "weakness" "weight loss" "allergies" "allergy" "breath" 
+drug 58 :suboxone 9
+"nausea" "injection site bruising" "hot flush" "crying" "burning sensation" "injection site warmth" "cough" "therapeutic response decreased" "headache" "toxicity to various agents" "injection site swelling" "sleep disorder" "chills" "infusion related reaction" "rash erythematous" 
+"nausea" "cold" "tremors" "itchy" "drowsiness" "nauseous" "insomnia" "injection" "rash" "burning" "swelling" "muscle spasms" "migraine" "side effects" "breathing" 
+drug 59 :biaxin 8
+"anaphylactic reaction" "influenza" "neoplasm malignant" "osteonecrosis of jaw" "surgery" "therapeutic response unexpected" "pneumonia" "fall" "injection site reaction" "toxicity to various agents" "therapeutic response decreased" "lung neoplasm malignant" "urinary tract infection" "upper respiratory tract infection" "blister" 
+"flu" "reaction" "reactions" "allergies" "allergy" "allergic reaction" "disease" "infection" "allergic" "sinus infection" "effect" "antibiotic" "antibiotics" "arthritis" "diarrhea" 
+drug 60 :zyrtec 8
+"influenza" "toxicity to various agents" "injection site reaction" "therapeutic response unexpected" "influenza like illness" "infusion related reaction" "septic shock" "asthma" "crying" "cataract" "hypertension" "nausea" "pneumonia" "anaphylactic reaction" "therapeutic response decreased" 
+"flu" "disease" "allergies" "allergy" "infection" "antibiotic" "antibiotics" "diarrhea" "sinus infection" "allergic" "arthritis" "cold" "heart attack" "rash" "hypertension" 
+drug 61 :flexeril 8
+"confusional state" "vision blurred" "hot flush" "surgery" "disturbance in attention" "visual acuity reduced" "suicide attempt" "transient ischaemic attack" "influenza" "dry mouth" "nausea" "dry skin" "sleep disorder" "eye pain" "feeling hot" 
+"mood" "drowsiness" "fatigue" "period" "sleep" "suicidal" "nervous" "anxiety" "itchy" "dizziness" "constipation" "eyes" "eye" "nausea" "swollen" 
+drug 62 :cocaine 8
+"multiple sclerosis relapse" "toxicity to various agents" "depression" "low turnover osteopathy" "abortion spontaneous" "depressed mood" "aggression" "anxiety" "injection site bruising" "blood glucose increased" "abnormal behaviour" "completed suicide" "injection site swelling" "device expulsion" "hepatic enzyme increased" 
+"high" "epilepsy" "hypertension" "arthritis" "migraine" "migraines" "insomnia" "side effects" "depression" "allergies" "allergy" "allergic" "addiction" "heart attack" "seizures" 
+drug 63 :prilosec 8
+"international normalised ratio increased" "haemoglobin decreased" "weight decreased" "weight increased" "transient ischaemic attack" "suicide attempt" "hepatic enzyme increased" "blood glucose increased" "blood cholesterol increased" "anaphylactic reaction" "fall" "blood pressure decreased" "cerebrovascular accident" "fluid retention" "therapeutic response unexpected" 
+"swelling" "heart rate" "high" "gain weight" "weight gain" "high blood pressure" "weight" "weight loss" "metabolism" "cholesterol" "function" "symptom" "tapering" "tapered" "taper" 
+drug 64 :enzymes 8
+"blood glucose increased" "blood cholesterol increased" "fall" "product substitution issue" "oedema peripheral" "haemoglobin decreased" "heart rate increased" "malignant neoplasm progression" "blood creatine phosphokinase increased" "dry skin" "renal impairment" "hepatic enzyme increased" "intestinal obstruction" "general physical health deterioration" "memory impairment" 
+"period" "blood" "cholesterol" "drug free" "blood test" "high" "sugar" "blood work" "blood pressure" "high blood pressure" "urine" "generic" "died" "vitamins" "vitamin" 
+drug 65 :naproxen 8
+"injection site bruising" "liver function test abnormal" "death" "renal failure" "feeling hot" "multi-organ failure" "abnormal behaviour" "burning sensation" "joint swelling" "chills" "abdominal pain upper" "osteonecrosis of jaw" "injection site swelling" "dry skin" "therapeutic response decreased" 
+"weight loss" "injection" "died" "damage" "tests" "swollen" "heart attack" "tingling" "weakness" "bleeding" "suicide" "blood test" "swelling" "hurting" "drug test" 
+drug 66 :avelox 8
+"anaphylactic reaction" "osteonecrosis of jaw" "dry skin" "memory impairment" "infection" "urinary tract infection" "injury" "staphylococcal infection" "influenza" "injection site reaction" "toxicity to various agents" "dry mouth" "therapeutic response unexpected" "chest discomfort" "oropharyngeal pain" 
+"reaction" "reactions" "skin" "allergic reaction" "neck" "symptom" "mouth" "allergies" "allergy" "lips" "infection" "throat" "tongue" "legs" "leg" 
+drug 67 :doxycycline 8
+"hot flush" "nausea" "injection site bruising" "dry mouth" "therapeutic response unexpected" "osteonecrosis of jaw" "therapeutic response decreased" "abortion spontaneous" "infusion related reaction" "blister" "feeling hot" "injection site swelling" "dry skin" "influenza" "rash pruritic" 
+"cold" "burning" "injection" "itchy" "nauseous" "tremors" "anxious" "nausea" "swelling" "tingling" "drinks" "drink" "drinking" "swollen" "panic" 
+drug 68 :marihuana 8
+"completed suicide" "abortion spontaneous" "liver function test abnormal" "diabetes mellitus" "blood creatine phosphokinase increased" "hot flush" "toxicity to various agents" "abnormal behaviour" "blood creatinine increased" "fall" "multiple sclerosis relapse" "exposure during pregnancy" "blood glucose increased" "low turnover osteopathy" "white blood cell count decreased" 
+"suicide" "suicidal" "pregnancy" "allergic" "birth control" "pain killers" "diagnosed" "pregnant" "heart attack" "smoking" "smoked" "marijuana" "sex" "period" "died" 
+drug 69 :calcium 8
+"disturbance in attention" "toxicity to various agents" "memory impairment" "renal impairment" "product quality issue" "nausea" "hot flush" "depressed mood" "liver function test abnormal" "activities of daily living impaired" "heart rate increased" "death" "visual impairment" "blood cholesterol increased" "gait disturbance" 
+"drug free" "damage" "panic disorder" "insomnia" "seizures" "seizure" "side effects" "tremors" "symptom" "fatigue" "drowsiness" "withdrawal symptoms" "nausea" "depression" "focus" 
+drug 70 :clot 8
+"depressed mood" "cataract" "septic shock" "cerebrovascular accident" "oedema peripheral" "hot flush" "road traffic accident" "nausea" "vision blurred" "malignant neoplasm progression" "abnormal behaviour" "blood glucose increased" "hypertension" "neoplasm malignant" "cerebral haemorrhage" 
+"heart attack" "suicide" "damage" "depressed" "epilepsy" "hypertension" "mood" "migraine" "arthritis" "kidneys" "kidney" "migraines" "insomnia" "mood swings" "liver" 
+drug 71 :lortab 8
+"skin exfoliation" "influenza" "nausea" "osteonecrosis of jaw" "injection site bruising" "dry skin" "blister" "headache" "skin discolouration" "abdominal pain upper" "injection site swelling" "amnesia" "injection site rash" "confusional state" "sleep disorder" 
+"brain zaps" "itchy" "allergic" "swelling" "nervous" "itching" "swollen" "flu" "painful" "pain med" "sensitive" "rash" "nausea" "disease" "drowsiness" 
+drug 72 :toprol 8
+"dry mouth" "nausea" "osteonecrosis of jaw" "visual acuity reduced" "injection site warmth" "flatulence" "dry skin" "throat irritation" "deep vein thrombosis" "anorectal discomfort" "gait disturbance" "chest discomfort" "nasal congestion" "cough" "dizziness" 
+"mouth" "lips" "drowsiness" "breathing" "nausea" "physical" "tongue" "sensation" "throat" "neck" "eyes" "eye" "high" "stomach" "chest" 
+drug 73 :atenolol 7
+"surgery" "sleep disorder" "nausea" "cataract" "multiple sclerosis relapse" "insomnia" "multiple sclerosis" "injection site bruising" "coma" "therapeutic response unexpected" "amnesia" "migraine" "gait disturbance" "memory impairment" "musculoskeletal pain" 
+"surgery" "therapy" "patients" "pains" "diagnosis" "chronic pain" "bleeding" "medicines" "disease" "chest pain" "chest pains" "back pain" "infection" "panic disorder" "hospital" 
+drug 74 :singulair 7
+"weight increased" "decreased appetite" "blood cholesterol increased" "intestinal obstruction" "weight decreased" "haemoglobin decreased" "osteonecrosis of jaw" "headache" "dry mouth" "chest discomfort" "toxicity to various agents" "blood glucose increased" "abdominal pain upper" "blood pressure decreased" "menstruation irregular" 
+"weight" "gain weight" "weight gain" "weight loss" "appetite" "high blood pressure" "swelling" "stomach" "high" "blood pressure" "diet" "heart rate" "depression" "cholesterol" "tapering" 
+drug 75 :paracetamol 7
+"blood glucose increased" "intestinal obstruction" "rash pruritic" "injection site bruising" "infusion related reaction" "oedema peripheral" "rash erythematous" "blister" "liver function test abnormal" "blood creatinine increased" "blood creatine phosphokinase increased" "malignant neoplasm progression" "neoplasm malignant" "suicidal ideation" "injection site swelling" 
+"suicidal" "vomiting" "allergic" "overdose" "liver" "kidneys" "kidney" "swelling" "blood" "lungs" "itchy" "bleeding" "itching" "tingling" "urine" 
+drug 76 :elavil 7
+"vision blurred" "feeling hot" "disorientation" "injection site bruising" "multiple sclerosis" "mobility decreased" "depressed mood" "memory impairment" "gait disturbance" "osteonecrosis of jaw" "heart rate increased" "flatulence" "toxicity to various agents" "bronchitis" "therapeutic response unexpected" 
+"dizziness" "drowsiness" "numbness" "nausea" "sensation" "died" "insomnia" "hurting" "constipation" "tingling" "muscle spasms" "burning" "diarrhea" "itchy" "migraine" 
+drug 77 :phentermine 7
+"weight increased" "surgery" "general physical health deterioration" "weight decreased" "device dislocation" "visual acuity reduced" "femur fracture" "activities of daily living impaired" "road traffic accident" "abnormal behaviour" "foetal exposure during pregnancy" "international normalised ratio increased" "fall" "exposure during pregnancy" "injury" 
+"weight" "gain weight" "weight gain" "weight loss" "surgery" "swelling" "pains" "depression" "chest pain" "chest pains" "high blood pressure" "chronic pain" "high" "back pain" "pain med" 
+drug 78 :meth 7
+"multiple sclerosis relapse" "abortion spontaneous" "injection site bruising" "abdominal distension" "aspartate aminotransferase increased" "infusion related reaction" "therapeutic response decreased" "therapeutic response unexpected" "alanine aminotransferase increased" "toxicity to various agents" "injection site swelling" "hot flush" "nausea" "abnormal behaviour" "diabetes mellitus" 
+"birth control" "pregnancy" "suicide" "swelling" "bleeding" "methadone" "injection" "sexual side effects" "seizures" "seizure" "smoking" "marijuana" "sex" "heart attack" "epilepsy" 
+drug 79 :crestor 7
+"septic shock" "cataract" "multi-organ failure" "renal failure" "therapeutic response unexpected" "anaphylactic reaction" "abnormal behaviour" "low turnover osteopathy" "memory impairment" "renal impairment" "therapeutic response decreased" "infusion related reaction" "gastrointestinal haemorrhage" "visual impairment" "hepatic enzyme increased" 
+"weight loss" "weakness" "damage" "heart attack" "reaction" "reactions" "interaction" "interactions" "seizures" "seizure" "suicide" "severe" "allergic reaction" "pains" "epilepsy" 
+drug 80 :darvocet 7
+"international normalised ratio increased" "weight increased" "abnormal behaviour" "weight decreased" "loss of consciousness" "injection site bruising" "feeling hot" "decreased appetite" "septic shock" "burning sensation" "renal failure" "multi-organ failure" "injection site swelling" "abdominal pain upper" "pain in extremity" 
+"swelling" "heart rate" "high" "gain weight" "weight gain" "weight" "weight loss" "high blood pressure" "function" "metabolism" "symptom" "depression" "stress" "diet" "pains" 
+drug 81 :enzyme 7
+"blood cholesterol increased" "fall" "blood glucose increased" "influenza" "oedema peripheral" "influenza like illness" "general physical health deterioration" "haemoglobin decreased" "malignant neoplasm progression" "heart rate increased" "blood creatine phosphokinase increased" "multiple sclerosis relapse" "hot flush" "intestinal obstruction" "product substitution issue" 
+"blood" "cholesterol" "blood test" "blood pressure" "blood work" "high blood pressure" "urine" "vitamins" "vitamin" "period" "swelling" "steroids" "urine test" "sugar" "high" 
+drug 82 :quinolones 7
+"infection" "blood creatine phosphokinase increased" "staphylococcal infection" "influenza" "liver function test abnormal" "blood creatinine increased" "death" "disease progression" "urinary tract infection" "gastrointestinal haemorrhage" "malignant neoplasm progression" "influenza like illness" "surgery" "white blood cell count increased" "injury" 
+"infection" "disease" "blood" "sinus infection" "flu" "blood test" "symptom" "swelling" "urine" "liver" "lungs" "blood work" "diarrhea" "bleeding" "kidneys" 
+drug 83 :soma 7
+"death" "anaphylactic reaction" "crying" "therapeutic response unexpected" "suicidal ideation" "visual acuity reduced" "general physical health deterioration" "disturbance in attention" "injection site reaction" "dry mouth" "influenza like illness" "therapeutic response decreased" "nausea" "vision blurred" "depressed mood" 
+"died" "reaction" "reactions" "suicide" "allergic reaction" "panic attacks" "panic attack" "suicidal" "weight loss" "anxiety attacks" "heart" "sick" "pain killers" "effect" "physical" 
+drug 84 :provigil 7
+"renal impairment" "condition aggravated" "suicidal ideation" "memory impairment" "depression" "general physical health deterioration" "disturbance in attention" "septic shock" "aggression" "stress" "emotional distress" "therapeutic response decreased" "mental disorder" "confusional state" "multiple sclerosis relapse" 
+"suicidal" "damage" "panic disorder" "depression" "symptom" "disease" "depressed" "weakness" "withdrawal symptoms" "allergic" "severe" "diagnosed" "mood" "epilepsy" "fatigue" 
+drug 85 :remeron 6
+"aggression" "gait disturbance" "anxiety" "gastrointestinal disorder" "cognitive disorder" "disturbance in attention" "condition aggravated" "nervousness" "memory impairment" "extrapyramidal disorder" "mental disorder" "sleep disorder" "agitation" "septic shock" "balance disorder" 
+"anxiety" "anxiety attacks" "suicidal" "suicide" "panic attacks" "panic attack" "stress" "seizures" "seizure" "appetite" "depression" "panic disorder" "insomnia" "reaction" "reactions" 
+drug 86 :caffeine 6
+"lung neoplasm malignant" "blood glucose increased" "aggression" "blood cholesterol increased" "product quality issue" "therapeutic response unexpected" "anxiety" "low turnover osteopathy" "crying" "neuropathy peripheral" "decreased appetite" "anaphylactic reaction" "suicidal ideation" "intestinal obstruction" "diabetes mellitus" 
+"drug free" "high" "blood" "lungs" "liver" "kidneys" "kidney" "cholesterol" "blood test" "blood pressure" "blood work" "urine" "high blood pressure" "heart" "suicidal" 
+drug 87 :zopiclone 6
+"dry mouth" "injection site bruising" "headache" "abortion spontaneous" "therapeutic response unexpected" "nausea" "menstruation irregular" "rash pruritic" "cough" "injection site swelling" "rash erythematous" "vomiting" "therapeutic response decreased" "osteonecrosis of jaw" "infusion related reaction" 
+"mouth" "lips" "throat" "tongue" "stomach" "eyes" "eye" "itchy" "neck" "chest" "swollen" "skin" "vomiting" "swelling" "rash" 
+drug 88 :allegra 6
+"therapeutic response unexpected" "surgery" "abortion spontaneous" "deep vein thrombosis" "abdominal distension" "dry mouth" "osteonecrosis of jaw" "alanine aminotransferase increased" "therapeutic response decreased" "aspartate aminotransferase increased" "dry skin" "swelling face" "anaphylactic reaction" "influenza" "hepatic enzyme increased" 
+"swelling" "painful" "swollen" "high" "reaction" "reactions" "therapy" "surgery" "brain zaps" "allergic reaction" "birth control" "pregnancy" "vomiting" "hurting" "medicines" 
+drug 89 :zantac 6
+"abdominal discomfort" "decreased appetite" "dry mouth" "multi-organ failure" "nausea" "hepatic enzyme increased" "flatulence" "chest discomfort" "liver function test abnormal" "renal failure" "osteonecrosis of jaw" "burning sensation" "abortion spontaneous" "intestinal obstruction" "rash erythematous" 
+"weight loss" "stomach" "weakness" "nausea" "appetite" "swelling" "mouth" "drowsiness" "damage" "chest pain" "vomiting" "headaches" "headache" "throat" "chest" 
+drug 90 :warfarin 6
+"blood creatine phosphokinase increased" "abnormal behaviour" "oedema peripheral" "blood glucose increased" "activities of daily living impaired" "neuropathy peripheral" "blood cholesterol increased" "surgery" "dry skin" "osteonecrosis of jaw" "white blood cell count decreased" "intestinal obstruction" "liver function test abnormal" "decreased appetite" "blood creatinine increased" 
+"blood" "blood work" "blood test" "urine" "swelling" "liver" "kidneys" "kidney" "urine test" "lungs" "brain" "high blood pressure" "heart" "mood" "high" 
+drug 91 :penicillin 6
+"dry mouth" "nausea" "anaphylactic reaction" "pulmonary oedema" "pulmonary embolism" "diabetes mellitus" "rash generalised" "osteonecrosis of jaw" "injection site rash" "toxicity to various agents" "device expulsion" "rash" "throat irritation" "injection site reaction" "blister" 
+"allergic" "diagnosed" "mouth" "vomiting" "lips" "throat" "tongue" "brain zaps" "stomach" "rash" "nervous" "eyes" "eye" "nausea" "neck" 
+drug 92 :propranolol 6
+"heart rate increased" "septic shock" "confusional state" "osteonecrosis of jaw" "crying" "device expulsion" "suicidal ideation" "surgery" "aggression" "anxiety" "disturbance in attention" "international normalised ratio increased" "nervousness" "dry mouth" "depressed mood" 
+"mood" "heart rate" "drowsiness" "heart" "period" "fatigue" "chest pain" "chest pains" "suicidal" "swelling" "head" "high blood pressure" "eyes" "eye" "lungs" 
+drug 93 :amphetamines 6
+"completed suicide" "abnormal behaviour" "osteonecrosis of jaw" "hepatic enzyme increased" "fall" "pulmonary oedema" "pulmonary embolism" "decreased appetite" "diabetes mellitus" "gastrointestinal disorder" "cognitive disorder" "weight increased" "sleep disorder" "toxicity to various agents" "dry mouth" 
+"suicide" "suicidal" "pain killers" "period" "addiction" "heart attack" "panic disorder" "anxiety attacks" "blood work" "panic attacks" "panic attack" "sex" "allergic" "pregnancy" "smoking" 
+drug 94 :antihistamine 6
+"toxicity to various agents" "condition aggravated" "disorientation" "nausea" "therapeutic response unexpected" "nervousness" "gait disturbance" "blister" "therapeutic response decreased" "depression" "malaise" "injection site reaction" "osteonecrosis of jaw" "depressed mood" "aggression" 
+"side effects" "allergic reaction" "drug interactions" "drug interaction" "allergic" "medicines" "depression" "drug test" "drug free" "metabolism" "allergies" "allergy" "symptom" "nausea" "sexual side effects" 
+drug 95 :nexium 6
+"septic shock" "anxiety" "feeling hot" "chest discomfort" "dry skin" "surgery" "aggression" "chest pain" "cardiac arrest" "femur fracture" "cerebrovascular accident" "abdominal discomfort" "death" "road traffic accident" "neck pain" 
+"panic" "anxiety" "pains" "chest pain" "chest pains" "stress" "depression" "chronic pain" "sensation" "back pain" "pain med" "interaction" "interactions" "reaction" "reactions" 
+drug 96 :norvasc 6
+"therapeutic response unexpected" "septic shock" "hepatic enzyme increased" "anaphylactic reaction" "therapeutic response decreased" "abnormal behaviour" "toxicity to various agents" "blood cholesterol increased" "infusion related reaction" "surgery" "haemoglobin decreased" "blood glucose increased" "mobility decreased" "vision blurred" "blood creatine phosphokinase increased" 
+"reaction" "reactions" "allergic reaction" "therapy" "effect" "interaction" "interactions" "drug interactions" "drug interaction" "therapist" "antibiotic" "antibiotics" "medicines" "stress" "methadone" 
+drug 97 :bactericide 6
+"influenza" "infection" "urinary tract infection" "foetal exposure during pregnancy" "cerebrovascular accident" "pulmonary embolism" "staphylococcal infection" "pulmonary oedema" "road traffic accident" "abortion spontaneous" "toxicity to various agents" "abnormal behaviour" "disease progression" "gastrointestinal haemorrhage" "septic shock" 
+"flu" "disease" "infection" "allergic" "sinus infection" "allergies" "allergy" "antibiotic" "antibiotics" "diarrhea" "heart attack" "arthritis" "diagnosed" "cold" "rash" 
+drug 98 :ritalin 6
+"osteonecrosis of jaw" "mobility decreased" "hot flush" "abnormal behaviour" "therapeutic response unexpected" "surgery" "therapeutic response decreased" "sleep disorder" "decreased appetite" "vision blurred" "toxicity to various agents" "abortion spontaneous" "dry mouth" "renal impairment" "pulmonary oedema" 
+"tapering" "tapered" "taper" "high" "high blood pressure" "swelling" "cold" "swollen" "spine" "legs" "leg" "toes" "burning" "neck" "reaction" 
+drug 99 :dopamine 6
+"therapeutic response decreased" "dry skin" "disturbance in attention" "heart rate increased" "eye pain" "vision blurred" "injection site warmth" "osteonecrosis of jaw" "memory impairment" "feeling hot" "therapeutic response unexpected" "mobility decreased" "loss of consciousness" "visual acuity reduced" "musculoskeletal pain" 
+"reaction" "reactions" "therapy" "allergic reaction" "eyes" "eye" "skin" "tapering" "tapered" "taper" "sensation" "swelling" "head" "high" "effect" 
+drug 100 :fentanyl 6
+"osteonecrosis of jaw" "fall" "hot flush" "injection site bruising" "dry skin" "dry mouth" "therapeutic response unexpected" "feeling hot" "therapeutic response decreased" "toxicity to various agents" "swelling face" "abortion spontaneous" "injection site swelling" "muscular weakness" "crying" 
+"period" "neck" "lips" "tongue" "spine" "mouth" "legs" "leg" "toes" "chest" "throat" "head" "stomach" "eyes" "eye" 
+drug 101 :luvox 6
+"aggression" "confusional state" "activities of daily living impaired" "injection site warmth" "sleep disorder" "nausea" "menstruation irregular" "visual acuity reduced" "agitation" "liver function test abnormal" "skin exfoliation" "gait disturbance" "crying" "anxiety" "rash pruritic" 
+"drowsiness" "mood" "fatigue" "anxiety" "suicidal" "sensation" "sleep" "anxiety attacks" "insomnia" "panic attacks" "panic attack" "panic disorder" "tremors" "sleeping pills" "nausea" 
+drug 102 :diclofenac 6
+"pulmonary embolism" "pulmonary oedema" "influenza" "dry mouth" "intestinal obstruction" "rash generalised" "herpes zoster" "dry skin" "diabetes mellitus" "rash" "malignant neoplasm progression" "pneumonia" "blister" "throat irritation" "rash pruritic" 
+"allergic" "diagnosed" "brain zaps" "nervous" "vomiting" "flu" "diarrhea" "rash" "mouth" "disease" "allergies" "allergy" "throat" "lungs" "stomach" 
+drug 103 :albuterol 6
+"disease progression" "hepatic enzyme increased" "toxicity to various agents" "pneumonia" "anaphylactic reaction" "influenza like illness" "intestinal obstruction" "visual acuity reduced" "septic shock" "malignant neoplasm progression" "oedema peripheral" "infusion related reaction" "chest discomfort" "memory impairment" "haemoglobin decreased" 
+"liver" "infection" "hypertension" "kidneys" "kidney" "metabolism" "sinus infection" "diagnosis" "arthritis" "diagnosed" "symptom" "lungs" "bleeding" "reaction" "reactions" 
+drug 104 :dilaudid 6
+"surgery" "musculoskeletal pain" "migraine" "headache" "oropharyngeal pain" "neck pain" "deep vein thrombosis" "multiple sclerosis" "platelet count decreased" "neutrophil count decreased" "femur fracture" "abdominal pain upper" "mobility decreased" "pain" "eye pain" 
+"surgery" "pains" "painful" "chronic pain" "chest pain" "chest pains" "swelling" "back pain" "pain med" "swollen" "headaches" "headache" "symptom" "bleeding" "therapy" 
+drug 105 :simvastatin 6
+"hepatic enzyme increased" "therapeutic response unexpected" "toxicity to various agents" "haemoglobin decreased" "septic shock" "blood glucose increased" "blood pressure decreased" "therapeutic response decreased" "hypertension" "abnormal behaviour" "oedema peripheral" "infusion related reaction" "disorientation" "blood cholesterol increased" "gastrointestinal haemorrhage" 
+"reaction" "reactions" "swelling" "vitamins" "vitamin" "metabolism" "acid reflux" "cholesterol" "high" "high blood pressure" "allergic reaction" "liver" "antibiotic" "antibiotics" "sugar" 
+drug 106 :mobic 5
+"septic shock" "nervousness" "alanine aminotransferase increased" "aspartate aminotransferase increased" "anxiety" "abnormal behaviour" "aggression" "agitation" "muscular weakness" "muscle spasms" "gait disturbance" "stress" "disorientation" "emotional distress" "confusional state" 
+"swelling" "high" "high blood pressure" "anxiety" "panic" "interaction" "interactions" "weight gain" "gain weight" "pains" "stress" "reaction" "reactions" "depression" "sensation" 
+drug 107 :geodon 5
+"muscular weakness" "dry mouth" "weight increased" "crying" "surgery" "abnormal behaviour" "confusional state" "osteonecrosis of jaw" "activities of daily living impaired" "weight decreased" "dry skin" "septic shock" "therapeutic response unexpected" "oedema peripheral" "product substitution issue" 
+"muscles" "fatigue" "mouth" "swelling" "weight" "drowsiness" "muscle spasms" "weight gain" "chest pain" "chest pains" "pains" "weight loss" "weakness" "gain weight" "breathing" 
+drug 108 :diazepam 5
+"anxiety" "suicidal ideation" "death" "product quality issue" "injection site pruritus" "nausea" "therapeutic response unexpected" "injection site erythema" "disturbance in attention" "device expulsion" "therapeutic response decreased" "multiple sclerosis relapse" "emotional distress" "withdrawal syndrome" "crying" 
+"drug free" "suicidal" "sleeping pills" "anxiety" "addicted" "panic" "addictive" "overdose" "allergic" "died" "depressed" "panic disorder" "nervous" "high" "anxious" 
+drug 109 :clonazepam 5
+"abortion spontaneous" "aggression" "pulmonary embolism" "general physical health deterioration" "confusional state" "diabetes mellitus" "cerebrovascular accident" "pulmonary oedema" "death" "anxiety" "suicidal ideation" "liver function test abnormal" "visual acuity reduced" "blood creatine phosphokinase increased" "depressed mood" 
+"allergic" "suicide" "pregnancy" "birth control" "diagnosed" "sex" "pregnant" "suicidal" "seizures" "seizure" "died" "weight loss" "smoking" "mood" "sexual side effects" 
+drug 110 :keppra 5
+"device expulsion" "diabetes mellitus" "gastrointestinal haemorrhage" "road traffic accident" "abortion spontaneous" "pulmonary embolism" "cerebrovascular accident" "vaginal haemorrhage" "pulmonary oedema" "malignant neoplasm progression" "cerebral haemorrhage" "rectal haemorrhage" "toxicity to various agents" "neoplasm malignant" "hot flush" 
+"seizures" "seizure" "suicide" "withdrawing" "withdraw" "pregnancy" "physical" "numbness" "birth control" "allergic" "diagnosed" "heart attack" "smoked" "pregnant" "vomiting" 
+drug 111 :amoxicillin 5
+"confusional state" "hepatic enzyme increased" "abnormal behaviour" "septic shock" "therapeutic response unexpected" "infusion related reaction" "anaphylactic reaction" "therapeutic response decreased" "toxicity to various agents" "injection site bruising" "abortion spontaneous" "foetal exposure during pregnancy" "injection site swelling" "menstruation irregular" "injection site reaction" 
+"mood" "drowsiness" "fatigue" "reaction" "reactions" "period" "anxiety" "swelling" "suicidal" "sleep" "nervous" "allergic reaction" "interaction" "interactions" "vitamins" 
+drug 112 :benicar 5
+"aggression" "fall" "blood pressure decreased" "suicide attempt" "stress" "renal failure acute" "osteonecrosis of jaw" "depressed mood" "abdominal pain upper" "headache" "feeling abnormal" "alanine aminotransferase increased" "aspartate aminotransferase increased" "burning sensation" "weight increased" 
+"suicide" "period" "anxiety attacks" "panic attacks" "panic attack" "suicidal" "stress" "anxiety" "died" "broke" "weight loss" "high blood pressure" "blood pressure" "depression" "high" 
+drug 113 :metronidazole 5
+"fall" "crying" "therapeutic response decreased" "dry mouth" "nausea" "deep vein thrombosis" "osteonecrosis of jaw" "general physical health deterioration" "injury" "chest discomfort" "feeling hot" "abdominal discomfort" "intestinal obstruction" "toxicity to various agents" "memory impairment" 
+"period" "died" "broke" "weakness" "weight loss" "high" "breath" "shaking" "cold" "painful" "mood swings" "swollen" "stress" "feet" "foot" 
+drug 114 :benzodiazepines 4
+"sleep disorder" "fall" "anxiety" "balance disorder" "hot flush" "disturbance in attention" "memory impairment" "extrapyramidal disorder" "cognitive disorder" "gastrointestinal disorder" "depression" "cardiac disorder" "depressed mood" "gait disturbance" "nervous system disorder" 
+"period" "panic disorder" "insomnia" "sleep" "disease" "epilepsy" "symptom" "weakness" "depression" "died" "broke" "anxiety" "hypertension" "stress" "withdrawal symptoms" 
+drug 115 :citalopram 4
+"anxiety" "weight increased" "weight decreased" "confusional state" "nervousness" "stress" "agitation" "international normalised ratio increased" "septic shock" "malaise" "emotional distress" "gait disturbance" "crying" "disorientation" "sleep disorder" 
+"mood" "drowsiness" "weight" "fatigue" "gain weight" "weight gain" "weight loss" "anxiety" "depression" "panic" "stress" "pains" "panic disorder" "high blood pressure" "sleep" 
+drug 116 :alprazolam 4
+"visual acuity reduced" "aggression" "suicidal ideation" "activities of daily living impaired" "death" "therapeutic response unexpected" "injection site erythema" "injection site pruritus" "renal impairment" "heart rate increased" "international normalised ratio increased" "abnormal behaviour" "memory impairment" "hot flush" "cognitive disorder" 
+"physical" "high" "high blood pressure" "brain" "suicidal" "sleeping pills" "heart rate" "breathing" "thyroid" "sexual side effects" "effect" "anxiety attacks" "sensation" "panic attacks" "panic attack" 
+drug 117 :avinza 4
+"activities of daily living impaired" "burning sensation" "femur fracture" "emotional distress" "weight increased" "feeling hot" "condition aggravated" "hot flush" "surgery" "neck pain" "bone pain" "oropharyngeal pain" "musculoskeletal pain" "weight decreased" "pain" 
+"exercise" "pains" "chronic pain" "sensation" "fatigue" "stress" "arthritis" "chest pain" "chest pains" "blood work" "back pain" "spine" "damage" "pain med" "swelling" 
+drug 118 :metoprolol 4
+"international normalised ratio increased" "activities of daily living impaired" "weight increased" "asthma" "hypertension" "foetal exposure during pregnancy" "blood pressure decreased" "weight decreased" "pulmonary oedema" "cataract" "multiple sclerosis relapse" "bronchitis" "rheumatoid arthritis" "arthritis" "pulmonary embolism" 
+"swelling" "heart rate" "high" "gain weight" "weight gain" "high blood pressure" "weight" "weight loss" "allergic" "function" "exercise" "metabolism" "symptom" "diagnosed" "blood work" 
+drug 119 :amfetamine 4
+"liver function test abnormal" "depressed mood" "completed suicide" "blood creatine phosphokinase increased" "pulmonary embolism" "pulmonary oedema" "condition aggravated" "product quality issue" "abnormal behaviour" "extrapyramidal disorder" "blood glucose increased" "toxicity to various agents" "blood cholesterol increased" "balance disorder" "cognitive disorder" 
+"allergic" "diagnosed" "suicide" "blood test" "liver" "tests" "brain zaps" "kidneys" "kidney" "blood" "suicidal" "function" "urine test" "blood work" "mood" 
+drug 120 :concerta 4
+"general physical health deterioration" "stress" "renal failure" "multi-organ failure" "device dislocation" "fluid retention" "gait disturbance" "fatigue" "amnesia" "aggression" "disturbance in attention" "vision blurred" "respiratory failure" "emotional distress" "nausea" 
+"weight loss" "damage" "physical" "weakness" "symptom" "fatigue" "withdrawal symptoms" "heart attack" "stress" "withdrawl symptoms" "suicide" "tired" "swelling" "seizures" "seizure" 
+drug 121 :demerol 4
+"crying" "surgery" "decreased appetite" "sleep disorder" "dry mouth" "influenza like illness" "osteonecrosis of jaw" "femur fracture" "dry skin" "abdominal pain upper" "intestinal obstruction" "coma" "confusional state" "nausea" "depressed mood" 
+"shaking" "awake" "sleeping" "vomiting" "sleeping pills" "died" "breath" "bleeding" "sleep" "sick" "surgery" "breathing" "pains" "mouth" "panic" 
+drug 122 :sudafed 4
+"aggression" "dry skin" "cerebrovascular accident" "urinary tract infection" "osteonecrosis of jaw" "road traffic accident" "device expulsion" "condition aggravated" "anxiety" "dry mouth" "nervousness" "infection" "staphylococcal infection" "death" "suicidal ideation" 
+"suicide" "heart attack" "damage" "pregnancy" "anxiety attacks" "anxiety" "suicidal" "panic attacks" "panic attack" "skin" "drunk" "seizures" "seizure" "died" "stress" 
+drug 123 :gabapentin 4
+"injection site bruising" "nausea" "product substitution issue" "burning sensation" "feeling hot" "injection site swelling" "toxicity to various agents" "feeling abnormal" "disorientation" "infusion related reaction" "joint swelling" "vision blurred" "migraine" "blister" "anorectal discomfort" 
+"drug free" "generic" "focus" "nausea" "injection" "drowsiness" "high" "rash" "itchy" "insomnia" "tremors" "swelling" "nauseous" "side effects" "muscle spasms" 
+drug 124 :skelaxin 4
+"feeling hot" "anaphylactic reaction" "heart rate increased" "disorientation" "bronchitis" "deep vein thrombosis" "swelling face" "herpes zoster" "malaise" "injection site reaction" "infusion related reaction" "lethargy" "blister" "headache" "flatulence" 
+"died" "hurting" "sensation" "burning" "reaction" "reactions" "pains" "cold" "painful" "heart" "tingling" "allergic reaction" "pain killers" "muscle spasms" "awake" 
+drug 125 :verapamil 4
+"dry skin" "depressed mood" "vision blurred" "heart rate increased" "feeling hot" "surgery" "dry mouth" "death" "toxicity to various agents" "osteonecrosis of jaw" "blood creatine phosphokinase increased" "disturbance in attention" "cardiac failure congestive" "interstitial lung disease" "hot flush" 
+"skin" "eyes" "eye" "heart" "brain" "throat" "head" "liver" "muscles" "lungs" "neck" "blood" "stomach" "mouth" "kidneys" 
+drug 126 :amiodarone 4
+"dry skin" "fall" "vision blurred" "hot flush" "surgery" "heart rate increased" "depressed mood" "toxicity to various agents" "dry mouth" "general physical health deterioration" "breast cancer" "nausea" "death" "low turnover osteopathy" "influenza like illness" 
+"period" "skin" "died" "broke" "cold" "head" "eyes" "eye" "high" "itchy" "brain" "feet" "foot" "liver" "lungs" 
+drug 127 :statins 4
+"anorectal discomfort" "nausea" "chest pain" "chest discomfort" "emotional distress" "abdominal discomfort" "disorientation" "neck pain" "blood pressure decreased" "oropharyngeal pain" "musculoskeletal pain" "septic shock" "bone pain" "abdominal pain" "hypertension" 
+"nausea" "pains" "chest pain" "chest pains" "chronic pain" "drowsiness" "insomnia" "back pain" "tremors" "pain med" "headaches" "headache" "muscle spasms" "fatigue" "rash" 
+drug 128 :chantix 4
+"depressed mood" "gait disturbance" "disturbance in attention" "sleep disorder" "vision blurred" "crying" "hot flush" "decreased appetite" "burning sensation" "malignant neoplasm progression" "memory impairment" "disorientation" "blood creatine phosphokinase increased" "blood creatinine increased" "blood cholesterol increased" 
+"mood" "depressed" "insomnia" "panic disorder" "mood swings" "sleep" "tremors" "anxiety" "seizures" "seizure" "depression" "panic" "symptom" "dizziness" "fatigue" 
+drug 129 :clindamycin 4
+"renal failure" "osteonecrosis of jaw" "gait disturbance" "multi-organ failure" "intestinal obstruction" "nausea" "chest discomfort" "dry mouth" "rash generalised" "renal impairment" "memory impairment" "sleep disorder" "cardiac failure" "visual impairment" "lethargy" 
+"weight loss" "weakness" "damage" "heart attack" "suicide" "seizures" "seizure" "severe" "muscle spasms" "insomnia" "disease" "nausea" "broke" "tests" "mouth" 
+drug 130 :metformin 4
+"nausea" "activities of daily living impaired" "deep vein thrombosis" "pulmonary oedema" "pulmonary embolism" "abnormal behaviour" "toxicity to various agents" "hot flush" "aspartate aminotransferase increased" "alanine aminotransferase increased" "abdominal distension" "diabetes mellitus" "impaired healing" "septic shock" "mobility decreased" 
+"allergic" "diagnosed" "painful" "brain zaps" "swollen" "swelling" "nervous" "exercise" "nausea" "blood work" "drowsiness" "high" "insomnia" "vomiting" "tremors" 
+drug 131 :keflex 4
+"surgery" "pulmonary embolism" "swelling face" "pulmonary oedema" "dry skin" "influenza" "completed suicide" "femur fracture" "injection site bruising" "death" "feeling hot" "injury" "dry mouth" "urinary tract infection" "osteonecrosis of jaw" 
+"allergic" "diagnosed" "surgery" "brain zaps" "nervous" "therapy" "vomiting" "patients" "pains" "bleeding" "medicines" "diagnosis" "chest pain" "chest pains" "chronic pain" 
+drug 132 :niacin 3
+"anaphylactic reaction" "rash generalised" "nausea" "therapeutic response unexpected" "confusional state" "therapeutic response decreased" "blister" "injection site reaction" "rash" "infusion related reaction" "injection site rash" "transient ischaemic attack" "abortion spontaneous" "menstruation irregular" "disorientation" 
+"reaction" "reactions" "allergic reaction" "effect" "allergies" "allergy" "symptom" "interaction" "interactions" "allergic" "withdrawal symptoms" "side effects" "drug interactions" "drug interaction" "mood" 
+drug 133 :mirapex 3
+"sleep disorder" "condition aggravated" "mental disorder" "low turnover osteopathy" "visual acuity reduced" "hot flush" "gait disturbance" "osteonecrosis of jaw" "therapeutic response decreased" "therapeutic response unexpected" "product substitution issue" "dry skin" "mobility decreased" "depressed mood" "completed suicide" 
+"high" "panic disorder" "depression" "depressed" "disease" "physical" "mood" "symptom" "epilepsy" "chronic pain" "severe" "sleep" "stress" "withdrawal symptoms" "mood swings" 
+drug 134 :toradol 3
+"sleep disorder" "low turnover osteopathy" "deep vein thrombosis" "completed suicide" "depressed mood" "toxicity to various agents" "gait disturbance" "multiple sclerosis relapse" "depression" "coma" "amnesia" "vision blurred" "suicidal ideation" "insomnia" "disturbance in attention" 
+"high" "painful" "depressed" "swollen" "swelling" "sleep" "brain zaps" "disease" "panic disorder" "sleeping" "hurting" "insomnia" "epilepsy" "symptom" "hypertension" 
+drug 135 :vioxx 3
+"nausea" "death" "disorientation" "osteonecrosis of jaw" "fall" "feeling hot" "injection site bruising" "chest discomfort" "flatulence" "cardiac arrest" "chest pain" "blister" "dizziness" "bronchitis" "anorectal discomfort" 
+"died" "nausea" "drowsiness" "suicide" "insomnia" "weight loss" "muscle spasms" "tremors" "cold" "heart" "period" "migraine" "rash" "pain killers" "chest pain" 
+drug 136 :restoril 3
+"fluid retention" "stress" "anxiety" "multiple sclerosis relapse" "sleep disorder" "aggression" "confusional state" "surgery" "fall" "suicidal ideation" "depressed mood" "death" "gastrointestinal disorder" "femur fracture" "therapeutic response decreased" 
+"fatigue" "swelling" "weight loss" "nervous" "tolerance" "wean" "addictive" "metabolism" "blood pressure" "constipation" "diarrhea" "high blood pressure" "nausea" "urine" "vomiting" 
+drug 137 :zocor 3
+"disorientation" "septic shock" "activities of daily living impaired" "infusion related reaction" "therapeutic response unexpected" "rash erythematous" "rash pruritic" "blood glucose increased" "toxicity to various agents" "hepatic enzyme increased" "blood pressure increased" "constipation" "blister" "blood cholesterol increased" "cardiac arrest" 
+"dizziness" "drowsiness" "reaction" "reactions" "numbness" "suicidal" "vomiting" "tremors" "nausea" "interaction" "interactions" "panic" "allergic reaction" "insomnia" "exercise" 
+drug 138 :viagra 3
+"hot flush" "septic shock" "anaphylactic reaction" "nausea" "rash erythematous" "crying" "injection site reaction" "chills" "infusion related reaction" "fall" "rash pruritic" "therapeutic response unexpected" "injection site warmth" "abnormal behaviour" "visual acuity reduced" 
+"cold" "reaction" "reactions" "burning" "panic" "injection" "allergic reaction" "interaction" "interactions" "sensation" "itchy" "anxious" "depressed" "effect" "drug interactions" 
+drug 139 :prevacid 3
+"therapeutic response unexpected" "hepatic enzyme increased" "oedema peripheral" "blood glucose increased" "surgery" "toxicity to various agents" "intestinal obstruction" "blood cholesterol increased" "haemoglobin decreased" "blood creatine phosphokinase increased" "neuropathy peripheral" "blood creatinine increased" "liver function test abnormal" "therapeutic response decreased" "dry skin" 
+"reaction" "reactions" "therapy" "allergic reaction" "vitamins" "vitamin" "metabolism" "liver" "antibiotic" "antibiotics" "cholesterol" "therapist" "swelling" "effect" "medicines" 
+drug 140 :atarax 3
+"osteonecrosis of jaw" "dry mouth" "weight decreased" "hot flush" "dry skin" "joint swelling" "deep vein thrombosis" "weight increased" "low turnover osteopathy" "nausea" "musculoskeletal stiffness" "swelling" "blister" "burning sensation" "feeling hot" 
+"high" "mouth" "swollen" "neck" "lips" "tongue" "throat" "legs" "leg" "toes" "spine" "stomach" "swelling" "chest" "painful" 
+drug 141 :fluoroquinolones 3
+"road traffic accident" "deep vein thrombosis" "dry mouth" "memory impairment" "osteonecrosis of jaw" "burning sensation" "general physical health deterioration" "injury" "confusional state" "alanine aminotransferase increased" "dry skin" "aspartate aminotransferase increased" "emotional distress" "multiple sclerosis" "flatulence" 
+"suicide" "heart attack" "damage" "painful" "swollen" "swelling" "drunk" "pregnancy" "high" "feet" "foot" "died" "brain zaps" "hurting" "alcohol" 
+drug 142 :phenergan 3
+"vision blurred" "surgery" "crying" "nausea" "dry mouth" "burning sensation" "dry skin" "influenza like illness" "osteonecrosis of jaw" "abdominal pain upper" "anaphylactic reaction" "disturbance in attention" "injection site bruising" "cataract" "sleep disorder" 
+"surgery" "drowsiness" "nausea" "itchy" "insomnia" "dizziness" "constipation" "eyes" "eye" "kidneys" "kidney" "sleep" "swollen" "bleeding" "diarrhea" 
+drug 143 :mirtazapine 3
+"hot flush" "renal impairment" "road traffic accident" "sleep disorder" "memory impairment" "extrapyramidal disorder" "gastrointestinal disorder" "cognitive disorder" "condition aggravated" "completed suicide" "impaired healing" "visual impairment" "nervous system disorder" "mental disorder" "balance disorder" 
+"cold" "burning" "injection" "itchy" "damage" "anxious" "panic disorder" "drinks" "drink" "drinking" "tremors" "smoke" "panic" "high" "energy" 
+drug 144 :arthritis 3
+"femur fracture" "injection site bruising" "headache" "surgery" "neoplasm malignant" "therapeutic response decreased" "migraine" "arthritis" "disease progression" "infusion related reaction" "multiple sclerosis" "blister" "asthma" "abdominal pain upper" "pulmonary embolism" 
+"spine" "arthritis" "surgery" "heart attack" "stress" "bleeding" "hypertension" "swelling" "fatigue" "injection" "toes" "infection" "neck" "hospital" "sinus infection" 
+drug 145 :dilantin 3
+"therapeutic response unexpected" "injection site pruritus" "device expulsion" "injection site erythema" "abnormal behaviour" "injection site reaction" "anaphylactic reaction" "therapeutic response decreased" "toxicity to various agents" "septic shock" "infusion related reaction" "aggression" "transient ischaemic attack" "mobility decreased" "gait disturbance" 
+"sleeping pills" "reaction" "reactions" "therapy" "allergic reaction" "seizures" "seizure" "withdrawing" "withdraw" "drug free" "addictive" "effect" "therapist" "overdose" "drug interactions" 
+drug 146 :multivitamin 3
+"blood cholesterol increased" "oedema peripheral" "septic shock" "abnormal behaviour" "blood glucose increased" "malignant neoplasm progression" "cerebrovascular accident" "neoplasm malignant" "road traffic accident" "renal impairment" "impaired healing" "haemoglobin decreased" "activities of daily living impaired" "intestinal obstruction" "blood creatine phosphokinase increased" 
+"blood" "cholesterol" "blood work" "liver" "kidneys" "kidney" "blood test" "heart attack" "lungs" "blood pressure" "suicide" "high blood pressure" "swelling" "brain" "hypertension" 
+drug 147 :sibutramine 3
+"swelling face" "toxicity to various agents" "weight increased" "international normalised ratio increased" "weight decreased" "rash pruritic" "rash erythematous" "musculoskeletal stiffness" "memory impairment" "osteonecrosis of jaw" "dry mouth" "feeling hot" "abdominal distension" "dry skin" "heart rate increased" 
+"swelling" "face" "side effects" "bleeding" "fatigue" "allergic" "drug interactions" "drug interaction" "nausea" "metabolism" "swollen" "weight" "allergic reaction" "symptom" "chronic pain" 
+drug 148 :ephedra 3
+"activities of daily living impaired" "death" "feeling hot" "heart rate increased" "swelling face" "depressed mood" "blood cholesterol increased" "abnormal behaviour" "product quality issue" "liver function test abnormal" "feeling abnormal" "blood glucose increased" "disturbance in attention" "dry skin" "weight increased" 
+"exercise" "died" "blood work" "anxiety attacks" "panic attacks" "panic attack" "damage" "function" "drinking" "panic disorder" "metabolism" "sleeping" "severe" "depressed" "diet" 
+drug 149 :aciphex 3
+"intestinal obstruction" "osteonecrosis of jaw" "headache" "haemoglobin decreased" "blood glucose increased" "dry skin" "blood cholesterol increased" "dry mouth" "injection site bruising" "menstruation irregular" "oedema peripheral" "therapeutic response unexpected" "abdominal pain upper" "therapeutic response decreased" "infusion related reaction" 
+"liver" "kidneys" "kidney" "lungs" "stomach" "bleeding" "muscle spasms" "diarrhea" "throat" "rash" "constipation" "mouth" "chest" "neck" "hypertension" 
+drug 150 :lamisil 3
+"oedema peripheral" "burning sensation" "stress" "device dislocation" "blood creatine phosphokinase increased" "decreased appetite" "liver function test abnormal" "blood creatinine increased" "condition aggravated" "malignant neoplasm progression" "white blood cell count decreased" "neoplasm malignant" "blood glucose increased" "intestinal obstruction" "femur fracture" 
+"kidneys" "kidney" "liver" "muscles" "brain" "blood" "lungs" "muscle spasms" "blood test" "blood work" "heart" "metabolism" "brain zaps" "cholesterol" "sensation" 
+drug 151 :nicotine 3
+"malignant neoplasm progression" "abortion spontaneous" "hot flush" "general physical health deterioration" "foetal exposure during pregnancy" "multiple sclerosis relapse" "depressed mood" "diabetes mellitus" "blood cholesterol increased" "nausea" "impaired healing" "vision blurred" "blood glucose increased" "exposure during pregnancy" "blood creatine phosphokinase increased" 
+"liver" "bleeding" "kidneys" "kidney" "diagnosed" "lungs" "allergic" "pregnancy" "diagnosis" "birth control" "hypertension" "smoking" "epilepsy" "arthritis" "addictive" 
+drug 152 :methotrexate 3
+"blood creatine phosphokinase increased" "neuropathy peripheral" "intestinal obstruction" "alanine aminotransferase increased" "blood creatinine increased" "aspartate aminotransferase increased" "lung neoplasm malignant" "oedema peripheral" "neoplasm malignant" "liver function test abnormal" "white blood cell count increased" "malignant neoplasm progression" "decreased appetite" "cataract" "heart rate increased" 
+"swelling" "blood" "high" "high blood pressure" "blood test" "liver" "kidneys" "kidney" "blood work" "lungs" "urine" "heart rate" "brain" "heart" "urine test" 
+drug 153 :meclizine 3
+"nausea" "toxicity to various agents" "confusional state" "disorientation" "malaise" "convulsion" "rash generalised" "hot flush" "flatulence" "dizziness" "dehydration" "lethargy" "irritability" "nervousness" "bronchitis" 
+"drowsiness" "nausea" "insomnia" "tremors" "nauseous" "migraine" "side effects" "rash" "muscle spasms" "itchy" "cold" "swelling" "chronic pain" "breathing" "chest pain" 
+drug 154 :avapro 3
+"nausea" "disorientation" "cerebrovascular accident" "road traffic accident" "dizziness" "malaise" "irritability" "gait disturbance" "hypertension" "tremor" "lethargy" "flatulence" "anorectal discomfort" "headache" "blood pressure decreased" 
+"suicide" "heart attack" "nausea" "drowsiness" "insomnia" "tremors" "migraine" "damage" "muscle spasms" "rash" "dizziness" "numbness" "side effects" "nauseous" "constipation" 
+drug 155 :antihistamines 3
+"fall" "neutrophil count decreased" "product quality issue" "bronchitis" "disorientation" "memory impairment" "blister" "transient ischaemic attack" "malaise" "condition aggravated" "platelet count decreased" "skin exfoliation" "injection site reaction" "osteonecrosis of jaw" "visual acuity reduced" 
+"period" "drug free" "high" "died" "broke" "weight loss" "tapering" "tapered" "taper" "weakness" "cold" "high blood pressure" "mood swings" "damage" "weight" 
+drug 156 :lidocaine 3
+"influenza" "therapeutic response unexpected" "dry mouth" "anaphylactic reaction" "fall" "bronchitis" "pulmonary oedema" "surgery" "abortion spontaneous" "pulmonary embolism" "therapeutic response decreased" "injection site reaction" "crying" "coma" "wheezing" 
+"allergic" "reaction" "reactions" "flu" "allergic reaction" "diagnosed" "period" "allergies" "allergy" "disease" "therapy" "antibiotic" "antibiotics" "cold" "mouth" 
+drug 157 :naprosyn 3
+"bronchitis" "pulmonary oedema" "asthma" "blister" "pulmonary embolism" "intestinal obstruction" "nasal congestion" "dry mouth" "influenza" "cough" "wheezing" "malignant neoplasm progression" "neoplasm malignant" "lung neoplasm malignant" "throat irritation" 
+"allergic" "diagnosed" "vomiting" "brain zaps" "nervous" "diarrhea" "constipation" "allergies" "allergy" "migraine" "migraines" "rash" "arthritis" "hypertension" "nausea" 
+drug 158 :tobacco 3
+"dry mouth" "impaired healing" "flatulence" "depressed mood" "decreased appetite" "device expulsion" "fall" "platelet count decreased" "mobility decreased" "bronchitis" "blood glucose increased" "neutrophil count decreased" "transient ischaemic attack" "cardiac arrest" "disorientation" 
+"depressed" "seizures" "seizure" "panic disorder" "high" "damage" "drowsiness" "mouth" "dizziness" "addicted" "severe" "metabolism" "tapering" "tapered" "taper" 
+drug 159 :erythromycin 3
+"deep vein thrombosis" "bronchitis" "disorientation" "multiple sclerosis" "flatulence" "cardiac arrest" "gait disturbance" "memory impairment" "gastrointestinal haemorrhage" "malaise" "abnormal behaviour" "injection site haemorrhage" "impaired healing" "dizziness" "haemorrhage" 
+"painful" "swollen" "swelling" "high" "brain zaps" "hurting" "constipation" "dizziness" "diarrhea" "insomnia" "migraine" "migraines" "nausea" "drowsiness" "arthritis" 
+drug 160 :isosorbide 3
+"chest pain" "chest discomfort" "neck pain" "musculoskeletal pain" "oropharyngeal pain" "emotional distress" "abdominal pain" "pain" "abdominal discomfort" "anorectal discomfort" "back pain" "eye pain" "nasal congestion" "bone pain" "throat irritation" 
+"chest pain" "chest pains" "pains" "chronic pain" "chest" "back pain" "symptom" "headaches" "headache" "pain med" "sensation" "painful" "withdrawal symptoms" "migraine" "migraines" 
+drug 161 :naps 3
+"weight increased" "international normalised ratio increased" "hot flush" "general physical health deterioration" "multi-organ failure" "renal failure" "cardiac failure" "weight decreased" "muscular weakness" "respiratory failure" "heart rate increased" "crying" "depressed mood" "abortion spontaneous" "injection site bruising" 
+"weight loss" "swelling" "weight gain" "gain weight" "weight" "high" "heart rate" "high blood pressure" "depression" "symptom" "weakness" "physical" "diet" "function" "stress" 
+drug 162 :altace 3
+"vision blurred" "dry skin" "abortion spontaneous" "depressed mood" "hypertension" "dry mouth" "blood creatine phosphokinase increased" "oedema peripheral" "asthma" "eye pain" "blood pressure decreased" "toxicity to various agents" "blood glucose increased" "breast cancer" "menstruation irregular" 
+"eyes" "eye" "drowsiness" "dizziness" "constipation" "nausea" "itchy" "kidneys" "kidney" "insomnia" "diarrhea" "numbness" "brain" "swollen" "migraine" 
+drug 163 :carvedilol 3
+"international normalised ratio increased" "gastrooesophageal reflux disease" "renal failure acute" "nausea" "toxicity to various agents" "weight increased" "respiratory failure" "crohn's disease" "cardiac failure" "extrapyramidal disorder" "breast cancer" "chronic obstructive pulmonary disease" "weight decreased" "surgery" "gastrointestinal disorder" 
+"swelling" "heart rate" "high" "gain weight" "weight gain" "high blood pressure" "weight loss" "weight" "symptom" "function" "metabolism" "disease" "hypertension" "infection" "chronic pain" 
+drug 164 :depo 3
+"abortion spontaneous" "international normalised ratio increased" "fall" "injection site bruising" "weight increased" "foetal exposure during pregnancy" "weight decreased" "injection site swelling" "therapeutic response unexpected" "nausea" "infusion related reaction" "injection site reaction" "therapeutic response decreased" "menstruation irregular" "headache" 
+"birth control" "pregnancy" "weight loss" "died" "suicide" "swelling" "sex" "period" "high" "pregnant" "marijuana" "heart rate" "sexual side effects" "smoking" "gain weight" 
+drug 165 :ecstasy 3
+"osteonecrosis of jaw" "abortion spontaneous" "headache" "septic shock" "loss of consciousness" "visual acuity reduced" "dry mouth" "gait disturbance" "injection site bruising" "tremor" "musculoskeletal stiffness" "dry skin" "disturbance in attention" "influenza" "fall" 
+"birth control" "pregnancy" "weight loss" "chest pain" "chest pains" "neck" "mouth" "lips" "sexual side effects" "tongue" "sensation" "spine" "pains" "eyes" "eye" 
+drug 166 :bextra 3
+"dry skin" "death" "rash pruritic" "surgery" "rash erythematous" "osteonecrosis of jaw" "blood creatine phosphokinase increased" "suicidal ideation" "road traffic accident" "feeling hot" "low turnover osteopathy" "blood creatinine increased" "depressed mood" "pulmonary embolism" "pulmonary oedema" 
+"suicidal" "allergic" "vomiting" "high" "overdose" "died" "suicide" "itchy" "swelling" "tingling" "blood" "itching" "skin" "swollen" "heart attack" 
+drug 167 :agon 3
+"crying" "dry mouth" "fall" "feeling hot" "osteonecrosis of jaw" "surgery" "dry skin" "decreased appetite" "completed suicide" "heart rate increased" "abdominal pain upper" "influenza" "deep vein thrombosis" "disturbance in attention" "vision blurred" 
+"period" "died" "mouth" "shaking" "breath" "vomiting" "lips" "awake" "sleeping" "throat" "broke" "breathing" "tongue" "hands" "hand" 
+drug 168 :sulfa 3
+"abortion spontaneous" "dry mouth" "burning sensation" "decreased appetite" "visual acuity reduced" "foetal exposure during pregnancy" "exposure during pregnancy" "osteonecrosis of jaw" "abnormal behaviour" "hot flush" "visual impairment" "throat irritation" "disturbance in attention" "nasal congestion" "vision blurred" 
+"birth control" "pregnancy" "suicide" "sex" "died" "pregnant" "sexual side effects" "burning" "smoking" "weight loss" "seizures" "seizure" "marijuana" "bleeding" "mouth" 
+drug 169 :fioricet 3
+"depression" "neck pain" "amnesia" "anxiety" "musculoskeletal pain" "oropharyngeal pain" "osteonecrosis of jaw" "multiple sclerosis relapse" "migraine" "chest pain" "bone pain" "back pain" "malaise" "nervousness" "hallucination" 
+"depression" "migraine" "migraines" "anxiety" "headaches" "headache" "pains" "insomnia" "chest pain" "chest pains" "symptom" "chronic pain" "nausea" "panic" "back pain" 
+drug 170 :buspar 3
+"blood cholesterol increased" "suicide attempt" "transient ischaemic attack" "blood glucose increased" "abortion spontaneous" "multiple sclerosis relapse" "renal impairment" "depression" "gastrointestinal disorder" "cognitive disorder" "extrapyramidal disorder" "memory impairment" "haemoglobin decreased" "balance disorder" "visual impairment" 
+"suicide" "anxiety attacks" "panic attacks" "panic attack" "suicidal" "cholesterol" "blood" "blood test" "blood pressure" "blood work" "high blood pressure" "urine" "vitamins" "vitamin" "steroids" 
+drug 171 :opioid 3
+"surgery" "injection site bruising" "crohn's disease" "renal failure acute" "burning sensation" "general physical health deterioration" "infusion related reaction" "injection site swelling" "toxicity to various agents" "abdominal pain upper" "femur fracture" "therapeutic response decreased" "gastrooesophageal reflux disease" "feeling abnormal" "influenza like illness" 
+"surgery" "therapy" "patients" "pains" "diagnosis" "medicines" "bleeding" "chronic pain" "chest pain" "chest pains" "physician" "hospital" "infection" "back pain" "pain med" 
+drug 172 :cefalexin 3
+"chills" "osteonecrosis of jaw" "abortion spontaneous" "mobility decreased" "general physical health deterioration" "fatigue" "staphylococcal infection" "infection" "headache" "chest pain" "oropharyngeal pain" "musculoskeletal pain" "pain in extremity" "vision blurred" "tremor" 
+"cold" "neck" "legs" "leg" "muscle spasms" "numbness" "spine" "sensation" "tingling" "stomach" "lips" "throat" "tongue" "chest" "mouth" 
+drug 173 :aleve 3
+"anaphylactic reaction" "product substitution issue" "injection site reaction" "therapeutic response unexpected" "dry mouth" "pulmonary embolism" "osteonecrosis of jaw" "pulmonary oedema" "crying" "infusion related reaction" "therapeutic response decreased" "swelling face" "chest discomfort" "throat irritation" "septic shock" 
+"drug free" "generic" "reaction" "reactions" "allergic reaction" "focus" "effect" "high" "allergies" "allergy" "allergic" "interaction" "interactions" "symptom" "withdrawal symptoms" 
+drug 174 :chlomipramine 3
+"dry skin" "multiple sclerosis relapse" "nausea" "low turnover osteopathy" "flatulence" "fall" "skin discolouration" "amnesia" "skin exfoliation" "vision blurred" "menstruation irregular" "memory impairment" "depressed mood" "malaise" "osteonecrosis of jaw" 
+"high" "skin" "itchy" "brain zaps" "depressed" "throat" "rash" "liver" "allergic" "stomach" "swelling" "eyes" "eye" "neck" "muscles" 
+drug 175 :methamphetamine 3
+"suicidal ideation" "stress" "hot flush" "diabetes mellitus" "fall" "condition aggravated" "device dislocation" "injection site warmth" "multiple sclerosis relapse" "foetal exposure during pregnancy" "depression" "injection site bruising" "exposure during pregnancy" "blood glucose increased" "aggression" 
+"suicidal" "allergic" "overdose" "smoked" "depressed" "diagnosed" "addicted" "addictive" "anxious" "drunk" "pregnant" "vomiting" "stress" "nervous" "cold" 
+drug 176 :flagyl 3
+"anaphylactic reaction" "osteonecrosis of jaw" "sleep disorder" "injection site reaction" "therapeutic response unexpected" "urinary tract infection" "infection" "staphylococcal infection" "crying" "injection site pruritus" "therapeutic response decreased" "influenza" "vision blurred" "dry mouth" "injection site bruising" 
+"reaction" "reactions" "allergic reaction" "effect" "allergies" "allergy" "symptom" "withdrawal symptoms" "interaction" "interactions" "mouth" "neck" "allergic" "panic disorder" "withdrawl symptoms" 
+drug 177 :inderal 3
+"abnormal behaviour" "malignant neoplasm progression" "product substitution issue" "septic shock" "liver function test abnormal" "neoplasm malignant" "deep vein thrombosis" "cardiac failure congestive" "wheezing" "therapeutic response decreased" "blood creatine phosphokinase increased" "foetal exposure during pregnancy" "heart rate increased" "lung neoplasm malignant" "intestinal obstruction" 
+"drug free" "generic" "diagnosed" "focus" "interaction" "interactions" "liver" "panic disorder" "swollen" "blood work" "kidneys" "kidney" "high" "swelling" "reaction" 
+drug 178 :conal 3
+"disturbance in attention" "osteonecrosis of jaw" "condition aggravated" "depressed mood" "vision blurred" "crying" "fall" "cerebrovascular accident" "heart rate increased" "septic shock" "road traffic accident" "stress" "gait disturbance" "sleep disorder" "anxiety" 
+"panic disorder" "mood" "eyes" "eye" "mood swings" "suicide" "period" "damage" "depression" "stress" "heart attack" "insomnia" "depressed" "anxiety" "head" 
+drug 179 :tris 3
+"blood pressure decreased" "blood creatine phosphokinase increased" "menstruation irregular" "liver function test abnormal" "transient ischaemic attack" "aggression" "foetal exposure during pregnancy" "anxiety" "extrapyramidal disorder" "migraine" "disease progression" "abortion spontaneous" "renal disorder" "product quality issue" "gastrointestinal disorder" 
+"blood pressure" "hypertension" "high blood pressure" "blood" "cholesterol" "blood test" "urine" "liver" "anxiety attacks" "kidneys" "kidney" "bleeding" "insomnia" "migraine" "migraines" 
+drug 180 :tetracycline 3
+"abortion spontaneous" "therapeutic response unexpected" "hepatic enzyme increased" "swelling face" "stress" "influenza" "device dislocation" "aggression" "therapeutic response decreased" "abnormal behaviour" "dry mouth" "activities of daily living impaired" "exposure during pregnancy" "feeling hot" "femur fracture" 
+"birth control" "pregnancy" "reaction" "reactions" "suicide" "allergic reaction" "sex" "swelling" "weight loss" "sexual side effects" "pregnant" "died" "smoking" "seizures" "seizure" 
+drug 181 :nytol 2
+"headache" "sleep disorder" "injection site pruritus" "bronchitis" "dry mouth" "injection site erythema" "nasal congestion" "migraine" "menstruation irregular" "insomnia" "cough" "crying" "amnesia" "wheezing" "constipation" 
+"sleeping pills" "insomnia" "migraine" "migraines" "headaches" "headache" "sleep" "itching" "itchy" "constipation" "diarrhea" "dizziness" "swelling" "overdose" "hypertension" 
+drug 182 :modafinil 2
+"septic shock" "abnormal behaviour" "confusional state" "fluid retention" "impaired healing" "therapeutic response unexpected" "product quality issue" "toxicity to various agents" "mobility decreased" "therapeutic response decreased" "activities of daily living impaired" "anaphylactic reaction" "infusion related reaction" "aggression" "injection site reaction" 
+"mood" "interaction" "interactions" "drowsiness" "reaction" "reactions" "fatigue" "stress" "drug interactions" "drug interaction" "allergic reaction" "pains" "panic" "anxiety" "chest pain" 
+drug 183 :nizoral 2
+"dry skin" "anaphylactic reaction" "rash generalised" "skin discolouration" "skin exfoliation" "injection site reaction" "rash" "blister" "therapeutic response unexpected" "therapeutic response decreased" "nausea" "injection site rash" "condition aggravated" "dry mouth" "transient ischaemic attack" 
+"brain zaps" "itchy" "allergic" "skin" "reaction" "reactions" "swelling" "rash" "allergic reaction" "itching" "swollen" "nervous" "allergies" "allergy" "painful" 
+drug 184 :lasix 2
+"blood cholesterol increased" "abnormal behaviour" "toxicity to various agents" "abortion spontaneous" "blood glucose increased" "haemoglobin decreased" "therapeutic response unexpected" "anaphylactic reaction" "nausea" "blood pressure decreased" "aspartate aminotransferase increased" "activities of daily living impaired" "therapeutic response decreased" "hypertension" "surgery" 
+"blood work" "panic disorder" "swelling" "interaction" "interactions" "cholesterol" "blood" "drug interactions" "drug interaction" "mood" "reaction" "reactions" "swollen" "diagnosed" "allergic reaction" 
+drug 185 :propanolol 2
+"disorientation" "multiple sclerosis" "bronchitis" "cardiac arrest" "memory impairment" "gait disturbance" "flatulence" "malaise" "lethargy" "vision blurred" "dizziness" "gastrointestinal haemorrhage" "haemorrhage" "injection site haemorrhage" "amnesia" 
+"dizziness" "numbness" "drowsiness" "insomnia" "nausea" "tremors" "constipation" "headaches" "headache" "migraine" "migraines" "diarrhea" "fatigue" "muscle spasms" "panic" 
+drug 186 :zolpidem 2
+"multiple sclerosis relapse" "menstruation irregular" "flatulence" "hallucination" "vomiting" "migraine" "nausea" "malaise" "insomnia" "amnesia" "depression" "bronchitis" "multiple sclerosis" "wheezing" "tremor" 
+"epilepsy" "arthritis" "migraine" "migraines" "hypertension" "insomnia" "heart attack" "addiction" "methadone" "constipation" "suicidal" "nausea" "allergies" "allergy" "addictive" 
+drug 187 :voltaren 2
+"pulmonary embolism" "therapeutic response unexpected" "dry mouth" "rash pruritic" "product substitution issue" "anaphylactic reaction" "rash erythematous" "injection site reaction" "pulmonary oedema" "diabetes mellitus" "infusion related reaction" "therapeutic response decreased" "crying" "osteonecrosis of jaw" "injection site warmth" 
+"allergic" "diagnosed" "drug free" "vomiting" "generic" "suicidal" "brain zaps" "nervous" "reaction" "reactions" "overdose" "focus" "allergic reaction" "itchy" "high" 
+drug 188 :barbiturate 2
+"blood pressure decreased" "liver function test abnormal" "blood creatine phosphokinase increased" "migraine" "transient ischaemic attack" "anxiety" "aggression" "extrapyramidal disorder" "abortion spontaneous" "gastrointestinal disorder" "blood cholesterol increased" "renal disorder" "blood glucose increased" "menstruation irregular" "haemoglobin decreased" 
+"blood pressure" "hypertension" "high blood pressure" "blood" "cholesterol" "blood test" "liver" "anxiety attacks" "kidneys" "kidney" "symptom" "urine test" "urine" "insomnia" "swelling" 
+drug 189 :metadate 2
+"sleep disorder" "product substitution issue" "osteonecrosis of jaw" "mental disorder" "road traffic accident" "dry skin" "impaired healing" "gait disturbance" "fall" "dry mouth" "depressed mood" "condition aggravated" "completed suicide" "cognitive disorder" "therapeutic response decreased" 
+"drug free" "generic" "sleep" "disease" "panic disorder" "focus" "sleeping" "epilepsy" "insomnia" "symptom" "hypertension" "high" "sleeping pills" "depression" "chronic pain" 
+drug 190 :mdma 2
+"abortion spontaneous" "diabetes mellitus" "foetal exposure during pregnancy" "blood cholesterol increased" "activities of daily living impaired" "abnormal behaviour" "multiple sclerosis relapse" "blood glucose increased" "renal impairment" "depression" "exposure during pregnancy" "device expulsion" "cognitive disorder" "extrapyramidal disorder" "gastrointestinal disorder" 
+"birth control" "pregnancy" "suicide" "sex" "pregnant" "died" "sexual side effects" "weight loss" "smoking" "marijuana" "seizures" "seizure" "bleeding" "burning" "allergic reaction" 
+drug 191 :augmentin 2
+"memory impairment" "dry skin" "fall" "influenza" "international normalised ratio increased" "hot flush" "heart rate increased" "depressed mood" "condition aggravated" "lung neoplasm malignant" "blood creatine phosphokinase increased" "white blood cell count increased" "white blood cell count decreased" "osteonecrosis of jaw" "suicidal ideation" 
+"period" "damage" "weight loss" "swelling" "high" "head" "disease" "cold" "flu" "skin" "weakness" "died" "broke" "heart rate" "gain weight" 
+drug 192 :extra 2
+"weight increased" "abdominal pain upper" "influenza like illness" "depressed mood" "weight decreased" "oropharyngeal pain" "pain" "influenza" "surgery" "neck pain" "headache" "bone pain" "eye pain" "nervousness" "burning sensation" 
+"weight" "gain weight" "weight gain" "weight loss" "pains" "depression" "swelling" "chest pain" "chest pains" "chronic pain" "back pain" "disease" "pain med" "symptom" "high blood pressure" 
+drug 193 :pepcid 2
+"memory impairment" "burning sensation" "skin exfoliation" "flatulence" "anaphylactic reaction" "blood cholesterol increased" "infusion related reaction" "toxicity to various agents" "feeling hot" "disorientation" "visual acuity reduced" "loss of consciousness" "vision blurred" "injection site reaction" "haemoglobin decreased" 
+"brain zaps" "itchy" "allergic" "swelling" "nervous" "itching" "sensation" "dizziness" "pain med" "damage" "painful" "numbness" "drowsiness" "swollen" "nausea" 
+drug 194 :percocets 2
+"transient ischaemic attack" "blindness" "multiple sclerosis" "device expulsion" "suicide attempt" "renal impairment" "surgery" "cataract" "memory impairment" "aggression" "cardiac disorder" "amnesia" "multiple sclerosis relapse" "confusional state" "neoplasm malignant" 
+"panic attacks" "panic attack" "anxiety attacks" "seizures" "seizure" "suicide" "allergic reaction" "allergic" "reaction" "reactions" "pain killers" "migraine" "migraines" "epilepsy" "arthritis" 
+drug 195 :tequin 2
+"confusional state" "condition aggravated" "suicidal ideation" "osteonecrosis of jaw" "nervousness" "urinary tract infection" "cerebrovascular accident" "staphylococcal infection" "anxiety" "road traffic accident" "infection" "depressed mood" "interstitial lung disease" "malaise" "low turnover osteopathy" 
+"mood" "drowsiness" "suicidal" "fatigue" "period" "anxiety" "nervous" "allergic" "sleep" "depression" "depressed" "panic disorder" "stress" "suicide" "mood swings" 
+drug 196 :meloxicam 2
+"osteonecrosis of jaw" "pulmonary embolism" "pulmonary oedema" "malignant neoplasm progression" "neoplasm malignant" "intestinal obstruction" "dry skin" "dry mouth" "rheumatoid arthritis" "product substitution issue" "heart rate increased" "disease progression" "arthritis" "swelling face" "cataract" 
+"allergic" "diagnosed" "neck" "lips" "tongue" "spine" "mouth" "legs" "leg" "toes" "chest" "throat" "stomach" "eyes" "eye" 
+drug 197 :apap 2
+"sleep disorder" "surgery" "weight increased" "fall" "osteonecrosis of jaw" "death" "road traffic accident" "blood glucose increased" "crying" "dry skin" "product substitution issue" "injection site bruising" "impaired healing" "multi-organ failure" "dry mouth" 
+"died" "suicide" "period" "weight loss" "disease" "heart attack" "damage" "sleep" "surgery" "chest pain" "chest pains" "panic disorder" "weight" "chronic pain" "pains" 
+drug 198 :opioids 2
+"multiple sclerosis relapse" "fluid retention" "suicidal ideation" "completed suicide" "injection site bruising" "therapeutic response decreased" "therapeutic response unexpected" "crohn's disease" "toxicity to various agents" "injection site swelling" "disease progression" "gastrointestinal disorder" "extrapyramidal disorder" "burning sensation" "renal disorder" 
+"suicidal" "addictive" "fatigue" "addicted" "overdose" "allergic" "swelling" "nervous" "epilepsy" "depressed" "weight loss" "vomiting" "constipation" "arthritis" "wean" 
+drug 199 :fungoid 2
+"influenza" "urinary tract infection" "infection" "staphylococcal infection" "gastrooesophageal reflux disease" "disease progression" "crohn's disease" "interstitial lung disease" "influenza like illness" "pneumonia" "inflammatory bowel disease" "chronic obstructive pulmonary disease" "femur fracture" "breast cancer" "surgery" 
+"flu" "disease" "infection" "sinus infection" "allergies" "allergy" "antibiotic" "antibiotics" "diarrhea" "arthritis" "cold" "allergic" "rash" "heart attack" "lungs" 
+drug 200 :fluoxetine 2
+"anxiety" "stress" "rash erythematous" "confusional state" "completed suicide" "suicidal ideation" "fall" "rash pruritic" "abortion spontaneous" "depressed mood" "gait disturbance" "crying" "aggression" "sleep disorder" "emotional distress" 
+"suicidal" "anxiety" "panic" "mood" "panic disorder" "stress" "drowsiness" "fatigue" "depression" "vomiting" "allergic" "pains" "nervous" "overdose" "insomnia" 
+drug 201 :ultracet 2
+"device expulsion" "suicidal ideation" "cataract" "blindness" "multiple sclerosis" "multiple sclerosis relapse" "malignant neoplasm progression" "fluid retention" "renal impairment" "aggression" "neoplasm malignant" "injection site erythema" "nervous system disorder" "injection site pruritus" "memory impairment" 
+"seizures" "seizure" "suicidal" "withdrawing" "withdraw" "physical" "pregnancy" "suicide" "numbness" "birth control" "addicted" "overdose" "allergic" "addictive" "depressed" 
+drug 202 :barbiturates 2
+"haemoglobin decreased" "platelet count decreased" "neutrophil count decreased" "injection site bruising" "injection site pain" "injection site swelling" "infusion related reaction" "amnesia" "multiple sclerosis relapse" "therapeutic response decreased" "migraine" "coma" "blood glucose increased" "hallucination" "mobility decreased" 
+"tapering" "tapered" "taper" "high blood pressure" "cholesterol" "high" "blood pressure" "heart rate" "vitamins" "vitamin" "metabolism" "blood" "urine" "thyroid" "sugar" 
+drug 203 :gravol 2
+"nausea" "abortion spontaneous" "weight decreased" "vision blurred" "coma" "sleep disorder" "weight increased" "disorientation" "foetal exposure during pregnancy" "gait disturbance" "exposure during pregnancy" "dizziness" "insomnia" "rash generalised" "international normalised ratio increased" 
+"nausea" "drowsiness" "insomnia" "birth control" "pregnancy" "rash" "side effects" "tremors" "nauseous" "weight loss" "migraine" "muscle spasms" "suicide" "swelling" "sex" 
+drug 204 :macrolide 2
+"therapeutic response unexpected" "abortion spontaneous" "influenza" "therapeutic response decreased" "infusion related reaction" "hepatic enzyme increased" "injection site bruising" "herpes zoster" "toxicity to various agents" "injection site swelling" "multiple sclerosis relapse" "pneumonia" "surgery" "multiple sclerosis" "asthma" 
+"reaction" "reactions" "allergic reaction" "therapy" "birth control" "flu" "pregnancy" "antibiotic" "antibiotics" "methadone" "therapist" "disease" "effect" "suicide" "sexual side effects" 
+drug 205 :stadol 2
+"diabetes mellitus" "dry mouth" "dry skin" "sleep disorder" "crying" "confusional state" "eye pain" "nausea" "multiple sclerosis relapse" "pain" "bone pain" "oropharyngeal pain" "musculoskeletal pain" "coma" "skin exfoliation" 
+"allergic" "diagnosed" "smoked" "pregnant" "vomiting" "sleeping" "pain med" "overdose" "mouth" "skin" "throat" "lips" "tongue" "stomach" "eyes" 
+drug 206 :lustral 2
+"international normalised ratio increased" "memory impairment" "decreased appetite" "diabetes mellitus" "weight increased" "loss of consciousness" "general physical health deterioration" "withdrawal syndrome" "aspartate aminotransferase increased" "weight decreased" "white blood cell count increased" "renal impairment" "visual impairment" "liver function test abnormal" "exposure during pregnancy" 
+"swelling" "heart rate" "high" "weight gain" "gain weight" "high blood pressure" "weight loss" "weight" "function" "metabolism" "symptom" "diagnosed" "allergic" "damage" "smoked" 
+drug 207 :alavert 2
+"injection site bruising" "osteonecrosis of jaw" "dry mouth" "dry skin" "skin exfoliation" "injection site swelling" "blister" "headache" "nausea" "rash pruritic" "rash erythematous" "musculoskeletal stiffness" "menstruation irregular" "abortion spontaneous" "joint swelling" 
+"neck" "spine" "injection" "toes" "lips" "legs" "leg" "mouth" "tongue" "swollen" "throat" "chest" "chest pain" "chest pains" "stomach" 
+drug 208 :committed 2
+"mobility decreased" "memory impairment" "general physical health deterioration" "vision blurred" "fall" "amnesia" "malaise" "depressed mood" "influenza" "disturbance in attention" "chills" "nervousness" "disorientation" "weight decreased" "impaired healing" 
+"tapering" "tapered" "taper" "physical" "fatigue" "symptom" "damage" "numbness" "dizziness" "drowsiness" "weight loss" "withdrawal symptoms" "high" "nausea" "depressed" 
+drug 209 :nardil 2
+"low turnover osteopathy" "completed suicide" "crying" "septic shock" "gait disturbance" "suicidal ideation" "mental disorder" "amnesia" "agitation" "abnormal behaviour" "renal impairment" "sleep disorder" "tremor" "general physical health deterioration" "nausea" 
+"high" "depressed" "suicide" "suicidal" "shaking" "panic" "pain killers" "heart attack" "depression" "anxiety" "panic disorder" "pains" "sleeping" "died" "tremors" 
+drug 210 :sodium 2
+"oedema peripheral" "renal impairment" "septic shock" "memory impairment" "crying" "abnormal behaviour" "blood creatine phosphokinase increased" "renal failure" "visual acuity reduced" "multi-organ failure" "fall" "vision blurred" "general physical health deterioration" "death" "gait disturbance" 
+"damage" "brain" "weight loss" "blood" "kidneys" "kidney" "liver" "muscle spasms" "lungs" "weakness" "seizures" "seizure" "muscles" "tremors" "blood work" 
+drug 211 :avil 2
+"weight increased" "international normalised ratio increased" "feeling hot" "death" "liver function test abnormal" "multi-organ failure" "weight decreased" "renal failure" "heart rate increased" "nausea" "loss of consciousness" "injection site bruising" "depressed mood" "sleep disorder" "impaired healing" 
+"weight" "weight loss" "weight gain" "gain weight" "swelling" "high" "high blood pressure" "heart rate" "depression" "pains" "diet" "stress" "pain killers" "died" "exercise" 
+drug 212 :nystatin 2
+"toxicity to various agents" "haemoglobin decreased" "therapeutic response decreased" "mobility decreased" "blood glucose increased" "therapeutic response unexpected" "abnormal behaviour" "hepatic enzyme increased" "blood cholesterol increased" "injection site bruising" "surgery" "osteonecrosis of jaw" "nausea" "multi-organ failure" "fall" 
+"metabolism" "tapering" "tapered" "taper" "high blood pressure" "cholesterol" "drug interactions" "drug interaction" "reaction" "reactions" "vitamins" "vitamin" "allergic reaction" "side effects" "steroids" 
+drug 213 :flonase 2
+"influenza" "blood cholesterol increased" "hepatic enzyme increased" "oedema peripheral" "haemoglobin decreased" "cataract" "asthma" "blood glucose increased" "intestinal obstruction" "hypertension" "malignant neoplasm progression" "breast cancer" "hot flush" "toxicity to various agents" "anaemia" 
+"flu" "cholesterol" "disease" "liver" "vitamins" "vitamin" "swelling" "antibiotic" "antibiotics" "blood" "metabolism" "high blood pressure" "infection" "allergies" "allergy" 
+drug 214 :plaquenil 2
+"vision blurred" "road traffic accident" "visual acuity reduced" "pulmonary oedema" "dry skin" "pulmonary embolism" "injection site warmth" "product substitution issue" "rash generalised" "injection site reaction" "alanine aminotransferase increased" "device dislocation" "aspartate aminotransferase increased" "disturbance in attention" "chills" 
+"allergic" "suicide" "heart attack" "diagnosed" "damage" "high" "brain zaps" "drowsiness" "drug free" "brain" "numbness" "eyes" "eye" "pregnancy" "dizziness" 
+drug 215 :refresh 2
+"depressed mood" "aggression" "impaired healing" "confusional state" "liver function test abnormal" "memory impairment" "stress" "visual impairment" "low turnover osteopathy" "condition aggravated" "renal impairment" "white blood cell count decreased" "blood creatinine increased" "general physical health deterioration" "blood creatine phosphokinase increased" 
+"mood" "drowsiness" "depressed" "fatigue" "anxiety" "panic disorder" "suicidal" "anxiety attacks" "damage" "depression" "high" "seizures" "seizure" "sleep" "mood swings" 
+drug 216 :roxicodone 2
+"death" "fall" "disorientation" "multiple sclerosis" "bronchitis" "memory impairment" "cardiac arrest" "flatulence" "vision blurred" "surgery" "crying" "gait disturbance" "malaise" "diabetes mellitus" "lethargy" 
+"died" "suicide" "weight loss" "period" "heart" "damage" "pain killers" "blood" "disease" "heart attack" "panic attacks" "panic attack" "anxiety attacks" "hands" "hand" 
+drug 217 :furosemide 2
+"surgery" "haemoglobin decreased" "fall" "blood cholesterol increased" "blood glucose increased" "toxicity to various agents" "nausea" "oedema peripheral" "renal failure" "infusion related reaction" "multi-organ failure" "therapeutic response unexpected" "mobility decreased" "injection site bruising" "blood pressure decreased" 
+"period" "surgery" "died" "broke" "cholesterol" "weight loss" "high" "weakness" "high blood pressure" "blood pressure" "blood" "vitamins" "vitamin" "kidneys" "kidney" 
+drug 218 :statin 2
+"chest pain" "nausea" "hypertension" "osteonecrosis of jaw" "neck pain" "toxicity to various agents" "chest discomfort" "breast cancer" "surgery" "musculoskeletal pain" "memory impairment" "anorectal discomfort" "blood pressure decreased" "gastrooesophageal reflux disease" "crohn's disease" 
+"chest pain" "chest pains" "nausea" "migraine" "pains" "chronic pain" "insomnia" "symptom" "muscle spasms" "chest" "drowsiness" "side effects" "headaches" "headache" "migraines" 
+drug 219 :librium 2
+"completed suicide" "diabetes mellitus" "sleep disorder" "device expulsion" "injection site bruising" "multiple sclerosis relapse" "fall" "confusional state" "headache" "suicidal ideation" "disease progression" "injection site erythema" "injection site pruritus" "abortion spontaneous" "injection site swelling" 
+"suicide" "allergic" "diagnosed" "seizures" "seizure" "smoked" "suicidal" "period" "pregnancy" "pregnant" "sleeping" "pain med" "vomiting" "pain killers" "overdose" 
+drug 220 :multivitamins 2
+"hepatic enzyme increased" "therapeutic response decreased" "haemoglobin decreased" "abnormal behaviour" "aggression" "blood glucose increased" "septic shock" "therapeutic response unexpected" "anxiety" "blood cholesterol increased" "blood pressure decreased" "toxicity to various agents" "infusion related reaction" "injection site reaction" "emotional distress" 
+"swelling" "reaction" "reactions" "high" "vitamins" "vitamin" "metabolism" "acid reflux" "cholesterol" "high blood pressure" "allergic reaction" "antibiotic" "antibiotics" "liver" "sugar" 
+drug 221 :meridia 2
+"product substitution issue" "product quality issue" "disturbance in attention" "stress" "infusion related reaction" "vision blurred" "hallucination" "swelling face" "hepatic enzyme increased" "therapeutic response decreased" "haemoglobin decreased" "abnormal behaviour" "aggression" "blood glucose increased" "septic shock" 
+"drug free" "generic" "focus" "high" "sensitive" "pain management" "panic disorder" "eyes" "eye" "seizures" "seizure" "insomnia" "tremors" "depression" "shaking" 
+drug 222 :ciprofloxacin 2
+"therapeutic response unexpected" "fall" "influenza" "surgery" "therapeutic response decreased" "cerebrovascular accident" "road traffic accident" "pulmonary oedema" "anaphylactic reaction" "pulmonary embolism" "injection site pain" "emotional distress" "infection" "septic shock" "urinary tract infection" 
+"reaction" "reactions" "therapy" "allergic reaction" "therapist" "effect" "antibiotic" "antibiotics" "period" "medicines" "drug interactions" "drug interaction" "methadone" "interaction" "interactions" 
+drug 223 :darvon 2
+"dry skin" "aspartate aminotransferase increased" "neoplasm malignant" "malignant neoplasm progression" "osteonecrosis of jaw" "liver function test abnormal" "disease progression" "alanine aminotransferase increased" "feeling hot" "dry mouth" "crohn's disease" "international normalised ratio increased" "fall" "breast cancer" "gastrooesophageal reflux disease" 
+"swelling" "high" "skin" "high blood pressure" "liver" "kidneys" "kidney" "lungs" "gain weight" "weight gain" "bleeding" "throat" "sinus infection" "neck" "eyes" 
+drug 224 :anafranil 2
+"cardiac failure" "disturbance in attention" "anaphylactic reaction" "fluid retention" "nausea" "gait disturbance" "respiratory failure" "rash generalised" "injection site reaction" "toxicity to various agents" "swelling face" "agitation" "therapeutic response unexpected" "therapeutic response decreased" "vision blurred" 
+"weight loss" "seizures" "seizure" "weakness" "panic disorder" "reaction" "reactions" "damage" "hypertension" "allergic reaction" "allergic" "side effects" "heart attack" "nervous" "brain zaps" 
+drug 225 :silvan 2
+"injection site reaction" "osteonecrosis of jaw" "infusion related reaction" "dry skin" "dry mouth" "anaphylactic reaction" "swelling face" "therapeutic response unexpected" "injection site bruising" "therapeutic response decreased" "injection site swelling" "toxicity to various agents" "hepatic enzyme increased" "injection site rash" "injection site pain" 
+"reaction" "reactions" "injection" "allergic reaction" "neck" "lips" "mouth" "tongue" "spine" "legs" "leg" "throat" "toes" "eyes" "eye" 
+drug 226 :excedrin 2
+"migraine" "headache" "hallucination" "multiple sclerosis" "bronchitis" "insomnia" "musculoskeletal pain" "rheumatoid arthritis" "oropharyngeal pain" "disorientation" "convulsion" "arthritis" "amnesia" "dizziness" "back pain" 
+"migraine" "migraines" "headaches" "headache" "insomnia" "arthritis" "constipation" "nausea" "dizziness" "epilepsy" "diarrhea" "hypertension" "allergies" "allergy" "pains" 
+drug 227 :azithromycin 2
+"influenza" "abortion spontaneous" "therapeutic response unexpected" "blister" "pulmonary oedema" "asthma" "herpes zoster" "pulmonary embolism" "completed suicide" "foetal exposure during pregnancy" "urinary tract infection" "pneumonia" "anaphylactic reaction" "therapeutic response decreased" "exposure during pregnancy" 
+"flu" "disease" "infection" "allergic" "antibiotic" "antibiotics" "allergies" "allergy" "sinus infection" "diarrhea" "arthritis" "cold" "heart attack" "rash" "pregnancy" 
+drug 228 :compazine 2
+"nausea" "therapeutic response unexpected" "anaphylactic reaction" "therapeutic response decreased" "surgery" "injection site reaction" "toxicity to various agents" "dry mouth" "vision blurred" "infusion related reaction" "dry skin" "crying" "cataract" "disturbance in attention" "dehydration" 
+"nausea" "reaction" "reactions" "drowsiness" "insomnia" "allergic reaction" "side effects" "nauseous" "tremors" "rash" "migraine" "muscle spasms" "itchy" "therapy" "cold" 
+drug 229 :nifedipine 2
+"fluid retention" "therapeutic response unexpected" "product quality issue" "septic shock" "hepatic enzyme increased" "therapeutic response decreased" "abnormal behaviour" "haemoglobin decreased" "anaphylactic reaction" "infusion related reaction" "confusional state" "impaired healing" "skin discolouration" "blood pressure decreased" "skin exfoliation" 
+"drug free" "fatigue" "swelling" "weight loss" "tolerance" "addictive" "nervous" "metabolism" "wean" "reaction" "reactions" "blood pressure" "high" "constipation" "allergic reaction" 
+drug 230 :alerted 2
+"therapeutic response decreased" "hot flush" "low turnover osteopathy" "therapeutic response unexpected" "completed suicide" "mental disorder" "feeling hot" "septic shock" "depressed mood" "nausea" "anaphylactic reaction" "condition aggravated" "injection site reaction" "sleep disorder" "amnesia" 
+"reaction" "reactions" "high" "therapy" "allergic reaction" "tapering" "tapered" "taper" "effect" "therapist" "medicines" "drug interactions" "drug interaction" "antibiotic" "antibiotics" 
+drug 231 :potassium 2
+"dry skin" "rash generalised" "dry mouth" "nausea" "intestinal obstruction" "rash" "osteonecrosis of jaw" "joint swelling" "swelling" "injection site rash" "abdominal pain upper" "loss of consciousness" "burning sensation" "fall" "swelling face" 
+"skin" "rash" "throat" "eyes" "eye" "itchy" "neck" "muscles" "liver" "stomach" "lungs" "lips" "head" "brain" "mouth" 
+drug 232 :sotalol 2
+"toxicity to various agents" "neoplasm malignant" "heart rate increased" "surgery" "lung neoplasm malignant" "cardiac failure congestive" "death" "therapeutic response unexpected" "malignant neoplasm progression" "liver function test abnormal" "therapeutic response decreased" "abnormal behaviour" "haemoglobin decreased" "oedema peripheral" "cerebral haemorrhage" 
+"liver" "kidneys" "kidney" "hypertension" "lungs" "bleeding" "sinus infection" "surgery" "heart rate" "epilepsy" "heart" "allergic" "diagnosed" "thyroid" "diagnosis" 
+drug 233 :lunesta 2
+"rash generalised" "rash" "blister" "injection site rash" "intestinal obstruction" "nausea" "herpes zoster" "malaise" "influenza" "musculoskeletal stiffness" "staphylococcal infection" "bronchitis" "swelling" "gastrointestinal haemorrhage" "pneumonia" 
+"rash" "suicidal" "dizziness" "diarrhea" "constipation" "vomiting" "drowsiness" "numbness" "nausea" "insomnia" "migraine" "migraines" "allergic" "tremors" "allergies" 
+drug 234 :dox 2
+"dry skin" "dry mouth" "hot flush" "therapeutic response unexpected" "osteonecrosis of jaw" "road traffic accident" "therapeutic response decreased" "cerebrovascular accident" "anaphylactic reaction" "feeling hot" "injection site bruising" "abdominal distension" "infusion related reaction" "rash erythematous" "rash pruritic" 
+"skin" "mouth" "throat" "lips" "neck" "reaction" "reactions" "tongue" "eyes" "eye" "cold" "stomach" "itchy" "suicide" "chest" 
+drug 235 :crank 2
+"confusional state" "general physical health deterioration" "liver function test abnormal" "memory impairment" "product quality issue" "stress" "weight increased" "product substitution issue" "renal impairment" "multiple sclerosis" "weight decreased" "completed suicide" "sleep disorder" "depression" "visual impairment" 
+"mood" "drowsiness" "fatigue" "drug free" "period" "physical" "sleep" "nervous" "anxiety" "suicidal" "symptom" "damage" "withdrawal symptoms" "generic" "high" 
+drug 236 :trimethoprim 2
+"blood glucose increased" "therapeutic response decreased" "haemoglobin decreased" "low turnover osteopathy" "diabetes mellitus" "blood creatinine increased" "blood creatine phosphokinase increased" "infusion related reaction" "skin discolouration" "multiple sclerosis relapse" "injection site bruising" "blood cholesterol increased" "white blood cell count increased" "emotional distress" "injection site swelling" 
+"high" "blood" "depressed" "allergic" "high blood pressure" "diagnosed" "cholesterol" "reaction" "reactions" "blood test" "sugar" "urine" "smoked" "blood work" "blood pressure" 
+drug 237 :zithromax 2
+"malignant neoplasm progression" "intestinal obstruction" "cerebrovascular accident" "blood cholesterol increased" "neoplasm malignant" "oedema peripheral" "road traffic accident" "renal impairment" "influenza" "blood glucose increased" "abnormal behaviour" "asthma" "multiple sclerosis relapse" "septic shock" "gastrointestinal haemorrhage" 
+"heart attack" "suicide" "liver" "kidneys" "kidney" "lungs" "bleeding" "damage" "diagnosed" "hypertension" "diagnosis" "allergic" "drunk" "sinus infection" "pregnancy" 
+drug 238 :bactrim 2
+"memory impairment" "product quality issue" "disorientation" "vision blurred" "flatulence" "bronchitis" "eye pain" "back pain" "oropharyngeal pain" "migraine" "neck pain" "musculoskeletal pain" "dizziness" "amnesia" "swelling face" 
+"drug free" "damage" "disease" "panic disorder" "head" "epilepsy" "symptom" "numbness" "insomnia" "tremors" "seizures" "seizure" "fatigue" "withdrawal symptoms" "dizziness" 
+drug 239 :claritin 2
+"haemoglobin decreased" "blood cholesterol increased" "hepatic enzyme increased" "blood glucose increased" "toxicity to various agents" "headache" "injection site bruising" "device dislocation" "osteonecrosis of jaw" "musculoskeletal stiffness" "abdominal pain upper" "fall" "menstruation irregular" "mobility decreased" "surgery" 
+"cholesterol" "high blood pressure" "vitamins" "vitamin" "blood pressure" "metabolism" "tapering" "tapered" "taper" "sugar" "urine" "blood" "acid reflux" "thyroid" "high" 
+drug 240 :pheniramine 2
+"blood creatine phosphokinase increased" "suicidal ideation" "fall" "blood glucose increased" "activities of daily living impaired" "crying" "abnormal behaviour" "blood creatinine increased" "injection site bruising" "white blood cell count decreased" "white blood cell count increased" "vomiting" "blood cholesterol increased" "infusion related reaction" "death" 
+"suicidal" "period" "blood" "blood work" "blood test" "died" "urine" "depressed" "high" "addicted" "swelling" "broke" "overdose" "breath" "urine test" 
+drug 241 :prometazin 2
+"vision blurred" "disturbance in attention" "visual acuity reduced" "rash generalised" "disorientation" "blindness" "dry mouth" "lethargy" "musculoskeletal stiffness" "dizziness" "amnesia" "irritability" "flatulence" "malaise" "bronchitis" 
+"drowsiness" "dizziness" "eyes" "eye" "constipation" "nausea" "insomnia" "numbness" "diarrhea" "itchy" "kidneys" "kidney" "brain" "swollen" "sleep" 
+drug 242 :fluconazole 2
+"urinary tract infection" "influenza" "infection" "staphylococcal infection" "gastrooesophageal reflux disease" "disease progression" "crohn's disease" "pneumonia" "interstitial lung disease" "influenza like illness" "inflammatory bowel disease" "femur fracture" "breast cancer" "surgery" "chronic obstructive pulmonary disease" 
+"infection" "disease" "flu" "sinus infection" "diarrhea" "allergies" "allergy" "symptom" "antibiotic" "antibiotics" "rash" "diagnosis" "bleeding" "arthritis" "cold" 
+drug 243 :lisinopril 2
+"haemoglobin decreased" "blood glucose increased" "hepatic enzyme increased" "blood cholesterol increased" "toxicity to various agents" "surgery" "osteonecrosis of jaw" "fall" "injection site bruising" "blood pressure decreased" "renal failure" "headache" "device dislocation" "product substitution issue" "nausea" 
+"cholesterol" "high blood pressure" "vitamins" "vitamin" "metabolism" "sugar" "blood pressure" "blood" "tapering" "tapered" "taper" "acid reflux" "urine" "high" "liver" 
+drug 244 :clomid 2
+"diabetes mellitus" "exposure during pregnancy" "foetal exposure during pregnancy" "abortion spontaneous" "injection site erythema" "injection site pruritus" "suicidal ideation" "suicide attempt" "injection site warmth" "breast cancer" "menstruation irregular" "vaginal haemorrhage" "herpes zoster" "weight increased" "weight decreased" 
+"allergic" "diagnosed" "smoked" "pregnant" "vomiting" "sleeping" "pain med" "overdose" "pregnancy" "birth control" "smoking" "wean" "sex" "infection" "sexual side effects" 
+drug 245 :duragesic 2
+"memory impairment" "abortion spontaneous" "fluid retention" "general physical health deterioration" "toxicity to various agents" "stress" "loss of consciousness" "renal impairment" "emotional distress" "gait disturbance" "renal failure acute" "influenza like illness" "disorientation" "depressed mood" "crohn's disease" 
+"damage" "weight loss" "fatigue" "panic disorder" "seizures" "seizure" "symptom" "withdrawal symptoms" "birth control" "pregnancy" "disease" "side effects" "physical" "sexual side effects" "head" 
+drug 246 :clarithromycin 2
+"influenza" "hepatic enzyme increased" "therapeutic response unexpected" "therapeutic response decreased" "toxicity to various agents" "pneumonia" "herpes zoster" "infusion related reaction" "urinary tract infection" "septic shock" "infection" "influenza like illness" "impaired healing" "upper respiratory tract infection" "abnormal behaviour" 
+"flu" "disease" "infection" "antibiotic" "antibiotics" "allergies" "allergy" "sinus infection" "diarrhea" "arthritis" "cold" "allergic" "heart attack" "rash" "sick" 
+drug 247 :dyazide 2
+"abnormal behaviour" "skin exfoliation" "dry mouth" "pulmonary oedema" "osteonecrosis of jaw" "alanine aminotransferase increased" "septic shock" "aspartate aminotransferase increased" "pulmonary embolism" "rash erythematous" "rash pruritic" "anaphylactic reaction" "toxicity to various agents" "abdominal distension" "mobility decreased" 
+"allergic" "brain zaps" "swelling" "itchy" "diagnosed" "nervous" "swollen" "high" "painful" "panic disorder" "interaction" "interactions" "itching" "blood work" "high blood pressure" 
+drug 248 :adapted 2
+"completed suicide" "general physical health deterioration" "anxiety" "suicidal ideation" "sleep disorder" "depressed mood" "amnesia" "disturbance in attention" "nausea" "headache" "memory impairment" "agitation" "emotional distress" "suicide attempt" "depression" 
+"suicide" "suicidal" "physical" "pain killers" "symptom" "withdrawal symptoms" "heart attack" "period" "panic disorder" "depression" "depressed" "anxiety attacks" "panic attacks" "panic attack" "addiction" 
+drug 249 :buprenorphine 2
+"confusional state" "surgery" "femur fracture" "cardiac arrest" "anxiety" "aggression" "coma" "nervousness" "sleep disorder" "multiple sclerosis relapse" "emotional distress" "influenza like illness" "death" "oropharyngeal pain" "crying" 
+"mood" "drowsiness" "fatigue" "period" "suicidal" "sleep" "nervous" "anxiety" "surgery" "therapy" "bleeding" "pains" "patients" "heart attack" "hospital" 
+drug 250 :lamotrigine 2
+"aggression" "anaphylactic reaction" "cognitive disorder" "extrapyramidal disorder" "renal disorder" "nervous system disorder" "septic shock" "gastrointestinal disorder" "therapeutic response unexpected" "anxiety" "multiple sclerosis relapse" "balance disorder" "speech disorder" "mental disorder" "blindness" 
+"anxiety" "reaction" "reactions" "anxiety attacks" "panic disorder" "suicidal" "panic attacks" "panic attack" "suicide" "depression" "allergic reaction" "stress" "insomnia" "disease" "seizures" 
+drug 251 :kava 2
+"anxiety" "nervousness" "aggression" "device expulsion" "memory impairment" "gait disturbance" "stress" "disturbance in attention" "agitation" "weight decreased" "weight increased" "cardiac failure" "emotional distress" "international normalised ratio increased" "depressed mood" 
+"anxiety" "panic" "panic disorder" "depression" "mood" "insomnia" "stress" "nausea" "fatigue" "headaches" "headache" "pains" "drowsiness" "dizziness" "tremors" 
+drug 252 :aloe 2
+"dry skin" "feeling hot" "pulmonary oedema" "death" "pulmonary embolism" "burning sensation" "dry mouth" "abdominal pain upper" "malignant neoplasm progression" "osteonecrosis of jaw" "joint swelling" "eye pain" "completed suicide" "intestinal obstruction" "neck pain" 
+"allergic" "skin" "died" "hurting" "heart" "cold" "diagnosed" "brain zaps" "pains" "painful" "muscles" "throat" "tingling" "eyes" "eye" 
+drug 253 :chalk 2
+"malignant neoplasm progression" "renal impairment" "device dislocation" "intestinal obstruction" "multi-organ failure" "oedema peripheral" "memory impairment" "neoplasm malignant" "renal failure" "breast cancer" "general physical health deterioration" "cardiac failure congestive" "dry skin" "blood cholesterol increased" "visual impairment" 
+"liver" "kidneys" "kidney" "diagnosed" "damage" "bleeding" "lungs" "diagnosis" "epilepsy" "arthritis" "hypertension" "addictive" "metabolism" "allergic" "symptom" 
+drug 254 :lotrel 2
+"blood cholesterol increased" "aspartate aminotransferase increased" "road traffic accident" "alanine aminotransferase increased" "nausea" "toxicity to various agents" "blood glucose increased" "renal impairment" "memory impairment" "multiple sclerosis relapse" "abortion spontaneous" "visual impairment" "abnormal behaviour" "activities of daily living impaired" "depression" 
+"swelling" "high" "high blood pressure" "suicide" "heart attack" "weight gain" "gain weight" "damage" "heart rate" "weight loss" "cholesterol" "blood" "pregnancy" "symptom" "alcohol" 
+drug 255 :zonal 2
+"skin exfoliation" "fall" "memory impairment" "product quality issue" "transient ischaemic attack" "platelet count decreased" "neutrophil count decreased" "blister" "osteonecrosis of jaw" "mobility decreased" "disorientation" "malaise" "visual acuity reduced" "amnesia" "dry mouth" 
+"brain zaps" "drug free" "itchy" "period" "allergic" "swelling" "nervous" "high" "sensitive" "itching" "painful" "swollen" "damage" "broke" "weight loss" 
+drug 256 :indocin 2
+"therapeutic response unexpected" "multiple sclerosis relapse" "multiple sclerosis" "injection site bruising" "sleep disorder" "therapeutic response decreased" "hot flush" "amnesia" "cataract" "insomnia" "mobility decreased" "surgery" "renal impairment" "infusion related reaction" "mental disorder" 
+"reaction" "reactions" "therapy" "allergic reaction" "methadone" "arthritis" "epilepsy" "therapist" "effect" "detox" "antibiotic" "antibiotics" "injection" "medicines" "morphine" 
+drug 257 :zofran 2
+"surgery" "nausea" "vision blurred" "crying" "dry skin" "therapeutic response unexpected" "anaphylactic reaction" "osteonecrosis of jaw" "dry mouth" "cataract" "disturbance in attention" "therapeutic response decreased" "injection site reaction" "abdominal pain upper" "death" 
+"surgery" "therapy" "bleeding" "pains" "patients" "chest pain" "medicines" "chronic pain" "diagnosis" "chest pains" "physician" "hospital" "back pain" "pain med" "infection" 
+drug 258 :dalmane 2
+"sleep disorder" "suicidal ideation" "anxiety" "confusional state" "injection site erythema" "injection site pruritus" "crying" "fluid retention" "depressed mood" "gait disturbance" "aggression" "blood creatine phosphokinase increased" "emotional distress" "amnesia" "agitation" 
+"sleeping pills" "suicidal" "mood" "drowsiness" "addicted" "overdose" "fatigue" "addictive" "sleep" "nervous" "anxiety" "allergic" "depressed" "panic disorder" "drunk" 
+drug 259 :hydroxyzine 2
+"menstruation irregular" "nausea" "weight decreased" "decreased appetite" "malaise" "nervousness" "neoplasm malignant" "flatulence" "weight increased" "stress" "therapeutic response decreased" "insomnia" "headache" "foetal exposure during pregnancy" "extrapyramidal disorder" 
+"nausea" "insomnia" "drowsiness" "migraine" "tremors" "constipation" "dizziness" "headaches" "headache" "muscle spasms" "migraines" "diarrhea" "rash" "weight" "fatigue" 
+drug 260 :diflucan 2
+"therapeutic response unexpected" "hepatic enzyme increased" "therapeutic response decreased" "surgery" "toxicity to various agents" "gastrooesophageal reflux disease" "breast cancer" "crohn's disease" "exposure during pregnancy" "infusion related reaction" "weight increased" "blood cholesterol increased" "menstruation irregular" "oropharyngeal pain" "arthritis" 
+"reaction" "reactions" "therapy" "allergic reaction" "vitamins" "vitamin" "antibiotic" "antibiotics" "metabolism" "therapist" "effect" "swelling" "drug interactions" "drug interaction" "medicines" 
+drug 261 :escitalopram 2
+"condition aggravated" "crying" "anxiety" "gait disturbance" "depression" "migraine" "agitation" "lethargy" "disturbance in attention" "chills" "septic shock" "coma" "oropharyngeal pain" "disorientation" "musculoskeletal pain" 
+"mood" "depression" "stress" "panic disorder" "mood swings" "severe" "weakness" "skin" "chronic pain" "anxiety" "period" "symptom" "effect" "disease" "allergic" 
+drug 262 :gabitril 2
+"therapeutic response decreased" "burning sensation" "influenza" "international normalised ratio increased" "product substitution issue" "crohn's disease" "nausea" "renal failure acute" "infusion related reaction" "crying" "influenza like illness" "migraine" "gastrooesophageal reflux disease" "injection site swelling" "weight decreased" 
+"drug free" "generic" "high" "reaction" "reactions" "swelling" "therapy" "allergic reaction" "heart rate" "flu" "high blood pressure" "focus" "disease" "tapering" "tapered" 
+drug 263 :dramamine 2
+"general physical health deterioration" "nausea" "fall" "suicide attempt" "platelet count decreased" "neutrophil count decreased" "decreased appetite" "product quality issue" "memory impairment" "completed suicide" "haemoglobin decreased" "menstruation irregular" "depressed mood" "headache" "cerebrovascular accident" 
+"physical" "symptom" "nausea" "weight loss" "weakness" "withdrawal symptoms" "drowsiness" "damage" "suicide" "withdrawl symptoms" "insomnia" "period" "tremors" "tapering" "drug free" 
+drug 264 :procrit 2
+"injection site reaction" "surgery" "death" "pulmonary oedema" "pulmonary embolism" "injection site bruising" "nausea" "diabetes mellitus" "cardiac failure" "toxicity to various agents" "femur fracture" "heart rate increased" "injection site pain" "injection site haemorrhage" "infusion related reaction" 
+"injection" "reaction" "reactions" "surgery" "allergic reaction" "allergic" "therapy" "effect" "allergies" "allergy" "pains" "patients" "symptom" "withdrawal symptoms" "side effects" 
+drug 265 :ketoconazole 2
+"product substitution issue" "abortion spontaneous" "device expulsion" "septic shock" "abnormal behaviour" "impaired healing" "foetal exposure during pregnancy" "therapeutic response unexpected" "menstruation irregular" "hepatic enzyme increased" "activities of daily living impaired" "exposure during pregnancy" "therapeutic response decreased" "influenza" "infusion related reaction" 
+"drug free" "generic" "focus" "high" "birth control" "pregnancy" "suicide" "sex" "pregnant" "died" "sexual side effects" "weight loss" "smoking" "marijuana" "seizures" 
+drug 266 :tegretol 2
+"toxicity to various agents" "device expulsion" "general physical health deterioration" "blindness" "surgery" "impaired healing" "low turnover osteopathy" "diabetes mellitus" "depressed mood" "cataract" "therapeutic response unexpected" "renal impairment" "multiple sclerosis relapse" "multiple sclerosis" "foetal exposure during pregnancy" 
+"seizures" "seizure" "physical" "side effects" "drug interactions" "drug interaction" "drug free" "metabolism" "medicines" "drug test" "narcotic" "narcotics" "pregnancy" "symptom" "allergic" 
+drug 267 :fortune 2
+"abortion spontaneous" "multiple sclerosis relapse" "deep vein thrombosis" "device expulsion" "fall" "diabetes mellitus" "injection site pruritus" "therapeutic response decreased" "therapeutic response unexpected" "foetal exposure during pregnancy" "injection site erythema" "injection site bruising" "exposure during pregnancy" "completed suicide" "disturbance in attention" 
+"birth control" "pregnancy" "suicide" "sex" "pregnant" "seizures" "seizure" "died" "sexual side effects" "smoking" "weight loss" "marijuana" "bleeding" "allergic reaction" "burning" 
+drug 268 :reglan 2
+"decreased appetite" "abnormal behaviour" "intestinal obstruction" "activities of daily living impaired" "crohn's disease" "renal impairment" "therapeutic response decreased" "influenza" "crying" "influenza like illness" "weight increased" "toxicity to various agents" "gastrooesophageal reflux disease" "septic shock" "breast cancer" 
+"appetite" "stomach" "tapering" "tapered" "taper" "panic disorder" "mood" "taste" "swelling" "high blood pressure" "anxiety" "swollen" "addiction" "nausea" "diet" 
+drug 269 :benzodiazepine 2
+"weight increased" "menstruation irregular" "withdrawal syndrome" "nausea" "fall" "headache" "gastrooesophageal reflux disease" "weight decreased" "migraine" "mental disorder" "transient ischaemic attack" "crohn's disease" "influenza" "musculoskeletal pain" "international normalised ratio increased" 
+"weight" "gain weight" "weight gain" "weight loss" "swelling" "depression" "high blood pressure" "high" "pains" "stress" "chronic pain" "muscle spasms" "nausea" "diet" "insomnia" 
+drug 270 :maoi 2
+"abortion spontaneous" "nausea" "cerebrovascular accident" "road traffic accident" "renal impairment" "device expulsion" "memory impairment" "disturbance in attention" "depression" "visual impairment" "gait disturbance" "multiple sclerosis relapse" "toxicity to various agents" "sleep disorder" "coma" 
+"suicide" "pregnancy" "birth control" "heart attack" "seizures" "seizure" "died" "damage" "sex" "weight loss" "sexual side effects" "pregnant" "smoking" "marijuana" "bleeding" 
+drug 271 :snapped 2
+"injection site bruising" "diabetes mellitus" "blood glucose increased" "therapeutic response unexpected" "device expulsion" "osteonecrosis of jaw" "therapeutic response decreased" "injection site reaction" "femur fracture" "injection site swelling" "injection site pain" "surgery" "hepatic enzyme increased" "blood cholesterol increased" "pulmonary oedema" 
+"allergic" "diagnosed" "smoked" "seizures" "seizure" "pregnant" "reaction" "reactions" "pain med" "injection" "vomiting" "sleeping" "therapy" "overdose" "allergic reaction" 
+drug 272 :opium 2
+"nasal congestion" "headache" "dry mouth" "anorectal discomfort" "migraine" "nausea" "malaise" "dizziness" "throat irritation" "disorientation" "constipation" "flatulence" "eye pain" "fluid retention" "hallucination" 
+"nausea" "headaches" "headache" "constipation" "drowsiness" "symptom" "migraine" "chest pain" "dizziness" "insomnia" "diarrhea" "chest pains" "rash" "migraines" "pains" 
+drug 273 :commit 2
+"therapeutic response decreased" "product quality issue" "sleep disorder" "suicide attempt" "completed suicide" "therapeutic response unexpected" "anxiety" "gait disturbance" "disturbance in attention" "mental disorder" "crying" "suicidal ideation" "agitation" "amnesia" "extrapyramidal disorder" 
+"drug free" "suicide" "suicidal" "panic attacks" "panic attack" "high" "anxiety attacks" "pain management" "focus" "reaction" "reactions" "sensitive" "therapy" "allergic reaction" "pregnancy" 
+drug 274 :niaspan 2
+"dry skin" "crying" "rash generalised" "dry mouth" "anaphylactic reaction" "injection site reaction" "therapeutic response unexpected" "blister" "rash" "injection site rash" "vision blurred" "throat irritation" "sleep disorder" "therapeutic response decreased" "nausea" 
+"skin" "rash" "mouth" "vomiting" "throat" "lips" "stomach" "shaking" "tongue" "itchy" "sleeping" "eyes" "eye" "allergic" "awake" 
+drug 275 :cyclobenzaprine 2
+"osteonecrosis of jaw" "therapeutic response unexpected" "alanine aminotransferase increased" "weight increased" "aspartate aminotransferase increased" "septic shock" "anaphylactic reaction" "condition aggravated" "depression" "therapeutic response decreased" "abnormal behaviour" "aggression" "weight decreased" "injection site reaction" "renal disorder" 
+"swelling" "high" "high blood pressure" "gain weight" "weight gain" "reaction" "reactions" "allergic reaction" "weight loss" "heart rate" "therapy" "neck" "symptom" "lips" "legs" 
+drug 276 :prazosin 2
+"blood creatine phosphokinase increased" "septic shock" "blood creatinine increased" "white blood cell count increased" "blood glucose increased" "abnormal behaviour" "neuropathy peripheral" "oedema peripheral" "white blood cell count decreased" "blood cholesterol increased" "therapeutic response unexpected" "infusion related reaction" "therapeutic response decreased" "death" "anaphylactic reaction" 
+"blood" "blood test" "blood work" "urine" "swelling" "urine test" "high blood pressure" "high" "heart rate" "liver" "kidneys" "kidney" "pains" "mood" "heart" 
+drug 277 :pamelor 2
+"septic shock" "confusional state" "device expulsion" "blood creatine phosphokinase increased" "blood creatinine increased" "abnormal behaviour" "white blood cell count increased" "neuropathy peripheral" "white blood cell count decreased" "oedema peripheral" "blood glucose increased" "blood cholesterol increased" "death" "gait disturbance" "infusion related reaction" 
+"mood" "drowsiness" "seizures" "seizure" "fatigue" "withdrawing" "withdraw" "blood" "physical" "anxiety" "period" "pregnancy" "nervous" "numbness" "suicide" 
+drug 278 :dextroamphetamine 2
+"toxicity to various agents" "device expulsion" "abortion spontaneous" "pulmonary oedema" "low turnover osteopathy" "pulmonary embolism" "confusional state" "septic shock" "infusion related reaction" "renal failure acute" "disturbance in attention" "product substitution issue" "impaired healing" "abnormal behaviour" "feeling abnormal" 
+"allergic" "high" "seizures" "seizure" "diagnosed" "pregnancy" "drowsiness" "side effects" "drug interactions" "drug interaction" "fatigue" "drug free" "narcotic" "narcotics" "drug test" 
+drug 279 :ephedrine 2
+"mobility decreased" "flatulence" "hot flush" "suicide attempt" "platelet count decreased" "malaise" "fall" "blood glucose increased" "bronchitis" "cardiac arrest" "disorientation" "decreased appetite" "device expulsion" "general physical health deterioration" "neutrophil count decreased" 
+"tapering" "tapered" "taper" "suicide" "high" "high blood pressure" "swelling" "panic attacks" "panic attack" "drowsiness" "nausea" "cold" "dizziness" "fatigue" "numbness" 
+drug 280 :zanaflex 2
+"depression" "sleep disorder" "hot flush" "condition aggravated" "multiple sclerosis relapse" "gait disturbance" "malaise" "depressed mood" "lethargy" "low turnover osteopathy" "extrapyramidal disorder" "asthma" "insomnia" "gastrointestinal disorder" "cognitive disorder" 
+"depression" "panic disorder" "insomnia" "mood" "symptom" "epilepsy" "anxiety" "migraine" "migraines" "disease" "cold" "high" "chronic pain" "depressed" "sleep" 
+drug 281 :risperdal 2
+"sleep disorder" "osteonecrosis of jaw" "hot flush" "dry mouth" "disturbance in attention" "amnesia" "balance disorder" "gastrointestinal disorder" "gait disturbance" "mental disorder" "crying" "extrapyramidal disorder" "aggression" "cognitive disorder" "therapeutic response unexpected" 
+"sleep" "disease" "panic disorder" "sleeping" "insomnia" "epilepsy" "symptom" "hypertension" "sleeping pills" "depression" "withdrawal symptoms" "chronic pain" "withdrawl symptoms" "awake" "diagnosed" 
+drug 282 :tikosyn 2
+"surgery" "pulmonary oedema" "pulmonary embolism" "influenza" "therapeutic response unexpected" "femur fracture" "death" "therapeutic response decreased" "diabetes mellitus" "blister" "heart rate increased" "influenza like illness" "cardiac failure congestive" "bronchitis" "asthma" 
+"allergic" "diagnosed" "surgery" "brain zaps" "nervous" "vomiting" "therapy" "patients" "medicines" "pains" "diagnosis" "bleeding" "physician" "hospital" "chest pain" 
+drug 283 :maxalt 2
+"anxiety" "transient ischaemic attack" "surgery" "amnesia" "gait disturbance" "pulmonary oedema" "suicidal ideation" "hot flush" "suicide attempt" "pulmonary embolism" "sleep disorder" "agitation" "multiple sclerosis" "depressed mood" "mental disorder" 
+"allergic" "panic attacks" "panic attack" "anxiety attacks" "diagnosed" "suicidal" "panic disorder" "anxiety" "nervous" "panic" "suicide" "seizures" "seizure" "allergic reaction" "headaches" 
+drug 284 :cartia 2
+"heart rate increased" "blood cholesterol increased" "blood glucose increased" "nervousness" "blood pressure decreased" "haemoglobin decreased" "anxiety" "depressed mood" "death" "surgery" "cardiac failure congestive" "abdominal pain upper" "hepatic enzyme increased" "malaise" "aggression" 
+"heart rate" "blood" "high blood pressure" "heart" "cholesterol" "blood pressure" "swelling" "blood test" "mood" "liver" "blood work" "high" "kidneys" "kidney" "hypertension" 
+drug 285 :fluanxol 2
+"disturbance in attention" "confusional state" "vision blurred" "eye pain" "dry mouth" "osteonecrosis of jaw" "migraine" "musculoskeletal pain" "headache" "dry skin" "back pain" "malaise" "visual acuity reduced" "oropharyngeal pain" "nervousness" 
+"mood" "drowsiness" "fatigue" "sleep" "anxiety" "panic disorder" "period" "eyes" "eye" "insomnia" "nervous" "seizures" "seizure" "suicidal" "tremors" 
