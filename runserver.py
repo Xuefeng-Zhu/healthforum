@@ -82,9 +82,9 @@ class Drug_Effect_resource(restful.Resource):
 		output["userType"] = userType
 		output["drugId"] = drugId
 		if userType == "doctor":
-			output["effects"] = [query.doctor_effect for query in queryEffects]
+			output["effects"] = [{"name": query.doctor_effect, "something": "hello"} for query in queryEffects]
 		else:
-			output["effects"] = [query.patient_effect for query in queryEffects]
+			output["effects"] = [{"name": query.patient_effect, "something": "hello"} for query in queryEffects]
 			
 		return output
 
