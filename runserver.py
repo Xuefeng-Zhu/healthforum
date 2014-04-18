@@ -3,7 +3,7 @@ from flask import Flask
 from flask.ext import restful
 from flask.ext.restful import reqparse, marshal_with, marshal
 from flask.ext.restful.utils import cors
-from database import Users, Drugs, SideEffects, henryURI, herokuURI
+from database import Users, Drugs, SideEffects, URI 
 from flask.ext.sqlalchemy import SQLAlchemy
 
 """
@@ -22,7 +22,7 @@ https://devcenter.heroku.com/articles/getting-started-with-python
 """
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = henryURI
+app.config['SQLALCHEMY_DATABASE_URI'] = URI
 data = SQLAlchemy(app)
 
 api = restful.Api(app)
