@@ -68,7 +68,7 @@ class Drug_List_resource(restful.Resource):
 
 	def get(self):
 		try:
-			drugs = Drugs.query.all()
+			drugs = Drugs.query.order_by(Drugs.name).all()
 			return [{"name": drug.name, "concise": drug.info} for drug in drugs]
 		except:
 			data.session.rollback()
