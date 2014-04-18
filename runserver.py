@@ -43,7 +43,7 @@ class Drug_resource(restful.Resource):
 	# $ curl localhost:5000/drugs/2
 	def get(self, drugNum):
 		drug = Drugs.query.filter_by(id=drugNum).first()
-		return marshal(drug, Drug.fields()) if drug is not None else "Not found", 404 
+		return marshal(drug, Drugs.fields()) if drug is not None else "Not found", 404 
 
 	# $ curl localhost:5000/drugs -d "name=Some UNIQUE name" -d "info=This is some information" -X POST -v
 	def post(self):
