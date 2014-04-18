@@ -25,6 +25,4 @@ print soup.find(itemprop="description").string
 
 '''
 
-
-drugList()
 desCrawl()
