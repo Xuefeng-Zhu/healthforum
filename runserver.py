@@ -22,7 +22,7 @@ https://devcenter.heroku.com/articles/getting-started-with-python
 """
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = herokuURI
+app.config['SQLALCHEMY_DATABASE_URI'] = henryURI
 data = SQLAlchemy(app)
 
 api = restful.Api(app)
