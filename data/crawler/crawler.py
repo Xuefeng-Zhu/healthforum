@@ -2,6 +2,7 @@
 
 from bs4 import BeautifulSoup
 import requests
+import json
 from descriptionCrawler import isValid
 from descriptionCrawler import desCrawl
 from descriptionCrawler import drugList
@@ -23,7 +24,10 @@ print(soup.prettify())
 #print soup.title.string
 print soup.findall("Definition")
 
+#desCrawl()
 '''
 
-
-desCrawl()
+f=open('description_json.txt', 'w')
+descriptions=desCrawl()
+f.write(json.dumps(descriptions))
+f.close()
