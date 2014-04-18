@@ -68,25 +68,26 @@ api.decorators=[cors.crossdomain(origin='*')]
 class Drug_Effect_resource(restful.Resource):
 
 	def get(self, drugName, userType):
-		effectType = "doctor_effect" if userType.lower() == "doctor" else "patient_effect"
-#		try:
-		drugId = Drugs.query.filter_by(name = drugName.lower()).first().id
-#		except:
-#			return "Drug not found", 404
+		try:
+			effectType = "doctor_effect" if userType.lower() == "doctor" else "patient_effect"
+			drugId = Drugs.query.filter_by(name = drugName.lower()).first().id
 
-		# TODO: Learn how to do a f***** select statement in SQLAlchemy! There's code to be refractored 
-		queryEffects = SideEffects.query.filter_by(drug_id = drugId)
-		
-		output = dict()
-		output["name"] = drugName
-		output["userType"] = userType
-		output["drugId"] = drugId
-		if userType == "doctor":
-			output["effects"] = [{"name": query.doctor_effect, "something": "hello"} for query in queryEffects]
-		else:
-			output["effects"] = [{"name": query.patient_effect, "something": "hello"} for query in queryEffects]
+			# TODO: Learn how to do a f***** select statement in SQLAlchemy! There's code to be refractored 
+			queryEffects = SideEffects.query.filter_by(drug_id = drugId)
 			
-		return output
+			output = dict()
+			output["name"] = drugName
+			output["userType"] = userType
+			output["drugId"] = drugId
+			if userType == "doctor":
+				output["effects"] = [{"name": query.doctor_effect, "something": "hello"} for query in queryEffects]
+			else:
+				output["effects"] = [{"name": query.patient_effect, "something": "hello"} for query in queryEffects]
+				
+			return output
+		except:
+			data.session.rollback()
+			return "Drug not found", 404
 
 
 api.add_resource(Drug_Effect_resource, '/drugs/<string:drugName>/<string:userType>')
@@ -95,16 +96,22 @@ api.add_resource(Drug_Effect_resource, '/drugs/<string:drugName>/<string:userTyp
 class Drugs_Substr_resource(restful.Resource):
 
 	def get(self, startChars):
-		drugs = Drugs.query.filter(Drugs.name.startswith(startChars)).all()
-		return [drug.name for drug in drugs]
+		try:
+			drugs = Drugs.query.filter(Drugs.name.startswith(startChars)).all()
+			return [drug.name for drug in drugs]
+		except:
+			data.session.rollback()
 
 api.add_resource(Drugs_Substr_resource, '/drugs/list/<string:startChars>')
 
 class Drugs_Substr_Result_resource(restful.Resource):
 
 	def get(self, startChars):
-		drugs = Drugs.query.filter(Drugs.name.startswith(startChars)).all()
-		return [{"name": drug.name, "concise": drug.info} for drug in drugs]
+		try:
+			drugs = Drugs.query.filter(Drugs.name.startswith(startChars)).all()
+			return [{"name": drug.name, "concise": drug.info} for drug in drugs]
+		except:
+			data.session.rollback() 
 
 api.add_resource(Drugs_Substr_Result_resource, '/drugs/result/<string:startChars>')
 
