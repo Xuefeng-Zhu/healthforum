@@ -31,7 +31,7 @@
       <div class="navbar-form pull-left input-group">
         <form ng-submit="search()" class="input-group">
           <input type="text" size="60" class="form-control" ng-model="searchText" data-animation="am-flip-x" ng-options="drug for drug in getList($viewValue)" 
-          placeholder="Type the drug name to Search" bs-typeahead/>
+          placeholder="Type the drug name to Search" ng-keyup="search()" bs-typeahead/>
           <span class="input-group-btn">
             <button class="btn btn-primary" type="button" ng-click="search()">
               <span class="glyphicon glyphicon-search"></span>
@@ -101,10 +101,11 @@
 <script src="lib/angular/angular-animate.min.js"></script>
 <script src="lib/angular/angular-sanitize.min.js"></script>
 <script src="lib/angular/angular-route.min.js"></script>
-<script src="//mgcrea.github.io/angular-strap/dist/angular-strap.js"></script>
-<script src="//mgcrea.github.io/angular-strap/dist/angular-strap.tpl.js" data-semver="v2.0.0-rc.4"></script>
-<script src="//mgcrea.github.io/angular-strap/scripts/docs.min.js" data-semver="v2.0.1"></script>
-<script src="//mgcrea.github.io/angular-strap/scripts/docs.tpl.min.js" data-semver="v2.0.1"></script>
+<script src="lib/angular-strap.js"></script>
+<script src="lib/angular-strap.tpl.js"></script>
+<!-- <script src="lib/docs.min.js"></script>
+<script src="lib/docs.tpl.min.js"></script>
+-->
 <script src="js/app.js"></script>
 
 </body>

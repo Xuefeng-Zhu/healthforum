@@ -26,18 +26,14 @@ app.controller('MainCtrl', function($scope, $http) {
 	$scope.searchText = "";
 	$scope.drugList = ["a","ab"];
 
-	// $scope.$watch("searchText", function(){
-	// 	if ($scope.searchText.length == 3){
-	// 		$http.get('http://healthforum.herokuapp.com/drugs/list/' + $scope.searchText).success(function(data){
-	// 			$scope.drugList = data;
-	// 		});
-	// 	}
-
-
-	// }, true);
+	$http.get('http://healthforum.herokuapp.com/drugs/all').success(function(data){
+			$scope.drugs = data;
+	});
 	
 	$scope.getList = function(viewValue) {
-	    var params = {address: viewValue, sensor: false};
+		if (viewValue.length == 0){
+			return;
+		}
 	    return $http.get('http://healthforum.herokuapp.com/drugs/list/' + $scope.searchText)
 	    .then(function(res) {
 	      return res.data;
@@ -45,7 +41,13 @@ app.controller('MainCtrl', function($scope, $http) {
 	}
 
 	$scope.search = function(){
-		console.log("hell")
+		if ($scope.searchText.length == 0){
+			return;
+		}
+		console.log($scope.searchText);
+		$http.get('http://healthforum.herokuapp.com/drugs/result/' + $scope.searchText).success(function(data){
+				$scope.drugs = data;
+		});
 
 	}
 });
@@ -60,26 +62,6 @@ app.controller('SelectDemoCtrl', function($scope, $http) {
 	{value: 'Letter', label: '<i class="fa fa-sort-alpha-asc"></i> Letter'},
 	{value: 'Most Review', label: '<i class="fa fa-comment"></i> Most Review'}
 	];
-
-	$scope.drugs = [
-	{name: 'clot', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'B', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'C', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'D', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'E', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'F', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'G', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'H', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'I', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'J', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	{name: 'K', concise:'Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo Demo, Demo, Demo, Demo'},
-	];
-
-
-	// $http.get('http://healthforum.herokuapp.com/drugs').success(function(data){
-	// 	$scope.drugs = data;
-	// });
-
 
 });
 
