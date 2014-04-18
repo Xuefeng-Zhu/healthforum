@@ -3,7 +3,7 @@ var app = angular.module('myapp', ['ngRoute','ngAnimate', 'ngSanitize', 'mgcrea.
 app.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
-		when('/', {
+		when('/description/:drugName', {
 			templateUrl: 'partials/description.html',
 			controller: 'DescriptionCtrl'
 		}).
@@ -11,7 +11,7 @@ app.config(['$routeProvider',
 			templateUrl: 'partials/sideeffect.html',
 			controller: 'SideEffectCtrl'
 		}).
-		when('/comments', {
+		when('/comments/:drugName', {
 			templateUrl: 'partials/comments.html',
 			controller: 'CommentsCtrl'
 		}).
@@ -63,24 +63,28 @@ app.controller('SelectDemoCtrl', function($scope, $http) {
 	{value: 'Most Review', label: '<i class="fa fa-comment"></i> Most Review'}
 	];
 
+	$scope.sDrug = function(name){
+		$scope.selectDrug = name;
+	}
+
 });
 
-app.controller('DescriptionCtrl', function($scope, $http){
+app.controller('DescriptionCtrl', function($scope, $http, $routeParams){
+	$scope.drugName = $routeParams["drugName"];
+
 	$scope.description = {name: 'A', manufacture:'xxxx', price:'$18'}
 });
 
 app.controller('SideEffectCtrl', function($scope, $http, $routeParams){
 	$scope.drugName = $routeParams["drugName"];
-	$http.get('http://healthforum.herokuapp.com/drugs/drugName/patient').success(function(data){
+	$http.get('http://healthforum.herokuapp.com/drugs/' + $scope.drugName +'/patient').success(function(data){
 		$scope.effects = data.effects;
 	});	
-	$scope.effects = [
-	{name: 'A', links:[{name: 'Cnbeta', url:'http://www.Cnbeta.com'},{name: 'Google', url:'www.google.com'}]},
-	{name: 'B', links:[{name: 'Cnbeta', url:'http://www.Cnbeta.com'},{name: 'Google', url:'www.google.com'}]}
-	]
 });
 
-app.controller('CommentsCtrl', function($scope, $http){
+app.controller('CommentsCtrl', function($scope, $http, $routeParams){
+	$scope.drugName = $routeParams["drugName"];
+
 	$(document).ready(function() {
 		$('.summernote').summernote({
 			toolbar: [

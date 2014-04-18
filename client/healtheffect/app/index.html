@@ -79,7 +79,7 @@
 
         <div class="panel-body" style="background-color:#f5f5f5;min-height:30em">
           <div class="list-group">
-            <a href="#" class="list-group-item" style="margin-bottom:10px" ng-repeat="drug in drugs">
+            <a href="#/description/{{drug.name}}" class="list-group-item" ng-class="{active: drug.name == selectDrug}" style="margin-bottom:10px" ng-repeat="drug in drugs" ng-click="sDrug(drug.name)">
               <h4 class="list-group-item-heading">{{drug.name}}</h4>
               <p class="list-group-item-text">{{drug.concise}}</p>
             </a>
