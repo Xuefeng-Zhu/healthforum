@@ -1,4 +1,4 @@
-var app = angular.module('myapp', ['ngRoute','ngAnimate', 'ngSanitize', 'mgcrea.ngStrap']);
+var app = angular.module('myapp', ['ngRoute','ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'toggle-switch']);
 
 app.config(['$routeProvider',
 	function($routeProvider) {
@@ -24,20 +24,20 @@ app.config(['$routeProvider',
 app.controller('MainCtrl', function($scope, $http) {
 
 	$scope.searchText = "";
-	$scope.drugList = ["a","ab"];
+	$scope.searchMode = true;
 
 	$http.get('http://healthforum.herokuapp.com/drugs/all').success(function(data){
-			$scope.drugs = data;
+		$scope.drugs = data;
 	});
 	
 	$scope.getList = function(viewValue) {
 		if (viewValue.length == 0){
 			return;
 		}
-	    return $http.get('http://healthforum.herokuapp.com/drugs/list/' + $scope.searchText)
-	    .then(function(res) {
-	      return res.data;
-	    });
+		return $http.get('http://healthforum.herokuapp.com/drugs/list/' + $scope.searchText)
+		.then(function(res) {
+			return res.data;
+		});
 	}
 
 	$scope.search = function(){
@@ -46,7 +46,7 @@ app.controller('MainCtrl', function($scope, $http) {
 		}
 		console.log($scope.searchText);
 		$http.get('http://healthforum.herokuapp.com/drugs/result/' + $scope.searchText).success(function(data){
-				$scope.drugs = data;
+			$scope.drugs = data;
 		});
 
 	}
@@ -73,11 +73,25 @@ app.controller('DescriptionCtrl', function($scope, $http, $routeParams){
 	$scope.drugName = $routeParams["drugName"];
 
 	$scope.description = {name: 'A', manufacture:'xxxx', price:'$18'}
+
+	$http.get('http://mapi-us.iterar.co/api/' + $scope.drugName +'/doses.json', {headers: {'Authorization': 'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='}}).success(function(data){
+		$scope.description.doses = data;
+	});	
+
 });
 
 app.controller('SideEffectCtrl', function($scope, $http, $routeParams){
 	$scope.drugName = $routeParams["drugName"];
-	$http.get('http://healthforum.herokuapp.com/drugs/' + $scope.drugName +'/patient').success(function(data){
+	$scope.panel = "panel panel-info";
+
+	$scope.$watch('searchMode', function(){
+		$http.get('http://healthforum.herokuapp.com/drugs/' + $scope.drugName + ($scope.searchMode ? '/patient' : '/doctor')).success(function(data){
+			$scope.effects = data.effects;
+		});	
+		$scope.panel = $scope.searchMode ? "panel panel-info" : "panel panel-success"
+	}, true);
+
+	$http.get('http://healthforum.herokuapp.com/drugs/' + $scope.drugName + ($scope.searchMode ? '/patient' : '/doctor')).success(function(data){
 		$scope.effects = data.effects;
 	});	
 });
@@ -100,6 +114,6 @@ app.controller('CommentsCtrl', function($scope, $http, $routeParams){
             ],
             height: 150
 
-});	});
+        });	});
 
 })
