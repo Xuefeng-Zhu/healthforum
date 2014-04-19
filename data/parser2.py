@@ -62,11 +62,3 @@ for drug in drugs_doct:
 		print "Error: Unable to put the drug " + drug + " into the database."
 		db.rollback()
 			
-
-
-
-#for drug in drugs_doct:
-#	print drugs_doct[drug] 
-#
-#for drug in drugs_pat:
-#	print drugs_pat[drug]

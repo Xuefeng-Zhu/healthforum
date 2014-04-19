@@ -31,6 +31,17 @@ api.decorators=[cors.crossdomain(origin='*')]
 ################################################
 ################################################
 
+class Drug_info_resource(restful.Resource):
+	def get(self, drugname):
+		try:
+			druginfo = Drugs.query.filter_by(name = drugname).first()
+			return {"name": druginfo.name, "concise": druginfo.info}
+		except:
+			data.session.rollback()
+			return "Error...", 500 
+
+api.add_resource(Drug_info_resource, "/drugs/info/<string:drugname>")
+
 # Returns a list of all of the drugs in the database
 class Drug_List_resource(restful.Resource):
 
@@ -40,6 +51,7 @@ class Drug_List_resource(restful.Resource):
 			return [{"name": drug.name, "concise": drug.info} for drug in drugs]
 		except:
 			data.session.rollback()
+			return "Error...", 500 
 
 api.add_resource(Drug_List_resource, '/drugs/all')
 
@@ -67,7 +79,7 @@ class Drug_Effect_resource(restful.Resource):
 			return output
 		except:
 			data.session.rollback()
-			return "Drug not found", 404
+			return "Error...", 500 
 
 
 api.add_resource(Drug_Effect_resource, '/drugs/<string:drugName>/<string:userType>')
@@ -81,6 +93,7 @@ class Drugs_Substr_resource(restful.Resource):
 			return [drug.name for drug in drugs]
 		except:
 			data.session.rollback()
+			return "Drug not found", 404
 
 api.add_resource(Drugs_Substr_resource, '/drugs/list/<string:startChars>')
 

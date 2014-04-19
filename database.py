@@ -8,10 +8,7 @@ useHenry = True
 herokuURI = 'mysql://bbe6abd0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a'
 henryURI = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
 
-if useHenry:
-	URI = henryURI
-else:
-	URI = herokuURI
+URI = henryURI if useHenry else herokuURI
 
 # In runserver.py, the code will not be able to access these global vars 
 databaseApp = Flask(__name__)
