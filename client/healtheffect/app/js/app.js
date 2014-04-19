@@ -74,7 +74,7 @@ app.controller('DescriptionCtrl', function($scope, $http, $routeParams){
 
 	$scope.description = {name: 'A', manufacture:'xxxx', price:'$18'}
 
-	$http.get('http://mapi-us.iterar.co/api/' + $scope.drugName +'/doses.json', {headers: {'Authorization': 'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='}}).success(function(data){
+	$http.get('https://iterar-mapi-us.p.mashape.com/api/' + $scope.drugName +'/doses.json', {headers: {'X-Mashape-Authorization': 'QqfoZNhsxQ9WSlbMapSXtkOfCBD76U0W'}}).success(function(data){
 		$scope.description.doses = data;
 	});	
 
