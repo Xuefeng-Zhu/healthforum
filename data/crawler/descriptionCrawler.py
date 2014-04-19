@@ -46,7 +46,7 @@ def desCrawl():
 	script_dir=os.path.dirname(os.path.abspath(__file__))
 	dest_file = os.path.join(script_dir, 'descriptions')
 	f3=open("notFound.txt","w")
-
+	drug_desc={}
 	with open("drugList.txt", "r") as f1:
 		for line in f1:
 			if isValid(line):
@@ -58,6 +58,19 @@ def desCrawl():
 				file_name="%s.txt"%(line)
 				path=os.path.join(dest_file,file_name)
 				f2=open(path,"w")
+				drug_desc[line.strip("\n")]=str(soup.find(itemprop="description").string)
+				f2.write(str(soup.find(itemprop="description").string))
+				f2.close()
+			elif isValidMTM(line):
+				url="http://www.drugs.com/mtm/%s.html"%(line).strip()
+				print url
+				r=requests.get(url)
+				data=r.text
+				soup=BeautifulSoup(data)
+				file_name="%s.txt"%(line)
+				path=os.path.join(dest_file,file_name)
+				f2=open(path,"w")
+				drug_desc[line.strip("\n")]=str(soup.find(itemprop="description").string)
 				f2.write(str(soup.find(itemprop="description").string))
 				f2.close()
 			elif isValidMTM(line):
@@ -73,6 +86,7 @@ def desCrawl():
 				f2.close()
 			else:
 				f3.write(line)
+	return drug_desc
 	f3.close()
 
 
