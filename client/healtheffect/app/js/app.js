@@ -26,7 +26,7 @@ app.controller('MainCtrl', function($scope, $http) {
 	$scope.searchText = "";
 	$scope.searchMode = true;
 
-	$http.get('http://healthforum.herokuapp.com/drugs/all').success(function(data){
+	$http.get('https://healthforum.herokuapp.com/drugs/all').success(function(data){
 		$scope.drugs = data;
 	});
 	
@@ -34,7 +34,7 @@ app.controller('MainCtrl', function($scope, $http) {
 		if (viewValue.length == 0){
 			return;
 		}
-		return $http.get('http://healthforum.herokuapp.com/drugs/list/' + $scope.searchText)
+		return $http.get('https://healthforum.herokuapp.com/drugs/list/' + $scope.searchText)
 		.then(function(res) {
 			return res.data;
 		});
@@ -45,7 +45,7 @@ app.controller('MainCtrl', function($scope, $http) {
 			return;
 		}
 		console.log($scope.searchText);
-		$http.get('http://healthforum.herokuapp.com/drugs/result/' + $scope.searchText).success(function(data){
+		$http.get('https://healthforum.herokuapp.com/drugs/result/' + $scope.searchText).success(function(data){
 			$scope.drugs = data;
 		});
 
@@ -85,13 +85,13 @@ app.controller('SideEffectCtrl', function($scope, $http, $routeParams){
 	$scope.panel = "panel panel-info";
 
 	$scope.$watch('searchMode', function(){
-		$http.get('http://healthforum.herokuapp.com/drugs/' + $scope.drugName + ($scope.searchMode ? '/patient' : '/doctor')).success(function(data){
+		$http.get('https://healthforum.herokuapp.com/drugs/' + $scope.drugName + ($scope.searchMode ? '/patient' : '/doctor')).success(function(data){
 			$scope.effects = data.effects;
 		});	
 		$scope.panel = $scope.searchMode ? "panel panel-info" : "panel panel-success"
 	}, true);
 
-	$http.get('http://healthforum.herokuapp.com/drugs/' + $scope.drugName + ($scope.searchMode ? '/patient' : '/doctor')).success(function(data){
+	$http.get('https://healthforum.herokuapp.com/drugs/' + $scope.drugName + ($scope.searchMode ? '/patient' : '/doctor')).success(function(data){
 		$scope.effects = data.effects;
 	});	
 });
