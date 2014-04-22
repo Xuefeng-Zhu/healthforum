@@ -41,7 +41,7 @@ def alphaStartTest():
 		drugs = curl(heroku + "drugs/result/" + i )
 		try:
 			if len(drugs) >= 0:
-				return 0
+				return 0 # this is only going to check whether the query for 'a' works
 			return 1
 		except:
 			return 2
@@ -50,9 +50,15 @@ def alphaStartTest():
 def dummyData():
 	dummyText = ['hello']
 	drugs = curl(heroku + "drugs/all")
+
+# drugs is going to return an array of medicine objects / dictionaries
+# You could access the medicine objects as such:
+# drugs[i]["concise"], drugs[i]["name"]
+# etc
+
 	druglength = len(drugs)
 	for i in range (0, druglength):
-		if 'zyrtec' in drugs[i]: print drugs[i]
+		if 'zyrtec' in drugs[i]: print drugs[i] # Not sure if this line would compile
 
 
 

@@ -84,7 +84,7 @@ class Drug_Effect_resource(restful.Resource):
 
 api.add_resource(Drug_Effect_resource, '/drugs/<string:drugName>/<string:userType>')
 
-
+# Grabs the drugs that start with the given characters
 class Drugs_Substr_resource(restful.Resource):
 
 	def get(self, startChars):
@@ -97,6 +97,7 @@ class Drugs_Substr_resource(restful.Resource):
 
 api.add_resource(Drugs_Substr_resource, '/drugs/list/<string:startChars>')
 
+# Grabs the drugs and their information that start with the given characters
 class Drugs_Substr_Result_resource(restful.Resource):
 
 	def get(self, startChars):
