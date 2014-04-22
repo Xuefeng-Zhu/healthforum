@@ -8,6 +8,8 @@ from datatest import *
 def main():
 	tests = []
 	tests.append(result(allDrugsTest, "allDrugsTest"))
+	tests.append(result(alphaStartTest, "alphaStartTest"))
+	tests.append(result(dummyData, "dummyData"))
 
 ########################################
 # TODO FOR CASSANDRA
@@ -19,6 +21,7 @@ def main():
 	numPass = 0
 	numFailed = 0
 	numWarning = 0
+	numHello = 0
 	for test in tests:
 		if test[1] == 0:
 			print test[0] + " has passed."
@@ -26,6 +29,10 @@ def main():
 
 		elif test[1] == 1:
 			print test[0] + " has indicated a database error."
+			numWarning += 1
+
+		elif test[1] == 99:
+			print test[0] + " has dummy data."
 			numWarning += 1
 
 		else:
@@ -37,6 +44,7 @@ def main():
 	print "Passed:\t\t" + str(numPass)
 	print "Warning:\t" + str(numWarning)
 	print "Failed:\t\t" + str(numFailed)
+	print "Dummy:\t\t" + str(numHello)
 
 	if numFailed == 0 and numWarning == 0:
 		print "Congrats: The code completely passed!"

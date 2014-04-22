@@ -20,6 +20,8 @@ heroku = "healthforum.herokuapp.com/"
 # 0: The test passed
 # 1: Something might be wrong with the data
 # 2: Something's majorly wrong with the database.
+
+
 def allDrugsTest():
 	drugs = curl(heroku + "drugs/all")
 	try:
@@ -31,10 +33,28 @@ def allDrugsTest():
 	except:
 		return 2
 
-########################################
-# TODO FOR CASSANDRA
-# Write a test similar to the one above.
-#######################################
+# tests all possible alpha chars at start of drug name
+# this can return empty arrays if there are no drug names beginning with a letter
+def alphaStartTest():
+	alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+	for i in alphabet:
+		drugs = curl(heroku + "drugs/result/" + i )
+		try:
+			if len(drugs) >= 0:
+				return 0
+			return 1
+		except:
+			return 2
+
+# locate hello or dummy data
+def dummyData():
+	dummyText = ['hello']
+	drugs = curl(heroku + "drugs/all")
+	druglength = len(drugs)
+	for i in range (0, druglength):
+		if 'zyrtec' in drugs[i]: print drugs[i]
+
+
 
 
 
