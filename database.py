@@ -25,7 +25,8 @@ class Users(db.Model):
 	dob = db.Column(db.DateTime)
 	weight_lbs = db.Column(db.Integer)
 	height_inches = db.Column(db.Integer)
-	gender = db.Column(db.CHAR(1))
+	gender = db.Column(db.Boolean)
+	isPatient = db.Column(db.Boolean)
 
 	def __init__(self, first, last, dob):
 		self.first_name = first
@@ -43,7 +44,9 @@ class Users(db.Model):
 			'dob': fields.DateTime,
 			'weight_lbs': fields.Integer,
 			'height_inches': fields.Integer,
-			'gender': fields.Raw
+			'isMale': fields.Boolean,
+			'isPatient': fields.Boolean
+
 		}
 		return users_fields
 	
