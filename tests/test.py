@@ -10,18 +10,14 @@ def main():
 	tests.append(result(allDrugsTest, "allDrugsTest"))
 	tests.append(result(alphaStartTest, "alphaStartTest"))
 	tests.append(result(dummyData, "dummyData"))
-
-########################################
-# TODO FOR CASSANDRA
-# Just like I did in line 10, call your test from datatest.py
-# by passing it into the result() function.
-#######################################
+	tests.append(result(patientData, "patientData"))
+	tests.append(result(doctorData, "doctorData"))
 
 	# Iterates through all the tuples in the list
 	numPass = 0
 	numFailed = 0
 	numWarning = 0
-	numHello = 0
+	numDummy = 0
 	for test in tests:
 		if test[1] == 0:
 			print test[0] + " has passed."
@@ -31,9 +27,10 @@ def main():
 			print test[0] + " has indicated a database error."
 			numWarning += 1
 
+		# dummy call just for testing, can remove for final scripts unless we want other types of test pass/fail
 		elif test[1] == 99:
 			print test[0] + " has dummy data."
-			numWarning += 1
+			numDummy += 1
 
 		else:
 			print test[0] + " has completely failed..."
@@ -44,7 +41,7 @@ def main():
 	print "Passed:\t\t" + str(numPass)
 	print "Warning:\t" + str(numWarning)
 	print "Failed:\t\t" + str(numFailed)
-	print "Dummy:\t\t" + str(numHello)
+	print "Dummy:\t\t" + str(numDummy)
 
 	if numFailed == 0 and numWarning == 0:
 		print "Congrats: The code completely passed!"
@@ -55,6 +52,7 @@ def main():
 # Returns a test tuple: ("function name", state)
 # if state == 0: The test passed
 # if state == 1: The test ran, but there might be output errors
+#				 Can also return 1 if the condition of the test is faulty, such as returning empty arrays where we might want data
 # if state == 2: The test completely failed
 #
 # TODO: Find out a way to get the function name of testFunc
