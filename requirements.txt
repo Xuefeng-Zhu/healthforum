@@ -11,8 +11,6 @@ aniso8601==0.82
 gunicorn==18.0
 itsdangerous==0.23
 newrelic==2.18.1.15
-numpy==1.8.1
 pytz==2014.2
-scipy==0.13.3
 six==1.6.1
 wsgiref==0.1.2
