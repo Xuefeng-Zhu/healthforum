@@ -5,7 +5,7 @@ from flask.ext.restful import fields, marshal
 useHenry = True
 
 # URLS for the databases. The default one is henryURI
-herokuURI = 'mysql://bbe6abd0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a'
+herokuURI = 'mysql://bbe6abd0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a' # I think I accidentally deleted this....
 henryURI = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
 
 URI = henryURI if useHenry else herokuURI
