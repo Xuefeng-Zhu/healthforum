@@ -3,33 +3,33 @@
 from bs4 import BeautifulSoup
 import requests
 import json
-from descriptionCrawler import isValid
+import re
 from descriptionCrawler import desCrawl
-from descriptionCrawler import drugList
-
-
-
-
+from PriceCrawler import priceCrawl
 
 '''
-name="macrolide"
+name="xanax"
 
 
-url="http://www.drugs.com/dict/%s.html"%(name).strip()
+url="http://www.drugs.com/price-guide/%s"%(name).strip()
 print url
 r=requests.get(url)
 data=r.text
 soup=BeautifulSoup(data)
-print(soup.prettify())
-#print soup.title.string
-print soup.findall("Definition")
+sbody=soup.body
 
-#desCrawl()
+dstring=[]
+for string in sbody.stripped_strings:
+	if "$" in string:
+		try:
+			dstring.append(str(string))
+		except:
+			continue
+
+dstring.pop(0)
+print dstring
 '''
 
-desCrawl()
-f=open('description_json.txt', 'w')
-descriptions=desCrawl()
-f.write(json.dumps(descriptions))
-f.close()
+drugs=desCrawl()
 
+priceCrawl()
