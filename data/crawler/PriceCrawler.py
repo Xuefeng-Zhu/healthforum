@@ -39,6 +39,7 @@ def priceCrawl():
 				f3.write(line)
 			f2.close()
 	f3.close()
+	return drug_price
 	
 
 

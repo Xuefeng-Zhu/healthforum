@@ -53,7 +53,7 @@ def desCrawl():
 			if isValid(line):
 				url="http://www.drugs.com/%s.html"%(line).strip()
 				print url
-				drug_link[line]=url
+				drug_link[line.strip('\n')]=url
 				r=requests.get(url)
 				data=r.text
 				soup=BeautifulSoup(data)
@@ -66,7 +66,7 @@ def desCrawl():
 			elif isValidMTM(line):
 				url="http://www.drugs.com/mtm/%s.html"%(line).strip()
 				print url
-				drug_link[line]=url
+				drug_link[line.strip('\n')]=url
 				r=requests.get(url)
 				data=r.text
 				soup=BeautifulSoup(data)
@@ -79,7 +79,7 @@ def desCrawl():
 			elif isValidMTM(line):
 				url="http://www.drugs.com/mtm/%s.html"%(line).strip()
 				print url
-				drug_link[line]=url
+				drug_link[line.strip('\n')]=url
 				r=requests.get(url)
 				data=r.text
 				soup=BeautifulSoup(data)
