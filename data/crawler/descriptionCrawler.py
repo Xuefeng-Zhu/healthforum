@@ -47,11 +47,13 @@ def desCrawl():
 	dest_file = os.path.join(script_dir, 'descriptions')
 	f3=open("notFound.txt","w")
 	drug_desc={}
+	drug_link={}
 	with open("drugList.txt", "r") as f1:
 		for line in f1:
 			if isValid(line):
 				url="http://www.drugs.com/%s.html"%(line).strip()
 				print url
+				drug_link[line]=url
 				r=requests.get(url)
 				data=r.text
 				soup=BeautifulSoup(data)
@@ -64,6 +66,7 @@ def desCrawl():
 			elif isValidMTM(line):
 				url="http://www.drugs.com/mtm/%s.html"%(line).strip()
 				print url
+				drug_link[line]=url
 				r=requests.get(url)
 				data=r.text
 				soup=BeautifulSoup(data)
@@ -76,6 +79,7 @@ def desCrawl():
 			elif isValidMTM(line):
 				url="http://www.drugs.com/mtm/%s.html"%(line).strip()
 				print url
+				drug_link[line]=url
 				r=requests.get(url)
 				data=r.text
 				soup=BeautifulSoup(data)
@@ -86,7 +90,7 @@ def desCrawl():
 				f2.close()
 			else:
 				f3.write(line)
-	return drug_desc
 	f3.close()
+	return {"descriptions": drug_desc, "links": drug_link}
 
 

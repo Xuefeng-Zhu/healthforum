@@ -27,11 +27,13 @@ def priceCrawl():
 					except:
 						continue
 			dstring.pop(0)
-			print dstring[0]
+			print line
 			if 'jQuery' in dstring[0]:
 				f2.write('None')
+				drug_price[line.strip('\n')]="None"
 			elif "$" in dstring[0]:
 				f2.write(dstring[0]+"\n")
+				drug_price[line.strip('\n')]=dstring[0]
 				f2.write(url)
 			else:
 				f3.write(line)
