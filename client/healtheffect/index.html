@@ -35,7 +35,8 @@
           <input type="text" size="60" class="form-control" ng-model="searchText" data-animation="am-flip-x" ng-options="drug for drug in getList($viewValue)" 
           placeholder="Type the drug name to Search" ng-keyup="search()" bs-typeahead/>
           <span class="input-group-btn">
-            <button class="btn btn-primary" type="button" ng-click="search()">
+            <button class="btn btn-primary" type="button" ng-click="search()" style="margin-left: -1px;
+border-bottom-left-radius: 0; border-top-left-radius: 0;">
               <span class="glyphicon glyphicon-search"></span>
             </button>
           </span>
