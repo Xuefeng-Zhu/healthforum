@@ -1,6 +1,7 @@
 from flask import Flask 
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.restful import fields, marshal
+from passlib.apps import custom_app_context as pwd_context
 
 useHenry = False
 
@@ -24,14 +25,20 @@ class Users(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	first_name = db.Column(db.String(30))
 	last_name = db.Column(db.String(30))
-	email = db.Column(db.String(50))
+	email = db.Column(db.String(50), unique = True)
+	password_hash = db.Column(db.String(132))
 	isDoctor = db.Column(db.Boolean)
 
-
-	def __init__(self, first, last, dob):
+	def __init__(self, first, last, email, password, isDoctor):
 		self.first_name = first
 		self.last_name = last
-		self.dob = dob
+		self.email = email
+		self.password_hash = hash(password)
+		self.isDoctor = isDoctor
+
+	@staticmethod
+	def hash(string)
+		return pwd_context.encrypt(string)
 
 	# Marshalling documentation:
 	# http://flask-restful.readthedocs.org/en/latest/api.html

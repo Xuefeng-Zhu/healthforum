@@ -5,6 +5,8 @@ from flask.ext.restful import reqparse, marshal_with, marshal
 from flask.ext.restful.utils import cors
 from database import Users, Drugs, SideEffects, URI 
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.httpauth import HTTPBasicAuth
+auth = HTTPBasicAuth()
 
 """
 More information about Flask RESTful:
@@ -124,24 +126,36 @@ class Users_resource(restful.Resource):
 		password = args["password"]
 		# TODO: MAKE SURE THE PASSWORD HASHES TO THE CORRECT USER
 		# TODO: RETURN THE USER DATA
+		
 
 api.add_resource(Users_resource, '/users/login/')
 
 
 createUserParse = reqparse.RequestParser()
+createUserParse.add_argument("first", type=str, required=True)
+createUserParse.add_argument("last", type=str, required=True)
 createUserParse.add_argument("email", type=str, required=True)
 createUserParse.add_argument("password", type=str, required=True)
 createUserParse.add_argument("isDoctor", type=bool, required=True)
-createUserParse.add_argument("first", type=str, required=True)
-createUserParse.add_argument("last", type=str, required=True)
 class Create_user_resource(restful.Resource):
 
-	# Logging a user in	
+	# Create a user account
 	def post(self):
 		args = loginParse.parse_args()
+		first = args['first']
+		last = args['last']
 		email = args["email"]
 		password = args["password"]
-		# TODO: MAKE SURE THE PASSWORD HASHES TO THE CORRECT USER
+		isDoctor = args['isDoctor']
+
+		# Checking uniqueness of user
+		user = User.query.filter_by(email = email).first()
+		if user is not None:
+			return False # TODO: DO SOMETHING ELSE
+		newUser = User(first, last, email, password, isDoctor)
+		data.session.add(newUser)
+		data.session.commit(newUser)
+		return # TODO: SOMETHING HERE
 
 api.add_resource(Create_user_resource, '/users/create')
 
