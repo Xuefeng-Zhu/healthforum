@@ -22,11 +22,7 @@ class Users(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	first_name = db.Column(db.String(30))
 	last_name = db.Column(db.String(30))
-	dob = db.Column(db.DateTime)
-	weight_lbs = db.Column(db.Integer)
-	height_inches = db.Column(db.Integer)
-	gender = db.Column(db.Boolean)
-	isPatient = db.Column(db.Boolean)
+	isDoctor = db.Column(db.Boolean)
 
 	def __init__(self, first, last, dob):
 		self.first_name = first
@@ -41,15 +37,50 @@ class Users(db.Model):
 		users_fields = {
 			'first_name': fields.String,
 			'last_name': fields.String,
-			'dob': fields.DateTime,
-			'weight_lbs': fields.Integer,
-			'height_inches': fields.Integer,
-			'isMale': fields.Boolean,
-			'isPatient': fields.Boolean
-
+			'isDoctor': fields.Boolean,
 		}
 		return users_fields
 	
+class Patients(db.Model):
+	id = db.Column(db.Integer, primary_key = True)
+	user_id = db.Column(db.Integer)
+	dob = db.Column(db.Date)
+	weight_lbs = db.Column(db.Integer)
+	height_in = db.Column(db.Integer)
+	gender = db.Column(db.Enum('F', 'M'))
+
+	def __init__(self, dob, weight, height_ft, height_in, gender):
+		if height_in >= 12:
+			print "WARNING: height_in >= 12"
+		self.dob = dob
+		self.weight_lbs = weight
+		self.height_in = height_ft * 12 + height_in
+		self.gender = gender
+
+	@staticmethod
+	def fields():
+		patient_fields = {
+			'dob': fields.DateTime,
+			'height_ft': fields.Integer
+			'height_in': fields.Integer
+			'gender': fields.String 
+		}
+		return patient_fields
+
+class Doctors(db.Model):
+	id = db.Column(db.Integer, primary_key = True)
+	user_id = db.Column(db.Integer)
+	hospital = db.Column(db.String(100))
+	specialization = db.Column(db.String(60))
+	title = db.Column(db.String(52))
+
+	def __init__(self, user_id, hospital, specialization, title):
+		self.user_id = user_id
+		self.hospital = hospital
+		self.specialization = specialization
+		self.title = title
+
+
 # NOTE: Shows up in database as drugs, NOT Drugs
 class Drugs(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
