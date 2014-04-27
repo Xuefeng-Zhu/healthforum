@@ -2,13 +2,15 @@ from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.restful import fields, marshal
 
-useHenry = True
+useHenry = False
 
 # URLS for the databases. The default one is henryURI
-herokuURI = 'mysql://bbe6abd0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a' # I think I accidentally deleted this....
+# the clearDB database has been deleted! I commented out herokuURI for this reason.
+#herokuURI = 'mysql://bbe6abd0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a' # I think I accidentally deleted this....
 henryURI = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
+testURI = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_test'
 
-URI = henryURI if useHenry else herokuURI
+URI = henryURI if useHenry else testURI
 
 # In runserver.py, the code will not be able to access these global vars 
 databaseApp = Flask(__name__)
@@ -45,8 +47,8 @@ class Patients(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
 	user_id = db.Column(db.Integer)
 	dob = db.Column(db.Date)
-	weight_lbs = db.Column(db.Integer)
-	height_in = db.Column(db.Integer)
+	weight_lbs = db.Column(db.SMALLINT)
+	height_in = db.Column(db.SMALLINT)
 	gender = db.Column(db.Enum('F', 'M'))
 
 	def __init__(self, dob, weight, height_ft, height_in, gender):
@@ -61,8 +63,8 @@ class Patients(db.Model):
 	def fields():
 		patient_fields = {
 			'dob': fields.DateTime,
-			'height_ft': fields.Integer
-			'height_in': fields.Integer
+			'height_ft': fields.Integer,
+			'height_in': fields.Integer,
 			'gender': fields.String 
 		}
 		return patient_fields

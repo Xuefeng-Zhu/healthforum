@@ -1,5 +1,10 @@
 #!/usr/bin/python
 
+"""
+Inserts the drugs and their respective side effects into the database.
+
+Proper parsing has been implemented.
+"""
 import MySQLdb
 import shlex
 
@@ -23,18 +28,18 @@ with open('drugs2.txt','r') as f:
 
 
 # When testing
-if False:
-	db = MySQLdb.connect(host="engr-cpanel-mysql.engr.illinois.edu",
-						 user="halin2_guest",
-						 passwd="helloworld",
-						 db="halin2_sample")
+if True:
+	db = MySQLdb.connect(host = "engr-cpanel-mysql.engr.illinois.edu",
+						user="halin2_guest",
+						passwd="helloworld",
+						db = "halin2_test")
 
- For the actual server
+# When not testing
 else:
-	db = MySQLdb.connect(host = "us-cdbr-east-05.cleardb.net",
-						user = "bbe6abd0b555dc",
-						passwd = "488c7e4d",
-						db = "heroku_5f9923672d3888a")
+	db = MySQLdb.connect(host="engr-cpanel-mysql.engr.illinois.edu",
+						user="halin2_guest",
+						passwd="helloworld",
+						db="halin2_sample")
 
 # Side effects are now arranged in two dictionaries:
 # drugs_doct and drugs_pat. All we need to do now is
