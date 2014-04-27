@@ -21,7 +21,7 @@ app.config(['$routeProvider',
 	}]);
 
 
-app.controller('MainCtrl', function($scope, $http) {
+app.controller('MainCtrl', function($scope, $http, $aside) {
 
 	$scope.searchText = "";
 	$scope.searchMode = true;
@@ -48,7 +48,19 @@ app.controller('MainCtrl', function($scope, $http) {
 		$http.get('https://healthforum.herokuapp.com/drugs/result/' + $scope.searchText).success(function(data){
 			$scope.drugs = data;
 		});
+	}
 
+	var signupAside;
+	$scope.logAside = function(){
+		  var myOtherAside = $aside({scope: $scope, template: 'partials/account.html'});
+	}
+
+	$scope.signAside = function(){
+		  signupAside = $aside({scope: $scope, template: 'partials/signup.html'});
+	}
+
+	$scope.createAcount = function(){
+		signupAside.hide();
 	}
 });
 
