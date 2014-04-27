@@ -43,12 +43,7 @@
         </form>
       </div>
 
-
-
-
-      <div class="navbar-text col-lg-2 pull-right">Drug Found: <a>
-        <span>{{drugs.length}}</span></a>
-      </div>
+      <button type="button" class="btn btn-primary navbar-btn pull-right" ng-click="logAside()">Log in</button>
     </div>
 
   </div>
@@ -65,20 +60,17 @@
         <div class="panel-heading">
           <div class="row">
             <!-- Pagination -->
-            <ul class="pagination" style="margin:0">
-              <li><a href="#">&laquo;</a></li>
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">&raquo;</a></li>
-            </ul>
+            
             <div class="col-lg-5">
               <label>Sort By:&nbsp;</label>
               <button type="button" class="btn btn-default" ng-model="selectedIcon" data-html="1" data-animation="am-flip-x" ng-options="icon.value as icon.label for icon in icons" placeholder="Select" bs-select>
                 Action <span class="caret"></span>
               </button>
+            </div>
+
+            <div class="col-lg-5 pull-right" style="padding:6px 12px">
+              <label>Drug Found:</label> <a>
+              <span>{{drugs.length}}</span></a>
             </div>
           </div>
         </div>
