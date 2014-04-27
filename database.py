@@ -24,7 +24,9 @@ class Users(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	first_name = db.Column(db.String(30))
 	last_name = db.Column(db.String(30))
+	email = db.Column(db.String(50))
 	isDoctor = db.Column(db.Boolean)
+
 
 	def __init__(self, first, last, dob):
 		self.first_name = first
@@ -40,6 +42,7 @@ class Users(db.Model):
 			'first_name': fields.String,
 			'last_name': fields.String,
 			'isDoctor': fields.Boolean,
+			'email': fields.email
 		}
 		return users_fields
 	

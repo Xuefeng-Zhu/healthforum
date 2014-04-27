@@ -112,5 +112,40 @@ api.add_resource(Drugs_Substr_Result_resource, '/drugs/result/<string:startChars
 ################################################
 ################################################
 
+loginParse = reqparse.RequestParser()
+loginParse.add_argument("email", type=str, required=True)
+loginParse.add_argument("password", type=str, required=True)
+class Users_resource(restful.Resource):
+
+	# Logging a user in	
+	def post(self):
+		args = loginParse.parse_args()
+		email = args["email"]
+		password = args["password"]
+		# TODO: MAKE SURE THE PASSWORD HASHES TO THE CORRECT USER
+		# TODO: RETURN THE USER DATA
+
+api.add_resource(Users_resource, '/users/login/')
+
+
+createUserParse = reqparse.RequestParser()
+createUserParse.add_argument("email", type=str, required=True)
+createUserParse.add_argument("password", type=str, required=True)
+createUserParse.add_argument("isDoctor", type=bool, required=True)
+createUserParse.add_argument("first", type=str, required=True)
+createUserParse.add_argument("last", type=str, required=True)
+class Create_user_resource(restful.Resource):
+
+	# Logging a user in	
+	def post(self):
+		args = loginParse.parse_args()
+		email = args["email"]
+		password = args["password"]
+		# TODO: MAKE SURE THE PASSWORD HASHES TO THE CORRECT USER
+
+api.add_resource(Create_user_resource, 'users/create')
+
+################################################
+################################################
 if __name__ == '__main__':
 	app.run(debug=True)
