@@ -143,7 +143,7 @@ class Create_user_resource(restful.Resource):
 		password = args["password"]
 		# TODO: MAKE SURE THE PASSWORD HASHES TO THE CORRECT USER
 
-api.add_resource(Create_user_resource, 'users/create')
+api.add_resource(Create_user_resource, '/users/create')
 
 ################################################
 ################################################
