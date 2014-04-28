@@ -26,18 +26,18 @@ class Users(db.Model):
 	first_name = db.Column(db.String(30))
 	last_name = db.Column(db.String(30))
 	email = db.Column(db.String(50), unique = True)
-	password_hash = db.Column(db.String(132))
+	hashedPass = db.Column(db.String(132))
 	isDoctor = db.Column(db.Boolean)
 
 	def __init__(self, first, last, email, password, isDoctor):
 		self.first_name = first
 		self.last_name = last
 		self.email = email
-		self.password_hash = hash(password)
+		self.hashedPass = hash(password)
 		self.isDoctor = isDoctor
 
 	@staticmethod
-	def hash(string)
+	def hash(string):
 		return pwd_context.encrypt(string)
 
 	# Marshalling documentation:

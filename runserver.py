@@ -6,6 +6,7 @@ from flask.ext.restful.utils import cors
 from database import Users, Drugs, SideEffects, URI 
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.httpauth import HTTPBasicAuth
+from sqlalchemy.exc import IntegrityError
 auth = HTTPBasicAuth()
 
 """
@@ -141,22 +142,26 @@ class Create_user_resource(restful.Resource):
 
 	# Create a user account
 	def post(self):
-		args = loginParse.parse_args()
-		first = args['first']
-		last = args['last']
-		email = args["email"]
-		password = args["password"]
-		isDoctor = args['isDoctor']
+		try:
+			args = createUserParse.parse_args()
+			first = args['first']
+			last = args['last']
+			email = args["email"]
+			password = args["password"]
+			isDoctor = args['isDoctor']
 
-		# Checking uniqueness of user
-		user = User.query.filter_by(email = email).first()
-		if user is not None:
-			return False # TODO: DO SOMETHING ELSE
-		newUser = User(first, last, email, password, isDoctor)
-		data.session.add(newUser)
-		data.session.commit(newUser)
-		return # TODO: SOMETHING HERE
+			# Checking uniqueness of user
+			user = Users.query.filter_by(email = email).first()
+			if user is not None:
+				raise IntegrityError("Email already exists in database", email, "hello")
 
+			newUser = Users(first, last, email, password, isDoctor)
+			data.session.add(newUser)
+			data.session.commit()
+			return {"message": "User with email {0} created".format(email)}, 201
+		except IntegrityError:
+			return {"message": "Error: Email already exists"}, 403
+			
 api.add_resource(Create_user_resource, '/users/create')
 
 ################################################
