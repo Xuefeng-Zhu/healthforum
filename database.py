@@ -92,6 +92,10 @@ class Doctors(db.Model):
 		self.specialization = specialization
 		self.title = title
 
+	@staticmethod
+	def fields():
+		pass # TODO
+
 
 # NOTE: Shows up in database as drugs, NOT Drugs
 class Drugs(db.Model):

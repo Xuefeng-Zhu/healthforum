@@ -3,7 +3,7 @@ from flask import Flask
 from flask.ext import restful
 from flask.ext.restful import reqparse, marshal_with, marshal
 from flask.ext.restful.utils import cors
-from database import Users, Drugs, SideEffects, URI 
+from database import Users, Drugs, SideEffects, URI, Doctors, Patients
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.httpauth import HTTPBasicAuth
 from sqlalchemy.exc import IntegrityError
@@ -132,18 +132,18 @@ class Users_resource(restful.Resource):
 api.add_resource(Users_resource, '/users/login/')
 
 
-createUserParse = reqparse.RequestParser()
-createUserParse.add_argument("first", type=str, required=True)
-createUserParse.add_argument("last", type=str, required=True)
-createUserParse.add_argument("email", type=str, required=True)
-createUserParse.add_argument("password", type=str, required=True)
-createUserParse.add_argument("isDoctor", type=bool, required=True)
+createUserParser = reqparse.RequestParser()
+createUserParser.add_argument("first", type=str, required=True)
+createUserParser.add_argument("last", type=str, required=True)
+createUserParser.add_argument("email", type=str, required=True)
+createUserParser.add_argument("password", type=str, required=True)
+createUserParser.add_argument("isDoctor", type=bool, required=True)
 class Create_user_resource(restful.Resource):
 
 	# Create a user account
 	def post(self):
 		try:
-			args = createUserParse.parse_args()
+			args = createUserParser.parse_args()
 			first = args['first']
 			last = args['last']
 			email = args["email"]
@@ -158,13 +158,34 @@ class Create_user_resource(restful.Resource):
 			newUser = Users(first, last, email, password, isDoctor)
 			data.session.add(newUser)
 			data.session.commit()
-			return {"message": "User with email {0} created".format(email)}, 201
+			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, 201
 		except IntegrityError:
-			return {"message": "Error: Email already exists"}, 403
-			
-api.add_resource(Create_user_resource, '/users/create')
+			return {"message": "Error: Email already exists" }, 403
 
-################################################
-################################################
+api.add_resource(Create_user_resource, '/registration/user')
+
+# Creating a doctor
+
+createDoctorParser = reqparse.RequestParser()
+createDoctorParser.add_argument("user_id", type=int, required = True)
+createDoctorParser.add_argument("hospital", type=str)
+createDoctorParser.add_argument("specialization", type=str)
+createDoctorParser.add_argument("title", type=str)
+class Create_doctor_resource(restful.Resource):
+	
+	def post(self):
+		args = createDoctorParser.parse_args()
+		user_id = args["user_id"]
+		hospital = args['hospital']
+		specialization = args['specialization']
+		title = args['title']
+		newDoctor = Doctors(user_id, hospital, specialization, title)
+		data.session.add(newDoctor)
+		data.session.commit()
+		return {"message": "doctor created"}, 201
+
+api.add_resource(Create_doctor_resource, '/registration/doctor')
+###############################################
+###############################################
 if __name__ == '__main__':
 	app.run(debug=True)
