@@ -1,4 +1,5 @@
 #!/usr/bin/python
+from flask.ext.restful.types import date, url
 from flask import Flask
 from flask.ext import restful
 from flask.ext.restful import reqparse, marshal_with, marshal
@@ -164,7 +165,6 @@ class Create_user_resource(restful.Resource):
 
 api.add_resource(Create_user_resource, '/registration/user')
 
-# Creating a doctor
 
 createDoctorParser = reqparse.RequestParser()
 createDoctorParser.add_argument("user_id", type=int, required = True)
@@ -182,9 +182,34 @@ class Create_doctor_resource(restful.Resource):
 		newDoctor = Doctors(user_id, hospital, specialization, title)
 		data.session.add(newDoctor)
 		data.session.commit()
-		return {"message": "doctor created"}, 201
+		return {"message": "Doctor created", "user_id": user_id}, 201
 
 api.add_resource(Create_doctor_resource, '/registration/doctor')
+
+createPatientParser = reqparse.RequestParser()
+createPatientParser.add_argument("user_id", type=int, required = True)
+#createPatientParser.add_argument("dob", type = str)
+createPatientParser.add_argument("weight_lbs", type=int)
+createPatientParser.add_argument("height_in", type = int)
+createPatientParser.add_argument("gender", type = str) 
+class Create_patient_resource(restful.Resource):
+
+# TODO: There are 5000 bugs in this code pertaining to dob. Fix it.
+	def post(self):
+		args = createPatientParser.parse_args()
+		print args
+		user_id = args["user_id"]
+#		dob = date(args['dob']).date() # TODO Clearly the wrong way to do this...
+		height_in = args['height_in']
+		weight_lbs = args['weight_lbs']
+		gender = args['gender'] 
+		newPatient = Patients(user_id, dob, weight_lbs, height_in, gender)
+		data.session.add(newPatient)
+		data.session.commit()
+		return {"message": "Patient created", "user_id": user_id}, 201
+
+api.add_resource(Create_patient_resource, '/registration/patient')
+
 ###############################################
 ###############################################
 if __name__ == '__main__':

@@ -55,18 +55,18 @@ class Users(db.Model):
 	
 class Patients(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
-	user_id = db.Column(db.Integer)
+	user_id = db.Column(db.Integer, unique = True)
 	dob = db.Column(db.Date)
 	weight_lbs = db.Column(db.SMALLINT)
 	height_in = db.Column(db.SMALLINT)
 	gender = db.Column(db.Enum('F', 'M'))
 
-	def __init__(self, dob, weight, height_ft, height_in, gender):
+	def __init__(self, user_id, dob = None, weight = None, height_in = None, gender = None):
 		if height_in >= 12:
 			print "WARNING: height_in >= 12"
-		self.dob = dob
+		self.user_id = user_id
+#self.dob = dob
 		self.weight_lbs = weight
-		self.height_in = height_ft * 12 + height_in
 		self.gender = gender
 
 	@staticmethod
@@ -81,7 +81,7 @@ class Patients(db.Model):
 
 class Doctors(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
-	user_id = db.Column(db.Integer)
+	user_id = db.Column(db.Integer, unique = True)
 	hospital = db.Column(db.String(100))
 	specialization = db.Column(db.String(60))
 	title = db.Column(db.String(52))
