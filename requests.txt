@@ -22,9 +22,11 @@ RESPONSE:	[{"name": drug.name, "concise": drug.info} for drug in drugs]
 
 Login under development
 healthforum.herokuapp.com/users/login/
+POST:		healthforum.herokuapp.com/login/user
+DATA:		-d "email=hello10@hello.com" -d "password=hello"
+RESPONSE:	{"message": "Success"}
 
 Registering a user into the database. All parameters are required.
-NOTE: Password and login has not been created yet.
 Emails are always unique.
 POST:		healthforum.herokuapp.com/registration/user
 DATA:		-d "first=Henry" -d "last=Lin" -d "email=this@that.com" -d "password=a password" -d "isDoctor=True"
