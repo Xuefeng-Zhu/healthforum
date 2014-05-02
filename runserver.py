@@ -194,14 +194,13 @@ createPatientParser.add_argument("height_in", type = int)
 createPatientParser.add_argument("gender", type = str) 
 class Create_patient_resource(restful.Resource):
 
-# TODO: There are 5000 bugs in this code pertaining to dob. Fix it.
 	def post(self):
 		args = createPatientParser.parse_args()
 		print args
 		user_id = args["user_id"]
 		dob = args.get('dob', None)
 		if dob is not None:
-			dob = date(dob).date() # TODO Clearly the wrong way to do this...
+			dob = date(dob).date() 
 		height_in = args.get('height_in', None)
 		weight_lbs = args.get('weight_lbs', None)
 		gender = args.get('gender', None)
