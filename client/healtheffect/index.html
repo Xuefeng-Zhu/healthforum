@@ -28,13 +28,13 @@
   <div class="navbar navbar-default" role="navigation" bs-navbar>
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#" data-step="1" data-intro="Welcome! This project is called HealthForum. We are here to help you know the side effect of drug">HealthForum</a>
+        <a class="navbar-brand" href="#">HealthForum</a>
       </div>
       <!-- Search field in NavBar -->
       <div class="navbar-form pull-left input-group">
         <form ng-submit="search()" class="input-group">
           <input type="text" size="60" class="form-control" ng-model="searchText" data-animation="am-flip-x" ng-options="drug for drug in getList($viewValue)" 
-          placeholder="Type the drug name to Search" ng-keyup="search()" bs-typeahead data-step="2" data-intro="Input the drug name you want to search here"/>
+          placeholder="Type the drug name to Search" ng-keyup="search()" bs-typeahead/>
           <span class="input-group-btn">
             <button class="btn btn-primary" type="button" ng-click="search()" style="margin-left: -1px;
 border-bottom-left-radius: 0; border-top-left-radius: 0;">
@@ -77,7 +77,7 @@ border-bottom-left-radius: 0; border-top-left-radius: 0;">
           </div>
         </div>
 
-        <div class="panel-body" style="background-color:#f5f5f5; height:90%; overflow-y:scroll" data-step="3" data-intro="Here will show the result of drugs you search for">
+        <div class="panel-body" style="background-color:#f5f5f5; height:90%; overflow-y:scroll">
           <div class="list-group">
             <a href="#/description/{{drug.name}}" class="list-group-item" ng-class="{active: drug.name == selectDrug}" style="margin-bottom:10px" ng-repeat="drug in drugs" ng-click="sDrug(drug.name)">
               <h4 class="list-group-item-heading">{{drug.name}}</h4>
@@ -112,6 +112,8 @@ border-bottom-left-radius: 0; border-top-left-radius: 0;">
 <script src="lib/docs.tpl.min.js"></script>
 -->
 <script src="js/app.js"></script>
+<script src="js/startintro.js"></script>
+
 
 </body>
 
