@@ -176,9 +176,9 @@ class Create_doctor_resource(restful.Resource):
 	def post(self):
 		args = createDoctorParser.parse_args()
 		user_id = args["user_id"]
-		hospital = args['hospital']
-		specialization = args['specialization']
-		title = args['title']
+		hospital = args.get("hospital", None)
+		specialization = args.get("specialization", None)
+		title = args.get("title", None)
 		newDoctor = Doctors(user_id, hospital, specialization, title)
 		data.session.add(newDoctor)
 		data.session.commit()
@@ -188,7 +188,7 @@ api.add_resource(Create_doctor_resource, '/registration/doctor')
 
 createPatientParser = reqparse.RequestParser()
 createPatientParser.add_argument("user_id", type=int, required = True)
-#createPatientParser.add_argument("dob", type = str)
+createPatientParser.add_argument("dob", type = str)
 createPatientParser.add_argument("weight_lbs", type=int)
 createPatientParser.add_argument("height_in", type = int)
 createPatientParser.add_argument("gender", type = str) 
@@ -199,10 +199,12 @@ class Create_patient_resource(restful.Resource):
 		args = createPatientParser.parse_args()
 		print args
 		user_id = args["user_id"]
-#		dob = date(args['dob']).date() # TODO Clearly the wrong way to do this...
-		height_in = args['height_in']
-		weight_lbs = args['weight_lbs']
-		gender = args['gender'] 
+		dob = args.get('dob', None)
+		if dob is not None:
+			dob = date(dob).date() # TODO Clearly the wrong way to do this...
+		height_in = args.get('height_in', None)
+		weight_lbs = args.get('weight_lbs', None)
+		gender = args.get('gender', None)
 		newPatient = Patients(user_id, dob, weight_lbs, height_in, gender)
 		data.session.add(newPatient)
 		data.session.commit()

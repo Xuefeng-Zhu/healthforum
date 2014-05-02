@@ -61,11 +61,12 @@ class Patients(db.Model):
 	height_in = db.Column(db.SMALLINT)
 	gender = db.Column(db.Enum('F', 'M'))
 
-	def __init__(self, user_id, dob = None, weight = None, height_in = None, gender = None):
+	def __init__(self, user_id, dob, weight, height_in, gender):
 		if height_in >= 12:
 			print "WARNING: height_in >= 12"
 		self.user_id = user_id
-#self.dob = dob
+		self.dob = dob
+		self.height_in = height_in
 		self.weight_lbs = weight
 		self.gender = gender
 
