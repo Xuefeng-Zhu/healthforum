@@ -21,10 +21,12 @@ app.config(['$routeProvider',
 	}]);
 
 
-app.controller('MainCtrl', function($scope, $http, $aside) {
+app.controller('MainCtrl', function($scope, $http, $aside, $location) {
 
 	$scope.searchText = "";
 	$scope.searchMode = true;
+
+	$location.path("description/abilify");
 
 	$http.get('https://healthforum.herokuapp.com/drugs/all').success(function(data){
 		$scope.drugs = data;
