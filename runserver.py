@@ -120,18 +120,22 @@ api.add_resource(Drugs_Substr_Result_resource, '/drugs/result/<string:startChars
 loginParse = reqparse.RequestParser()
 loginParse.add_argument("email", type=str, required=True)
 loginParse.add_argument("password", type=str, required=True)
-class Users_resource(restful.Resource):
+class Login_users_resource(restful.Resource):
 
 	# Logging a user in	
 	def post(self):
 		args = loginParse.parse_args()
 		email = args["email"]
 		password = args["password"]
-		# TODO: MAKE SURE THE PASSWORD HASHES TO THE CORRECT USER
-		# TODO: RETURN THE USER DATA
-		
 
-api.add_resource(Users_resource, '/users/login/')
+		user = Users.query.filter_by(email = email).first()
+		if user is None or not Users.verify(password, user.hashedPass):
+			return {"message": "Error: Username or password is incorrect."}, 403
+			
+		return {"message": "Success"}, 201
+		# TODO: Return what user data?
+
+api.add_resource(Login_users_resource, '/login/user')
 
 
 createUserParser = reqparse.RequestParser()

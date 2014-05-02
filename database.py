@@ -26,19 +26,23 @@ class Users(db.Model):
 	first_name = db.Column(db.String(30))
 	last_name = db.Column(db.String(30))
 	email = db.Column(db.String(50), unique = True)
-	hashedPass = db.Column(db.String(132))
+	hashedPass = db.Column(db.Integer)
 	isDoctor = db.Column(db.Boolean)
 
 	def __init__(self, first, last, email, password, isDoctor):
 		self.first_name = first
 		self.last_name = last
 		self.email = email
-		self.hashedPass = hash(password)
+		self.hashedPass = Users.hash(password)
 		self.isDoctor = isDoctor
 
 	@staticmethod
 	def hash(string):
 		return pwd_context.encrypt(string)
+
+	@staticmethod
+	def verify(password, hashedPass):
+		return pwd_context.verify(password, hashedPass)
 
 	# Marshalling documentation:
 	# http://flask-restful.readthedocs.org/en/latest/api.html
