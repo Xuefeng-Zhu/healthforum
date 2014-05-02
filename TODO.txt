@@ -1,0 +1,5 @@
+Patients table:Make the date of birth for the users allowed to be NULL. Make user_id not NULL.
+
+Users table: Not let password nor email be NULL. In general, there are some uniqueness constraints that I'm not exercising.
+
+

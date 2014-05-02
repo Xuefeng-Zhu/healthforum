@@ -1,10 +1,14 @@
 #!/usr/bin/python
+from flask.ext.restful.types import date, url
 from flask import Flask
 from flask.ext import restful
 from flask.ext.restful import reqparse, marshal_with, marshal
 from flask.ext.restful.utils import cors
-from database import Users, Drugs, SideEffects, URI 
+from database import Users, Drugs, SideEffects, URI, Doctors, Patients
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.httpauth import HTTPBasicAuth
+from sqlalchemy.exc import IntegrityError
+auth = HTTPBasicAuth()
 
 """
 More information about Flask RESTful:
@@ -112,5 +116,102 @@ api.add_resource(Drugs_Substr_Result_resource, '/drugs/result/<string:startChars
 ################################################
 ################################################
 
+loginParse = reqparse.RequestParser()
+loginParse.add_argument("email", type=str, required=True)
+loginParse.add_argument("password", type=str, required=True)
+class Users_resource(restful.Resource):
+
+	# Logging a user in	
+	def post(self):
+		args = loginParse.parse_args()
+		email = args["email"]
+		password = args["password"]
+		# TODO: MAKE SURE THE PASSWORD HASHES TO THE CORRECT USER
+		# TODO: RETURN THE USER DATA
+		
+
+api.add_resource(Users_resource, '/users/login/')
+
+
+createUserParser = reqparse.RequestParser()
+createUserParser.add_argument("first", type=str, required=True)
+createUserParser.add_argument("last", type=str, required=True)
+createUserParser.add_argument("email", type=str, required=True)
+createUserParser.add_argument("password", type=str, required=True)
+createUserParser.add_argument("isDoctor", type=bool, required=True)
+class Create_user_resource(restful.Resource):
+
+	# Create a user account
+	def post(self):
+		try:
+			args = createUserParser.parse_args()
+			first = args['first']
+			last = args['last']
+			email = args["email"]
+			password = args["password"]
+			isDoctor = args['isDoctor']
+
+			# Checking uniqueness of user
+			user = Users.query.filter_by(email = email).first()
+			if user is not None:
+				raise IntegrityError("Email already exists in database", email, "hello")
+
+			newUser = Users(first, last, email, password, isDoctor)
+			data.session.add(newUser)
+			data.session.commit()
+			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, 201
+		except IntegrityError:
+			return {"message": "Error: Email already exists" }, 403
+
+api.add_resource(Create_user_resource, '/registration/user')
+
+
+createDoctorParser = reqparse.RequestParser()
+createDoctorParser.add_argument("user_id", type=int, required = True)
+createDoctorParser.add_argument("hospital", type=str)
+createDoctorParser.add_argument("specialization", type=str)
+createDoctorParser.add_argument("title", type=str)
+class Create_doctor_resource(restful.Resource):
+	
+	def post(self):
+		args = createDoctorParser.parse_args()
+		user_id = args["user_id"]
+		hospital = args.get("hospital", None)
+		specialization = args.get("specialization", None)
+		title = args.get("title", None)
+		newDoctor = Doctors(user_id, hospital, specialization, title)
+		data.session.add(newDoctor)
+		data.session.commit()
+		return {"message": "Doctor created", "user_id": user_id}, 201
+
+api.add_resource(Create_doctor_resource, '/registration/doctor')
+
+createPatientParser = reqparse.RequestParser()
+createPatientParser.add_argument("user_id", type=int, required = True)
+createPatientParser.add_argument("dob", type = str)
+createPatientParser.add_argument("weight_lbs", type=int)
+createPatientParser.add_argument("height_in", type = int)
+createPatientParser.add_argument("gender", type = str) 
+class Create_patient_resource(restful.Resource):
+
+	def post(self):
+		args = createPatientParser.parse_args()
+		print args
+		user_id = args["user_id"]
+		dob = args.get('dob', None)
+		if dob is not None:
+			dob = date(dob).date() 
+		height_in = args.get('height_in', None)
+		weight_lbs = args.get('weight_lbs', None)
+		gender = args.get('gender', None)
+		newPatient = Patients(user_id, dob, weight_lbs, height_in, gender)
+		data.session.add(newPatient)
+		data.session.commit()
+		return {"message": "Patient created", "user_id": user_id}, 201
+
+api.add_resource(Create_patient_resource, '/registration/patient')
+
+###############################################
+###############################################
 if __name__ == '__main__':
 	app.run(debug=True)

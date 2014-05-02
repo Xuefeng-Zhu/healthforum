@@ -2,21 +2,26 @@
 import json
 import MySQLdb
 
+"""
+Imports the drug descriptions into the database.
+"""
+
+
 data = json.load(open("crawler/descriptions.json"))
 
 # When testing
 if True:
-	db = MySQLdb.connect(host="engr-cpanel-mysql.engr.illinois.edu",
-						 user="halin2_guest",
-						 passwd="helloworld",
-						 db="halin2_sample")
+	db = MySQLdb.connect(host = "engr-cpanel-mysql.engr.illinois.edu",
+						user="halin2_guest",
+						passwd="helloworld",
+						db = "halin2_test")
 
-# For the actual server
+# When not testing
 else:
-	db = MySQLdb.connect(host = "us-cdbr-east-05.cleardb.net",
-						user = "bbe6abd0b555dc",
-						passwd = "488c7e4d",
-						db = "heroku_5f9923672d3888a")
+	db = MySQLdb.connect(host="engr-cpanel-mysql.engr.illinois.edu",
+						user="halin2_guest",
+						passwd="helloworld",
+						db="halin2_sample")
 cursor = db.cursor()
 
 def quote(string):

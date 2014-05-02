@@ -1,14 +1,17 @@
 from flask import Flask 
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.restful import fields, marshal
+from passlib.apps import custom_app_context as pwd_context
 
-useHenry = True
+useHenry = False
 
 # URLS for the databases. The default one is henryURI
-herokuURI = 'mysql://bbe6abd0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a' # I think I accidentally deleted this....
+# the clearDB database has been deleted! I commented out herokuURI for this reason.
+#herokuURI = 'mysql://bbe6abd0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a' # I think I accidentally deleted this....
 henryURI = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
+testURI = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_test'
 
-URI = henryURI if useHenry else herokuURI
+URI = henryURI if useHenry else testURI
 
 # In runserver.py, the code will not be able to access these global vars 
 databaseApp = Flask(__name__)
@@ -22,16 +25,20 @@ class Users(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	first_name = db.Column(db.String(30))
 	last_name = db.Column(db.String(30))
-	dob = db.Column(db.DateTime)
-	weight_lbs = db.Column(db.Integer)
-	height_inches = db.Column(db.Integer)
-	gender = db.Column(db.Boolean)
-	isPatient = db.Column(db.Boolean)
+	email = db.Column(db.String(50), unique = True)
+	hashedPass = db.Column(db.String(132))
+	isDoctor = db.Column(db.Boolean)
 
-	def __init__(self, first, last, dob):
+	def __init__(self, first, last, email, password, isDoctor):
 		self.first_name = first
 		self.last_name = last
-		self.dob = dob
+		self.email = email
+		self.hashedPass = hash(password)
+		self.isDoctor = isDoctor
+
+	@staticmethod
+	def hash(string):
+		return pwd_context.encrypt(string)
 
 	# Marshalling documentation:
 	# http://flask-restful.readthedocs.org/en/latest/api.html
@@ -41,15 +48,56 @@ class Users(db.Model):
 		users_fields = {
 			'first_name': fields.String,
 			'last_name': fields.String,
-			'dob': fields.DateTime,
-			'weight_lbs': fields.Integer,
-			'height_inches': fields.Integer,
-			'isMale': fields.Boolean,
-			'isPatient': fields.Boolean
-
+			'isDoctor': fields.Boolean,
+			'email': fields.email
 		}
 		return users_fields
 	
+class Patients(db.Model):
+	id = db.Column(db.Integer, primary_key = True)
+	user_id = db.Column(db.Integer, unique = True)
+	dob = db.Column(db.Date)
+	weight_lbs = db.Column(db.SMALLINT)
+	height_in = db.Column(db.SMALLINT)
+	gender = db.Column(db.Enum('F', 'M'))
+
+	def __init__(self, user_id, dob, weight, height_in, gender):
+		if height_in >= 12:
+			print "WARNING: height_in >= 12"
+		self.user_id = user_id
+		self.dob = dob
+		self.height_in = height_in
+		self.weight_lbs = weight
+		self.gender = gender
+
+	@staticmethod
+	def fields():
+		patient_fields = {
+			'dob': fields.DateTime,
+			'height_ft': fields.Integer,
+			'height_in': fields.Integer,
+			'gender': fields.String 
+		}
+		return patient_fields
+
+class Doctors(db.Model):
+	id = db.Column(db.Integer, primary_key = True)
+	user_id = db.Column(db.Integer, unique = True)
+	hospital = db.Column(db.String(100))
+	specialization = db.Column(db.String(60))
+	title = db.Column(db.String(52))
+
+	def __init__(self, user_id, hospital, specialization, title):
+		self.user_id = user_id
+		self.hospital = hospital
+		self.specialization = specialization
+		self.title = title
+
+	@staticmethod
+	def fields():
+		pass # TODO
+
+
 # NOTE: Shows up in database as drugs, NOT Drugs
 class Drugs(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
