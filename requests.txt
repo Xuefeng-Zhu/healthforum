@@ -1,0 +1,42 @@
+This is a list of all of the current queries our app supports.
+
+------------------------------------------------------
+
+Drug name query:
+GET: 		healthforum.herokuapp.com/drugs/info/<string:drugname>
+RESPONSE: 	{"name": druginfo.name, "concise": druginfo.info}
+
+Getting names of all the drugs:
+GET: 		healthforum.herokuapp.com/drugs/all
+RESPONSE:	[{"name": drug.name, "concise": drug.info} for drug in drugs]
+
+Getting names of all the names of drugs starting with a substring:
+GET:		healthforum.herokuapp.com/drugs/list/<string:startChars>
+RESPONSE:	[drug.name for drug in drugs]
+
+Getting the names and information of drugs starting with a substring:
+GET:		healthforum.herokuapp.com/drugs/result/<string:startChars>
+RESPONSE:	[{"name": drug.name, "concise": drug.info} for drug in drugs]
+
+------------------------------------------------------
+
+Login under development
+healthforum.herokuapp.com/users/login/
+
+Registering a user into the database. All parameters are required.
+NOTE: Password and login has not been created yet.
+Emails are always unique.
+POST:		healthforum.herokuapp.com/registration/user
+DATA:		-d "first=Henry" -d "last=Lin" -d "email=this@that.com" -d "password=a password" -d "isDoctor=True"
+RESPONSE:	{"message": "User with email {0} created".format(email), "user_id": newUser.id}
+
+Registering a doctor into the database.
+user_ids are required to register a doctor. dob is YYYY-MM-dd
+POST:		healthforum.herokuapp.com/registration/doctor
+DATA:		-d "user_id=21" -d "hospital=Some hospital in nowhere kansas" -d "specialization=hello"
+RESPONSE:	{"message": "Doctor created", "user_id": user_id}
+
+Registering a patient into the database. Gender is M or F.
+POST:		healthforum.herokuapp.com/registration/patient
+DATA:		-d "dob=2014-6-31" -d "height_in=1337" -d "weight_in=99" "gender=M"
+RESPONSE:	{"message": "Patient created", "user_id": user_id}

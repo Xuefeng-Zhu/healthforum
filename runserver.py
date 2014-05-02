@@ -71,6 +71,7 @@ class Drug_Effect_resource(restful.Resource):
 			# TODO: Learn how to do a f***** select statement in SQLAlchemy! There's code to be refractored 
 			queryEffects = SideEffects.query.filter_by(drug_id = drugId)
 			
+			# TODO: Stop being a noob and have less if statements
 			output = dict()
 			output["name"] = drugName
 			output["userType"] = userType
