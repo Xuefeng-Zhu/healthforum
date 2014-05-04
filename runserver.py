@@ -30,7 +30,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = URI
 data = SQLAlchemy(app)
 
 api = restful.Api(app)
-api.decorators=[cors.crossdomain(origin='*')]
+api.decorators=[cors.crossdomain(origin='*', automatic_options = True)]
 
 ################################################
 ################################################
