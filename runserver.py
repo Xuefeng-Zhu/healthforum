@@ -32,11 +32,12 @@ data = SQLAlchemy(app)
 api = restful.Api(app)
 api.decorators=[cors.crossdomain(origin='*')]
 
+
 ################################################
 ################################################
 
 class Drug_info_resource(restful.Resource):
-	cors.crossdomain(origin="*")
+	@cors.crossdomain(origin="*")
 	def get(self, drugname):
 		try:
 			druginfo = Drugs.query.filter_by(name = drugname).first()
@@ -52,7 +53,7 @@ api.add_resource(Drug_info_resource, "/drugs/info/<string:drugname>")
 # Returns a list of all of the drugs in the database
 class Drug_List_resource(restful.Resource):
 
-	cors.crossdomain(origin="*")
+	@cors.crossdomain(origin="*")
 	def get(self):
 		try:
 			drugs = Drugs.query.order_by(Drugs.name).all()
@@ -69,7 +70,7 @@ api.add_resource(Drug_List_resource, '/drugs/all')
 # return a list of side effects corresponding to the user
 class Drug_Effect_resource(restful.Resource):
 
-	cors.crossdomain(origin="*")
+	@cors.crossdomain(origin="*")
 	def get(self, drugName, userType):
 		try:
 			effectType = "doctor_effect" if userType.lower() == "doctor" else "patient_effect"
@@ -101,7 +102,7 @@ api.add_resource(Drug_Effect_resource, '/drugs/<string:drugName>/<string:userTyp
 # Grabs the drugs that start with the given characters
 class Drugs_Substr_resource(restful.Resource):
 
-	cors.crossdomain(origin="*")
+	@cors.crossdomain(origin="*")
 	def get(self, startChars):
 		try:
 			drugs = Drugs.query.filter(Drugs.name.startswith(startChars)).all()
@@ -117,7 +118,7 @@ api.add_resource(Drugs_Substr_resource, '/drugs/list/<string:startChars>')
 # Grabs the drugs and their information that start with the given characters
 class Drugs_Substr_Result_resource(restful.Resource):
 
-	cors.crossdomain(origin="*")
+	@cors.crossdomain(origin="*")
 	def get(self, startChars):
 		try:
 			drugs = Drugs.query.filter(Drugs.name.startswith(startChars)).all()
@@ -138,7 +139,7 @@ loginParse.add_argument("password", type=str, required=True)
 class Login_users_resource(restful.Resource):
 
 	# Logging a user in	
-	cors.crossdomain(origin="*")
+	@cors.crossdomain(origin="*")
 	def post(self):
 		args = loginParse.parse_args()
 		email = args["email"]
@@ -165,7 +166,7 @@ createUserParser.add_argument("isDoctor", type=bool, required=True)
 class Create_user_resource(restful.Resource):
 
 	# Create a user account
-	cors.crossdomain(origin="*")
+	@cors.crossdomain(origin="*")
 	def post(self):
 		try:
 			args = createUserParser.parse_args()
@@ -199,6 +200,7 @@ createDoctorParser.add_argument("specialization", type=str)
 createDoctorParser.add_argument("title", type=str)
 class Create_doctor_resource(restful.Resource):
 	
+	@cors.crossdomain(origin="*")
 	def post(self):
 		args = createDoctorParser.parse_args()
 		user_id = args["user_id"]
@@ -222,7 +224,7 @@ createPatientParser.add_argument("height_in", type = int)
 createPatientParser.add_argument("gender", type = str) 
 class Create_patient_resource(restful.Resource):
 
-	cors.crossdomain(origin="*")
+	@cors.crossdomain(origin="*")
 	def post(self):
 		args = createPatientParser.parse_args()
 		print args
