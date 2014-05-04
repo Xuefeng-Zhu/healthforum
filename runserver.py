@@ -132,7 +132,7 @@ class Login_users_resource(restful.Resource):
 		if user is None or not Users.verify(password, user.hashedPass):
 			return {"message": "Error: Username or password is incorrect."}, 403
 			
-		return {"message": "Success"}, 201
+		return {"message": "Success"}, 201, {'Access-Control-Allow-Origin': '*'}  
 		# TODO: Return what user data?
 
 api.add_resource(Login_users_resource, '/login/user')
@@ -164,7 +164,7 @@ class Create_user_resource(restful.Resource):
 			newUser = Users(first, last, email, password, isDoctor)
 			data.session.add(newUser)
 			data.session.commit()
-			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, 201
+			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, 201, {'Access-Control-Allow-Origin': '*'}  
 		except IntegrityError:
 			return {"message": "Error: Email already exists" }, 403
 
@@ -187,7 +187,7 @@ class Create_doctor_resource(restful.Resource):
 		newDoctor = Doctors(user_id, hospital, specialization, title)
 		data.session.add(newDoctor)
 		data.session.commit()
-		return {"message": "Doctor created", "user_id": user_id}, 201
+		return {"message": "Doctor created", "user_id": user_id}, 201, {'Access-Control-Allow-Origin': '*'} 
 
 api.add_resource(Create_doctor_resource, '/registration/doctor')
 
@@ -212,7 +212,7 @@ class Create_patient_resource(restful.Resource):
 		newPatient = Patients(user_id, dob, weight_lbs, height_in, gender)
 		data.session.add(newPatient)
 		data.session.commit()
-		return {"message": "Patient created", "user_id": user_id}, 201
+		return {"message": "Patient created", "user_id": user_id}, 201, {'Access-Control-Allow-Origin': '*'} 
 
 api.add_resource(Create_patient_resource, '/registration/patient')
 
