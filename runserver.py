@@ -36,6 +36,7 @@ api.decorators=[cors.crossdomain(origin='*')]
 ################################################
 
 class Drug_info_resource(restful.Resource):
+	cors.crossdomain(origin="*")
 	def get(self, drugname):
 		try:
 			druginfo = Drugs.query.filter_by(name = drugname).first()
@@ -43,12 +44,15 @@ class Drug_info_resource(restful.Resource):
 		except:
 			data.session.rollback()
 			return "Error...", 500 
+	def options(self):
+		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 
 api.add_resource(Drug_info_resource, "/drugs/info/<string:drugname>")
 
 # Returns a list of all of the drugs in the database
 class Drug_List_resource(restful.Resource):
 
+	cors.crossdomain(origin="*")
 	def get(self):
 		try:
 			drugs = Drugs.query.order_by(Drugs.name).all()
@@ -56,6 +60,8 @@ class Drug_List_resource(restful.Resource):
 		except:
 			data.session.rollback()
 			return "Error...", 500 
+	def options(self):
+		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 
 api.add_resource(Drug_List_resource, '/drugs/all')
 
@@ -63,6 +69,7 @@ api.add_resource(Drug_List_resource, '/drugs/all')
 # return a list of side effects corresponding to the user
 class Drug_Effect_resource(restful.Resource):
 
+	cors.crossdomain(origin="*")
 	def get(self, drugName, userType):
 		try:
 			effectType = "doctor_effect" if userType.lower() == "doctor" else "patient_effect"
@@ -85,6 +92,8 @@ class Drug_Effect_resource(restful.Resource):
 		except:
 			data.session.rollback()
 			return "Error...", 500 
+	def options(self):
+		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 
 
 api.add_resource(Drug_Effect_resource, '/drugs/<string:drugName>/<string:userType>')
@@ -92,6 +101,7 @@ api.add_resource(Drug_Effect_resource, '/drugs/<string:drugName>/<string:userTyp
 # Grabs the drugs that start with the given characters
 class Drugs_Substr_resource(restful.Resource):
 
+	cors.crossdomain(origin="*")
 	def get(self, startChars):
 		try:
 			drugs = Drugs.query.filter(Drugs.name.startswith(startChars)).all()
@@ -100,11 +110,14 @@ class Drugs_Substr_resource(restful.Resource):
 			data.session.rollback()
 			return "Drug not found", 404
 
+	def options(self):
+		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 api.add_resource(Drugs_Substr_resource, '/drugs/list/<string:startChars>')
 
 # Grabs the drugs and their information that start with the given characters
 class Drugs_Substr_Result_resource(restful.Resource):
 
+	cors.crossdomain(origin="*")
 	def get(self, startChars):
 		try:
 			drugs = Drugs.query.filter(Drugs.name.startswith(startChars)).all()
@@ -112,6 +125,8 @@ class Drugs_Substr_Result_resource(restful.Resource):
 		except:
 			data.session.rollback() 
 
+	def options(self):
+		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 api.add_resource(Drugs_Substr_Result_resource, '/drugs/result/<string:startChars>')
 
 ################################################
@@ -123,6 +138,7 @@ loginParse.add_argument("password", type=str, required=True)
 class Login_users_resource(restful.Resource):
 
 	# Logging a user in	
+	cors.crossdomain(origin="*")
 	def post(self):
 		args = loginParse.parse_args()
 		email = args["email"]
@@ -135,6 +151,8 @@ class Login_users_resource(restful.Resource):
 		return {"message": "Success"}, 201, {'Access-Control-Allow-Origin': '*'}  
 		# TODO: Return what user data?
 
+	def options(self):
+		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 api.add_resource(Login_users_resource, '/login/user')
 
 
@@ -147,6 +165,7 @@ createUserParser.add_argument("isDoctor", type=bool, required=True)
 class Create_user_resource(restful.Resource):
 
 	# Create a user account
+	cors.crossdomain(origin="*")
 	def post(self):
 		try:
 			args = createUserParser.parse_args()
@@ -168,6 +187,8 @@ class Create_user_resource(restful.Resource):
 		except IntegrityError:
 			return {"message": "Error: Email already exists" }, 403
 
+	def options(self):
+		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 api.add_resource(Create_user_resource, '/registration/user')
 
 
@@ -189,8 +210,10 @@ class Create_doctor_resource(restful.Resource):
 		data.session.commit()
 		return {"message": "Doctor created", "user_id": user_id}, 201, {'Access-Control-Allow-Origin': '*'} 
 
-api.add_resource(Create_doctor_resource, '/registration/doctor')
+	def options(self):
+		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 
+api.add_resource(Create_doctor_resource, '/registration/doctor')
 createPatientParser = reqparse.RequestParser()
 createPatientParser.add_argument("user_id", type=int, required = True)
 createPatientParser.add_argument("dob", type = str)
@@ -199,6 +222,7 @@ createPatientParser.add_argument("height_in", type = int)
 createPatientParser.add_argument("gender", type = str) 
 class Create_patient_resource(restful.Resource):
 
+	cors.crossdomain(origin="*")
 	def post(self):
 		args = createPatientParser.parse_args()
 		print args
@@ -213,6 +237,9 @@ class Create_patient_resource(restful.Resource):
 		data.session.add(newPatient)
 		data.session.commit()
 		return {"message": "Patient created", "user_id": user_id}, 201, {'Access-Control-Allow-Origin': '*'} 
+
+	def options(self):
+		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 
 api.add_resource(Create_patient_resource, '/registration/patient')
 
