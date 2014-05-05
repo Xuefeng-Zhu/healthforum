@@ -31,7 +31,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = URI
 data = SQLAlchemy(app)
 
 api = restful.Api(app)
-api.decorators=[cors.crossdomain(origin='*')]
+api.decorators=[cors.crossdomain(origin='*'), api.representation("application/json")]
 
 
 ################################################
@@ -215,6 +215,7 @@ createPatientParser.add_argument("dob", type = str)
 createPatientParser.add_argument("weight_lbs", type=int)
 createPatientParser.add_argument("height_in", type = int)
 createPatientParser.add_argument("gender", type = str) 
+
 class Create_patient_resource(restful.Resource):
 
 	def post(self):
@@ -232,8 +233,6 @@ class Create_patient_resource(restful.Resource):
 		data.session.commit()
 		return {"message": "Patient created", "user_id": user_id}, 201, {'Access-Control-Allow-Origin': '*'} 
 
-	def options(self):
-		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 
 api.add_resource(Create_patient_resource, '/registration/patient')
 
