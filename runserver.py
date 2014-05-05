@@ -132,7 +132,7 @@ class Login_users_resource(restful.Resource):
 
 		user = Users.query.filter_by(email = email).first()
 		if user is None or not Users.verify(password, user.hashedPass):
-			return {"message": "Error: Username or password is incorrect."}, 403, {'Access-Control-Allow-Origin': '/registration/patient'} 
+			return {"message": "Error: Username or password is incorrect."}, 403, {'Access-Control-Allow-Origin': '/login/user'} 
 			
 		return {"message": "Success"}, 201
 		# TODO: Return what user data?
@@ -166,7 +166,7 @@ class Create_user_resource(restful.Resource):
 			newUser = Users(first, last, email, password, isDoctor)
 			data.session.add(newUser)
 			data.session.commit()
-			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, 201, {'Access-Control-Allow-Origin': '/registration/patient'} 
+			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, 201, {'Access-Control-Allow-Origin': '/registration/user'} 
 		except IntegrityError:
 			return {"message": "Error: Email already exists" }, 403
 
