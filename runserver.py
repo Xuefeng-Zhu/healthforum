@@ -45,8 +45,6 @@ class Drug_info_resource(restful.Resource):
 		except:
 			data.session.rollback()
 			return "Error...", 500 
-	def options(self):
-		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 
 api.add_resource(Drug_info_resource, "/drugs/info/<string:drugname>")
 
@@ -60,8 +58,6 @@ class Drug_List_resource(restful.Resource):
 		except:
 			data.session.rollback()
 			return "Error...", 500 
-	def options(self):
-		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 
 api.add_resource(Drug_List_resource, '/drugs/all')
 
@@ -91,8 +87,6 @@ class Drug_Effect_resource(restful.Resource):
 		except:
 			data.session.rollback()
 			return "Error...", 500 
-	def options(self):
-		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 
 
 api.add_resource(Drug_Effect_resource, '/drugs/<string:drugName>/<string:userType>')
@@ -108,8 +102,6 @@ class Drugs_Substr_resource(restful.Resource):
 			data.session.rollback()
 			return "Drug not found", 404
 
-	def options(self):
-		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 api.add_resource(Drugs_Substr_resource, '/drugs/list/<string:startChars>')
 
 # Grabs the drugs and their information that start with the given characters
@@ -122,8 +114,6 @@ class Drugs_Substr_Result_resource(restful.Resource):
 		except:
 			data.session.rollback() 
 
-	def options(self):
-		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 api.add_resource(Drugs_Substr_Result_resource, '/drugs/result/<string:startChars>')
 
 ################################################
@@ -144,11 +134,9 @@ class Login_users_resource(restful.Resource):
 		if user is None or not Users.verify(password, user.hashedPass):
 			return {"message": "Error: Username or password is incorrect."}, 403
 			
-		return {"message": "Success"}, 201, {'Access-Control-Allow-Origin': '*'}  
+		return {"message": "Success"}, 201
 		# TODO: Return what user data?
 
-	def options(self):
-		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 api.add_resource(Login_users_resource, '/login/user')
 
 
@@ -178,12 +166,10 @@ class Create_user_resource(restful.Resource):
 			newUser = Users(first, last, email, password, isDoctor)
 			data.session.add(newUser)
 			data.session.commit()
-			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, 201, {'Access-Control-Allow-Origin': '*'}  
+			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, 201
 		except IntegrityError:
 			return {"message": "Error: Email already exists" }, 403
 
-	def options(self):
-		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
 api.add_resource(Create_user_resource, '/registration/user')
 
 
@@ -203,12 +189,10 @@ class Create_doctor_resource(restful.Resource):
 		newDoctor = Doctors(user_id, hospital, specialization, title)
 		data.session.add(newDoctor)
 		data.session.commit()
-		return {"message": "Doctor created", "user_id": user_id}, 201, {'Access-Control-Allow-Origin': '*'} 
-
-	def options(self):
-		return {"Allow": "POST"}, 200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST"}
+		return {"message": "Doctor created", "user_id": user_id}, 201
 
 api.add_resource(Create_doctor_resource, '/registration/doctor')
+
 createPatientParser = reqparse.RequestParser()
 createPatientParser.add_argument("user_id", type=int, required = True)
 createPatientParser.add_argument("dob", type = str)

@@ -64,6 +64,10 @@ app.controller('MainCtrl', function($scope, $http, $aside, $location) {
 	$scope.createAcount = function(){
 		signupAside.hide();
 	}
+
+	$scope.login = function(){
+		$http.post('http://localhost:5000/login/user');
+	}
 });
 
 'use strict';
