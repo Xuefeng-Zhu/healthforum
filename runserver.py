@@ -166,7 +166,7 @@ class Create_user_resource(restful.Resource):
 			newUser = Users(first, last, email, password, isDoctor)
 			data.session.add(newUser)
 			data.session.commit()
-			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, 201, {'Access-Control-Allow-Origin': '/registration/user'} 
+			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, 201, {'Access-Control-Allow-Origin': 'http://healthforum.herokuapp.com/registration/user'} 
 		except IntegrityError:
 			return {"message": "Error: Email already exists" }, 403
 
