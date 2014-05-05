@@ -132,7 +132,7 @@ class Login_users_resource(restful.Resource):
 
 		user = Users.query.filter_by(email = email).first()
 		if user is None or not Users.verify(password, user.hashedPass):
-			return {"message": "Error: Username or password is incorrect."}, 403
+			return {"message": "Error: Username or password is incorrect."}, 403, {'Access-Control-Allow-Origin': '/registration/patient'} 
 			
 		return {"message": "Success"}, 201
 		# TODO: Return what user data?
@@ -166,7 +166,7 @@ class Create_user_resource(restful.Resource):
 			newUser = Users(first, last, email, password, isDoctor)
 			data.session.add(newUser)
 			data.session.commit()
-			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, 201
+			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, 201, {'Access-Control-Allow-Origin': '/registration/patient'} 
 		except IntegrityError:
 			return {"message": "Error: Email already exists" }, 403
 
@@ -204,7 +204,6 @@ class Create_patient_resource(restful.Resource):
 
 	def post(self):
 		args = createPatientParser.parse_args()
-		print args
 		user_id = args["user_id"]
 		dob = args.get('dob', None)
 		if dob is not None:
@@ -215,7 +214,7 @@ class Create_patient_resource(restful.Resource):
 		newPatient = Patients(user_id, dob, weight_lbs, height_in, gender)
 		data.session.add(newPatient)
 		data.session.commit()
-		return {"message": "Patient created", "user_id": user_id}, 201, {'Access-Control-Allow-Origin': '*'} 
+		return {"message": "Patient created", "user_id": user_id}, 201, {'Access-Control-Allow-Origin': '/registration/patient'} 
 
 
 api.add_resource(Create_patient_resource, '/registration/patient')
