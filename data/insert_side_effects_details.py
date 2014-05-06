@@ -7,7 +7,7 @@ import MySQLdb
 Imports the drug side effects details into the database.
 """
 
-data_dict = json.load(open("topic_good_drugSideEffects.json"))
+data_dict = json.load(open("forum_relations.json"))
 
 # When testing
 db = MySQLdb.connect(host = "engr-cpanel-mysql.engr.illinois.edu",
@@ -27,30 +27,6 @@ def quote(string):
 	return '\"' + str(string) + '\"'
 
 
-"""
-	data =  [{
-		"drugName":"some drug",
-		"sideEffect":"some side effect",
-		"isDrSERes":"True/False"
-		"retrievedObjects":
-			[
-				{
-					"url":"http://www.some.url_1.om",
-					"forumId":"1",
-					"title":"some title_1",
-					"content":"content_1"
-				}
-				{
-					"url":"http://www.some.url_2.om",
-					"forumId":"2",
-					"title":"some title_2",
-					"content":"content_2"
-				}				
-			]
-		}]
-"""
-
-
 for data in data_dict:
 
 	try:
@@ -65,7 +41,7 @@ for data in data_dict:
 		cursor.execute(updateSED)
 
 
-		for se in enumerate(data['retrievedObjects'])
+		for se in enumerate(data['retrievedObjects']):
 
 			try:
 
