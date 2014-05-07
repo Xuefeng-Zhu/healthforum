@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import unicodedata
 from flask.ext.restful.types import date, url
 from flask import send_file, make_response, abort
 from flask import Flask
@@ -31,10 +32,15 @@ app.config['SQLALCHEMY_DATABASE_URI'] = URI
 data = SQLAlchemy(app)
 
 api = restful.Api(app)
+<<<<<<< HEAD
 api.decorators=[cors.crossdomain(origin='*')]
+=======
+api.decorators=[cors.crossdomain(origin='*'), api.representation("application/json")]
+>>>>>>> FETCH_HEAD
 
-################################################
-################################################
+
+###############################################
+###############################################
 
 class Drug_info_resource(restful.Resource):
 	def get(self, drugname):
@@ -131,9 +137,9 @@ class Login_users_resource(restful.Resource):
 
 		user = Users.query.filter_by(email = email).first()
 		if user is None or not Users.verify(password, user.hashedPass):
-			return {"message": "Error: Username or password is incorrect."}, 403
+			return {"message": "Error: Username or password is incorrect."}, 403, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
 			
-		return {"message": "Success"}, 201
+		return {"message": "Success"}, 201, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
 		# TODO: Return what user data?
 
 api.add_resource(Login_users_resource, '/login/user')
@@ -165,9 +171,11 @@ class Create_user_resource(restful.Resource):
 			newUser = Users(first, last, email, password, isDoctor)
 			data.session.add(newUser)
 			data.session.commit()
-			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, 201
+			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, \
+			201, \
+			{'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} \
 		except IntegrityError:
-			return {"message": "Error: Email already exists" }, 403
+			return {"message": "Error: Email already exists" }, 403, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
 
 api.add_resource(Create_user_resource, '/registration/user')
 
@@ -188,7 +196,7 @@ class Create_doctor_resource(restful.Resource):
 		newDoctor = Doctors(user_id, hospital, specialization, title)
 		data.session.add(newDoctor)
 		data.session.commit()
-		return {"message": "Doctor created", "user_id": user_id}, 201
+		return {"message": "Doctor created", "user_id": user_id}, 201, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
 
 api.add_resource(Create_doctor_resource, '/registration/doctor')
 
@@ -198,11 +206,11 @@ createPatientParser.add_argument("dob", type = str)
 createPatientParser.add_argument("weight_lbs", type=int)
 createPatientParser.add_argument("height_in", type = int)
 createPatientParser.add_argument("gender", type = str) 
+
 class Create_patient_resource(restful.Resource):
 
 	def post(self):
 		args = createPatientParser.parse_args()
-		print args
 		user_id = args["user_id"]
 		dob = args.get('dob', None)
 		if dob is not None:
@@ -213,7 +221,8 @@ class Create_patient_resource(restful.Resource):
 		newPatient = Patients(user_id, dob, weight_lbs, height_in, gender)
 		data.session.add(newPatient)
 		data.session.commit()
-		return {"message": "Patient created", "user_id": user_id}, 201
+		return {"message": "Patient created", "user_id": user_id}, 201, {'Access-Control-Allow-Origin': '*'} 
+
 
 api.add_resource(Create_patient_resource, '/registration/patient')
 
