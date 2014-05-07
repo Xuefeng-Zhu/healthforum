@@ -1,0 +1,19 @@
+<ul class="nav nav-tabs nav-justified">
+	<li><a ng-href="#/description/{{drugName}}">Description</a></li>
+	<li class="active"><a ng-href="#/sideeffect/{{drugName}}">Side Effect</a></li>
+	<li><a ng-href="#/comments/{{drugName}}">User Comments</a></li>
+</ul>
+
+<div class="container-fuild content" style="height:90%; overflow-y:scroll">
+
+	<div ng-class="panel" ng-repeat="effect in effects">
+		<div class="panel-heading">{{effect.name}}</div>
+		<div class="panel-body">
+			Links:
+			<div ng-repeat="link in effect.links">
+				<a href="{{link.url}}">{{link.name}}</a>
+			</div>
+		</div>
+	</div>
+
+</div>
