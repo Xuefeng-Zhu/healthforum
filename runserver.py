@@ -1,5 +1,6 @@
 #!/usr/bin/python
 from flask.ext.restful.types import date, url
+from flask import send_file, make_response, abort
 from flask import Flask
 from flask.ext import restful
 from flask.ext.restful import reqparse, marshal_with, marshal
@@ -25,12 +26,12 @@ https://devcenter.heroku.com/articles/getting-started-with-python
 
 """
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 app.config['SQLALCHEMY_DATABASE_URI'] = URI
 data = SQLAlchemy(app)
 
 api = restful.Api(app)
-api.decorators=[cors.crossdomain(origin='*', methods=['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'])]
+api.decorators=[cors.crossdomain(origin='*')]
 
 ################################################
 ################################################
@@ -215,6 +216,11 @@ class Create_patient_resource(restful.Resource):
 		return {"message": "Patient created", "user_id": user_id}, 201
 
 api.add_resource(Create_patient_resource, '/registration/patient')
+
+
+@app.route('/')
+def basic_pages(**kwargs):
+	return make_response(open('templates/index.html').read())
 
 ###############################################
 ###############################################
