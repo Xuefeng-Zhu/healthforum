@@ -135,7 +135,9 @@ class Login_users_resource(restful.Resource):
 		if user is None or not Users.verify(password, user.hashedPass):
 			return {"message": "Error: Username or password is incorrect."}, 403, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
 			
-		return {"message": "Success"}, 201, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
+		return {"message": "Success"},\
+				201,\
+				{'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
 		# TODO: Return what user data?
 
 api.add_resource(Login_users_resource, '/login/user')

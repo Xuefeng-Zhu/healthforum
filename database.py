@@ -22,12 +22,12 @@ db = SQLAlchemy(databaseApp)
 # NOTE: Shows up in database as users, NOT Users
 # TODO: We need more tables! Need a table for doctors as well as patients.
 class Users(db.Model):
-	id = db.Column(db.Integer, primary_key=True)
+	id = db.Column(db.Integer, primary_key=True, nullable = False)
 	first_name = db.Column(db.String(30))
 	last_name = db.Column(db.String(30))
-	email = db.Column(db.String(50), unique = True)
-	hashedPass = db.Column(db.Integer)
-	isDoctor = db.Column(db.Boolean)
+	email = db.Column(db.String(50), unique = True, nullable = False)
+	hashedPass = db.Column(db.Integer, nullable = False)
+	isDoctor = db.Column(db.Boolean, nullable = False)
 
 	def __init__(self, first, last, email, password, isDoctor):
 		self.first_name = first
@@ -58,8 +58,8 @@ class Users(db.Model):
 		return users_fields
 	
 class Patients(db.Model):
-	id = db.Column(db.Integer, primary_key = True)
-	user_id = db.Column(db.Integer, unique = True)
+	id = db.Column(db.Integer, primary_key = True, nullable = False)
+	user_id = db.Column(db.Integer, unique = True, nullable = False)
 	dob = db.Column(db.Date)
 	weight_lbs = db.Column(db.SMALLINT)
 	height_in = db.Column(db.SMALLINT)
@@ -85,8 +85,8 @@ class Patients(db.Model):
 		return patient_fields
 
 class Doctors(db.Model):
-	id = db.Column(db.Integer, primary_key = True)
-	user_id = db.Column(db.Integer, unique = True)
+	id = db.Column(db.Integer, primary_key = True, nullable = False)
+	user_id = db.Column(db.Integer, unique = True, nullable = False)
 	hospital = db.Column(db.String(100))
 	specialization = db.Column(db.String(60))
 	title = db.Column(db.String(52))
@@ -104,8 +104,8 @@ class Doctors(db.Model):
 
 # NOTE: Shows up in database as drugs, NOT Drugs
 class Drugs(db.Model):
-	id = db.Column(db.Integer, primary_key=True)
-	name = db.Column(db.String(50), unique=True)
+	id = db.Column(db.Integer, primary_key=True, nullable = False)
+	name = db.Column(db.String(50), unique=True, nullable = False)
 	info = db.Column(db.Text)
 
 	def __init__(self, name, info):
@@ -124,8 +124,8 @@ class Drugs(db.Model):
 
 # NOTE: Shows up in database as side_effects
 class SideEffects(db.Model):
-	id = db.Column(db.Integer, primary_key=True)
-	drug_id = db.Column(db.Integer, db.ForeignKey('drugs.id'))
+	id = db.Column(db.Integer, primary_key=True, nullable = False)
+	drug_id = db.Column(db.Integer, db.ForeignKey('drugs.id'), nullable = False)
 	patient_effect = db.Column(db.String(150))
 	doctor_effect = db.Column(db.String(150))
 	# TODO: Add a rank to side effects
@@ -173,13 +173,12 @@ class SideEffects(db.Model):
 # NOTE: Shows up in database as side_effects_details
 class SideEffectsDetails(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
-	effect = db.Column(db.String(150))
-	url = db.Column(db.String(250), unique=True)
-	title = db.Column(db.String(100))
-	forum_id = db.Column(db.String(30), unique=True)
-	content = db.Column(db.Text)
+	url = db.Column(db.String(250), unique=True, nullable = False)
+	title = db.Column(db.String(100), nullable = False)
+	forum_id = db.Column(db.String(30), unique=True, nullable = False)
+	content = db.Column(db.Text, nullable = False)
 
-	side_effects_id = db.Column(db.Integer, db.ForeignKey('side_effects.id'))
+	side_effects_id = db.Column(db.Integer, db.ForeignKey('side_effects.id'), unique=True, nullable = False)
 
 	# TODO: I got an error whenever I uncommented the below line. We should look into that.
 	# I'll look into this documentation later:
