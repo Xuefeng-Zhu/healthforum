@@ -34,10 +34,13 @@ for data in data_dict:
 		side_effect = data['sideEffect']
 		isDr = data['isDrSERes']
 
-		updateSEDId = "INSERT INTO side_effects_details(side_effects_id) SELECT id FROM side_effects WHERE patient_effect=" + quote(side_effect) + ";"
+		updateSEDId = "INSERT INTO side_effects_details(side_effects_id) SELECT id FROM side_effects WHERE patient_effect=" \
+							+ quote(side_effect) + ";"
 		cursor.execute(updateSEDId)
 
-		updateSED = "INSERT INTO side_effects_details(effect,isDrSERes) VALUES (" + quote(side_effect) + "," + quote(isDr)  + ") FROM side_effects WHERE patient_effect = " + quote(side_effect) + ";"
+		updateSED = "INSERT INTO side_effects_details(effect, isDrSERes) VALUES (" 
+							+ quote(side_effect) + "," + quote(isDr)  
+							+ ") FROM side_effects WHERE patient_effect = " + quote(side_effect) + ";"
 		cursor.execute(updateSED)
 
 
