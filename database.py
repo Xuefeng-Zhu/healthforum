@@ -1,3 +1,4 @@
+from math import ceil
 from flask import Flask 
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.restful import fields, marshal
@@ -109,17 +110,20 @@ class Drugs(db.Model):
 	id = db.Column(db.Integer, primary_key=True, nullable = False)
 	name = db.Column(db.String(50), unique=True, nullable = False)
 	info = db.Column(db.Text)
+	price = db.Column(db.Integer)
 
-	def __init__(self, name, info):
+	def __init__(self, name, info, price):
 		self.name = name
 		self.info = info
+		self.price = ceil(price)
 
 	@staticmethod
 	def fields():
 		drug_fields = {
 			'id': fields.Integer,
 			'name': fields.String, 
-			'info': fields.String
+			'info': fields.String,
+			'price': fields.Integer
 		}
 		return drug_fields
 
