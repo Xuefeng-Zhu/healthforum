@@ -144,17 +144,23 @@ api.add_resource(Login_users_resource, '/login/user')
 
 
 createUserParser = reqparse.RequestParser()
-createUserParser.add_argument("first", type=str)
-createUserParser.add_argument("last", type=str)
-createUserParser.add_argument("email", type=str)
-createUserParser.add_argument("password", type=str)
-createUserParser.add_argument("isDoctor", type=bool)
+createUserParser.add_argument("first", type=str, required=True)
+createUserParser.add_argument("last", type=str, required=True)
+createUserParser.add_argument("email", type=str, required=True)
+createUserParser.add_argument("password", type=str, required=True)
+createUserParser.add_argument("isDoctor", type=bool, required=True)
 class Create_user_resource(restful.Resource):
 
 	# Create a user account
 	def post(self):
 		try:
 			args = createUserParser.parse_args()
+
+		#	if args.get("first", None) is None or args.get("last", None) is None or \
+		#		args.get("email", None) is None or args.get("password", None) is None or \
+		#		args.get("isDoctor", None) is None:
+		#			raise IntegrityError("One of the parameters was None", "meh", "meh")
+
 			first = args['first']
 			last = args['last']
 			email = args["email"]
@@ -165,7 +171,7 @@ class Create_user_resource(restful.Resource):
 			user = Users.query.filter_by(email = email).first()
 			if user is not None:
 				raise IntegrityError("Email already exists in database", email, "hello")
-
+			print user
 			newUser = Users(first, last, email, password, isDoctor)
 			data.session.add(newUser)
 			data.session.commit()

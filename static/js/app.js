@@ -1,4 +1,4 @@
-var apiUrl = "https://healthforum.herokuapp.com"
+var apiUrl = "http://localhost:5000"
 var app = angular.module('myapp', ['ngRoute','ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'toggle-switch']);
 
 app.config(['$routeProvider',
@@ -63,17 +63,34 @@ app.controller('MainCtrl', function($scope, $http, $aside, $location) {
 	}
 
 	$scope.createAcount = function(){
-		if ($scope.password1 != $scope.password2){
+		var email = $('#EmailR').val();
+		var password1 = $('#Password1').val();
+		var password2 = $('#Password2').val();
+		var first = $('#First').val();
+		var last = $('#Last').val();
+
+		if (password1 != password2){
 			console.log("passwords do not match");
 			return;
 		}
-		var data = {'email': $scope.email, 'password': $scope.password1, 'first': $scope.first, 'last': $scope.last, 'isDoctor': 'False'};
-		$http.post(apiUrl + '/registration/user', data);
+		var data = {'email': email, 'password': password1, 'first': first, 'last': last, 'isDoctor': false};
+		$http.post(apiUrl + '/registration/user', data).success(function(data){
+			console.log(data);
+			signupAside.hide();
+		})
+		.error(function(data){
+			console.log(data);
+		});
 	}
 
 	$scope.login = function(){
-		data = {'email': $scope.email, 'password': $scope.password};
-		$http.post(apiUrl + '/login/user', data);
+		data = {'email': $('#Email').val(), 'password': $('#Password').val()};
+		$http.post(apiUrl + '/login/user', data).success(function(data){
+			console.log(data);
+		})
+		.error(function(data){
+			 console.log(data);
+		});
 	}
 });
 
