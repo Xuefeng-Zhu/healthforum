@@ -169,7 +169,7 @@ class Create_user_resource(restful.Resource):
 			data.session.commit()
 			return {"message": "User with email {0} created".format(email), "user_id": newUser.id}, \
 			201, \
-			{'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} \
+			{'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"}
 		except IntegrityError:
 			return {"message": "Error: Email already exists" }, 403, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
 
