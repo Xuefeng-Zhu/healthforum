@@ -1,9 +1,8 @@
 from flask import Flask 
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.restful import fields, marshal
-from passlib.apps import custom_app_context as pwd_context
-
-useHenry = True
+from hashlib import sha224
+useHenry = False
 
 # URLS for the databases. The default one is henryURI
 # the clearDB database has been deleted! I commented out herokuURI for this reason.
@@ -26,7 +25,7 @@ class Users(db.Model):
 	first_name = db.Column(db.String(30))
 	last_name = db.Column(db.String(30))
 	email = db.Column(db.String(50), unique = True, nullable = False)
-	hashedPass = db.Column(db.Integer, nullable = False)
+	hashedPass = db.Column(db.String(132), nullable = False)
 	isDoctor = db.Column(db.Boolean, nullable = False)
 
 	def __init__(self, first, last, email, password, isDoctor):
@@ -38,11 +37,11 @@ class Users(db.Model):
 
 	@staticmethod
 	def hash(string):
-		return pwd_context.encrypt(string)
+		return sha224(string)
 
 	@staticmethod
 	def verify(password, hashedPass):
-		return pwd_context.verify(password, hashedPass)
+		return sha224(password) == hashedPass
 
 	# Marshalling documentation:
 	# http://flask-restful.readthedocs.org/en/latest/api.html
@@ -175,10 +174,12 @@ class SideEffectsDetails(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	url = db.Column(db.String(250), unique=True, nullable = False)
 	title = db.Column(db.String(100), nullable = False)
-	forum_id = db.Column(db.String(30), unique=True, nullable = False)
+	forum_id = db.Column(db.String(30), nullable = False)
 	content = db.Column(db.Text, nullable = False)
+	drug_id = db.Column(db.Integer, nullable = False)
+	general_effect = db.Column(db.String(30), nullable = False)
 
-	side_effects_id = db.Column(db.Integer, db.ForeignKey('side_effects.id'), unique=True, nullable = False)
+#	side_effects_id = db.Column(db.Integer, db.ForeignKey('side_effects.id'), unique=True, nullable = False)
 
 	# TODO: I got an error whenever I uncommented the below line. We should look into that.
 	# I'll look into this documentation later:
