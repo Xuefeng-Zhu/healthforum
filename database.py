@@ -37,11 +37,14 @@ class Users(db.Model):
 
 	@staticmethod
 	def hash(string):
-		return sha224(string)
+		return sha224(string).hexdigest()
 
 	@staticmethod
 	def verify(password, hashedPass):
-		return sha224(password) == hashedPass
+		string = sha224(password).digest()
+		print string
+		print hashedPass
+		return string == hashedPass
 
 	# Marshalling documentation:
 	# http://flask-restful.readthedocs.org/en/latest/api.html
@@ -192,5 +195,14 @@ class SideEffectsDetails(db.Model):
 		self.forum_id = resource['forumId']
 		self.content = resource['content']
 
-	def __repr__(self):
-		return '<Side Effect Details %s>' % self.title
+	@staticmethod
+	def fields():
+		return {
+			"id": fields.Integer,
+			"url": fields.String,
+			"title": fields.String,
+			"forum_id": fields.Integer,
+			"content": fields.String,
+			"drug_id": fields.Integer,
+			"general_effect": fields.String
+		}
