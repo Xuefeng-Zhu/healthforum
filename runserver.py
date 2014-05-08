@@ -121,8 +121,8 @@ api.add_resource(Drugs_Substr_Result_resource, '/drugs/result/<string:startChars
 ################################################
 
 loginParse = reqparse.RequestParser()
-loginParse.add_argument("email", type=str, required=True)
-loginParse.add_argument("password", type=str, required=True)
+loginParse.add_argument("email", type=str)
+loginParse.add_argument("password", type=str)
 class Login_users_resource(restful.Resource):
 
 	# Logging a user in	
@@ -142,11 +142,11 @@ api.add_resource(Login_users_resource, '/login/user')
 
 
 createUserParser = reqparse.RequestParser()
-createUserParser.add_argument("first", type=str, required=True)
-createUserParser.add_argument("last", type=str, required=True)
-createUserParser.add_argument("email", type=str, required=True)
-createUserParser.add_argument("password", type=str, required=True)
-createUserParser.add_argument("isDoctor", type=bool, required=True)
+createUserParser.add_argument("first", type=str)
+createUserParser.add_argument("last", type=str)
+createUserParser.add_argument("email", type=str)
+createUserParser.add_argument("password", type=str)
+createUserParser.add_argument("isDoctor", type=bool)
 class Create_user_resource(restful.Resource):
 
 	# Create a user account

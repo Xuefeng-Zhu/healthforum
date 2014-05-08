@@ -63,11 +63,17 @@ app.controller('MainCtrl', function($scope, $http, $aside, $location) {
 	}
 
 	$scope.createAcount = function(){
-		signupAside.hide();
+		if ($scope.password1 != $scope.password2){
+			console.log("passwords do not match");
+			return;
+		}
+		var data = {'email': $scope.email, 'password': $scope.password1, 'first': $scope.first, 'last': $scope.last, 'isDoctor': 'False'};
+		$http.post(apiUrl + '/registration/user', data);
 	}
 
 	$scope.login = function(){
-		$http.post(apiUrl + '/login/user');
+		data = {'email': $scope.email, 'password': $scope.password};
+		$http.post(apiUrl + '/login/user', data);
 	}
 });
 
