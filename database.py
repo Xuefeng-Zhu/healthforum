@@ -4,7 +4,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.restful import fields, marshal
 from hashlib import sha224
 from passlib.apps import custom_app_context as pwd_context
-useHenry = False
+useHenry = True
 
 # URLS for the databases. The default one is henryURI
 # the clearDB database has been deleted! I commented out herokuURI for this reason.
@@ -179,9 +179,10 @@ class SideEffectsDetails(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	url = db.Column(db.String(250), nullable = False)
 	title = db.Column(db.String(100), nullable = False)
-	forum_id = db.Column(db.String(30), nullable = False)
+	forum_id = db.Column(db.String(30))
 	content = db.Column(db.Text, nullable = False)
 	side_effect_id = db.Column(db.Integer, nullable = False)
+	isDoctor = db.Column(db.Boolean)
 
 #	side_effects_id = db.Column(db.Integer, db.ForeignKey('side_effects.id'), unique=True, nullable = False)
 

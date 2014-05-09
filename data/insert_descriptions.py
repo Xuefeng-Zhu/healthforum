@@ -10,7 +10,7 @@ Imports the drug descriptions into the database.
 data = json.load(open("crawler/descriptions.json"))
 
 # When testing
-if True:
+if False:
 	db = MySQLdb.connect(host = "engr-cpanel-mysql.engr.illinois.edu",
 						user="halin2_guest",
 						passwd="helloworld",

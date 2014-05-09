@@ -7,7 +7,7 @@ import MySQLdb
 data = json.load(open("prices.json"))
 
 # When testing
-if True:
+if False:
 	db = MySQLdb.connect(host = "engr-cpanel-mysql.engr.illinois.edu",
 						user="halin2_guest",
 						passwd="helloworld",
