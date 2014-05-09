@@ -164,8 +164,17 @@ app.controller('CommentsCtrl', function($scope, $http, $routeParams){
 
 	$scope.subComment = function(){
 		console.log($('.summernote').code())
+		var data = {"cotent": $('.summernote').code(), "user_id": $scope.user.id, "drugname": $scope.drugName};
+
+		$http.post(apiUrl + '/comments/create', data).success(function(data){
+			$alert({title: 'Success!', content: data.message, placement: 'top-left', type: 'success', show: true, duration: 3});
+		})
 	}
 
+	$scope.showUser = function(){
+		
+	}
+	
 	$(document).ready(function() {
 		$('.summernote').summernote({
 			toolbar: [
