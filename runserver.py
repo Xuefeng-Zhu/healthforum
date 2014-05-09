@@ -36,6 +36,20 @@ api = restful.Api(app)
 api.decorators=[cors.crossdomain(origin='*')]
 
 
+def openSession():
+	if useHenry:
+		return MySQLdb.connect(host = "engr-cpanel-mysql.engr.illinois.edu",
+								user = "halin2_guest",
+								passwd = "helloworld",
+								db = "halin2_test")
+
+	else:
+		return MySQLdb.connect(host = "engr-cpanel-mysql.engr.illinois.edu",
+								user = "halin2_guest",
+								passwd = "helloworld",
+								db = "halin2_sample")
+
+
 ###############################################
 ###############################################
 
@@ -123,23 +137,19 @@ class Login_users_resource(restful.Resource):
 		email = args["email"]
 		password = args["password"]
 
+		db = openSession()
+		with closing(db.cursor()) as cursor:
 
-		db = MySQLdb.connect(host = "engr-cpanel-mysql.engr.illinois.edu",
-								user = "halin2_guest",
-								passwd = "helloworld",
-								db = "halin2_test")
-		cursor = db.cursor()
-
-		queryString = "select hashedPass from users where email='{0}'" \
-					.format(MySQLdb.escape_string(email))
-		cursor.execute(queryString)
-		hashedPass = cursor.fetchone()[0]
-		if Users.verify(password, hashedPass):
-			return {"message": "Success"},\
-				201,\
-				{'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
-		else:
-			return {"message": "Error: Username or password is incorrect."}, 403, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"}
+			queryString = "select hashedPass from users where email='{0}'" \
+						.format(MySQLdb.escape_string(email))
+			cursor.execute(queryString)
+			hashedPass = cursor.fetchone()[0]
+			if Users.verify(password, hashedPass):
+				return {"message": "Success"},\
+					201,\
+					{'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
+			else:
+				return {"message": "Error: Username or password is incorrect."}, 403, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"}
 
 
 api.add_resource(Login_users_resource, '/login/user')
@@ -243,7 +253,11 @@ class Create_comments_resource(restful.Resource):
 		
 api.add_resource(Create_comments_resource, '/comments/create')
 		
+class Get_comments_resource(restful.Resource):
 
+	def get(self, drugname):
+		
+		
 
 
 
