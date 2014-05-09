@@ -122,10 +122,8 @@ app.controller('SelectDemoCtrl', function($scope, $http) {
 app.controller('DescriptionCtrl', function($scope, $http, $routeParams){
 	$scope.drugName = $routeParams["drugName"];
 
-	$scope.description = {name: 'A', manufacture:'xxxx', price:'$18'}
-
-	$http.get('https://iterar-mapi-us.p.mashape.com/api/' + $scope.drugName +'/doses.json', {headers: {'X-Mashape-Authorization': 'QqfoZNhsxQ9WSlbMapSXtkOfCBD76U0W'}}).success(function(data){
-		$scope.description.doses = data;
+	$http.get(apiUrl + '/drugs/info/'+ $scope.drugName).success(function(data){
+		$scope.description = data;
 	});	
 
 });
