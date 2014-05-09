@@ -66,21 +66,24 @@ class Drug_Effect_resource(restful.Resource):
 		drug = Drugs.query.filter_by(name = drugName.lower()).first()
 		drugId = drug.id
 
+		side_effects = SideEffects.query.filter_by(drug_id = drugId) \
+			.join(SideEffectsDetails) \
+			.all()
 
-		side_effects = SideEffects.query.filter_by(drug_id = drugId).all()
+
 		output = dict()
 		output["name"] = drugName
 		output["sideEffects"] = []
 
-		for effect in side_effects:
-			sideEffect = dict()
-			doc = 1 if userType.lower() == "doctor" else 0
-			sideEffect["name"] = effect.doctor_effect if doc else effect.patient_effect
-			sideEffect["posts"] = [marshal(post, SideEffectsDetails.fields()) \
-				for post in SideEffectsDetails.query \
-					.filter_by(side_effect_id = int(effect.id), isDoctor = doc) \
-					.limit(3)]
-			output["sideEffects"].append(sideEffect)
+#		for effect in side_effects:
+#			sideEffect = dict()
+#			doc = 1 if userType.lower() == "doctor" else 0
+#			sideEffect["name"] = effect.doctor_effect if doc else effect.patient_effect
+#			sideEffect["posts"] = [marshal(post, SideEffectsDetails.fields()) \
+#				for post in SideEffectsDetails.query \
+#					.filter_by(side_effect_id = int(effect.id), isDoctor = doc) \
+#					.limit(3)]
+#			output["sideEffects"].append(sideEffect)
 			
 		return output
 
