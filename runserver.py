@@ -267,12 +267,20 @@ class Create_comments_resource(restful.Resource):
 		drugname = args["drugname"]
 		content = args["content"]
 
-		db = openSession()
-		with closing(db.cursor()) as cursor:
+		drug_id = 0
+		try:
+			db = openSession()
+			cursor = db.cursor()
 			queryString = "select id from drugs where name = '{0}'".format(MySQLdb.escape_string(drugname))
 			cursor.execute(queryString)
+			output = cursor.fetchone()
+			print output
 			drug_id = cursor.fetchone()[0]
-		db.close()
+		except:
+			pass
+		finally:
+			cursor.close()	
+			db.close()
 		comment = Comments(user_id, drug_id, content)
 		data.session.add(comment)
 		data.session.commit()
