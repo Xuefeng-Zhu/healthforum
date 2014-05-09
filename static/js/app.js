@@ -155,7 +155,7 @@ app.controller('SideEffectCtrl', function($scope, $http, $routeParams){
 
 });
 
-app.controller('CommentsCtrl', function($scope, $http, $routeParams){
+app.controller('CommentsCtrl', function($scope, $http, $routeParams, $alert, $modal){
 	$scope.drugName = $routeParams["drugName"];
 
 	$http.get(apiUrl + '/comments/get/'+ $scope.drugName).success(function(data){
@@ -164,17 +164,26 @@ app.controller('CommentsCtrl', function($scope, $http, $routeParams){
 
 	$scope.subComment = function(){
 		console.log($('.summernote').code())
-		var data = {"cotent": $('.summernote').code(), "user_id": $scope.user.id, "drugname": $scope.drugName};
+		var data = {"content": $('.summernote').code(), "user_id": $scope.user.id, "drugname": $scope.drugName};
 
 		$http.post(apiUrl + '/comments/create', data).success(function(data){
 			$alert({title: 'Success!', content: data.message, placement: 'top-left', type: 'success', show: true, duration: 3});
 		})
+		$http.get(apiUrl + '/comments/get/'+ $scope.drugName).success(function(data){
+			$scope.comments = data;
+		});	
 	}
 
-	$scope.showUser = function(){
-		
+	$scope.showUser = function(user_id){
+		$http.get(apiUrl + '/users/info/'+ user_id).success(function(data){
+			var title = data.first + " " + data.last + "'s Infomation"
+			var info = "<b>email: </b>" + data.email + "<br>" + "<b>First name: </b>" + data.first + "<br>" + "<b>Last name: </b>" + data.last + "<br>"
+			$modal({title: title, content: info, show: true, html: true});
+
+		});	
+
 	}
-	
+
 	$(document).ready(function() {
 		$('.summernote').summernote({
 			toolbar: [

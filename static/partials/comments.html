@@ -8,8 +8,8 @@
 
 	<div class="list-group" style="clear:both">
 		<a class="list-group-item" ng-repeat="comment in comments">
-			<h4 class="list-group-item-heading" ng-click="showUser()">{{comment.first_name}}</h4>
-			<p class="list-group-item-text">{{comment.content}}</p>
+			<h4 class="list-group-item-heading" style="cursor:pointer" ng-click="showUser(comment.user_id)">{{comment.first_name}}</h4>
+			<p class="list-group-item-text" ng-bind-html="comment.content"></p>
 		</a>
 	</div>
 
