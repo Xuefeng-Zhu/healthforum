@@ -10,7 +10,7 @@
 		<div class="panel-heading">{{effect.name}}</div>
 		<div class="panel-body">
 			<div ng-repeat="post in effect.posts">
-				<a href="{{post.url}}" TARGET="_blank" data-placement="bottom" title="{{post.title}}" data-content="{{post.content}}" data-trigger="hover" bs-popover>{{post.title}}</a>
+				<a href="{{post.url}}" TARGET="_blank" data-placement="bottom-left" title="{{post.title | limitTo: 30}}" data-content="{{post.content}}" data-trigger="hover" bs-popover>{{post.title | limitTo: 30}}</a>
 			</div>
 		</div>
 	</div>
