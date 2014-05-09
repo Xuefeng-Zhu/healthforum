@@ -66,11 +66,8 @@ api.add_resource(Drug_info_resource, "/drugs/info/<string:drugname>")
 class Drug_List_resource(restful.Resource):
 
 	def get(self):
-		try:
-			drugs = Drugs.query.order_by(Drugs.name).all()
-			return [{"name": drug.name, "concise": drug.info} for drug in drugs if drug.info != "None"]
-		except:
-			return "Error...", 500 
+		drugs = Drugs.query.order_by(Drugs.name).all()
+		return [{"name": drug.name, "concise": drug.info} for drug in drugs if drug.info != "None"]
 
 api.add_resource(Drug_List_resource, '/drugs/all')
 # Given a drug's name and whether a user is a patient or doctor,
@@ -146,13 +143,14 @@ class Login_users_resource(restful.Resource):
 			cursor.execute(queryString)
 			first_name, id, hashedPass = cursor.fetchone()
 
-			if Users.verify(password, hashedPass):
-						
-				return {"message": "Success", "first_name": first_name, "id": id },\
-					201,\
-					{'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
-			else:
-				return {"message": "Error: Username or password is incorrect."}, 403, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"}
+		cursor.close()
+		if Users.verify(password, hashedPass):
+					
+			return {"message": "Success", "first_name": first_name, "id": id },\
+				201,\
+				{'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
+		else:
+			return {"message": "Error: Username or password is incorrect."}, 403, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"}
 
 
 api.add_resource(Login_users_resource, '/login/user')
@@ -268,11 +266,11 @@ class Get_comments_resource(restful.Resource):
 							where drugs.name = '{0}'""".format(drugname).replace('\t', "").replace('\n', "")
 			cursor.execute(queryString)
 			comments = cursor.fetchall()
-			print comments[0]
-			comments = [{"content": comment[0], "drug_id": comment[1], \
-							"first_name": comment[2], "last_name": comment[3]}
-							for comment in comments]
-			return comments, 201, {'Access-Control-Allow-Origin': '*'}
+		cursor.close()
+		comments = [{"content": comment[0], "drug_id": comment[1], \
+						"first_name": comment[2], "last_name": comment[3]}
+						for comment in comments]
+		return comments, 201, {'Access-Control-Allow-Origin': '*'}
 			
 api.add_resource(Get_comments_resource, '/comments/get/<string:drugname>', endpoint = "<string:drugname>")
 
