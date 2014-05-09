@@ -27,7 +27,6 @@ app.config(['$routeProvider',
 
 app.controller('MainCtrl', function($scope, $http, $aside, $alert, $location, $cookies) {
 
-	console.log($cookies.user);
 	if ($cookies.visited != "true"){
 		runIntro();
 		$cookies.visited = "true";
@@ -162,6 +161,10 @@ app.controller('CommentsCtrl', function($scope, $http, $routeParams){
 	$http.get(apiUrl + '/comments/get/'+ $scope.drugName).success(function(data){
 		$scope.comments = data;
 	});	
+
+	$scope.subComment = function(){
+		console.log($('.summernote').code())
+	}
 
 	$(document).ready(function() {
 		$('.summernote').summernote({
