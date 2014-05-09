@@ -258,18 +258,20 @@ api.add_resource(Create_comments_resource, '/comments/create')
 		
 class Get_comments_resource(restful.Resource):
 
-	def get(self, drug_id):
+	def get(self, drugname):
 		db = openSession()		
 		with closing(db.cursor()) as cursor:
-			queryString = "select * from comments where drug_id = {0}".format(drug_id)
+			queryString = 	"""select comments.content, comments.user_id, comments.drug_id 
+							from comments join drugs on comments.drug_id = drugs.id 
+							where drugs.name = '{0}'""".format(drugname).replace('\t', "").replace('\n', "")
 			cursor.execute(queryString)
 			comments = cursor.fetchall()
-			comments = [{"id": id, "user_id": user_id, \
-							"drug_id": drug_id, "content": content} \
-							for id, user_id, drug_id, content in comments]
+			comments = [{"content": comment[0], "user_id": int(comment[1]), \
+							"drug_id": int(comment[2])} \
+							for comment in comments]
 			return comments, 201, {'Access-Control-Allow-Origin': '*'}
 			
-api.add_resource(Get_comments_resource, '/comments/get/<int:drug_id>', endpoint = "<int:drug_id>")
+api.add_resource(Get_comments_resource, '/comments/get/<string:drugname>', endpoint = "<string:drugname>")
 
 
 ###############################################
