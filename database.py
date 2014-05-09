@@ -184,13 +184,7 @@ class SideEffectsDetails(db.Model):
 	side_effect_id = db.Column(db.Integer, nullable = False)
 	isDoctor = db.Column(db.Boolean)
 
-#	side_effects_id = db.Column(db.Integer, db.ForeignKey('side_effects.id'), unique=True, nullable = False)
-
-	# TODO: I got an error whenever I uncommented the below line. We should look into that.
-	# I'll look into this documentation later:
-	# https://pythonhosted.org/Flask-SQLAlchemy/models.html
-#	side_effect = db.relationship(lambda: SideEffectsDetails, primaryjoin = "side_effects.id == side_effect_details.side_effect_id")
-
+	# NOTE: This is dead code
 	def __init__(self, resource):
 		self.url = resource['url']
 		self.title = resource['title']
@@ -204,4 +198,15 @@ class SideEffectsDetails(db.Model):
 			"title": fields.String,
 			"content": fields.String,
 		}
+
+class Comments(db.Model):
+	id = db.Column(db.Integer, primary_key=True)
+	user_id = db.Column(db.Integer, nullable = False)
+	drug_id = db.Column(db.String(250), nullable = False)
+	content = db.Column(db.String(250), nullable = False)
+	
+	def __init__(self, user_id, drug_id, content):
+		self.user_id = user_id
+		self.drug_id = drug_id
+		self.content = content
 

@@ -6,7 +6,7 @@ from flask import Flask
 from flask.ext import restful
 from flask.ext.restful import reqparse, marshal_with, marshal
 from flask.ext.restful.utils import cors
-from database import Users, Drugs, SideEffects, URI, Doctors, Patients, SideEffectsDetails
+from database import *
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.httpauth import HTTPBasicAuth
 from sqlalchemy.exc import IntegrityError
@@ -130,7 +130,8 @@ class Login_users_resource(restful.Resource):
 								db = "halin2_test")
 		cursor = db.cursor()
 
-		queryString = "select hashedPass from users where email='{0}'".format(email)
+		queryString = "select hashedPass from users where email='{0}'" \
+					.format(MySQLdb.escape_string(email))
 		cursor.execute(queryString)
 		hashedPass = cursor.fetchone()[0]
 		if Users.verify(password, hashedPass):
@@ -140,13 +141,6 @@ class Login_users_resource(restful.Resource):
 		else:
 			return {"message": "Error: Username or password is incorrect."}, 403, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"}
 
-
-#j		user = Users.query.filter_by(email = email).first()
-#j
-#j		if user is None or not Users.verify(password, user.hashedPass):
-#j			return "} 
-#j
-#j		
 
 api.add_resource(Login_users_resource, '/login/user')
 
@@ -230,13 +224,26 @@ api.add_resource(Create_patient_resource, '/registration/patient')
 ###############################################
 ###############################################
 
-createCommentParser = reqparse.RequestParser()
-createCommentParser.add_argument("user_id", type=str, required = True)
-createCommentParser.add_argument("drug_id", type=int, required = True)
-createCommentParser.add_argument("content", type=str, required = True)
+createCommentsParser = reqparse.RequestParser()
+createCommentsParser.add_argument("user_id", type=str, required = True)
+createCommentsParser.add_argument("drug_id", type=int, required = True)
+createCommentsParser.add_argument("content", type=str, required = True)
 
 class Create_comments_resource(restful.Resource):
-	pass # TODO
+
+	def post(self):
+		args = createCommentsParser.parse_args()
+		user_id = args["user_id"]
+		drug_id = args["drug_id"]
+		content = args["content"]
+		comment = Comments(user_id, drug_id, content)
+		data.session.add(comment)
+		data.session.commit()
+		return {"message": "Comment created"}, 201, {'Access-Control-Allow-Origin': '*'} 
+		
+api.add_resource(Create_comments_resource, '/comments/create')
+		
+
 
 
 
