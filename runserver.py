@@ -143,7 +143,7 @@ class Login_users_resource(restful.Resource):
 			cursor.execute(queryString)
 			first_name, id, hashedPass = cursor.fetchone()
 
-		cursor.close()
+		db.close()
 		if Users.verify(password, hashedPass):
 					
 			return {"message": "Success", "first_name": first_name, "id": id },\
@@ -196,7 +196,7 @@ class User_info_resource(restful.Resource):
 			queryString = "select first_name, last_name, email from users where id = {0}".format(userid)
 			cursor.execute(queryString)
 			first, last, email = cursor.fetchone()
-		cursor.close()
+		db.close()
 		return {"first": first, "last": last, "email": email}, 201
 
 api.add_resource(User_info_resource, '/users/info/<int:userid>', endpoint='<int:userid>')
@@ -272,7 +272,7 @@ class Create_comments_resource(restful.Resource):
 			queryString = "select id from drugs where name = '{0}'".format(MySQLdb.escape_string(drugname))
 			cursor.execute(queryString)
 			drug_id = cursor.fetchone()[0]
-		
+		db.close()
 		comment = Comments(user_id, drug_id, content)
 		data.session.add(comment)
 		data.session.commit()
@@ -292,7 +292,7 @@ class Get_comments_resource(restful.Resource):
 							where drugs.name = '{0}'""".format(drugname).replace('\t', "").replace('\n', "")
 			cursor.execute(queryString)
 			comments = cursor.fetchall()
-		cursor.close()
+		db.close()
 		comments = [{"content": comment[0], "drug_id": comment[1], \
 						"first_name": comment[2], "last_name": comment[3]}
 						for comment in comments]

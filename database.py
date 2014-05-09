@@ -9,8 +9,8 @@ useHenry = True
 # URLS for the databases. The default one is henryURI
 # the clearDB database has been deleted! I commented out herokuURI for this reason.
 #herokuURI = 'mysql://bbe6abd0b555dc:488c7e4d@us-cdbr-east-05.cleardb.net/heroku_5f9923672d3888a' # I think I accidentally deleted this....
-henryURI = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
-testURI = 'mysql://halin2_guest:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_test'
+henryURI = 'mysql://halin2_magic:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_sample'
+testURI = 'mysql://halin2_magic:helloworld@engr-cpanel-mysql.engr.illinois.edu/halin2_test'
 
 URI = henryURI if useHenry else testURI
 
