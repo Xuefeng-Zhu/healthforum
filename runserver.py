@@ -123,6 +123,8 @@ class Login_users_resource(restful.Resource):
 		password = args["password"]
 
 		user = Users.query.filter_by(email = email).first()
+		print user.email
+
 		if user is None or not Users.verify(password, user.hashedPass):
 			return {"message": "Error: Username or password is incorrect."}, 403, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
 			
@@ -153,11 +155,6 @@ class Create_user_resource(restful.Resource):
 			password = args["password"]
 			isDoctor = args['isDoctor']
 
-			# Checking uniqueness of user
-			user = Users.query.filter_by(email = email).first()
-			if user is not None:
-				raise IntegrityError("Email already exists in database", email, "hello")
-			print user
 			newUser = Users(first, last, email, password, isDoctor)
 			data.session.add(newUser)
 			data.session.commit()
