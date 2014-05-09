@@ -187,6 +187,25 @@ class Create_user_resource(restful.Resource):
 api.add_resource(Create_user_resource, '/registration/user')
 
 
+class User_info_resource(restful.Resource):
+
+	# Create a user account
+	def get(self, userid):
+		db = openSession()	
+		with closing(db.cursor()) as cursor:
+			queryString = "select first_name, last_name, email from users where id = {0}".format(userid)
+			cursor.execute(queryString)
+			first, last, email = cursor.fetchone()
+		cursor.close()
+		return {"first": first, "last": last, "email": email}, 201
+
+api.add_resource(User_info_resource, '/users/info/<int:userid>', endpoint='<int:userid>')
+
+
+
+################################################
+################################################
+
 createDoctorParser = reqparse.RequestParser()
 createDoctorParser.add_argument("user_id", type=int, required = True)
 createDoctorParser.add_argument("hospital", type=str)
@@ -237,7 +256,7 @@ api.add_resource(Create_patient_resource, '/registration/patient')
 
 createCommentsParser = reqparse.RequestParser()
 createCommentsParser.add_argument("user_id", type=str, required = True)
-createCommentsParser.add_argument("drug_id", type=int, required = True)
+createCommentsParser.add_argument("drugname", type=str, required = True)
 createCommentsParser.add_argument("content", type=str, required = True)
 
 class Create_comments_resource(restful.Resource):
@@ -245,8 +264,15 @@ class Create_comments_resource(restful.Resource):
 	def post(self):
 		args = createCommentsParser.parse_args()
 		user_id = args["user_id"]
-		drug_id = args["drug_id"]
+		drugname = args["drugname"]
 		content = args["content"]
+
+		db = openSession()
+		with closing(db.cursor()) as cursor:
+			queryString = "select id from drugs where name = '{0}'".format(MySQLdb.escape_string(drugname))
+			cursor.execute(queryString)
+			drug_id = cursor.fetchone()[0]
+		
 		comment = Comments(user_id, drug_id, content)
 		data.session.add(comment)
 		data.session.commit()
