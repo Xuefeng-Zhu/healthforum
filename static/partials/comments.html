@@ -7,9 +7,9 @@
 <div class="container-fuild content" style="height:90%; overflow-y:scroll">
 
 	<div class="list-group" style="clear:both">
-		<a href="#" class="list-group-item" ng-repeat="comment in comments">
-			<h4 class="list-group-item-heading">comment.first_name</h4>
-			<p class="list-group-item-text">comment.content</p>
+		<a class="list-group-item" ng-repeat="comment in comments">
+			<h4 class="list-group-item-heading">{{comment.first_name}}</h4>
+			<p class="list-group-item-text">{{comment.content}}</p>
 		</a>
 	</div>
 

@@ -1,4 +1,4 @@
-var apiUrl = "https://healthforum.herokuapp.com"
+var apiUrl = "http://localhost:5000"
 var app = angular.module('myapp', ['ngRoute','ngAnimate', 'ngSanitize', 'ngCookies', 'mgcrea.ngStrap', 'toggle-switch']);
 
 app.config(['$routeProvider',
