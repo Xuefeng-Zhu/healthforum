@@ -41,7 +41,8 @@ api.decorators=[cors.crossdomain(origin='*')]
 class Drug_info_resource(restful.Resource):
 	def get(self, drugname):
 		druginfo = Drugs.query.filter_by(name = drugname).first()
-		return {"name": druginfo.name, "concise": druginfo.info}
+		return {"name": druginfo.name, "concise": druginfo.info, \
+				"price": druginfo.price}
 
 api.add_resource(Drug_info_resource, "/drugs/info/<string:drugname>")
 
@@ -51,7 +52,7 @@ class Drug_List_resource(restful.Resource):
 	def get(self):
 		try:
 			drugs = Drugs.query.order_by(Drugs.name).all()
-			return [{"name": drug.name, "concise": drug.info} for drug in drugs]
+			return [{"name": drug.name, "concise": drug.info} for drug in drugs if drug.info != "None"]
 		except:
 			return "Error...", 500 
 
@@ -76,8 +77,9 @@ class Drug_Effect_resource(restful.Resource):
 			doc = 1 if userType.lower() == "doctor" else 0
 			sideEffect["name"] = effect.doctor_effect if doc else effect.patient_effect
 			sideEffect["posts"] = [marshal(post, SideEffectsDetails.fields()) \
-				for post in SideEffectsDetails.query. \
-					filter_by(side_effect_id = int(effect.id), isDoctor = doc).limit(3)]
+				for post in SideEffectsDetails.query \
+					.filter_by(side_effect_id = int(effect.id), isDoctor = doc) \
+					.limit(3)]
 			output["sideEffects"].append(sideEffect)
 			
 		return output
@@ -145,11 +147,6 @@ class Create_user_resource(restful.Resource):
 		try:
 			args = createUserParser.parse_args()
 
-		#	if args.get("first", None) is None or args.get("last", None) is None or \
-		#		args.get("email", None) is None or args.get("password", None) is None or \
-		#		args.get("isDoctor", None) is None:
-		#			raise IntegrityError("One of the parameters was None", "meh", "meh")
-
 			first = args['first']
 			last = args['last']
 			email = args["email"]
@@ -216,19 +213,28 @@ class Create_patient_resource(restful.Resource):
 		data.session.commit()
 		return {"message": "Patient created", "user_id": user_id}, 201, {'Access-Control-Allow-Origin': '*'} 
 
-
 api.add_resource(Create_patient_resource, '/registration/patient')
 
+###############################################
+###############################################
+
+createCommentParser = reqparse.RequestParser()
+createCommentParser.add_argument("user_id", type=str, required = True)
+createCommentParser.add_argument("drug_id", type=int, required = True)
+createCommentParser.add_argument("content", type=str, required = True)
+
+class Create_comments_resource(restful.Resource):
+	pass # TODO
 
 
 
+###############################################
+###############################################
 
 @app.route('/')
 def basic_pages(**kwargs):
 	return make_response(open('templates/index.html').read())
 
-###############################################
-###############################################
 if __name__ == '__main__':
 	app.run(debug=True)
 
