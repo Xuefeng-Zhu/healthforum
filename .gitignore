@@ -5,3 +5,5 @@ venv
 *.pyc
 .gitkeep
 forum_relations.json
+errors_sample.txt
+errors_test.txt

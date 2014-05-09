@@ -179,9 +179,10 @@ class SideEffectsDetails(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	url = db.Column(db.String(250), nullable = False)
 	title = db.Column(db.String(100), nullable = False)
-	forum_id = db.Column(db.String(30), nullable = False)
+	forum_id = db.Column(db.String(30))
 	content = db.Column(db.Text, nullable = False)
 	side_effect_id = db.Column(db.Integer, nullable = False)
+	isDoctor = db.Column(db.Boolean)
 
 #	side_effects_id = db.Column(db.Integer, db.ForeignKey('side_effects.id'), unique=True, nullable = False)
 

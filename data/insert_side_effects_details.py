@@ -11,16 +11,18 @@ Imports the drug side effects details into the database.
 dataList = json.load(open("forum_relations.json"))
 
 # When testing
-#db = MySQLdb.connect(host = "engr-cpanel-mysql.engr.illinois.edu",
-#                                        user="halin2_guest",
-#                                        passwd="helloworld",
-#                                        db = "halin2_test")
-#
+if False:
+	db = MySQLdb.connect(host = "engr-cpanel-mysql.engr.illinois.edu",
+											user="halin2_guest",
+											passwd="helloworld",
+											db = "halin2_test")
+
 # When not testing
-db = MySQLdb.connect(host="engr-cpanel-mysql.engr.illinois.edu",
-                                       user="halin2_guest",
-                                       passwd="helloworld",
-                                       db="halin2_sample")
+else:
+	db = MySQLdb.connect(host="engr-cpanel-mysql.engr.illinois.edu",
+										   user="halin2_guest",
+										   passwd="helloworld",
+										   db="halin2_sample")
 
 cursor = db.cursor()
 
@@ -42,12 +44,12 @@ def getDrugId(drugName):
 #	side_effect_id = cursor.fetchone()[0]
 #	return side_effect_id
 #
-def insertPost(post, drug_id, sideEffectId):
+def insertPost(post, drug_id, sideEffectId, isDoctor):
 	if post["forumId"] is None or post["forumId"] == "":
 		post["forumId"] = -1
 
-	queryString = "insert into side_effects_details(url, title, forum_id, content, side_effect_id) values (\"{0}\", \"{1}\", {2}, \"{3}\", {4})" \
-					.format(post["url"].encode("utf-8"), post["title"].encode("utf-8"), post["forumId"], post["content"].encode("utf-8"), sideEffectId)
+	queryString = "insert into side_effects_details(url, title, forum_id, content, side_effect_id, isDoctor) values (\"{0}\", \"{1}\", {2}, \"{3}\", {4}, {5})" \
+					.format(post["url"].encode("utf-8"), post["title"].encode("utf-8"), post["forumId"], post["content"].encode("utf-8"), sideEffectId, isDoctor)
 	try:
 		cursor.execute(queryString)
 	except Exception as e:
@@ -86,7 +88,7 @@ for i, obj in enumerate(dataList):
 		
 	retrievedObjects = obj["retrievedObjects"]
 	for post in retrievedObjects:
-		insertPost(post, drug_id, sideEffectId)
+		insertPost(post, drug_id, sideEffectId, isDoctor)
 		numInserted += 1
 	db.commit()
 		
