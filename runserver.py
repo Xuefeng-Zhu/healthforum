@@ -74,9 +74,9 @@ class Drug_Effect_resource(restful.Resource):
 		for effect in side_effects:
 			sideEffect = dict()
 			if userType.lower() == "doctor":
-				sideEffect['doctorEff'] = effect.doctor_effect
+				sideEffect['name'] = effect.doctor_effect
 			else:
-				sideEffect['patientEff'] = effect.patient_effect
+				sideEffect['name'] = effect.patient_effect
 			sideEffect["posts"] = [marshal(post, SideEffectsDetails.fields()) \
 				for post in SideEffectsDetails.query.filter_by(side_effect_id = int(effect.id)).limit(3)]
 			output["sideEffects"].append(sideEffect)
