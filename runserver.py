@@ -35,11 +35,6 @@ data = SQLAlchemy(app)
 api = restful.Api(app)
 api.decorators=[cors.crossdomain(origin='*')]
 
-db = MySQLdb.connect(host = "engr-cpanel-mysql.engr.illinois.edu",
-						user = "halin2_guest",
-						passwd = "helloworld",
-						db = "halin2_test")
-cursor = db.cursor()
 
 ###############################################
 ###############################################
@@ -128,22 +123,30 @@ class Login_users_resource(restful.Resource):
 		email = args["email"]
 		password = args["password"]
 
-		queryString = "select hashedPass from Users where email='{0}'".format(email)
+
+		db = MySQLdb.connect(host = "engr-cpanel-mysql.engr.illinois.edu",
+								user = "halin2_guest",
+								passwd = "helloworld",
+								db = "halin2_test")
+		cursor = db.cursor()
+
+		queryString = "select hashedPass from users where email='{0}'".format(email)
 		cursor.execute(queryString)
 		hashedPass = cursor.fetchone()[0]
-		return User.verify(password, hashedPass)
-		
+		if Users.verify(password, hashedPass):
+			return {"message": "Success"},\
+				201,\
+				{'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
+		else:
+			return {"message": "Error: Username or password is incorrect."}, 403, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"}
 
 
 #j		user = Users.query.filter_by(email = email).first()
 #j
 #j		if user is None or not Users.verify(password, user.hashedPass):
-#j			return {"message": "Error: Username or password is incorrect."}, 403, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
+#j			return "} 
 #j
-#j			
-		return {"message": "Success"},\
-				201,\
-				{'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
+#j		
 
 api.add_resource(Login_users_resource, '/login/user')
 
@@ -245,5 +248,5 @@ def basic_pages(**kwargs):
 	return make_response(open('templates/index.html').read())
 
 if __name__ == '__main__':
-	app.run(debug=True, use_reloader=False)
+	app.run(debug=True)
 
