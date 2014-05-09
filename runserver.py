@@ -261,13 +261,16 @@ class Get_comments_resource(restful.Resource):
 	def get(self, drugname):
 		db = openSession()		
 		with closing(db.cursor()) as cursor:
-			queryString = 	"""select comments.content, comments.user_id, comments.drug_id 
+			queryString = 	"""select comments.content, comments.drug_id, 
+							users.first_name, users.last_name 
 							from comments join drugs on comments.drug_id = drugs.id 
+							join users on comments.user_id = users.id 
 							where drugs.name = '{0}'""".format(drugname).replace('\t', "").replace('\n', "")
 			cursor.execute(queryString)
 			comments = cursor.fetchall()
-			comments = [{"content": comment[0], "user_id": int(comment[1]), \
-							"drug_id": int(comment[2])} \
+			print comments[0]
+			comments = [{"content": comment[0], "drug_id": comment[1], \
+							"first_name": comment[2], "last_name": comment[3]}
 							for comment in comments]
 			return comments, 201, {'Access-Control-Allow-Origin': '*'}
 			

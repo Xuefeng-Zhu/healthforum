@@ -202,7 +202,7 @@ class SideEffectsDetails(db.Model):
 class Comments(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	user_id = db.Column(db.Integer, nullable = False)
-	drug_id = db.Column(db.String(250), nullable = False)
+	drug_id = db.Column(db.Integer, nullable = False)
 	content = db.Column(db.String(250), nullable = False)
 	
 	def __init__(self, user_id, drug_id, content):
