@@ -27,9 +27,14 @@ app.config(['$routeProvider',
 
 app.controller('MainCtrl', function($scope, $http, $aside, $alert, $location, $cookies) {
 
-	if (!$cookies.visited == "true"){
+	console.log($cookies.user);
+	if ($cookies.visited != "true"){
 		runIntro();
 		$cookies.visited = "true";
+	}
+
+	if ($cookies.user){
+		$scope.user = angular.fromJson($cookies.user);
 	}
 
 	$scope.searchText = "";
@@ -97,11 +102,18 @@ app.controller('MainCtrl', function($scope, $http, $aside, $alert, $location, $c
 		$http.post(apiUrl + '/login/user', data).success(function(data){
 			$alert({title: 'Success!', content: "Hi, " + data.first_name + ". You are logining in.", placement: 'top-left', type: 'success', show: true, duration: 3});
 			$scope.user = {name: data.first_name, id: data.id}
+			$cookies.user = angular.toJson($scope.user); 
+			console.log($cookies.user)
 			loginAside.hide();
 		})
 		.error(function(data){
 			$alert({title: 'Error!', content: data.message, placement: 'top-left', type: 'danger', show: true, duration: 3});
 		});
+	}
+
+	$scope.logout = function(){
+		delete $scope.user;
+		delete $cookies.user;
 	}
 });
 
@@ -146,6 +158,10 @@ app.controller('SideEffectCtrl', function($scope, $http, $routeParams){
 
 app.controller('CommentsCtrl', function($scope, $http, $routeParams){
 	$scope.drugName = $routeParams["drugName"];
+
+	$http.get(apiUrl + '/comments/get/'+ $scope.drugName).success(function(data){
+		$scope.comments = data;
+	});	
 
 	$(document).ready(function() {
 		$('.summernote').summernote({
