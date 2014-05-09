@@ -274,7 +274,6 @@ class Create_comments_resource(restful.Resource):
 			queryString = "select id from drugs where name = '{0}'".format(MySQLdb.escape_string(drugname))
 			cursor.execute(queryString)
 			output = cursor.fetchone()
-			print output
 			drug_id = cursor.fetchone()[0]
 		except:
 			pass
@@ -294,7 +293,7 @@ class Get_comments_resource(restful.Resource):
 		db = openSession()		
 		with closing(db.cursor()) as cursor:
 			queryString = 	"""select comments.content, comments.drug_id, 
-							users.first_name, users.last_name 
+							users.first_name, users.last_name, users.id 
 							from comments join drugs on comments.drug_id = drugs.id 
 							join users on comments.user_id = users.id 
 							where drugs.name = '{0}'""".format(drugname).replace('\t', "").replace('\n', "")
@@ -302,7 +301,7 @@ class Get_comments_resource(restful.Resource):
 			comments = cursor.fetchall()
 		db.close()
 		comments = [{"content": comment[0], "drug_id": comment[1], \
-						"first_name": comment[2], "last_name": comment[3]}
+						"first_name": comment[2], "last_name": comment[3], "user_id": comment[4]}
 						for comment in comments]
 		return comments, 201, {'Access-Control-Allow-Origin': '*'}
 			
