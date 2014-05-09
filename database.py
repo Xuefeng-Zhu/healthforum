@@ -3,6 +3,7 @@ from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.restful import fields, marshal
 from hashlib import sha224
+from passlib.apps import custom_app_context as pwd_context
 useHenry = False
 
 # URLS for the databases. The default one is henryURI
@@ -38,14 +39,11 @@ class Users(db.Model):
 
 	@staticmethod
 	def hash(string):
-		return sha224(string).hexdigest()
+		return pwd_context.encrypt(string)
 
 	@staticmethod
 	def verify(password, hashedPass):
-		string = sha224(password).digest()
-		print string
-		print hashedPass
-		return string == hashedPass
+		return pwd_context.verify(password, hashedPass)
 
 	# Marshalling documentation:
 	# http://flask-restful.readthedocs.org/en/latest/api.html
@@ -179,12 +177,11 @@ class SideEffects(db.Model):
 # NOTE: Shows up in database as side_effects_details
 class SideEffectsDetails(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
-	url = db.Column(db.String(250), unique=True, nullable = False)
+	url = db.Column(db.String(250), nullable = False)
 	title = db.Column(db.String(100), nullable = False)
 	forum_id = db.Column(db.String(30), nullable = False)
 	content = db.Column(db.Text, nullable = False)
-	drug_id = db.Column(db.Integer, nullable = False)
-	general_effect = db.Column(db.String(30), nullable = False)
+	side_effect_id = db.Column(db.Integer, nullable = False)
 
 #	side_effects_id = db.Column(db.Integer, db.ForeignKey('side_effects.id'), unique=True, nullable = False)
 
@@ -202,11 +199,8 @@ class SideEffectsDetails(db.Model):
 	@staticmethod
 	def fields():
 		return {
-			"id": fields.Integer,
 			"url": fields.String,
 			"title": fields.String,
-			"forum_id": fields.Integer,
 			"content": fields.String,
-			"drug_id": fields.Integer,
-			"general_effect": fields.String
 		}
+

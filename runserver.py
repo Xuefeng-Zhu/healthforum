@@ -62,31 +62,26 @@ api.add_resource(Drug_List_resource, '/drugs/all')
 class Drug_Effect_resource(restful.Resource):
 
 	def get(self, drugName, userType):
-		#try:
-		effectType = "doctor_effect" if userType.lower() == "doctor" else "patient_effect"
 		drug = Drugs.query.filter_by(name = drugName.lower()).first()
 		drugId = drug.id
-		info = drug.info
-		posts = [marshal(post, SideEffectsDetails.fields()) for post in SideEffectsDetails.query.filter_by(drug_id = drugId).all()]
-		print posts
 
-		# TODO: Learn how to do a f***** select statement in SQLAlchemy! There's code to be refractored 
-		queryEffects = SideEffects.query.filter_by(drug_id = drugId)
-		
-		# TODO: Stop being a noob and have less if statements
+
+		side_effects = SideEffects.query.filter_by(drug_id = drugId).all()
 		output = dict()
 		output["name"] = drugName
-		output["userType"] = userType
-		output["drugId"] = drugId
-		output["posts"] = posts
-		if userType == "doctor":
-			output["effects"] = [{"name": query.doctor_effect, "info": info} for query in queryEffects]
-		else:
-			output["effects"] = [{"name": query.patient_effect, "info": info} for query in queryEffects]
+		output["sideEffects"] = []
+
+		for effect in side_effects:
+			sideEffect = dict()
+			if userType.lower() == "doctor":
+				sideEffect['doctorEff'] = effect.doctor_effect
+			else:
+				sideEffect['patientEff'] = effect.patient_effect
+			sideEffect["posts"] = [marshal(post, SideEffectsDetails.fields()) \
+				for post in SideEffectsDetails.query.filter_by(side_effect_id = int(effect.id)).limit(3)]
+			output["sideEffects"].append(sideEffect)
 			
 		return output
-#		except:
-#			return "Error...", 500 
 
 
 api.add_resource(Drug_Effect_resource, '/drugs/<string:drugName>/<string:userType>')
@@ -237,3 +232,4 @@ def basic_pages(**kwargs):
 ###############################################
 if __name__ == '__main__':
 	app.run(debug=True)
+
