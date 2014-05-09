@@ -4,6 +4,9 @@ var app = angular.module('myapp', ['ngRoute','ngAnimate', 'ngSanitize', 'ngCooki
 app.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
+		when('/', {
+			templateUrl: 'partials/help.html',
+		}).
 		when('/description/:drugName', {
 			templateUrl: 'partials/description.html',
 			controller: 'DescriptionCtrl'
@@ -32,12 +35,12 @@ app.controller('MainCtrl', function($scope, $http, $aside, $location, $cookies) 
 	$scope.searchText = "";
 	$scope.searchMode = true;
 
-	$location.path("description/abilify");
-
 	$http.get(apiUrl + '/drugs/all').success(function(data){
 		$scope.drugs = data;
 	});
 	
+	$scope.intro = runIntro;
+
 	$scope.getList = function(viewValue) {
 		if (viewValue.length == 0){
 			return;
@@ -60,11 +63,11 @@ app.controller('MainCtrl', function($scope, $http, $aside, $location, $cookies) 
 
 	var signupAside;
 	$scope.logAside = function(){
-		  var myOtherAside = $aside({scope: $scope, template: 'partials/account.html'});
+		var myOtherAside = $aside({scope: $scope, template: 'partials/account.html'});
 	}
 
 	$scope.signAside = function(){
-		  signupAside = $aside({scope: $scope, template: 'partials/signup.html'});
+		signupAside = $aside({scope: $scope, template: 'partials/signup.html'});
 	}
 
 	$scope.createAcount = function(){
@@ -94,7 +97,7 @@ app.controller('MainCtrl', function($scope, $http, $aside, $location, $cookies) 
 			console.log(data);
 		})
 		.error(function(data){
-			 console.log(data);
+			console.log(data);
 		});
 	}
 });
