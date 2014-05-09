@@ -141,12 +141,14 @@ class Login_users_resource(restful.Resource):
 		db = openSession()
 		with closing(db.cursor()) as cursor:
 
-			queryString = "select hashedPass from users where email='{0}'" \
+			queryString = "select first_name, last_name, hashedPass from users where email='{0}'" \
 						.format(MySQLdb.escape_string(email))
 			cursor.execute(queryString)
-			hashedPass = cursor.fetchone()[0]
+			first_name, last_name, hashedPass = cursor.fetchone()
+
 			if Users.verify(password, hashedPass):
-				return {"message": "Success"},\
+						
+				return {"message": "Success", "first_name": first_name, "last_name": last_name },\
 					201,\
 					{'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
 			else:
@@ -272,6 +274,10 @@ api.add_resource(Get_comments_resource, '/comments/get/<int:drug_id>', endpoint 
 
 ###############################################
 ###############################################
+
+@app.route('/index.html')
+def index(**kwargs):
+	return basic_pages(* kwargs)
 
 @app.route('/')
 def basic_pages(**kwargs):
