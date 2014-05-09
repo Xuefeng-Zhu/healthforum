@@ -57,7 +57,6 @@ class Drug_List_resource(restful.Resource):
 			return "Error...", 500 
 
 api.add_resource(Drug_List_resource, '/drugs/all')
-
 # Given a drug's name and whether a user is a patient or doctor,
 # return a list of side effects corresponding to the user
 class Drug_Effect_resource(restful.Resource):
@@ -66,24 +65,22 @@ class Drug_Effect_resource(restful.Resource):
 		drug = Drugs.query.filter_by(name = drugName.lower()).first()
 		drugId = drug.id
 
-		side_effects = SideEffects.query.filter_by(drug_id = drugId) \
-			.join(SideEffectsDetails) \
-			.all()
+		side_effects = SideEffects.query.filter_by(drug_id = drugId).all()
 
 
 		output = dict()
 		output["name"] = drugName
 		output["sideEffects"] = []
 
-#		for effect in side_effects:
-#			sideEffect = dict()
-#			doc = 1 if userType.lower() == "doctor" else 0
-#			sideEffect["name"] = effect.doctor_effect if doc else effect.patient_effect
-#			sideEffect["posts"] = [marshal(post, SideEffectsDetails.fields()) \
-#				for post in SideEffectsDetails.query \
-#					.filter_by(side_effect_id = int(effect.id), isDoctor = doc) \
-#					.limit(3)]
-#			output["sideEffects"].append(sideEffect)
+		for effect in side_effects:
+			sideEffect = dict()
+			doc = 1 if userType.lower() == "doctor" else 0
+			sideEffect["name"] = effect.doctor_effect if doc else effect.patient_effect
+			sideEffect["posts"] = [marshal(post, SideEffectsDetails.fields()) \
+				for post in SideEffectsDetails.query \
+					.filter_by(side_effect_id = int(effect.id), isDoctor = doc) \
+					.limit(3)]
+			output["sideEffects"].append(sideEffect)
 			
 		return output
 
@@ -126,7 +123,6 @@ class Login_users_resource(restful.Resource):
 		password = args["password"]
 
 		user = Users.query.filter_by(email = email).first()
-		print user.email
 
 		if user is None or not Users.verify(password, user.hashedPass):
 			return {"message": "Error: Username or password is incorrect."}, 403, {'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
@@ -236,5 +232,5 @@ def basic_pages(**kwargs):
 	return make_response(open('templates/index.html').read())
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(debug=True, use_reloader=False)
 

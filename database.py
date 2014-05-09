@@ -181,7 +181,7 @@ class SideEffectsDetails(db.Model):
 	title = db.Column(db.String(100), nullable = False)
 	forum_id = db.Column(db.String(30))
 	content = db.Column(db.Text, nullable = False)
-	side_effect_id = db.Column(db.Integer, db.ForeignKey("SideEffects.id"), nullable = False)
+	side_effect_id = db.Column(db.Integer, nullable = False)
 	isDoctor = db.Column(db.Boolean)
 
 #	side_effects_id = db.Column(db.Integer, db.ForeignKey('side_effects.id'), unique=True, nullable = False)
@@ -189,7 +189,7 @@ class SideEffectsDetails(db.Model):
 	# TODO: I got an error whenever I uncommented the below line. We should look into that.
 	# I'll look into this documentation later:
 	# https://pythonhosted.org/Flask-SQLAlchemy/models.html
-	side_effect = db.relationship(lambda: SideEffectsDetails, primaryjoin = "side_effects.id == side_effect_details.side_effect_id")
+#	side_effect = db.relationship(lambda: SideEffectsDetails, primaryjoin = "side_effects.id == side_effect_details.side_effect_id")
 
 	def __init__(self, resource):
 		self.url = resource['url']
