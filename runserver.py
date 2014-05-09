@@ -11,6 +11,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.httpauth import HTTPBasicAuth
 from sqlalchemy.exc import IntegrityError
 import MySQLdb
+from contextlib import closing
 auth = HTTPBasicAuth()
 
 """
@@ -41,13 +42,13 @@ def openSession():
 		return MySQLdb.connect(host = "engr-cpanel-mysql.engr.illinois.edu",
 								user = "halin2_guest",
 								passwd = "helloworld",
-								db = "halin2_test")
+								db = "halin2_sample")
 
 	else:
 		return MySQLdb.connect(host = "engr-cpanel-mysql.engr.illinois.edu",
 								user = "halin2_guest",
 								passwd = "helloworld",
-								db = "halin2_sample")
+								db = "halin2_test")
 
 
 ###############################################
@@ -255,10 +256,18 @@ api.add_resource(Create_comments_resource, '/comments/create')
 		
 class Get_comments_resource(restful.Resource):
 
-	def get(self, drugname):
-		
-		
-
+	def get(self, drug_id):
+		db = openSession()		
+		with closing(db.cursor()) as cursor:
+			queryString = "select * from comments where drug_id = {0}".format(drug_id)
+			cursor.execute(queryString)
+			comments = cursor.fetchall()
+			comments = [{"id": id, "user_id": user_id, \
+							"drug_id": drug_id, "content": content} \
+							for id, user_id, drug_id, content in comments]
+			return comments, 201, {'Access-Control-Allow-Origin': '*'}
+			
+api.add_resource(Get_comments_resource, '/comments/get/<int:drug_id>', endpoint = "<int:drug_id>")
 
 
 ###############################################
