@@ -141,14 +141,14 @@ class Login_users_resource(restful.Resource):
 		db = openSession()
 		with closing(db.cursor()) as cursor:
 
-			queryString = "select first_name, last_name, hashedPass from users where email='{0}'" \
+			queryString = "select first_name, id, hashedPass from users where email='{0}'" \
 						.format(MySQLdb.escape_string(email))
 			cursor.execute(queryString)
-			first_name, last_name, hashedPass = cursor.fetchone()
+			first_name, id, hashedPass = cursor.fetchone()
 
 			if Users.verify(password, hashedPass):
 						
-				return {"message": "Success", "first_name": first_name, "last_name": last_name },\
+				return {"message": "Success", "first_name": first_name, "id": id },\
 					201,\
 					{'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Methods": "GET, POST"} 
 			else:

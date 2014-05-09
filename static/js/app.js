@@ -25,7 +25,7 @@ app.config(['$routeProvider',
 	}]);
 
 
-app.controller('MainCtrl', function($scope, $http, $aside, $location, $cookies) {
+app.controller('MainCtrl', function($scope, $http, $aside, $alert, $location, $cookies) {
 
 	if (!$cookies.visited == "true"){
 		runIntro();
@@ -78,16 +78,16 @@ app.controller('MainCtrl', function($scope, $http, $aside, $location, $cookies) 
 		var last = $('#Last').val();
 
 		if (password1 != password2){
-			console.log("passwords do not match");
+			$alert({title: 'Error!', content: "passwords do not match", placement: 'top-left', type: 'danger', show: true, duration: 3});			
 			return;
 		}
 		var data = {'email': email, 'password': password1, 'first': first, 'last': last, 'isDoctor': false};
 		$http.post(apiUrl + '/registration/user', data).success(function(data){
-			console.log(data);
+			$alert({title: 'Success!', content: data.message, placement: 'top-left', type: 'success', show: true, duration: 3});
 			signupAside.hide();
 		})
 		.error(function(data){
-			console.log(data);
+			$alert({title: 'Error!', content: data.message, placement: 'top-left', type: 'danger', show: true, duration: 3});
 		});
 	}
 
