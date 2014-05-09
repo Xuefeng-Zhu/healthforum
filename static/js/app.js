@@ -136,14 +136,11 @@ app.controller('SideEffectCtrl', function($scope, $http, $routeParams){
 
 	$scope.$watch('searchMode', function(){
 		$http.get(apiUrl + '/drugs/' + $scope.drugName + ($scope.searchMode ? '/patient' : '/doctor')).success(function(data){
-			$scope.effects = data.effects;
+			$scope.effects = data.sideEffects;
 		});	
 		$scope.panel = $scope.searchMode ? "panel panel-info" : "panel panel-success"
 	}, true);
 
-	$http.get(apiUrl + '/drugs/' + $scope.drugName + ($scope.searchMode ? '/patient' : '/doctor')).success(function(data){
-		$scope.effects = data.effects;
-	});	
 });
 
 app.controller('CommentsCtrl', function($scope, $http, $routeParams){

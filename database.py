@@ -4,7 +4,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.restful import fields, marshal
 from hashlib import sha224
 from passlib.apps import custom_app_context as pwd_context
-useHenry = True
+useHenry = False
 
 # URLS for the databases. The default one is henryURI
 # the clearDB database has been deleted! I commented out herokuURI for this reason.
