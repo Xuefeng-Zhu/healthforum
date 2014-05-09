@@ -1,5 +1,5 @@
 var apiUrl = "http://localhost:5000"
-var app = angular.module('myapp', ['ngRoute','ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'toggle-switch']);
+var app = angular.module('myapp', ['ngRoute','ngAnimate', 'ngSanitize', 'ngCookies', 'mgcrea.ngStrap', 'toggle-switch']);
 
 app.config(['$routeProvider',
 	function($routeProvider) {
@@ -22,7 +22,12 @@ app.config(['$routeProvider',
 	}]);
 
 
-app.controller('MainCtrl', function($scope, $http, $aside, $location) {
+app.controller('MainCtrl', function($scope, $http, $aside, $location, $cookies) {
+
+	if (!$cookies.visited == "true"){
+		runIntro();
+		$cookies.visited = "true";
+	}
 
 	$scope.searchText = "";
 	$scope.searchMode = true;

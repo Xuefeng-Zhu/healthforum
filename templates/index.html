@@ -33,7 +33,7 @@
       <!-- Search field in NavBar -->
       <div class="navbar-form pull-left input-group">
         <form ng-submit="search()" class="input-group">
-          <input type="text" size="60" class="form-control" ng-model="searchText" data-animation="am-flip-x" ng-options="drug for drug in getList($viewValue)" 
+          <input id="searchbar" type="text" size="60" class="form-control" ng-model="searchText" data-animation="am-flip-x" ng-options="drug for drug in getList($viewValue)" 
           placeholder="Type the drug name to Search" ng-keyup="search()" bs-typeahead/>
           <span class="input-group-btn">
             <button class="btn btn-primary" type="button" ng-click="search()" style="margin-left: -1px;
@@ -41,11 +41,11 @@ border-bottom-left-radius: 0; border-top-left-radius: 0;">
               <span class="glyphicon glyphicon-search"></span>
             </button>
           </span>
-          <div toggle-switch class="switch-primary switch-large col-lg-offset-1"  knob-label="Mode" on-label='Patient' off-label='Doctor' model="searchMode"></div>
+          <div id="switchB" toggle-switch class="switch-primary switch-large col-lg-offset-1"  knob-label="Mode" on-label='Patient' off-label='Doctor' model="searchMode"></div>
         </form>
       </div>
 
-      <button type="button" class="btn btn-primary navbar-btn pull-right" ng-click="logAside()">Log in</button>
+      <button id="login" type="button" class="btn btn-primary navbar-btn pull-right" ng-click="logAside()">Log in</button>
     </div>
 
   </div>
@@ -57,7 +57,7 @@ border-bottom-left-radius: 0; border-top-left-radius: 0;">
     <div class="row" style="height:100%">
 
       <!-- Tweet Cards inside frame -->
-      <div class="col-lg-5" id="tweet-frame" ng-controller="SelectDemoCtrl" style="height:100%">
+      <div id="queryR" class="col-lg-5" id="tweet-frame" ng-controller="SelectDemoCtrl" style="height:100%">
        <div class="panel panel-success" style="height:100%">
         <div class="panel-heading">
           <div class="row">
@@ -89,7 +89,7 @@ border-bottom-left-radius: 0; border-top-left-radius: 0;">
     </div>
 
     <!-- Charts column -->
-    <div class="col-lg-7" style="height:100%">
+    <div id="details" class="col-lg-7" style="height:100%">
       <div ng-view style="height:100%"></div>
     </div>
   </div>
@@ -101,6 +101,7 @@ border-bottom-left-radius: 0; border-top-left-radius: 0;">
 <script src="lib/angular/angular-animate.min.js"></script>
 <script src="lib/angular/angular-sanitize.min.js"></script>
 <script src="lib/angular/angular-route.min.js"></script>
+<script src="lib/angular/angular-cookies.min.js"></script>
 <script src="lib/angular-strap.js"></script>
 <script src="lib/angular-strap.tpl.js"></script>
 <script src="lib/angular-toggle-switch.js"></script>
