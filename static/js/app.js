@@ -61,9 +61,10 @@ app.controller('MainCtrl', function($scope, $http, $aside, $alert, $location, $c
 		});
 	}
 
+	var loginAside;
 	var signupAside;
 	$scope.logAside = function(){
-		var myOtherAside = $aside({scope: $scope, template: 'partials/account.html'});
+		loginAside = $aside({scope: $scope, template: 'partials/account.html'});
 	}
 
 	$scope.signAside = function(){
@@ -94,10 +95,12 @@ app.controller('MainCtrl', function($scope, $http, $aside, $alert, $location, $c
 	$scope.login = function(){
 		data = {'email': $('#Email').val(), 'password': $('#Password').val()};
 		$http.post(apiUrl + '/login/user', data).success(function(data){
-			console.log(data);
+			$alert({title: 'Success!', content: "Hi, " + data.first_name + ". You are logining in.", placement: 'top-left', type: 'success', show: true, duration: 3});
+			$scope.user = {name: data.first_name, id: data.id}
+			loginAside.hide();
 		})
 		.error(function(data){
-			console.log(data);
+			$alert({title: 'Error!', content: data.message, placement: 'top-left', type: 'danger', show: true, duration: 3});
 		});
 	}
 });
