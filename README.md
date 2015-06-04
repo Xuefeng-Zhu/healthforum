@@ -1,1 +1,16 @@
-This is the official repository for our CS 410 project, currently named "Healthforum". I'm open to any other suggestion of what we should name this proejct and repository.
+# Healthforum
+
+Healthforum is a search engine for drug side effect. The data is crawled from several health forum through text mining. 
+
+## Features
+
+* Guide for using the application
+* Search for specific drug's description and related side effect
+* View the actual forum post
+* Switch between doctor mode and patent mode (The phrase will be different)
+* Provide feedback for side effect results
+
+## Usage
+1. Run `python runserver.py` 
+2. Visit [http://localhost:5000/](http://localhost:5000/)
+
