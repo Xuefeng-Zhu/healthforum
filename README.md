@@ -14,3 +14,9 @@ Healthforum is a search engine for drug side effect. The data is crawled from se
 1. Run `python runserver.py` 
 2. Visit [http://localhost:5000/](http://localhost:5000/)
 
+![screenshot](https://raw.githubusercontent.com/Xuefeng-Zhu/healthforum/master/static/screenshot.png)
+
+## Thanks
+* Angularjs
+* Flask
+* Heroku
