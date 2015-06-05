@@ -1,4 +1,4 @@
-var apiUrl = "http://healthforum.herokuapp.com"
+var apiUrl = location.origin
 var app = angular.module('myapp', ['ngRoute','ngAnimate', 'ngSanitize', 'ngCookies', 'mgcrea.ngStrap', 'toggle-switch']);
 
 app.config(['$routeProvider',
